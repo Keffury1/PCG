@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--History-->
+        <!--Archives-->
         <scene sceneID="FPW-RZ-9E9">
             <objects>
                 <viewController id="DeW-VI-0Tp" customClass="HistoryViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AAO-sv-Mdw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" image="clock" catalog="system" id="SLH-4S-Qoe"/>
+                    <tabBarItem key="tabBarItem" title="Archives" image="archivebox" catalog="system" id="SLH-4S-Qoe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryi-2e-yph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,7 +107,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bZZ-jf-J6f"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" id="Qhx-HW-Tni"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="Qhx-HW-Tni"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z22-7F-gEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,8 +134,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="archivebox" catalog="system" width="128" height="106"/>
         <image name="circle.grid.hex.fill" catalog="system" width="128" height="112"/>
-        <image name="clock" catalog="system" width="128" height="121"/>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="person" catalog="system" width="128" height="117"/>
     </resources>
 </document>
