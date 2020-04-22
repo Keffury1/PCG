@@ -10,7 +10,7 @@
         <!--Products-->
         <scene sceneID="KQI-sz-Wsi">
             <objects>
-                <viewController id="yUC-3d-eli" sceneMemberID="viewController">
+                <viewController id="yUC-3d-eli" customClass="ProductsViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EiO-XL-uzV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
