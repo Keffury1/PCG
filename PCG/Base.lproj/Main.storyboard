@@ -357,7 +357,7 @@
     </scenes>
     <resources>
         <image name="Cutting Board" width="744" height="566"/>
-        <image name="Kelsey" width="750" height="1334"/>
+        <image name="Kelsey" width="280" height="280"/>
         <image name="Ornament" width="544" height="580"/>
         <image name="archivebox" catalog="system" width="128" height="106"/>
         <image name="circle.grid.hex.fill" catalog="system" width="128" height="112"/>
