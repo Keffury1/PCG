@@ -23,8 +23,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
     
     //MARK: - Actions
+    @IBAction func infoButtonTapped(_ sender: Any) {
+    }
     
     @IBAction func editButtonTapped(_ sender: Any) {
         self.delegate?.collectionViewCell(self, buttonTapped: editButton)
