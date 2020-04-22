@@ -39,7 +39,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Teq-ya-kQu">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productCell" id="Teq-ya-kQu" customClass="ProductCollectionViewCell" customModule="PCG" customModuleProvider="target">
                                         <rect key="frame" x="10" y="0.0" width="225" height="225"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GU1-zG-qZJ">
@@ -70,6 +70,9 @@
                                                     </constraints>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="pencil.tip" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="editButtonTapped:" destination="Teq-ya-kQu" eventType="touchUpInside" id="7oo-bT-SLD"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -81,6 +84,11 @@
                                                 <constraint firstItem="l3V-pu-igY" firstAttribute="centerX" secondItem="GU1-zG-qZJ" secondAttribute="centerX" id="lcg-yE-GVf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="editButton" destination="i3Z-5F-RXc" id="1qh-P6-WN3"/>
+                                            <outlet property="imageView" destination="u4b-1U-GI8" id="YqQ-oc-MtD"/>
+                                            <outlet property="titleLabel" destination="l3V-pu-igY" id="Ryh-yK-Azd"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -97,6 +105,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Products" image="circle.grid.hex.fill" catalog="system" id="Vjl-lX-AOu"/>
                     <connections>
+                        <outlet property="productsCollectionView" destination="Ccc-Os-sw8" id="OH5-50-JK4"/>
                         <segue destination="Izp-Aa-7ZU" kind="show" identifier="editSegue" id="tRn-hR-9xI"/>
                     </connections>
                 </viewController>
