@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		379197AE2450F3FB0057F709 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379197AD2450F3FB0057F709 /* ProductsViewController.swift */; };
 		37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F5244E4338001F6421 /* AppDelegate.swift */; };
 		37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F7244E4338001F6421 /* SceneDelegate.swift */; };
 		37E270FD244E4338001F6421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E270FB244E4338001F6421 /* Main.storyboard */; };
 		37E270FF244E4338001F6421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E270FE244E4338001F6421 /* Assets.xcassets */; };
 		37E27102244E4338001F6421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E27100244E4338001F6421 /* LaunchScreen.storyboard */; };
 		37E27112244E46A7001F6421 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E27111244E46A7001F6421 /* ProfileViewController.swift */; };
-		37E27116244E46C3001F6421 /* ProductsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E27115244E46C3001F6421 /* ProductsCollectionViewController.swift */; };
 		37E27118244E46E2001F6421 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E27117244E46E2001F6421 /* CustomizeViewController.swift */; };
 		37E2711A244E46EB001F6421 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E27119244E46EB001F6421 /* PurchaseViewController.swift */; };
 		37E2711C244E4702001F6421 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2711B244E4702001F6421 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		379197AD2450F3FB0057F709 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		37E270F2244E4338001F6421 /* PCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E270F5244E4338001F6421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E270F7244E4338001F6421 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +29,6 @@
 		37E27101244E4338001F6421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37E27103244E4338001F6421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37E27111244E46A7001F6421 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		37E27115244E46C3001F6421 /* ProductsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewController.swift; sourceTree = "<group>"; };
 		37E27117244E46E2001F6421 /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
 		37E27119244E46EB001F6421 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		37E2711B244E4702001F6421 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				37E27111244E46A7001F6421 /* ProfileViewController.swift */,
-				37E27115244E46C3001F6421 /* ProductsCollectionViewController.swift */,
+				379197AD2450F3FB0057F709 /* ProductsViewController.swift */,
 				37E27117244E46E2001F6421 /* CustomizeViewController.swift */,
 				37E27119244E46EB001F6421 /* PurchaseViewController.swift */,
 				37E2711B244E4702001F6421 /* HistoryViewController.swift */,
@@ -215,8 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				37E27112244E46A7001F6421 /* ProfileViewController.swift in Sources */,
-				37E27116244E46C3001F6421 /* ProductsCollectionViewController.swift in Sources */,
 				37E27118244E46E2001F6421 /* CustomizeViewController.swift in Sources */,
+				379197AE2450F3FB0057F709 /* ProductsViewController.swift in Sources */,
 				37E2711A244E46EB001F6421 /* PurchaseViewController.swift in Sources */,
 				37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */,
 				37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */,
