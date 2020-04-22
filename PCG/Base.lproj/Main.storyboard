@@ -70,9 +70,6 @@
                                                     </constraints>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="pencil.tip" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="editButtonTapped:" destination="Teq-ya-kQu" eventType="touchUpInside" id="7oo-bT-SLD"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -235,14 +232,83 @@
                     <view key="view" contentMode="scaleToFill" id="bxz-qT-EZu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myy-wy-AFA">
+                                <rect key="frame" x="107" y="114" width="200" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="AOq-Fj-E8g"/>
+                                    <constraint firstAttribute="height" constant="60" id="nYf-ti-ZXF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mcl-v0-d6c">
+                                <rect key="frame" x="87" y="249" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="4LO-gP-ZN9"/>
+                                    <constraint firstAttribute="height" constant="240" id="tqs-86-cT9"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lmn-ze-OC4">
+                                <rect key="frame" x="87" y="509" width="240" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Client Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddF-Tr-hLc">
+                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZj-Fm-qrn">
+                                        <rect key="frame" x="0.0" y="55" width="33.5" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knX-do-hyA">
+                                        <rect key="frame" x="0.0" y="91" width="115" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMb-Yn-bH6">
+                                        <rect key="frame" x="0.0" y="126.5" width="108" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erU-6b-r9F">
+                                        <rect key="frame" x="0.0" y="175" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="cOb-KF-QJ1"/>
+                                            <constraint firstAttribute="height" constant="25" id="wh6-qQ-0c7"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="creditcard" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="MTI-ck-ufZ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Lmn-ze-OC4" firstAttribute="leading" secondItem="mcl-v0-d6c" secondAttribute="leading" id="4Kz-xG-r8n"/>
+                            <constraint firstItem="mcl-v0-d6c" firstAttribute="centerX" secondItem="bZZ-jf-J6f" secondAttribute="centerX" id="6Vb-5n-JSM"/>
+                            <constraint firstItem="myy-wy-AFA" firstAttribute="top" secondItem="bZZ-jf-J6f" secondAttribute="top" constant="70" id="FyS-Lk-ohw"/>
+                            <constraint firstItem="myy-wy-AFA" firstAttribute="centerX" secondItem="bZZ-jf-J6f" secondAttribute="centerX" id="cmw-bK-Wq3"/>
+                            <constraint firstItem="Lmn-ze-OC4" firstAttribute="trailing" secondItem="mcl-v0-d6c" secondAttribute="trailing" id="jxe-Gf-lHj"/>
+                            <constraint firstItem="mcl-v0-d6c" firstAttribute="top" secondItem="myy-wy-AFA" secondAttribute="bottom" constant="75" id="qdX-0N-9Y8"/>
+                            <constraint firstItem="Lmn-ze-OC4" firstAttribute="top" secondItem="mcl-v0-d6c" secondAttribute="bottom" constant="20" id="toz-IT-jeI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bZZ-jf-J6f"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="Qhx-HW-Tni"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z22-7F-gEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2710" y="834"/>
+            <point key="canvasLocation" x="-2710.144927536232" y="833.70535714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SN6-Mo-QOG">
@@ -252,6 +318,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="YJR-sU-9Lo" kind="relationship" relationship="viewControllers" id="uhG-hX-wrS"/>
@@ -267,6 +334,7 @@
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>
         <image name="circle.grid.hex.fill" catalog="system" width="128" height="112"/>
+        <image name="creditcard" catalog="system" width="128" height="91"/>
         <image name="pencil.tip" catalog="system" width="99" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
     </resources>

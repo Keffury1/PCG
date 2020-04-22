@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol CollectionViewCellDelegate: class {
+    func collectionViewCell(_ cell: UICollectionViewCell, buttonTapped: UIButton)
+}
+
 class ProductCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Properties
+    
+    weak var delegate: CollectionViewCellDelegate?
     
     //MARK: - Outlets
     
@@ -21,6 +27,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
     //MARK: - Actions
     
     @IBAction func editButtonTapped(_ sender: Any) {
-        
+        self.delegate?.collectionViewCell(self, buttonTapped: editButton)
     }
 }
