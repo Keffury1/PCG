@@ -14,10 +14,14 @@ class ProductsViewController: UIViewController {
     
     //MARK: - Outlets
     
+    @IBOutlet weak var productsCollectionView: UICollectionView!
+    
     //MARK: - Views
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        productsCollectionView.delegate = self
     }
     
     
@@ -30,4 +34,8 @@ class ProductsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
+}
+
+extension ProductsViewController: UICollectionViewDelegate {
+    
 }
