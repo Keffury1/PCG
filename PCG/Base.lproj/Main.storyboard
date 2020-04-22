@@ -33,18 +33,53 @@
                                     <constraint firstAttribute="width" constant="245" id="clR-ty-JoM"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bFM-VI-DeD">
-                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="itemSize" width="225" height="225"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Teq-ya-kQu">
-                                        <rect key="frame" x="22.5" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="10" y="0.0" width="225" height="225"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GU1-zG-qZJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="225" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u4b-1U-GI8">
+                                                    <rect key="frame" x="25" y="8" width="175" height="155"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="175" id="d6O-Qm-3R1"/>
+                                                        <constraint firstAttribute="height" constant="155" id="lmn-N0-u1b"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-pu-igY">
+                                                    <rect key="frame" x="95.5" y="185.5" width="34" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="PhD-AJ-Fgl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3Z-5F-RXc">
+                                                    <rect key="frame" x="175" y="183" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="oLt-y9-wsf"/>
+                                                        <constraint firstAttribute="height" constant="30" id="wTc-OM-tPr"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="pencil.tip" catalog="system"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="i3Z-5F-RXc" firstAttribute="trailing" secondItem="u4b-1U-GI8" secondAttribute="trailing" constant="5" id="1DD-KC-0so"/>
+                                                <constraint firstItem="i3Z-5F-RXc" firstAttribute="top" secondItem="u4b-1U-GI8" secondAttribute="bottom" constant="20" id="EV4-bA-QBu"/>
+                                                <constraint firstItem="u4b-1U-GI8" firstAttribute="top" secondItem="GU1-zG-qZJ" secondAttribute="top" constant="8" id="SCa-W7-CQt"/>
+                                                <constraint firstItem="l3V-pu-igY" firstAttribute="centerY" secondItem="i3Z-5F-RXc" secondAttribute="centerY" id="VZw-FM-div"/>
+                                                <constraint firstItem="u4b-1U-GI8" firstAttribute="centerX" secondItem="GU1-zG-qZJ" secondAttribute="centerX" id="hIZ-tz-cMz"/>
+                                                <constraint firstItem="l3V-pu-igY" firstAttribute="centerX" secondItem="GU1-zG-qZJ" secondAttribute="centerX" id="lcg-yE-GVf"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
@@ -159,6 +194,7 @@
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>
         <image name="circle.grid.hex.fill" catalog="system" width="128" height="112"/>
+        <image name="pencil.tip" catalog="system" width="99" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
     </resources>
 </document>
