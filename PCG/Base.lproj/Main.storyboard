@@ -233,17 +233,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cutting Board" translatesAutoresizingMaskIntoConstraints="NO" id="BoJ-yd-Qfe">
-                                <rect key="frame" x="91" y="180" width="232" height="200"/>
+                                <rect key="frame" x="20" y="180" width="374" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="f8v-Um-3B9"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVh-3f-WbL">
-                                <rect key="frame" x="69.5" y="708" width="275" height="50"/>
+                                <rect key="frame" x="20" y="708" width="374" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Fr6-0Z-Jw5"/>
-                                    <constraint firstAttribute="width" constant="275" id="QFT-fz-UdY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                                 <state key="normal" title="Create">
@@ -256,10 +255,13 @@
                             <constraint firstItem="0zE-2U-VkF" firstAttribute="centerX" secondItem="Wg5-xL-Ytj" secondAttribute="centerX" id="A1s-QA-MZS"/>
                             <constraint firstItem="BoJ-yd-Qfe" firstAttribute="centerX" secondItem="Wg5-xL-Ytj" secondAttribute="centerX" id="EnY-by-lH1"/>
                             <constraint firstItem="0zE-2U-VkF" firstAttribute="top" secondItem="Wg5-xL-Ytj" secondAttribute="top" constant="70" id="FUj-jw-FF2"/>
+                            <constraint firstItem="XVh-3f-WbL" firstAttribute="leading" secondItem="Wg5-xL-Ytj" secondAttribute="leading" constant="20" id="JDo-Mh-Okm"/>
                             <constraint firstItem="BoJ-yd-Qfe" firstAttribute="top" secondItem="0zE-2U-VkF" secondAttribute="bottom" constant="50" id="K1E-qe-OmO"/>
-                            <constraint firstItem="BoJ-yd-Qfe" firstAttribute="width" secondItem="0zE-2U-VkF" secondAttribute="width" id="SVx-Kk-SAQ"/>
                             <constraint firstItem="Wg5-xL-Ytj" firstAttribute="bottom" secondItem="XVh-3f-WbL" secondAttribute="bottom" constant="50" id="VKG-rm-bkA"/>
+                            <constraint firstItem="BoJ-yd-Qfe" firstAttribute="leading" secondItem="4xd-PF-aoZ" secondAttribute="leading" constant="20" id="YT6-La-ndJ"/>
                             <constraint firstItem="XVh-3f-WbL" firstAttribute="centerX" secondItem="Wg5-xL-Ytj" secondAttribute="centerX" id="aZr-y0-KIx"/>
+                            <constraint firstAttribute="trailing" secondItem="BoJ-yd-Qfe" secondAttribute="trailing" constant="20" id="cmT-WS-oat"/>
+                            <constraint firstItem="Wg5-xL-Ytj" firstAttribute="trailing" secondItem="XVh-3f-WbL" secondAttribute="trailing" constant="20" id="sbg-Ix-Af9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wg5-xL-Ytj"/>
                     </view>
