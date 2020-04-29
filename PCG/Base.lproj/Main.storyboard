@@ -111,7 +111,7 @@
                                             <outlet property="titleLabel" destination="l3V-pu-igY" id="Ryh-yK-Azd"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5kB-dG-vl2">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="product1Cell" id="5kB-dG-vl2">
                                         <rect key="frame" x="27" y="313" width="191" height="238"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="m56-KE-tmm">
@@ -144,9 +144,6 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
                                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <state key="normal" image="info.circle" catalog="system"/>
-                                                                    <connections>
-                                                                        <action selector="infoButtonTapped:" destination="Teq-ya-kQu" eventType="touchUpInside" id="QZF-gY-CfH"/>
-                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYe-MG-fcP">
                                                                     <rect key="frame" x="145" y="0.0" width="30" height="30"/>
@@ -156,9 +153,6 @@
                                                                     </constraints>
                                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <state key="normal" image="pencil.tip.crop.circle" catalog="system"/>
-                                                                    <connections>
-                                                                        <action selector="editButtonTapped:" destination="Teq-ya-kQu" eventType="touchUpInside" id="paB-gy-vfP"/>
-                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -408,7 +402,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cutting Board" translatesAutoresizingMaskIntoConstraints="NO" id="tOh-W6-xPi">
-                                <rect key="frame" x="50" y="304" width="314" height="200"/>
+                                <rect key="frame" x="50" y="254" width="314" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="WNj-c7-rJ6"/>
                                 </constraints>
@@ -424,17 +418,51 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aok-hc-azH">
+                                <rect key="frame" x="50" y="454" width="314" height="135"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$26.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkb-G7-PN9">
+                                        <rect key="frame" x="110" y="0.0" width="94.5" height="32.5"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Natasha &amp; Alex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS0-8u-Z5n">
+                                        <rect key="frame" x="59" y="42.5" width="196.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.5.2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKd-AB-gbS">
+                                        <rect key="frame" x="121" y="86.5" width="72.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4v-zF-4uH">
+                                        <rect key="frame" x="145" y="116" width="24" height="19"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="photo" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="QHL-nz-Kl2"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tOh-W6-xPi" firstAttribute="leading" secondItem="XDI-u2-b1X" secondAttribute="leading" constant="50" id="0bV-pP-p0o"/>
-                            <constraint firstItem="tOh-W6-xPi" firstAttribute="centerY" secondItem="XDI-u2-b1X" secondAttribute="centerY" id="AOM-DH-XqB"/>
+                            <constraint firstItem="tOh-W6-xPi" firstAttribute="centerY" secondItem="XDI-u2-b1X" secondAttribute="centerY" constant="-50" id="AOM-DH-XqB"/>
                             <constraint firstItem="cjz-AX-187" firstAttribute="leading" secondItem="XDI-u2-b1X" secondAttribute="leading" constant="20" id="BtS-3A-tfU"/>
                             <constraint firstItem="XDI-u2-b1X" firstAttribute="bottom" secondItem="cjz-AX-187" secondAttribute="bottom" constant="30" id="Elf-tX-d4z"/>
+                            <constraint firstItem="aok-hc-azH" firstAttribute="trailing" secondItem="tOh-W6-xPi" secondAttribute="trailing" id="KvO-C5-tIb"/>
+                            <constraint firstItem="aok-hc-azH" firstAttribute="top" secondItem="tOh-W6-xPi" secondAttribute="bottom" id="PLb-Vw-Onn"/>
                             <constraint firstItem="XDI-u2-b1X" firstAttribute="trailing" secondItem="cjz-AX-187" secondAttribute="trailing" constant="20" id="QR3-oR-etO"/>
                             <constraint firstItem="XDI-u2-b1X" firstAttribute="trailing" secondItem="tOh-W6-xPi" secondAttribute="trailing" constant="50" id="Yf0-E4-NTL"/>
                             <constraint firstItem="19K-TJ-Dxw" firstAttribute="top" secondItem="XDI-u2-b1X" secondAttribute="top" constant="50" id="aUE-IW-TS0"/>
                             <constraint firstItem="19K-TJ-Dxw" firstAttribute="leading" secondItem="XDI-u2-b1X" secondAttribute="leading" constant="20" id="dhg-XD-xEz"/>
+                            <constraint firstItem="aok-hc-azH" firstAttribute="leading" secondItem="tOh-W6-xPi" secondAttribute="leading" id="yHO-Z7-Sdy"/>
                             <constraint firstAttribute="trailing" secondItem="19K-TJ-Dxw" secondAttribute="trailing" constant="20" id="zBx-T5-LxC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XDI-u2-b1X"/>
