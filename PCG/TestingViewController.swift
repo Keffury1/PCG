@@ -16,13 +16,9 @@ class TestingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = URL(string: "https://g3d-app.com/s/app/pluto/en_GB/default.html#p=1007644&r=2d-canvas") {
+        if let url = URL(string: "https://g3d-app.com/s/app/acp3_2/en_GB/t14w79fkfnxq7px.html#p=1468069") {
             let request = URLRequest(url: url)
             webView.load(request)
         }
     }
-    
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//        return .landscapeLeft
-//    }
 }
