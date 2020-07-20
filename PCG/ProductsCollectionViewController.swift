@@ -13,15 +13,16 @@ private let reuseIdentifier = "ProductCell"
 class ProductsCollectionViewController: UICollectionViewController {
     
     var products: [Product] = [
-    Product(name: "Antlers Teakboard", price: 20, image: UIImage(named: "maple")!, url: "https://g3d-app.com/s/app/acp3_2/en_GB/t14w79fkfnxq7px.html#p=1498685"),
-    Product(name: "Antlers Bamboo", price: 40, image: UIImage(named: "bamboo")!, url: "https://g3d-app.com/s/app/acp3_2/en_GB/t14w79fkfnxq7px.html#p=1572900"),
-    Product(name: "Antler Coaster", price: 15, image: UIImage(named: "coaster")!, url: "https://g3d-app.com/s/app/acp3_2/en_GB/t14w79fkfnxq7px.html#p=1589301")
+    Product(name: "Maple Cutting Board", price: 20, image: UIImage(named: "maple")!, url: "https://g3d-app.com/s/app/acp3_2/en_IPZ/y8zq61n357n0f25.html#p=1496380"),
+    Product(name: "Bamboo Cutting Board", price: 40, image: UIImage(named: "bamboo")!, url: "https://g3d-app.com/s/app/acp3_2/en_PTS/whyr4g2vnfyzm7b.html#p=1613891"),
+    Product(name: "Marblewood Cheese Board", price: 15, image: UIImage(named: "cheese")!, url: "https://g3d-app.com/s/app/acp3_2/en_GB/t14w79fkfnxq7px.html#p=1468069")
     ]
     
     var index: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 
     // MARK: - UICollectionViewDataSource
@@ -38,6 +39,11 @@ class ProductsCollectionViewController: UICollectionViewController {
         cell.imageView.image = product.image
         cell.nameLabel.text = product.name
         cell.priceLabel.text = "$ \(product.price)"
+
+        cell.layer.cornerRadius = 15.0
+        cell.layer.masksToBounds = true
+        cell.layer.borderWidth = 2.0
+        cell.layer.borderColor = UIColor.black.cgColor
     
         return cell
     }
