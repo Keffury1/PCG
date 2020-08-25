@@ -56,9 +56,11 @@ class HomeViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func membershipButtonTapped(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 0
     }
     
     @IBAction func shopButtonTapped(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 3
     }
     
     // MARK: - Navigation
