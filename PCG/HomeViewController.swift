@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Methods
     
-    func setupSubviews() {
+    private func setupSubviews() {
         let gradient = CAGradientLayer()
 
         gradient.frame = headerView.bounds
