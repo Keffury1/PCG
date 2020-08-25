@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,40 +47,82 @@
         <!--Home-->
         <scene sceneID="V2d-KA-I1F">
             <objects>
-                <viewController id="v9E-KL-Cem" sceneMemberID="viewController">
+                <viewController id="v9E-KL-Cem" customClass="HomeViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EIV-2H-a58">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQG-L7-Fd4">
-                                <rect key="frame" x="20" y="194" width="374" height="619"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">-	All Things PCG  
-     o	Artwork
-     o	Promo Videos
-     o	Upcoming Tradeshows?
-     o	New Deals?  
--	Links to shop &amp; sign up as a member
-</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siA-3M-kLM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="98n-Pg-wdZ"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="F23-st-Vpb">
+                                <rect key="frame" x="57" y="20" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="F23-st-Vpb" secondAttribute="height" multiplier="1:1" id="IjS-C2-zkF"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-Bx-9H6">
+                                <rect key="frame" x="20" y="573" width="374" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBe-Gh-33l">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="200"/>
+                                        <color key="backgroundColor" name="Navy"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                        <state key="normal" title="Membership">
+                                            <color key="titleColor" name="White"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="membershipButtonTapped:" destination="v9E-KL-Cem" eventType="touchUpInside" id="oo5-Jz-sML"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkI-0J-86d">
+                                        <rect key="frame" x="197" y="0.0" width="177" height="200"/>
+                                        <color key="backgroundColor" name="Navy"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                        <state key="normal" title="Shop">
+                                            <color key="titleColor" name="White"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shopButtonTapped:" destination="v9E-KL-Cem" eventType="touchUpInside" id="PhQ-QI-t1r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="D27-k5-CkQ"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="PQG-L7-Fd4" firstAttribute="trailing" secondItem="IUg-Uj-dTm" secondAttribute="trailing" constant="-20" id="Bja-J4-0e4"/>
-                            <constraint firstItem="PQG-L7-Fd4" firstAttribute="bottom" secondItem="IUg-Uj-dTm" secondAttribute="bottom" id="FjC-G1-PCp"/>
-                            <constraint firstItem="PQG-L7-Fd4" firstAttribute="top" secondItem="IUg-Uj-dTm" secondAttribute="top" constant="150" id="Iai-s5-MHo"/>
-                            <constraint firstItem="PQG-L7-Fd4" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="20" id="ao3-9U-tov"/>
+                            <constraint firstItem="siA-3M-kLM" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" id="EQK-b4-Qxy"/>
+                            <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="siA-3M-kLM" secondAttribute="trailing" id="Fot-m8-XBh"/>
+                            <constraint firstItem="F23-st-Vpb" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="57" id="Shw-fr-dfV"/>
+                            <constraint firstItem="F23-st-Vpb" firstAttribute="top" secondItem="EIV-2H-a58" secondAttribute="top" constant="20" id="h9q-l2-QxS"/>
+                            <constraint firstItem="F23-st-Vpb" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="jhO-86-wE9"/>
+                            <constraint firstItem="IUg-Uj-dTm" firstAttribute="bottom" secondItem="HaF-Bx-9H6" secondAttribute="bottom" constant="40" id="lDO-PH-qEZ"/>
+                            <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="F23-st-Vpb" secondAttribute="trailing" constant="57" id="lK1-Ye-8Lp"/>
+                            <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="HaF-Bx-9H6" secondAttribute="trailing" constant="20" id="s4E-Kg-82M"/>
+                            <constraint firstItem="HaF-Bx-9H6" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="20" id="xEc-Ma-TzY"/>
+                            <constraint firstItem="siA-3M-kLM" firstAttribute="top" secondItem="EIV-2H-a58" secondAttribute="top" id="ygd-TS-ufm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IUg-Uj-dTm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="IBg-Rd-sn0"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="IBg-Rd-sn0">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="headerView" destination="siA-3M-kLM" id="fw8-4Q-vTM"/>
+                        <outlet property="membershipButton" destination="VBe-Gh-33l" id="fRu-WH-ADF"/>
+                        <outlet property="shopButton" destination="zkI-0J-86d" id="gso-SX-FZI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUu-5r-86b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2739" y="1596"/>
+            <point key="canvasLocation" x="-2739.130434782609" y="1595.7589285714284"/>
         </scene>
         <!--Shop-->
         <scene sceneID="Hba-GF-CqG">
@@ -92,14 +135,14 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ddU-q0-fO4">
                                 <rect key="frame" x="20" y="194" width="374" height="619"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">-	List of Items for sale with                  information 
+                                <string key="text">-	List of Items for sale with                  information 
 -	List of deals currently offered 
 -	Cart 
 -	Ability to customize item 
 -	Ability to purchase item 
 -	Ability to select features of the item to be saved for repurchase. 
 -	Ability to search for items.
-</mutableString>
+</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -195,11 +238,13 @@
         <!--Tab Bar Controller-->
         <scene sceneID="3PG-MM-nfx">
             <objects>
-                <tabBarController id="D4G-WN-Flz" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dod-fS-bqn">
+                <tabBarController id="D4G-WN-Flz" customClass="TabBarController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dod-fS-bqn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="Navy"/>
                     </tabBar>
                     <connections>
                         <segue destination="7fS-oC-6Ax" kind="relationship" relationship="viewControllers" id="iHD-re-bVw"/>
@@ -215,10 +260,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="612" height="792"/>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="tag.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="Navy">
+            <color red="0.047058823529411764" green="0.094117647058823528" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
