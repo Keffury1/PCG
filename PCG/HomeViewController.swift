@@ -16,8 +16,10 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var reviewsCollectionView: UICollectionView!
-    @IBOutlet weak var membershipButton: UIButton!
-    @IBOutlet weak var shopButton: UIButton!
+    @IBOutlet weak var membershipView: UIView!
+    @IBOutlet weak var shopView: UIView!
+    @IBOutlet var membershipTapGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet var shopTapGestureRecognizer: UITapGestureRecognizer!
     
     // MARK: - Views
     
@@ -38,17 +40,17 @@ class HomeViewController: UIViewController {
         gradient.endPoint = CGPoint(x: 0.5, y: 0)
         headerView.layer.insertSublayer(gradient, at: 0)
         
-        membershipButton.layer.cornerRadius = 15
-        membershipButton.layer.shadowColor = UIColor.black.cgColor
-        membershipButton.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
-        membershipButton.layer.shadowRadius = 5
-        membershipButton.layer.shadowOpacity = 0.25
+        membershipView.layer.cornerRadius = 15
+        membershipView.layer.shadowColor = UIColor.black.cgColor
+        membershipView.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
+        membershipView.layer.shadowRadius = 5
+        membershipView.layer.shadowOpacity = 0.25
         
-        shopButton.layer.cornerRadius = 15
-        shopButton.layer.shadowColor = UIColor.black.cgColor
-        shopButton.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
-        shopButton.layer.shadowRadius = 5
-        shopButton.layer.shadowOpacity = 0.25
+        shopView.layer.cornerRadius = 15
+        shopView.layer.shadowColor = UIColor.black.cgColor
+        shopView.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
+        shopView.layer.shadowRadius = 5
+        shopView.layer.shadowOpacity = 0.25
     }
     
     // MARK: - Actions
