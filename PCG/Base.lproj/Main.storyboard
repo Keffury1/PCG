@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -106,12 +107,38 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-wz-fxb">
+                                <rect key="frame" x="20" y="293.5" width="374" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="xVO-VK-bJR"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="St2-V1-YcK">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reviewCell" id="dZv-oS-KCB">
+                                        <rect key="frame" x="0.0" y="11" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="t6p-nV-9Np">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="siA-3M-kLM" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" id="EQK-b4-Qxy"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="siA-3M-kLM" secondAttribute="trailing" id="Fot-m8-XBh"/>
                             <constraint firstItem="9FT-5Y-AcA" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="HyN-CM-U8a"/>
+                            <constraint firstItem="bzH-wz-fxb" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="Ij1-HF-SJc"/>
+                            <constraint firstItem="bzH-wz-fxb" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="20" id="N7u-Rl-ldC"/>
+                            <constraint firstItem="9FT-5Y-AcA" firstAttribute="top" secondItem="bzH-wz-fxb" secondAttribute="bottom" constant="20" id="RIr-Ri-NuG"/>
                             <constraint firstItem="F23-st-Vpb" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="57" id="Shw-fr-dfV"/>
                             <constraint firstItem="F23-st-Vpb" firstAttribute="top" secondItem="EIV-2H-a58" secondAttribute="top" constant="20" id="h9q-l2-QxS"/>
                             <constraint firstItem="F23-st-Vpb" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="jhO-86-wE9"/>
@@ -130,6 +157,7 @@
                     <connections>
                         <outlet property="headerView" destination="siA-3M-kLM" id="fw8-4Q-vTM"/>
                         <outlet property="membershipButton" destination="VBe-Gh-33l" id="fRu-WH-ADF"/>
+                        <outlet property="reviewsCollectionView" destination="bzH-wz-fxb" id="L4m-31-bOz"/>
                         <outlet property="shopButton" destination="zkI-0J-86d" id="gso-SX-FZI"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var reviewsCollectionView: UICollectionView!
     @IBOutlet weak var membershipButton: UIButton!
     @IBOutlet weak var shopButton: UIButton!
     
