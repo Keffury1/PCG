@@ -38,11 +38,16 @@ class HomeViewController: UIViewController {
         headerView.layer.insertSublayer(gradient, at: 0)
         
         membershipButton.layer.cornerRadius = 15
-        membershipButton.layer.borderWidth = 2.5
-        membershipButton.layer.borderColor = UIColor.init(named: "Light Gray")!.cgColor
+        membershipButton.layer.shadowColor = UIColor.black.cgColor
+        membershipButton.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
+        membershipButton.layer.shadowRadius = 5
+        membershipButton.layer.shadowOpacity = 0.25
+        
         shopButton.layer.cornerRadius = 15
-        shopButton.layer.borderWidth = 2.5
-        shopButton.layer.borderColor = UIColor.init(named: "Light Gray")!.cgColor
+        shopButton.layer.shadowColor = UIColor.black.cgColor
+        shopButton.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
+        shopButton.layer.shadowRadius = 5
+        shopButton.layer.shadowOpacity = 0.25
     }
     
     // MARK: - Actions

@@ -66,10 +66,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-Bx-9H6">
-                                <rect key="frame" x="20" y="573" width="374" height="200"/>
+                                <rect key="frame" x="20" y="588" width="374" height="185"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBe-Gh-33l">
-                                        <rect key="frame" x="0.0" y="0.0" width="177" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="185"/>
                                         <color key="backgroundColor" name="Navy"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                         <state key="normal" title="Membership">
@@ -80,7 +80,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkI-0J-86d">
-                                        <rect key="frame" x="197" y="0.0" width="177" height="200"/>
+                                        <rect key="frame" x="197" y="0.0" width="177" height="185"/>
                                         <color key="backgroundColor" name="Navy"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                         <state key="normal" title="Shop">
@@ -92,20 +92,33 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="D27-k5-CkQ"/>
+                                    <constraint firstAttribute="height" constant="185" id="D27-k5-CkQ"/>
                                 </constraints>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Find out why over 17 years of experience has made us the best in the business." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-5Y-AcA">
+                                <rect key="frame" x="57" y="463.5" width="300" height="90"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="z1V-SG-JaI"/>
+                                    <constraint firstAttribute="height" constant="90" id="zBO-as-cUt"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="siA-3M-kLM" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" id="EQK-b4-Qxy"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="siA-3M-kLM" secondAttribute="trailing" id="Fot-m8-XBh"/>
+                            <constraint firstItem="9FT-5Y-AcA" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="HyN-CM-U8a"/>
                             <constraint firstItem="F23-st-Vpb" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="57" id="Shw-fr-dfV"/>
                             <constraint firstItem="F23-st-Vpb" firstAttribute="top" secondItem="EIV-2H-a58" secondAttribute="top" constant="20" id="h9q-l2-QxS"/>
                             <constraint firstItem="F23-st-Vpb" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="jhO-86-wE9"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="bottom" secondItem="HaF-Bx-9H6" secondAttribute="bottom" constant="40" id="lDO-PH-qEZ"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="F23-st-Vpb" secondAttribute="trailing" constant="57" id="lK1-Ye-8Lp"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="HaF-Bx-9H6" secondAttribute="trailing" constant="20" id="s4E-Kg-82M"/>
+                            <constraint firstItem="9FT-5Y-AcA" firstAttribute="centerY" secondItem="IUg-Uj-dTm" secondAttribute="centerY" constant="80" id="vXV-UX-KzY"/>
                             <constraint firstItem="HaF-Bx-9H6" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="20" id="xEc-Ma-TzY"/>
                             <constraint firstItem="siA-3M-kLM" firstAttribute="top" secondItem="EIV-2H-a58" secondAttribute="top" id="ygd-TS-ufm"/>
                         </constraints>
