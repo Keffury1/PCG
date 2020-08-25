@@ -1,125 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ONX-xU-7rt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D4G-WN-Flz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Products Collection View Controller-->
-        <scene sceneID="tsO-UB-7tN">
+        <!--Purchases-->
+        <scene sceneID="Ueq-nf-8aV">
             <objects>
-                <collectionViewController id="ONX-xU-7rt" customClass="ProductsCollectionViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xBY-h7-Xl7">
+                <viewController id="wId-EJ-1VH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tgB-NW-41w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9LY-SF-SwF">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="u1W-JW-f2e" customClass="ProductCollectionViewCell" customModule="PCG" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="190" height="207"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rAx-Wf-cQz" customClass="ProductCell" customModule="PCG" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="190" height="207"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1JI-uM-hA4">
-                                            <rect key="frame" x="20" y="0.0" width="150" height="150"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="150" id="0PM-M4-pS9"/>
-                                                <constraint firstAttribute="width" constant="150" id="d5o-ls-ieY"/>
-                                            </constraints>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zsc-0v-nNd">
-                                            <rect key="frame" x="20" y="158" width="150" height="41"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SG-ls-hdc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T72-8v-OeO">
-                                                    <rect key="frame" x="0.0" y="20.5" width="150" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="1JI-uM-hA4" firstAttribute="top" secondItem="rAx-Wf-cQz" secondAttribute="top" id="9N7-yO-AqW"/>
-                                        <constraint firstItem="1JI-uM-hA4" firstAttribute="centerX" secondItem="rAx-Wf-cQz" secondAttribute="centerX" id="Hc3-hx-NX6"/>
-                                        <constraint firstAttribute="bottom" secondItem="Zsc-0v-nNd" secondAttribute="bottom" constant="8" id="I34-tP-rNV"/>
-                                        <constraint firstItem="1JI-uM-hA4" firstAttribute="leading" secondItem="rAx-Wf-cQz" secondAttribute="leading" constant="20" id="NDU-uK-vcP"/>
-                                        <constraint firstItem="Zsc-0v-nNd" firstAttribute="top" secondItem="1JI-uM-hA4" secondAttribute="bottom" constant="8" id="a3C-tg-64w"/>
-                                        <constraint firstItem="Zsc-0v-nNd" firstAttribute="leading" secondItem="rAx-Wf-cQz" secondAttribute="leading" constant="20" id="bmz-Aw-8Nw"/>
-                                        <constraint firstAttribute="trailing" secondItem="1JI-uM-hA4" secondAttribute="trailing" constant="20" id="mKe-ZZ-4lC"/>
-                                        <constraint firstAttribute="trailing" secondItem="Zsc-0v-nNd" secondAttribute="trailing" constant="20" id="pUX-5d-75e"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="imageView" destination="1JI-uM-hA4" id="Nc0-sR-aHd"/>
-                                    <outlet property="nameLabel" destination="6SG-ls-hdc" id="qPL-Iu-398"/>
-                                    <outlet property="priceLabel" destination="T72-8v-OeO" id="ljs-EX-g3f"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="ONX-xU-7rt" id="3YE-Ac-N56"/>
-                            <outlet property="delegate" destination="ONX-xU-7rt" id="ftn-Uc-5oI"/>
-                        </connections>
-                    </collectionView>
-                    <connections>
-                        <segue destination="45S-jx-KYu" kind="show" identifier="customizeSegue" id="UHr-KB-Q3c"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zJv-92-bY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3606" y="80"/>
-        </scene>
-        <!--Testing View Controller-->
-        <scene sceneID="WN5-Hp-dna">
-            <objects>
-                <viewController id="45S-jx-KYu" customClass="TestingViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jQa-Md-rPG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oIh-qj-QZw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rfp-ft-R9A">
+                                <rect key="frame" x="20" y="194" width="374" height="619"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">-	List of purchases 
+-	Option to re-purchase 
+-	Option to re-customize 
+-	Ability to have previously saved info displayed
+</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="oIh-qj-QZw" firstAttribute="top" secondItem="jQa-Md-rPG" secondAttribute="top" id="Niz-1Z-gBk"/>
-                            <constraint firstItem="oIh-qj-QZw" firstAttribute="leading" secondItem="jQa-Md-rPG" secondAttribute="leading" id="d7i-Xj-eq7"/>
-                            <constraint firstAttribute="bottom" secondItem="oIh-qj-QZw" secondAttribute="bottom" id="dTS-jf-1tF"/>
-                            <constraint firstAttribute="trailing" secondItem="oIh-qj-QZw" secondAttribute="trailing" id="pUf-bu-m3n"/>
+                            <constraint firstItem="Rfp-ft-R9A" firstAttribute="bottom" secondItem="idS-yW-Iaw" secondAttribute="bottom" id="7td-v5-Rkx"/>
+                            <constraint firstItem="Rfp-ft-R9A" firstAttribute="top" secondItem="idS-yW-Iaw" secondAttribute="top" constant="150" id="93R-2e-OAI"/>
+                            <constraint firstItem="Rfp-ft-R9A" firstAttribute="leading" secondItem="idS-yW-Iaw" secondAttribute="leading" constant="20" id="EZ4-qP-6Fn"/>
+                            <constraint firstAttribute="trailing" secondItem="Rfp-ft-R9A" secondAttribute="trailing" constant="20" id="hfN-ck-31P"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yLF-vq-LA4"/>
+                        <viewLayoutGuide key="safeArea" id="idS-yW-Iaw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SSP-G6-0lc"/>
-                    <connections>
-                        <outlet property="webView" destination="oIh-qj-QZw" id="F7W-SV-VT0"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Purchases" image="tag.circle" catalog="system" id="fMP-MX-aqi"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kh6-al-blZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Su-be-Nx2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2717" y="80"/>
+            <point key="canvasLocation" x="-2739" y="907"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="V2d-KA-I1F">
+            <objects>
+                <viewController id="v9E-KL-Cem" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EIV-2H-a58">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQG-L7-Fd4">
+                                <rect key="frame" x="20" y="194" width="374" height="619"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">-	All Things PCG  
+     o	Artwork
+     o	Promo Videos
+     o	Upcoming Tradeshows?
+     o	New Deals?  
+-	Links to shop &amp; sign up as a member
+</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PQG-L7-Fd4" firstAttribute="trailing" secondItem="IUg-Uj-dTm" secondAttribute="trailing" constant="-20" id="Bja-J4-0e4"/>
+                            <constraint firstItem="PQG-L7-Fd4" firstAttribute="bottom" secondItem="IUg-Uj-dTm" secondAttribute="bottom" id="FjC-G1-PCp"/>
+                            <constraint firstItem="PQG-L7-Fd4" firstAttribute="top" secondItem="IUg-Uj-dTm" secondAttribute="top" constant="150" id="Iai-s5-MHo"/>
+                            <constraint firstItem="PQG-L7-Fd4" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="20" id="ao3-9U-tov"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IUg-Uj-dTm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="IBg-Rd-sn0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUu-5r-86b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2739" y="1596"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="Hba-GF-CqG">
+            <objects>
+                <viewController id="3Qf-EQ-pdr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H03-WX-1kn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ddU-q0-fO4">
+                                <rect key="frame" x="20" y="194" width="374" height="619"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">-	List of Items for sale with                  information 
+-	List of deals currently offered 
+-	Cart 
+-	Ability to customize item 
+-	Ability to purchase item 
+-	Ability to select features of the item to be saved for repurchase. 
+-	Ability to search for items.
+</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ddU-q0-fO4" firstAttribute="trailing" secondItem="LLq-nj-O01" secondAttribute="trailing" constant="-20" id="E6g-qm-co1"/>
+                            <constraint firstItem="ddU-q0-fO4" firstAttribute="bottom" secondItem="LLq-nj-O01" secondAttribute="bottom" id="Kd3-js-fdi"/>
+                            <constraint firstItem="ddU-q0-fO4" firstAttribute="leading" secondItem="LLq-nj-O01" secondAttribute="leading" constant="20" id="KdO-jV-6Wk"/>
+                            <constraint firstItem="ddU-q0-fO4" firstAttribute="top" secondItem="LLq-nj-O01" secondAttribute="top" constant="150" id="uFh-U9-8DC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LLq-nj-O01"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Shop" image="bag" catalog="system" id="v40-Bc-nQl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wv3-dj-UFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2739" y="2288"/>
+        </scene>
+        <!--More-->
+        <scene sceneID="s39-xV-bTQ">
+            <objects>
+                <viewController id="xuy-q4-YGs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YnT-t0-rOT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sxh-gZ-MWJ">
+                                <rect key="frame" x="20" y="200" width="374" height="613"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">-	FAQ’s 
+-	Support 
+-	Legal &amp; Privacy 
+-	Settings
+</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Sxh-gZ-MWJ" firstAttribute="top" secondItem="YnT-t0-rOT" secondAttribute="top" constant="200" id="5CA-Q0-fES"/>
+                            <constraint firstItem="Sxh-gZ-MWJ" firstAttribute="leading" secondItem="YnT-t0-rOT" secondAttribute="leading" constant="20" id="BGM-Pg-4Fy"/>
+                            <constraint firstItem="uub-6m-B4o" firstAttribute="bottom" secondItem="Sxh-gZ-MWJ" secondAttribute="bottom" id="oc4-5E-p4G"/>
+                            <constraint firstItem="uub-6m-B4o" firstAttribute="trailing" secondItem="Sxh-gZ-MWJ" secondAttribute="trailing" constant="20" id="pRi-Si-7Zl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uub-6m-B4o"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="More" image="ellipsis.circle" catalog="system" id="WE8-7O-gzp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TCG-sU-VL2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2739" y="3007"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="hSB-5o-UfT">
+            <objects>
+                <viewController id="7fS-oC-6Ax" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FHI-Yj-bh2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hkn-eK-OIL">
+                                <rect key="frame" x="20" y="194" width="374" height="619"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">-	Login &amp; Sign Up 
+-	Face/Touch ID 
+-	Account Details 
+-	Perks of Membership  (Also on sign up screen &amp; home screen)
+</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hkn-eK-OIL" secondAttribute="trailing" constant="20" id="Kc8-Pu-ivg"/>
+                            <constraint firstItem="hkn-eK-OIL" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" constant="20" id="TTF-rZ-3Lp"/>
+                            <constraint firstItem="hkn-eK-OIL" firstAttribute="bottom" secondItem="9y0-DO-fWZ" secondAttribute="bottom" id="bsX-O2-VWB"/>
+                            <constraint firstItem="hkn-eK-OIL" firstAttribute="top" secondItem="9y0-DO-fWZ" secondAttribute="top" constant="150" id="cVA-iX-UTL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9y0-DO-fWZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" id="SGn-5V-JQi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwl-zD-bCc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2739" y="218"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3PG-MM-nfx">
+            <objects>
+                <tabBarController id="D4G-WN-Flz" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dod-fS-bqn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7fS-oC-6Ax" kind="relationship" relationship="viewControllers" id="iHD-re-bVw"/>
+                        <segue destination="wId-EJ-1VH" kind="relationship" relationship="viewControllers" id="DXa-Ch-iDT"/>
+                        <segue destination="v9E-KL-Cem" kind="relationship" relationship="viewControllers" id="bdO-SX-m6r"/>
+                        <segue destination="3Qf-EQ-pdr" kind="relationship" relationship="viewControllers" id="jYM-Nk-mJM"/>
+                        <segue destination="xuy-q4-YGs" kind="relationship" relationship="viewControllers" id="Uiq-u0-eSi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lnx-V5-Biq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4517" y="1596"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="tag.circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
