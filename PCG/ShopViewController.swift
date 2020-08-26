@@ -12,8 +12,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     // MARK: - Properties
     
-    let products = [Product(title: "Slate Coasters", price: "$45", image: UIImage.init(named: "Slate Cheese Board")!)]
-    
+    let productController = ProductController()
     var price: Bool = true
     
     // MARK: - Outlets
@@ -38,14 +37,14 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products.count
+        return productController.products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as? ProductCollectionViewCell else { return UICollectionViewCell() }
         
-        let product = products[indexPath.row]
+        let product = productController.products[indexPath.row]
         
         cell.titleLabel.text = product.title
         if price {

@@ -18,6 +18,10 @@
 		37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57B024F5960C00610C60 /* ShopViewController.swift */; };
 		37FC57B324F59F0F00610C60 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57B224F59F0F00610C60 /* ProductCollectionViewCell.swift */; };
 		37FC57B524F5A07900610C60 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57B424F5A07900610C60 /* Product.swift */; };
+		37FC57BB24F5F94D00610C60 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57BA24F5F94D00610C60 /* Review.swift */; };
+		37FC57BD24F5FB3600610C60 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57BC24F5FB3600610C60 /* ReviewCollectionViewCell.swift */; };
+		37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57BE24F5FC4800610C60 /* ReviewController.swift */; };
+		37FC57C324F60F5100610C60 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57C224F60F5100610C60 /* ProductController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		37FC57B024F5960C00610C60 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		37FC57B224F59F0F00610C60 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		37FC57B424F5A07900610C60 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		37FC57BA24F5F94D00610C60 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		37FC57BC24F5FB3600610C60 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		37FC57BE24F5FC4800610C60 /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
+		37FC57C224F60F5100610C60 /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				37FC57B224F59F0F00610C60 /* ProductCollectionViewCell.swift */,
+				37FC57BC24F5FB3600610C60 /* ReviewCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -128,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				37FC57B424F5A07900610C60 /* Product.swift */,
+				37FC57BA24F5F94D00610C60 /* Review.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -144,6 +154,8 @@
 		37E2710F244E4376001F6421 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				37FC57BE24F5FC4800610C60 /* ReviewController.swift */,
+				37FC57C224F60F5100610C60 /* ProductController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -227,6 +239,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */,
+				37FC57C324F60F5100610C60 /* ProductController.swift in Sources */,
+				37FC57BD24F5FB3600610C60 /* ReviewCollectionViewCell.swift in Sources */,
+				37FC57BB24F5F94D00610C60 /* Review.swift in Sources */,
+				37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */,
 				37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */,
 				37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */,
 				37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */,

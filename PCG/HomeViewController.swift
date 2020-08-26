@@ -8,9 +8,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Properties
+    
+    let reviewController = ReviewController()
     
     // MARK: - Outlets
     
@@ -26,6 +28,29 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
+        
+        reviewsCollectionView.delegate = self
+        reviewsCollectionView.dataSource = self
+    }
+    
+    // MARK: - Colllection View Methods
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return reviewController.reviews.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reviewCell", for: indexPath) as? ReviewCollectionViewCell else { return UICollectionViewCell() }
+        
+        let review = reviewController.reviews[indexPath.row]
+        cell.nameLabel.text = review.name
+        cell.reviewView.text = review.review
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 140, height: 175)
     }
     
     // MARK: - Methods
