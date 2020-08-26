@@ -38,6 +38,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         productsCollectionView.dataSource = self
         self.products = productController.products
         productsCollectionView.reloadData()
+        searchTextField.addTarget(self, action: #selector(showProducts), for: .touchDown)
     }
     
     // MARK: - Collection View Methods
@@ -126,6 +127,15 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let array = productController.products.sorted(by: { $0.category.rawValue < $1.category.rawValue })
         self.products = array
         productsCollectionView.reloadData()
+    }
+    
+    @objc func showProducts(textField: UITextField) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "PopoverViewController")
+        vc.modalPresentationStyle = .popover
+        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
+        popover.sourceView = textField
+        present(vc, animated: true, completion:nil)
     }
     
     // MARK: - Navigation

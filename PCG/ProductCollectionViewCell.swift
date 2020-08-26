@@ -14,7 +14,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    override func awakeFromNib() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layoutIfNeeded()
         setupSubviews()
     }
     
