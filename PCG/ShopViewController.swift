@@ -14,10 +14,15 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     let productController = ProductController()
     var price: Bool = true
+    var products: [Product] = []
     
     // MARK: - Outlets
 
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var filterView: UIView!
+    @IBOutlet weak var lowToHighButton: UIButton!
+    @IBOutlet weak var highToLowButton: UIButton!
+    @IBOutlet weak var groupButton: UIButton!
     @IBOutlet weak var priceButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var filterButton: UIButton!
@@ -31,24 +36,26 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         productsCollectionView.delegate = self
         productsCollectionView.dataSource = self
+        self.products = productController.products
+        productsCollectionView.reloadData()
     }
     
     // MARK: - Collection View Methods
     
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productController.products.count
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as? ProductCollectionViewCell else { return UICollectionViewCell() }
         
-        let product = productController.products[indexPath.row]
+        let product = products[indexPath.row]
         
         cell.titleLabel.text = product.title
         if price {
-            cell.priceLabel.text = product.price
+            cell.priceLabel.text = "\(product.price)"
         } else {
             cell.priceLabel.text = ""
         }
@@ -72,9 +79,11 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         gradient.startPoint = CGPoint(x: 0.5, y: 1)
         gradient.endPoint = CGPoint(x: 0.5, y: 0)
         headerView.layer.insertSublayer(gradient, at: 0)
+        highToLowButton.transform = CGAffineTransform(scaleX: -1, y: 1)
     }
     
     // MARK: - Actions
+    
     @IBAction func priceButtonTapped(_ sender: Any) {
         if price {
             price = false
@@ -88,7 +97,37 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     @IBAction func filterButtonTapped(_ sender: Any) {
+        if filterView.alpha == 0 {
+            filterView.alpha = 1
+            lowToHighButton.isEnabled = true
+            highToLowButton.isEnabled = true
+            groupButton.isEnabled = true
+        } else {
+            filterView.alpha = 0
+            lowToHighButton.isEnabled = false
+            highToLowButton.isEnabled = false
+            groupButton.isEnabled = false
+        }
     }
+
+    @IBAction func lowToHighTapped(_ sender: Any) {
+        let array = productController.products.sorted(by: { $0.price < $1.price })
+        self.products = array
+        productsCollectionView.reloadData()
+    }
+    
+    @IBAction func highToLowTapped(_ sender: Any) {
+        let array = productController.products.sorted(by: { $0.price > $1.price })
+        self.products = array
+        productsCollectionView.reloadData()
+    }
+    
+    @IBAction func groupTapped(_ sender: Any) {
+        let array = productController.products.sorted(by: { $0.category.rawValue < $1.category.rawValue })
+        self.products = array
+        productsCollectionView.reloadData()
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
