@@ -29,5 +29,7 @@ enum Categories: Int {
     case KnifeSet = 3
     case Ornament = 4
     case Doormat = 5
-    case Misc = 6
+    case Lantern = 6
+    case DogTreatJar = 7
+    case Stamps = 8
 }

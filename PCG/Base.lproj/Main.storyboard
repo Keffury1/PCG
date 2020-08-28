@@ -338,49 +338,6 @@
                                     <constraint firstItem="7Ah-sh-iMy" firstAttribute="top" secondItem="lij-3z-Zya" secondAttribute="top" constant="115" id="gdz-a5-vKR"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rAV-bK-Vek">
-                                <rect key="frame" x="20" y="64" width="374" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ch-da-z2H">
-                                        <rect key="frame" x="0.0" y="0.5" width="40" height="39"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="7Ch-da-z2H" secondAttribute="height" multiplier="1:1" id="d0g-tj-W8B"/>
-                                        </constraints>
-                                        <color key="tintColor" name="Navy"/>
-                                        <state key="normal" backgroundImage="dollarsign.circle" catalog="system"/>
-                                        <connections>
-                                            <action selector="priceButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="KDs-2u-gWx"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gmb-NJ-ZrV">
-                                        <rect key="frame" x="50" y="0.0" width="274" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="KnD-oY-iuz"/>
-                                        </constraints>
-                                        <color key="textColor" name="Navy"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="searchCompleted:" destination="3Qf-EQ-pdr" eventType="editingDidEnd" id="2J9-aO-Edi"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-M8-kbg">
-                                        <rect key="frame" x="334" y="0.5" width="40" height="39"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="jwz-M8-kbg" secondAttribute="height" multiplier="1:1" id="P8h-au-Kc8"/>
-                                        </constraints>
-                                        <color key="tintColor" name="Navy"/>
-                                        <state key="normal" backgroundImage="line.horizontal.3.decrease.circle" catalog="system"/>
-                                        <connections>
-                                            <action selector="filterButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="CpG-HH-8XW"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Yee-YX-UfY"/>
-                                </constraints>
-                            </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5a1-W8-vZ2">
                                 <rect key="frame" x="20" y="179" width="374" height="614"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -440,34 +397,207 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRk-8X-WXB">
+                                <rect key="frame" x="70" y="89" width="274" height="480"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b1W-dR-AOx">
+                                        <rect key="frame" x="10" y="30" width="254" height="440"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8G-va-Ut0">
+                                                <rect key="frame" x="0.0" y="0.0" width="254" height="40"/>
+                                                <color key="backgroundColor" name="White"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Cutting Boards">
+                                                    <color key="titleColor" name="Dark Gray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cuttingBoardButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="S58-Ha-ZY9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHN-wn-VKV">
+                                                <rect key="frame" x="0.0" y="50" width="254" height="40"/>
+                                                <color key="backgroundColor" name="White"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Cheese Boards">
+                                                    <color key="titleColor" name="Dark Gray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cheeseBoardButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="YU5-Ej-eOc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXC-N3-u72">
+                                                <rect key="frame" x="0.0" y="100" width="254" height="40"/>
+                                                <color key="backgroundColor" name="White"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Knife Sets">
+                                                    <color key="titleColor" name="Dark Gray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="knifeSetsButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="zUL-aE-EB2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L95-AA-CfT">
+                                                <rect key="frame" x="0.0" y="150" width="254" height="40"/>
+                                                <color key="backgroundColor" name="White"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Ornaments">
+                                                    <color key="titleColor" name="Dark Gray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ornamentsButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="GIL-Wh-cBp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-XX-rGx">
+                                                <rect key="frame" x="0.0" y="200" width="254" height="40"/>
+                                                <color key="backgroundColor" name="White"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Doormats">
+                                                    <color key="titleColor" name="Dark Gray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="doormatsButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="OTy-dL-PFM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-hI-7Lg">
+                                                <rect key="frame" x="0.0" y="250" width="254" height="40"/>
+                                                <color key="backgroundColor" name="White"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Stamps">
+                                                    <color key="titleColor" name="Dark Gray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stampsButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="c8F-LE-S1O"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTw-Zo-1Ib">
+                                                <rect key="frame" x="0.0" y="300" width="254" height="40"/>
+                                                <color key="backgroundColor" name="White"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Dog Treat Jar">
+                                                    <color key="titleColor" name="Dark Gray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dogTreatJarButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="Xc0-mf-uLt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7a-bj-sAy">
+                                                <rect key="frame" x="0.0" y="350" width="254" height="40"/>
+                                                <color key="backgroundColor" name="White"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Lantern">
+                                                    <color key="titleColor" name="Dark Gray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lanternButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="bha-Ue-dnA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHH-93-ndz">
+                                                <rect key="frame" x="0.0" y="400" width="254" height="40"/>
+                                                <color key="backgroundColor" name="White"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="All Products">
+                                                    <color key="titleColor" name="Dark Gray"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lanternButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="dOB-dn-c9P"/>
+                                                    <action selector="showAllButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="5jD-ac-5sB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="White"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="Navy"/>
+                                <constraints>
+                                    <constraint firstItem="b1W-dR-AOx" firstAttribute="top" secondItem="HRk-8X-WXB" secondAttribute="top" constant="30" id="1bC-6B-Ct3"/>
+                                    <constraint firstItem="b1W-dR-AOx" firstAttribute="leading" secondItem="HRk-8X-WXB" secondAttribute="leading" constant="10" id="PbR-O0-iiy"/>
+                                    <constraint firstAttribute="bottom" secondItem="b1W-dR-AOx" secondAttribute="bottom" constant="10" id="Yfg-5Q-1Qa"/>
+                                    <constraint firstAttribute="trailing" secondItem="b1W-dR-AOx" secondAttribute="trailing" constant="10" id="t8l-yw-b0C"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rAV-bK-Vek">
+                                <rect key="frame" x="20" y="64" width="374" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ch-da-z2H">
+                                        <rect key="frame" x="0.0" y="0.5" width="40" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7Ch-da-z2H" secondAttribute="height" multiplier="1:1" id="d0g-tj-W8B"/>
+                                        </constraints>
+                                        <color key="tintColor" name="Navy"/>
+                                        <state key="normal" backgroundImage="dollarsign.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="priceButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="KDs-2u-gWx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWV-5A-I8e">
+                                        <rect key="frame" x="50" y="0.0" width="274" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                        <state key="normal" title="Menu">
+                                            <color key="titleColor" name="Tan"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="menuButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="Tq3-1C-3vF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-M8-kbg">
+                                        <rect key="frame" x="334" y="0.5" width="40" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jwz-M8-kbg" secondAttribute="height" multiplier="1:1" id="P8h-au-Kc8"/>
+                                        </constraints>
+                                        <color key="tintColor" name="Navy"/>
+                                        <state key="normal" backgroundImage="line.horizontal.3.decrease.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="filterButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="CpG-HH-8XW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Yee-YX-UfY"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="HRk-8X-WXB" firstAttribute="top" secondItem="qWV-5A-I8e" secondAttribute="bottom" constant="-15" id="3QF-AG-225"/>
                             <constraint firstItem="5a1-W8-vZ2" firstAttribute="top" secondItem="rAV-bK-Vek" secondAttribute="bottom" constant="75" id="7Z3-go-OVS"/>
                             <constraint firstItem="lij-3z-Zya" firstAttribute="leading" secondItem="LLq-nj-O01" secondAttribute="leading" id="9AO-9u-6fI"/>
                             <constraint firstItem="LLq-nj-O01" firstAttribute="trailing" secondItem="lij-3z-Zya" secondAttribute="trailing" id="9JD-mG-ung"/>
                             <constraint firstItem="lij-3z-Zya" firstAttribute="top" secondItem="H03-WX-1kn" secondAttribute="top" id="Aea-Js-JZP"/>
                             <constraint firstItem="5a1-W8-vZ2" firstAttribute="leading" secondItem="H03-WX-1kn" secondAttribute="leading" constant="20" id="KXT-TK-oHK"/>
                             <constraint firstItem="rAV-bK-Vek" firstAttribute="top" secondItem="LLq-nj-O01" secondAttribute="top" constant="20" id="MYf-E4-kRe"/>
+                            <constraint firstItem="HRk-8X-WXB" firstAttribute="centerX" secondItem="LLq-nj-O01" secondAttribute="centerX" id="W3f-8z-KPL"/>
                             <constraint firstAttribute="trailing" secondItem="5a1-W8-vZ2" secondAttribute="trailing" constant="20" id="XXT-sM-WZP"/>
                             <constraint firstItem="LLq-nj-O01" firstAttribute="bottom" secondItem="5a1-W8-vZ2" secondAttribute="bottom" constant="20" id="itW-Ud-9vp"/>
                             <constraint firstItem="LLq-nj-O01" firstAttribute="trailing" secondItem="rAV-bK-Vek" secondAttribute="trailing" constant="20" id="mjX-F3-Wxz"/>
+                            <constraint firstItem="HRk-8X-WXB" firstAttribute="trailing" secondItem="qWV-5A-I8e" secondAttribute="trailing" id="rIK-nk-C8N"/>
                             <constraint firstItem="7Ah-sh-iMy" firstAttribute="centerX" secondItem="LLq-nj-O01" secondAttribute="centerX" id="wyG-we-qFk"/>
                             <constraint firstItem="rAV-bK-Vek" firstAttribute="leading" secondItem="LLq-nj-O01" secondAttribute="leading" constant="20" id="ydX-zQ-Xp1"/>
+                            <constraint firstItem="HRk-8X-WXB" firstAttribute="leading" secondItem="qWV-5A-I8e" secondAttribute="leading" id="zwU-0m-iVi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LLq-nj-O01"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shop" image="bag" catalog="system" id="v40-Bc-nQl"/>
                     <connections>
+                        <outlet property="cheeseBoardsButton" destination="bHN-wn-VKV" id="LiI-qU-0HU"/>
+                        <outlet property="choicesView" destination="HRk-8X-WXB" id="nNU-Va-PSv"/>
+                        <outlet property="cuttingBoardsButton" destination="p8G-va-Ut0" id="Szw-Sa-wy4"/>
+                        <outlet property="dogTreatJarButton" destination="mTw-Zo-1Ib" id="XS9-nb-6sN"/>
+                        <outlet property="doormatsButton" destination="Yqk-XX-rGx" id="tzW-mJ-VxY"/>
                         <outlet property="filterButton" destination="jwz-M8-kbg" id="V3k-pK-8y9"/>
                         <outlet property="filterView" destination="7Ah-sh-iMy" id="gac-y2-S9m"/>
                         <outlet property="groupButton" destination="3Ov-ia-kVc" id="eTr-Vo-MMu"/>
                         <outlet property="headerView" destination="lij-3z-Zya" id="sOK-3v-wOW"/>
                         <outlet property="highToLowButton" destination="nqe-nZ-HsK" id="H7I-jq-n4b"/>
+                        <outlet property="knifeSetsButton" destination="yXC-N3-u72" id="Mnr-hw-u2k"/>
+                        <outlet property="lanternButton" destination="o7a-bj-sAy" id="yBd-kU-fuU"/>
                         <outlet property="lowToHighButton" destination="BTT-tP-OV4" id="pPe-3O-smB"/>
+                        <outlet property="menuButton" destination="qWV-5A-I8e" id="E7f-XJ-ZUz"/>
+                        <outlet property="ornamentsButton" destination="L95-AA-CfT" id="SA2-dW-fKI"/>
                         <outlet property="priceButton" destination="7Ch-da-z2H" id="rdW-DE-gJ9"/>
                         <outlet property="productsCollectionView" destination="5a1-W8-vZ2" id="Vi1-h7-dLT"/>
-                        <outlet property="searchTextField" destination="gmb-NJ-ZrV" id="7s6-IZ-k9Y"/>
+                        <outlet property="showAllButton" destination="tHH-93-ndz" id="YzB-r4-WSY"/>
+                        <outlet property="stampsButton" destination="hu4-hI-7Lg" id="KVg-Is-7wb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wv3-dj-UFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

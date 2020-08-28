@@ -14,6 +14,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     let productController = ProductController()
     var price: Bool = true
+    var display: Bool = true
     var products: [Product] = []
     
     // MARK: - Outlets
@@ -24,9 +25,19 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var highToLowButton: UIButton!
     @IBOutlet weak var groupButton: UIButton!
     @IBOutlet weak var priceButton: UIButton!
-    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var productsCollectionView: UICollectionView!
+    @IBOutlet weak var choicesView: UIView!
+    @IBOutlet weak var cuttingBoardsButton: UIButton!
+    @IBOutlet weak var cheeseBoardsButton: UIButton!
+    @IBOutlet weak var knifeSetsButton: UIButton!
+    @IBOutlet weak var ornamentsButton: UIButton!
+    @IBOutlet weak var doormatsButton: UIButton!
+    @IBOutlet weak var stampsButton: UIButton!
+    @IBOutlet weak var dogTreatJarButton: UIButton!
+    @IBOutlet weak var lanternButton: UIButton!
+    @IBOutlet weak var showAllButton: UIButton!
     
     // MARK: - Views
     
@@ -38,7 +49,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         productsCollectionView.dataSource = self
         self.products = productController.products
         productsCollectionView.reloadData()
-        searchTextField.addTarget(self, action: #selector(showProducts), for: .touchDown)
     }
     
     // MARK: - Collection View Methods
@@ -56,7 +66,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         cell.titleLabel.text = product.title
         if price {
-            cell.priceLabel.text = "\(product.price)"
+            cell.priceLabel.text = "$\(product.price)"
         } else {
             cell.priceLabel.text = ""
         }
@@ -81,6 +91,63 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         gradient.endPoint = CGPoint(x: 0.5, y: 0)
         headerView.layer.insertSublayer(gradient, at: 0)
         highToLowButton.transform = CGAffineTransform(scaleX: -1, y: 1)
+        setupButtons()
+        choicesView.layer.cornerRadius = 10.0
+    }
+    
+    func setupButtons() {
+        menuButton.layer.cornerRadius = 10.0
+        cuttingBoardsButton.layer.cornerRadius = 10.0
+        cheeseBoardsButton.layer.cornerRadius = 10.0
+        knifeSetsButton.layer.cornerRadius = 10.0
+        ornamentsButton.layer.cornerRadius = 10.0
+        doormatsButton.layer.cornerRadius = 10.0
+        stampsButton.layer.cornerRadius = 10.0
+        dogTreatJarButton.layer.cornerRadius = 10.0
+        lanternButton.layer.cornerRadius = 10.0
+        showAllButton.layer.cornerRadius = 10.0
+    }
+    
+    func enableButtons() {
+        cuttingBoardsButton.isEnabled = true
+        cheeseBoardsButton.isEnabled = true
+        knifeSetsButton.isEnabled = true
+        ornamentsButton.isEnabled = true
+        doormatsButton.isEnabled = true
+        stampsButton.isEnabled = true
+        dogTreatJarButton.isEnabled = true
+        lanternButton.isEnabled = true
+        showAllButton.isEnabled = true
+    }
+    
+    func disableButtons() {
+        cuttingBoardsButton.isEnabled = false
+        cheeseBoardsButton.isEnabled = false
+        knifeSetsButton.isEnabled = false
+        ornamentsButton.isEnabled = false
+        doormatsButton.isEnabled = false
+        stampsButton.isEnabled = false
+        dogTreatJarButton.isEnabled = false
+        lanternButton.isEnabled = false
+        showAllButton.isEnabled = false
+    }
+    
+    func sortByCategory(category: Categories) {
+        var array: [Product] = []
+        for item in productController.products {
+            if item.category == category {
+                array.append(item)
+            }
+        }
+        self.products = array
+        productsCollectionView.reloadData()
+    }
+    
+    func removeChoices(_ string: String) {
+        disableButtons()
+        display = true
+        choicesView.alpha = 0
+        menuButton.setTitle(string, for: .normal)
     }
     
     // MARK: - Actions
@@ -92,9 +159,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             price = true
         }
         productsCollectionView.reloadData()
-    }
-    
-    @IBAction func searchCompleted(_ sender: Any) {
     }
     
     @IBAction func filterButtonTapped(_ sender: Any) {
@@ -112,30 +176,80 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @IBAction func lowToHighTapped(_ sender: Any) {
-        let array = productController.products.sorted(by: { $0.price < $1.price })
+        let array = self.products.sorted(by: { $0.price < $1.price })
         self.products = array
         productsCollectionView.reloadData()
     }
     
     @IBAction func highToLowTapped(_ sender: Any) {
-        let array = productController.products.sorted(by: { $0.price > $1.price })
+        let array = self.products.sorted(by: { $0.price > $1.price })
         self.products = array
         productsCollectionView.reloadData()
     }
     
     @IBAction func groupTapped(_ sender: Any) {
-        let array = productController.products.sorted(by: { $0.category.rawValue < $1.category.rawValue })
+        let array = self.products.sorted(by: { $0.category.rawValue < $1.category.rawValue })
         self.products = array
         productsCollectionView.reloadData()
     }
     
-    @objc func showProducts(textField: UITextField) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "PopoverViewController")
-        vc.modalPresentationStyle = .popover
-        let popover: UIPopoverPresentationController = vc.popoverPresentationController!
-        popover.sourceView = textField
-        present(vc, animated: true, completion:nil)
+    @IBAction func menuButtonTapped(_ sender: Any) {
+        if display {
+            choicesView.alpha = 1
+            enableButtons()
+            display = false
+            menuButton.setTitle("Menu", for: .normal)
+        } else {
+            choicesView.alpha = 0
+            disableButtons()
+            display = true
+        }
+    }
+    
+    @IBAction func cuttingBoardButtonTapped(_ sender: Any) {
+        removeChoices("Cutting Boards")
+        sortByCategory(category: .CuttingBoard)
+    }
+    
+    @IBAction func cheeseBoardButtonTapped(_ sender: Any) {
+        removeChoices("Cheese Boards")
+        sortByCategory(category: .CheeseBoard)
+    }
+    
+    @IBAction func knifeSetsButtonTapped(_ sender: Any) {
+        removeChoices("Knife Sets")
+        sortByCategory(category: .KnifeSet)
+    }
+    
+    @IBAction func ornamentsButtonTapped(_ sender: Any) {
+        removeChoices("Ornaments")
+        sortByCategory(category: .Ornament)
+    }
+    
+    @IBAction func doormatsButtonTapped(_ sender: Any) {
+        removeChoices("Doormats")
+        sortByCategory(category: .Doormat)
+    }
+    
+    @IBAction func stampsButtonTapped(_ sender: Any) {
+        removeChoices("Stamps")
+        sortByCategory(category: .Stamps)
+    }
+    
+    @IBAction func dogTreatJarButtonTapped(_ sender: Any) {
+        removeChoices("Dog Treat Jar")
+        sortByCategory(category: .DogTreatJar)
+    }
+    
+    @IBAction func lanternButtonTapped(_ sender: Any) {
+        removeChoices("Lantern")
+        sortByCategory(category: .Lantern)
+    }
+    
+    @IBAction func showAllButtonTapped(_ sender: Any) {
+        removeChoices("Menu")
+        self.products = productController.products
+        productsCollectionView.reloadData()
     }
     
     // MARK: - Navigation
