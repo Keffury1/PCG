@@ -66,14 +66,14 @@
                                     <constraint firstAttribute="width" secondItem="F23-st-Vpb" secondAttribute="height" multiplier="1:1" id="IjS-C2-zkF"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Find out why over 17 years of experience has made us the best in the business. ______" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-5Y-AcA">
-                                <rect key="frame" x="57" y="477.5" width="300" height="102"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Find out why over 17 years of experience has made us the best in the business." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-5Y-AcA">
+                                <rect key="frame" x="57" y="478.5" width="300" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="z1V-SG-JaI"/>
-                                    <constraint firstAttribute="height" constant="102" id="zBO-as-cUt"/>
+                                    <constraint firstAttribute="height" constant="100" id="zBO-as-cUt"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" name="Dark Gray"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -100,27 +100,28 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★★★★★" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-mu-X7P">
                                                     <rect key="frame" x="20" y="10" width="100" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="Tan"/>
+                                                    <color key="textColor" name="Navy"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Review" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-Hi-TcE">
-                                                    <rect key="frame" x="0.0" y="58.5" width="140" height="116.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Review" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-Hi-TcE">
+                                                    <rect key="frame" x="0.0" y="66.5" width="140" height="108.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <color key="textColor" name="Light Gray"/>
+                                                    <color key="textColor" name="Dark Gray"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lV8-SR-JUU">
                                                     <rect key="frame" x="29.5" y="38" width="81.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                                    <color key="textColor" name="Navy"/>
+                                                    <color key="textColor" name="White"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" name="Tan"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="UGA-Hi-TcE" secondAttribute="trailing" id="5rM-gr-f4n"/>
                                                 <constraint firstItem="lV8-SR-JUU" firstAttribute="top" secondItem="d8C-mu-X7P" secondAttribute="bottom" constant="7.5" id="E8G-dU-Sj5"/>
-                                                <constraint firstItem="UGA-Hi-TcE" firstAttribute="top" secondItem="lV8-SR-JUU" secondAttribute="bottom" id="JOx-yw-3St"/>
+                                                <constraint firstItem="UGA-Hi-TcE" firstAttribute="top" secondItem="lV8-SR-JUU" secondAttribute="bottom" constant="8" id="JOx-yw-3St"/>
                                                 <constraint firstItem="d8C-mu-X7P" firstAttribute="top" secondItem="t6p-nV-9Np" secondAttribute="top" constant="10" id="NHG-fl-cwP"/>
                                                 <constraint firstAttribute="bottom" secondItem="UGA-Hi-TcE" secondAttribute="bottom" id="P07-Wc-ELI"/>
                                                 <constraint firstItem="lV8-SR-JUU" firstAttribute="centerX" secondItem="t6p-nV-9Np" secondAttribute="centerX" id="iZa-n6-bk0"/>
@@ -138,7 +139,7 @@
                                 </cells>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-Bx-9H6">
-                                <rect key="frame" x="20" y="257.5" width="374" height="180"/>
+                                <rect key="frame" x="20" y="258.5" width="374" height="180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvD-Zm-gBm">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="180"/>
@@ -207,17 +208,28 @@
                                     <constraint firstAttribute="height" constant="180" id="D27-k5-CkQ"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="___________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cey-89-M23">
+                                <rect key="frame" x="167.5" y="563.5" width="79.5" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="XOn-vK-dzh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Navy"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="bzH-wz-fxb" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="2zm-2x-87P"/>
+                            <constraint firstItem="cey-89-M23" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="B1d-eq-Iog"/>
                             <constraint firstItem="siA-3M-kLM" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" id="EQK-b4-Qxy"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="siA-3M-kLM" secondAttribute="trailing" id="Fot-m8-XBh"/>
                             <constraint firstItem="9FT-5Y-AcA" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="HyN-CM-U8a"/>
-                            <constraint firstItem="bzH-wz-fxb" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="Ij1-HF-SJc"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="bottom" secondItem="bzH-wz-fxb" secondAttribute="bottom" constant="20" id="JtH-4V-tDH"/>
                             <constraint firstItem="bzH-wz-fxb" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="20" id="N7u-Rl-ldC"/>
                             <constraint firstItem="F23-st-Vpb" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="57" id="Shw-fr-dfV"/>
                             <constraint firstItem="F23-st-Vpb" firstAttribute="top" secondItem="EIV-2H-a58" secondAttribute="top" constant="10" id="h9q-l2-QxS"/>
+                            <constraint firstItem="cey-89-M23" firstAttribute="top" secondItem="9FT-5Y-AcA" secondAttribute="bottom" constant="-15" id="ivZ-G6-TYn"/>
                             <constraint firstItem="F23-st-Vpb" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="jhO-86-wE9"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="F23-st-Vpb" secondAttribute="trailing" constant="57" id="lK1-Ye-8Lp"/>
                             <constraint firstItem="9FT-5Y-AcA" firstAttribute="top" secondItem="HaF-Bx-9H6" secondAttribute="bottom" constant="40" id="mMP-y2-SXD"/>
@@ -572,14 +584,17 @@
         <image name="member" width="512" height="512"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="tag.circle" catalog="system" width="128" height="121"/>
-        <namedColor name="Light Gray">
-            <color red="0.5607843137254902" green="0.60784313725490191" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Dark Gray">
+            <color red="0.28235294117647058" green="0.30196078431372547" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Navy">
             <color red="0.047058823529411764" green="0.094117647058823528" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tan">
             <color red="0.83137254901960789" green="0.81568627450980391" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

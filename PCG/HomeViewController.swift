@@ -45,6 +45,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let review = reviewController.reviews[indexPath.row]
         cell.nameLabel.text = review.name
         cell.reviewView.text = review.review
+        cell.layer.cornerRadius = 10.0
         
         return cell
     }
