@@ -19,6 +19,8 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Outlets
 
+    
+    @IBOutlet var productButtonCollection: [UIButton]!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var lowToHighButton: UIButton!
@@ -82,17 +84,11 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Methods
     
     private func setupSubviews() {
-        let gradient = CAGradientLayer()
-
-        gradient.frame = headerView.bounds
-        gradient.colors = [UIColor.white.cgColor, UIColor.init(named: "Light Gray")!.cgColor]
-
-        gradient.startPoint = CGPoint(x: 0.5, y: 1)
-        gradient.endPoint = CGPoint(x: 0.5, y: 0)
-        headerView.layer.insertSublayer(gradient, at: 0)
+        headerView.addGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         highToLowButton.transform = CGAffineTransform(scaleX: -1, y: 1)
         setupButtons()
         choicesView.layer.cornerRadius = 10.0
+        menuLabel.addShadow()
     }
     
     func setupButtons() {
@@ -140,16 +136,53 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         self.products = array
-        productsCollectionView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+            self.productsCollectionView.reloadData()
+        })
     }
     
     func removeChoices(_ string: String) {
         disableButtons()
         display = true
-        choicesView.alpha = 0
         menuLabel.setTitle(string, for: .normal)
-        UIView.animate(withDuration: 0.75, animations: {
+        dropAndRetreiveButtons()
+        turnOffMenu()
+    }
+    
+    func turnOffMenu() {
+        disableButtons()
+        display = true
+        UIView.animate(withDuration: 0.5, animations: {
             self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35, execute: {
+            self.choicesView.alpha = 0
+        })
+    }
+    
+    func turnOnMenu() {
+        enableButtons()
+        display = false
+        UIView.animate(withDuration: 0.5, animations: {
+            self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            self.choicesView.alpha = 1
+        })
+    }
+    
+    func dropAndRetreiveButtons() {
+        self.productButtonCollection.forEach({ (button) in
+            UIView.animate(withDuration: 0.45, animations: {
+                button.isHidden = !button.isHidden
+            })
+            if button.alpha == 0 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.27, execute: {
+                    button.alpha = 1
+                })
+            } else {
+                button.alpha = 0
+            }
         })
     }
     
@@ -183,20 +216,13 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     @IBAction func menuButtonTapped(_ sender: Any) {
+        
+        dropAndRetreiveButtons()
+        
         if display {
-            choicesView.alpha = 1
-            enableButtons()
-            display = false
-            UIView.animate(withDuration: 0.75, animations: {
-                self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
-            })
+            turnOnMenu()
         } else {
-            choicesView.alpha = 0
-            disableButtons()
-            display = true
-            UIView.animate(withDuration: 0.75, animations: {
-                self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
-            })
+            turnOffMenu()
         }
     }
     

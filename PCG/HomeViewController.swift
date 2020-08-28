@@ -46,15 +46,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.nameLabel.text = review.name
         cell.reviewView.text = review.review
         cell.layer.cornerRadius = 10.0
-        
-        let gradient = CAGradientLayer()
-
-        gradient.frame = headerView.bounds
-        gradient.colors = [UIColor.white.cgColor, UIColor.init(named: "Tan")!.cgColor]
-
-        gradient.startPoint = CGPoint(x: 0.5, y: 1)
-        gradient.endPoint = CGPoint(x: 0.5, y: 0)
-        cell.layer.insertSublayer(gradient, at: 0)
+        cell.addGradient(color: UIColor.init(named: "Tan")!.cgColor)
         
         return cell
     }
@@ -66,26 +58,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Methods
     
     private func setupSubviews() {
-        let gradient = CAGradientLayer()
-
-        gradient.frame = headerView.bounds
-        gradient.colors = [UIColor.white.cgColor, UIColor.init(named: "Light Gray")!.cgColor]
-
-        gradient.startPoint = CGPoint(x: 0.5, y: 1)
-        gradient.endPoint = CGPoint(x: 0.5, y: 0)
-        headerView.layer.insertSublayer(gradient, at: 0)
+        headerView.addGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         
         membershipView.layer.cornerRadius = 15
-        membershipView.layer.shadowColor = UIColor.black.cgColor
-        membershipView.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
-        membershipView.layer.shadowRadius = 5
-        membershipView.layer.shadowOpacity = 0.25
+        membershipView.addShadow()
         
         shopView.layer.cornerRadius = 15
-        shopView.layer.shadowColor = UIColor.black.cgColor
-        shopView.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
-        shopView.layer.shadowRadius = 5
-        shopView.layer.shadowOpacity = 0.25
+        shopView.addShadow()
     }
     
     // MARK: - Actions

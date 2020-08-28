@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370AE5FA24F96988000B3683 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370AE5F924F96988000B3683 /* UIView+Extension.swift */; };
 		37125D742489A20B00E716CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37125D732489A20A00E716CA /* WebKit.framework */; };
 		37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F5244E4338001F6421 /* AppDelegate.swift */; };
 		37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F7244E4338001F6421 /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370AE5F924F96988000B3683 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		37125D732489A20A00E716CA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		37E270F2244E4338001F6421 /* PCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E270F5244E4338001F6421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		370AE5F824F9696F000B3683 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				370AE5F924F96988000B3683 /* UIView+Extension.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		37125D722489A20A00E716CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 				37E2710B244E4358001F6421 /* View Controllers */,
 				37E2710A244E4356001F6421 /* Storyboards */,
 				37E27109244E4352001F6421 /* Resources */,
+				370AE5F824F9696F000B3683 /* Helpers */,
 			);
 			path = PCG;
 			sourceTree = "<group>";
@@ -244,6 +255,7 @@
 				37FC57BB24F5F94D00610C60 /* Review.swift in Sources */,
 				37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */,
 				37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */,
+				370AE5FA24F96988000B3683 /* UIView+Extension.swift in Sources */,
 				37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */,
 				37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */,
 				37FC57B324F59F0F00610C60 /* ProductCollectionViewCell.swift in Sources */,
