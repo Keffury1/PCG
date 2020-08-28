@@ -16,6 +16,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var price: Bool = true
     var display: Bool = true
     var products: [Product] = []
+    var product: Product?
     
     // MARK: - Outlets
 
@@ -79,6 +80,12 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 180, height: 220)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = products[indexPath.row]
+        self.product = product
+        self.performSegue(withIdentifier: "customizeSegue", sender: self)
     }
     
     // MARK: - Methods
@@ -275,5 +282,14 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "paymentSegue" {
+            if let _ = segue.destination as? PaymentViewController  {
+                
+            }
+        } else if segue.identifier == "customizeSegue" {
+            if let customizeVC = segue.destination as? CustomizeViewController {
+                customizeVC.product = self.product
+            }
+        }
     }
 }
