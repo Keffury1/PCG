@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="width" secondItem="F23-st-Vpb" secondAttribute="height" multiplier="1:1" id="IjS-C2-zkF"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Find out why over 17 years of experience has made us the best in the business." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-5Y-AcA">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Find out how over 17 years of experience has made us the best in the business" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-5Y-AcA">
                                 <rect key="frame" x="57" y="478.5" width="300" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -100,7 +100,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★★★★★" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-mu-X7P">
                                                     <rect key="frame" x="20" y="10" width="100" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="Navy"/>
+                                                    <color key="textColor" name="White"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Review" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-Hi-TcE">
@@ -113,7 +113,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lV8-SR-JUU">
                                                     <rect key="frame" x="29.5" y="38" width="81.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                                    <color key="textColor" name="White"/>
+                                                    <color key="textColor" name="Navy"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -277,13 +277,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lij-3z-Zya">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                 <subviews>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-sh-iMy">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-sh-iMy">
                                         <rect key="frame" x="0.0" y="115" width="414" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lMf-hb-6Od">
                                                 <rect key="frame" x="50" y="8" width="314" height="34"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTT-tP-OV4">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTT-tP-OV4">
                                                         <rect key="frame" x="0.0" y="0.0" width="91.5" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -295,7 +295,7 @@
                                                             <action selector="lowToHighTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="l2V-yl-Wni"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ov-ia-kVc">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ov-ia-kVc">
                                                         <rect key="frame" x="111.5" y="0.0" width="91" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="Navy"/>
@@ -306,7 +306,7 @@
                                                             <action selector="groupTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="s9b-6C-5ve"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqe-nZ-HsK">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqe-nZ-HsK">
                                                         <rect key="frame" x="222.5" y="0.0" width="91.5" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="Navy"/>
@@ -339,9 +339,9 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5a1-W8-vZ2">
-                                <rect key="frame" x="20" y="179" width="374" height="614"/>
+                                <rect key="frame" x="20" y="175" width="374" height="618"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DH9-5k-eHX">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="DH9-5k-eHX">
                                     <size key="itemSize" width="180" height="218"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -499,7 +499,6 @@
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="lanternButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="dOB-dn-c9P"/>
                                                     <action selector="showAllButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="5jD-ac-5sB"/>
                                                 </connections>
                                             </button>
@@ -529,16 +528,13 @@
                                             <action selector="priceButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="KDs-2u-gWx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWV-5A-I8e">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWV-5A-I8e">
                                         <rect key="frame" x="50" y="0.0" width="274" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <state key="normal" title="Menu">
                                             <color key="titleColor" name="Tan"/>
                                         </state>
-                                        <connections>
-                                            <action selector="menuButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="Tq3-1C-3vF"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-M8-kbg">
                                         <rect key="frame" x="334" y="0.5" width="40" height="39"/>
@@ -546,9 +542,10 @@
                                             <constraint firstAttribute="width" secondItem="jwz-M8-kbg" secondAttribute="height" multiplier="1:1" id="P8h-au-Kc8"/>
                                         </constraints>
                                         <color key="tintColor" name="Navy"/>
-                                        <state key="normal" backgroundImage="line.horizontal.3.decrease.circle" catalog="system"/>
+                                        <state key="normal" backgroundImage="chevron.down.circle" catalog="system"/>
+                                        <state key="selected" backgroundImage="chevron.up.circle" catalog="system"/>
                                         <connections>
-                                            <action selector="filterButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="CpG-HH-8XW"/>
+                                            <action selector="menuButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="fp6-c0-7To"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -560,7 +557,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="HRk-8X-WXB" firstAttribute="top" secondItem="qWV-5A-I8e" secondAttribute="bottom" constant="-15" id="3QF-AG-225"/>
-                            <constraint firstItem="5a1-W8-vZ2" firstAttribute="top" secondItem="rAV-bK-Vek" secondAttribute="bottom" constant="75" id="7Z3-go-OVS"/>
+                            <constraint firstItem="5a1-W8-vZ2" firstAttribute="top" secondItem="p8G-va-Ut0" secondAttribute="bottom" constant="20" id="3uP-a6-ktR"/>
                             <constraint firstItem="lij-3z-Zya" firstAttribute="leading" secondItem="LLq-nj-O01" secondAttribute="leading" id="9AO-9u-6fI"/>
                             <constraint firstItem="LLq-nj-O01" firstAttribute="trailing" secondItem="lij-3z-Zya" secondAttribute="trailing" id="9JD-mG-ung"/>
                             <constraint firstItem="lij-3z-Zya" firstAttribute="top" secondItem="H03-WX-1kn" secondAttribute="top" id="Aea-Js-JZP"/>
@@ -584,7 +581,6 @@
                         <outlet property="cuttingBoardsButton" destination="p8G-va-Ut0" id="Szw-Sa-wy4"/>
                         <outlet property="dogTreatJarButton" destination="mTw-Zo-1Ib" id="XS9-nb-6sN"/>
                         <outlet property="doormatsButton" destination="Yqk-XX-rGx" id="tzW-mJ-VxY"/>
-                        <outlet property="filterButton" destination="jwz-M8-kbg" id="V3k-pK-8y9"/>
                         <outlet property="filterView" destination="7Ah-sh-iMy" id="gac-y2-S9m"/>
                         <outlet property="groupButton" destination="3Ov-ia-kVc" id="eTr-Vo-MMu"/>
                         <outlet property="headerView" destination="lij-3z-Zya" id="sOK-3v-wOW"/>
@@ -592,7 +588,8 @@
                         <outlet property="knifeSetsButton" destination="yXC-N3-u72" id="Mnr-hw-u2k"/>
                         <outlet property="lanternButton" destination="o7a-bj-sAy" id="yBd-kU-fuU"/>
                         <outlet property="lowToHighButton" destination="BTT-tP-OV4" id="pPe-3O-smB"/>
-                        <outlet property="menuButton" destination="qWV-5A-I8e" id="E7f-XJ-ZUz"/>
+                        <outlet property="menuButton" destination="jwz-M8-kbg" id="gxJ-pf-PCg"/>
+                        <outlet property="menuLabel" destination="qWV-5A-I8e" id="hye-v8-EyB"/>
                         <outlet property="ornamentsButton" destination="L95-AA-CfT" id="SA2-dW-fKI"/>
                         <outlet property="priceButton" destination="7Ch-da-z2H" id="rdW-DE-gJ9"/>
                         <outlet property="productsCollectionView" destination="5a1-W8-vZ2" id="Vi1-h7-dLT"/>
@@ -706,11 +703,12 @@
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
+        <image name="chevron.down.circle" catalog="system" width="128" height="121"/>
+        <image name="chevron.up.circle" catalog="system" width="128" height="121"/>
         <image name="circle.grid.hex" catalog="system" width="128" height="112"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="110"/>
-        <image name="line.horizontal.3.decrease.circle" catalog="system" width="128" height="121"/>
         <image name="member" width="512" height="512"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="tag.circle" catalog="system" width="128" height="121"/>

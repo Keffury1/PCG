@@ -25,8 +25,8 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var highToLowButton: UIButton!
     @IBOutlet weak var groupButton: UIButton!
     @IBOutlet weak var priceButton: UIButton!
+    @IBOutlet weak var menuLabel: UIButton!
     @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var productsCollectionView: UICollectionView!
     @IBOutlet weak var choicesView: UIView!
     @IBOutlet weak var cuttingBoardsButton: UIButton!
@@ -96,7 +96,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func setupButtons() {
-        menuButton.layer.cornerRadius = 10.0
+        menuLabel.layer.cornerRadius = 10.0
         cuttingBoardsButton.layer.cornerRadius = 10.0
         cheeseBoardsButton.layer.cornerRadius = 10.0
         knifeSetsButton.layer.cornerRadius = 10.0
@@ -147,7 +147,10 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         disableButtons()
         display = true
         choicesView.alpha = 0
-        menuButton.setTitle(string, for: .normal)
+        menuLabel.setTitle(string, for: .normal)
+        UIView.animate(withDuration: 0.75, animations: {
+            self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
+        })
     }
     
     // MARK: - Actions
@@ -159,20 +162,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             price = true
         }
         productsCollectionView.reloadData()
-    }
-    
-    @IBAction func filterButtonTapped(_ sender: Any) {
-        if filterView.alpha == 0 {
-            filterView.alpha = 1
-            lowToHighButton.isEnabled = true
-            highToLowButton.isEnabled = true
-            groupButton.isEnabled = true
-        } else {
-            filterView.alpha = 0
-            lowToHighButton.isEnabled = false
-            highToLowButton.isEnabled = false
-            groupButton.isEnabled = false
-        }
     }
 
     @IBAction func lowToHighTapped(_ sender: Any) {
@@ -198,11 +187,16 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             choicesView.alpha = 1
             enableButtons()
             display = false
-            menuButton.setTitle("Menu", for: .normal)
+            UIView.animate(withDuration: 0.75, animations: {
+                self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
+            })
         } else {
             choicesView.alpha = 0
             disableButtons()
             display = true
+            UIView.animate(withDuration: 0.75, animations: {
+                self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
+            })
         }
     }
     
@@ -247,9 +241,9 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     @IBAction func showAllButtonTapped(_ sender: Any) {
-        removeChoices("Menu")
         self.products = productController.products
         productsCollectionView.reloadData()
+        removeChoices("Menu")
     }
     
     // MARK: - Navigation
