@@ -47,6 +47,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.reviewView.text = review.review
         cell.layer.cornerRadius = 10.0
         
+        let gradient = CAGradientLayer()
+
+        gradient.frame = headerView.bounds
+        gradient.colors = [UIColor.white.cgColor, UIColor.init(named: "Tan")!.cgColor]
+
+        gradient.startPoint = CGPoint(x: 0.5, y: 1)
+        gradient.endPoint = CGPoint(x: 0.5, y: 0)
+        cell.layer.insertSublayer(gradient, at: 0)
+        
         return cell
     }
     

@@ -105,7 +105,7 @@
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Review" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-Hi-TcE">
                                                     <rect key="frame" x="0.0" y="66.5" width="140" height="108.5"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="textColor" name="Dark Gray"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -117,7 +117,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" name="Tan"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="UGA-Hi-TcE" secondAttribute="trailing" id="5rM-gr-f4n"/>
                                                 <constraint firstItem="lV8-SR-JUU" firstAttribute="top" secondItem="d8C-mu-X7P" secondAttribute="bottom" constant="7.5" id="E8G-dU-Sj5"/>
@@ -398,15 +398,15 @@
                                 </cells>
                             </collectionView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRk-8X-WXB">
-                                <rect key="frame" x="70" y="89" width="274" height="480"/>
+                                <rect key="frame" x="70" y="89" width="274" height="444"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b1W-dR-AOx">
-                                        <rect key="frame" x="10" y="30" width="254" height="440"/>
+                                        <rect key="frame" x="10" y="30" width="254" height="404"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8G-va-Ut0">
-                                                <rect key="frame" x="0.0" y="0.0" width="254" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="254" height="36"/>
                                                 <color key="backgroundColor" name="White"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Cutting Boards">
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
@@ -415,9 +415,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHN-wn-VKV">
-                                                <rect key="frame" x="0.0" y="50" width="254" height="40"/>
+                                                <rect key="frame" x="0.0" y="46" width="254" height="36"/>
                                                 <color key="backgroundColor" name="White"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Cheese Boards">
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
@@ -426,9 +426,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXC-N3-u72">
-                                                <rect key="frame" x="0.0" y="100" width="254" height="40"/>
+                                                <rect key="frame" x="0.0" y="92" width="254" height="36"/>
                                                 <color key="backgroundColor" name="White"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Knife Sets">
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
@@ -437,9 +437,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L95-AA-CfT">
-                                                <rect key="frame" x="0.0" y="150" width="254" height="40"/>
+                                                <rect key="frame" x="0.0" y="138" width="254" height="36"/>
                                                 <color key="backgroundColor" name="White"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Ornaments">
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
@@ -448,9 +448,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-XX-rGx">
-                                                <rect key="frame" x="0.0" y="200" width="254" height="40"/>
+                                                <rect key="frame" x="0.0" y="184" width="254" height="36"/>
                                                 <color key="backgroundColor" name="White"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Doormats">
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
@@ -459,9 +459,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-hI-7Lg">
-                                                <rect key="frame" x="0.0" y="250" width="254" height="40"/>
+                                                <rect key="frame" x="0.0" y="230" width="254" height="36"/>
                                                 <color key="backgroundColor" name="White"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Stamps">
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
@@ -470,9 +470,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTw-Zo-1Ib">
-                                                <rect key="frame" x="0.0" y="300" width="254" height="40"/>
+                                                <rect key="frame" x="0.0" y="276" width="254" height="36"/>
                                                 <color key="backgroundColor" name="White"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Dog Treat Jar">
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
@@ -481,9 +481,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7a-bj-sAy">
-                                                <rect key="frame" x="0.0" y="350" width="254" height="40"/>
+                                                <rect key="frame" x="0.0" y="322" width="254" height="36"/>
                                                 <color key="backgroundColor" name="White"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Lantern">
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
@@ -492,9 +492,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHH-93-ndz">
-                                                <rect key="frame" x="0.0" y="400" width="254" height="40"/>
+                                                <rect key="frame" x="0.0" y="368" width="254" height="36"/>
                                                 <color key="backgroundColor" name="White"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="All Products">
                                                     <color key="titleColor" name="Dark Gray"/>
                                                 </state>
@@ -532,7 +532,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWV-5A-I8e">
                                         <rect key="frame" x="50" y="0.0" width="274" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <state key="normal" title="Menu">
                                             <color key="titleColor" name="Tan"/>
                                         </state>
