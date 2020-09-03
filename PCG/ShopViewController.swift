@@ -159,10 +159,10 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func turnOffMenu() {
         disableButtons()
         display = true
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
         })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
             self.choicesView.alpha = 0
         })
     }

@@ -31,6 +31,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         reviewsCollectionView.delegate = self
         reviewsCollectionView.dataSource = self
+        reviewsCollectionView.layer.cornerRadius = 10.0
     }
     
     // MARK: - Colllection View Methods
