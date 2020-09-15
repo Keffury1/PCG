@@ -1,0 +1,16 @@
+PODS:
+  - Mobile-Buy-SDK (5.0.0)
+
+DEPENDENCIES:
+  - Mobile-Buy-SDK
+
+SPEC REPOS:
+  trunk:
+    - Mobile-Buy-SDK
+
+SPEC CHECKSUMS:
+  Mobile-Buy-SDK: a2d5780eadac16e9980c2702789045b701bc5d55
+
+PODFILE CHECKSUM: 38a336dc8241ed856262a7cd05d28f445dbca2fa
+
+COCOAPODS: 1.9.1
