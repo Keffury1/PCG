@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D4G-WN-Flz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D4G-WN-Flz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,25 +21,25 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rfp-ft-R9A">
                                 <rect key="frame" x="20" y="194" width="374" height="619"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">-	List of purchases 
 -	Option to re-purchase 
 -	Option to re-customize 
 -	Ability to have previously saved info displayed
 </string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="idS-yW-Iaw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Rfp-ft-R9A" firstAttribute="bottom" secondItem="idS-yW-Iaw" secondAttribute="bottom" id="7td-v5-Rkx"/>
                             <constraint firstItem="Rfp-ft-R9A" firstAttribute="top" secondItem="idS-yW-Iaw" secondAttribute="top" constant="150" id="93R-2e-OAI"/>
                             <constraint firstItem="Rfp-ft-R9A" firstAttribute="leading" secondItem="idS-yW-Iaw" secondAttribute="leading" constant="20" id="EZ4-qP-6Fn"/>
                             <constraint firstAttribute="trailing" secondItem="Rfp-ft-R9A" secondAttribute="trailing" constant="20" id="hfN-ck-31P"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="idS-yW-Iaw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Purchases" image="tag.circle" catalog="system" id="fMP-MX-aqi"/>
                 </viewController>
@@ -191,7 +193,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IUg-Uj-dTm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6gf-RW-qhU" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" id="4Yc-s7-9L7"/>
                             <constraint firstItem="eaB-mY-xa1" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="Arj-u3-9Il"/>
@@ -216,7 +219,6 @@
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="bottom" secondItem="bzH-wz-fxb" secondAttribute="bottom" constant="20" id="xwn-1q-Ujm"/>
                             <constraint firstItem="siA-3M-kLM" firstAttribute="top" secondItem="EIV-2H-a58" secondAttribute="top" id="ygd-TS-ufm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="IUg-Uj-dTm"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="IBg-Rd-sn0">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -308,7 +310,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="2WM-XI-KZ6"/>
                                     <constraint firstAttribute="trailing" secondItem="7Ah-sh-iMy" secondAttribute="trailing" id="Dzt-Xv-6wy"/>
@@ -381,110 +383,110 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b1W-dR-AOx">
                                         <rect key="frame" x="10" y="30" width="254" height="0.0"/>
                                         <subviews>
-                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8G-va-Ut0">
+                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8G-va-Ut0">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="40"/>
-                                                <color key="backgroundColor" name="White"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="bk2-65-XhG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Cutting Boards">
-                                                    <color key="titleColor" name="Navy"/>
+                                                    <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="cuttingBoardButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="S58-Ha-ZY9"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHN-wn-VKV">
+                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHN-wn-VKV">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
-                                                <color key="backgroundColor" name="White"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Cheese Boards">
-                                                    <color key="titleColor" name="Navy"/>
+                                                    <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="cheeseBoardButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="YU5-Ej-eOc"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXC-N3-u72">
+                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXC-N3-u72">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
-                                                <color key="backgroundColor" name="White"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Knife Sets">
-                                                    <color key="titleColor" name="Navy"/>
+                                                    <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="knifeSetsButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="zUL-aE-EB2"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L95-AA-CfT">
+                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L95-AA-CfT">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
-                                                <color key="backgroundColor" name="White"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Ornaments">
-                                                    <color key="titleColor" name="Navy"/>
+                                                    <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="ornamentsButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="GIL-Wh-cBp"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-XX-rGx">
+                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-XX-rGx">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
-                                                <color key="backgroundColor" name="White"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Doormats">
-                                                    <color key="titleColor" name="Navy"/>
+                                                    <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="doormatsButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="OTy-dL-PFM"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-hI-7Lg">
+                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-hI-7Lg">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
-                                                <color key="backgroundColor" name="White"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Stamps">
-                                                    <color key="titleColor" name="Navy"/>
+                                                    <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="stampsButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="c8F-LE-S1O"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTw-Zo-1Ib">
+                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTw-Zo-1Ib">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
-                                                <color key="backgroundColor" name="White"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Dog Treat Jar">
-                                                    <color key="titleColor" name="Navy"/>
+                                                    <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="dogTreatJarButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="Xc0-mf-uLt"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7a-bj-sAy">
+                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7a-bj-sAy">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
-                                                <color key="backgroundColor" name="White"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="Lantern">
-                                                    <color key="titleColor" name="Navy"/>
+                                                    <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="lanternButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="bha-Ue-dnA"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHH-93-ndz">
+                                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHH-93-ndz">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
-                                                <color key="backgroundColor" name="White"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                 <state key="normal" title="All Products">
-                                                    <color key="titleColor" name="Navy"/>
+                                                    <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="showAllButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="5jD-ac-5sB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" name="White"/>
+                                        <color key="backgroundColor" name="Navy"/>
                                         <constraints>
                                             <constraint firstItem="p8G-va-Ut0" firstAttribute="leading" secondItem="b1W-dR-AOx" secondAttribute="leading" id="0Ly-w5-CQ5"/>
                                             <constraint firstAttribute="trailing" secondItem="tHH-93-ndz" secondAttribute="trailing" id="1Db-cb-qbo"/>
@@ -529,7 +531,7 @@
                                             <action selector="priceButtonTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="KDs-2u-gWx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWV-5A-I8e">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWV-5A-I8e">
                                         <rect key="frame" x="50" y="0.0" width="274" height="40"/>
                                         <color key="backgroundColor" name="Navy"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
@@ -537,7 +539,7 @@
                                             <color key="titleColor" name="White"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-M8-kbg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-M8-kbg">
                                         <rect key="frame" x="334" y="0.5" width="40" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jwz-M8-kbg" secondAttribute="height" multiplier="1:1" id="P8h-au-Kc8"/>
@@ -555,7 +557,8 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LLq-nj-O01"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HRk-8X-WXB" firstAttribute="top" secondItem="qWV-5A-I8e" secondAttribute="bottom" constant="-15" id="3QF-AG-225"/>
                             <constraint firstItem="lij-3z-Zya" firstAttribute="leading" secondItem="LLq-nj-O01" secondAttribute="leading" id="9AO-9u-6fI"/>
@@ -573,7 +576,6 @@
                             <constraint firstItem="rAV-bK-Vek" firstAttribute="leading" secondItem="LLq-nj-O01" secondAttribute="leading" constant="20" id="ydX-zQ-Xp1"/>
                             <constraint firstItem="HRk-8X-WXB" firstAttribute="leading" secondItem="qWV-5A-I8e" secondAttribute="leading" id="zwU-0m-iVi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LLq-nj-O01"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shop" image="bag" catalog="system" id="v40-Bc-nQl"/>
                     <connections>
@@ -620,8 +622,8 @@
                     <view key="view" contentMode="scaleToFill" id="voA-ki-vad">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="TId-8W-FIS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="8Q1-cR-dU8"/>
                 </viewController>
@@ -636,8 +638,8 @@
                     <view key="view" contentMode="scaleToFill" id="qrD-q0-Czf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="afZ-9I-ncq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="qpj-3x-naQ"/>
                 </viewController>
@@ -655,25 +657,25 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sxh-gZ-MWJ">
                                 <rect key="frame" x="20" y="200" width="374" height="613"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">-	FAQ’s 
 -	Support 
 -	Legal &amp; Privacy 
 -	Settings
 </string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="uub-6m-B4o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Sxh-gZ-MWJ" firstAttribute="top" secondItem="YnT-t0-rOT" secondAttribute="top" constant="200" id="5CA-Q0-fES"/>
                             <constraint firstItem="Sxh-gZ-MWJ" firstAttribute="leading" secondItem="YnT-t0-rOT" secondAttribute="leading" constant="20" id="BGM-Pg-4Fy"/>
                             <constraint firstItem="uub-6m-B4o" firstAttribute="bottom" secondItem="Sxh-gZ-MWJ" secondAttribute="bottom" id="oc4-5E-p4G"/>
                             <constraint firstItem="uub-6m-B4o" firstAttribute="trailing" secondItem="Sxh-gZ-MWJ" secondAttribute="trailing" constant="20" id="pRi-Si-7Zl"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="uub-6m-B4o"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="More" image="ellipsis.circle" catalog="system" id="WE8-7O-gzp"/>
                 </viewController>
@@ -691,25 +693,25 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hkn-eK-OIL">
                                 <rect key="frame" x="20" y="194" width="374" height="619"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">-	Login &amp; Sign Up 
 -	Face/Touch ID 
 -	Account Details 
 -	Perks of Membership  (Also on sign up screen &amp; home screen)
 </string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9y0-DO-fWZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hkn-eK-OIL" secondAttribute="trailing" constant="20" id="Kc8-Pu-ivg"/>
                             <constraint firstItem="hkn-eK-OIL" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" constant="20" id="TTF-rZ-3Lp"/>
                             <constraint firstItem="hkn-eK-OIL" firstAttribute="bottom" secondItem="9y0-DO-fWZ" secondAttribute="bottom" id="bsX-O2-VWB"/>
                             <constraint firstItem="hkn-eK-OIL" firstAttribute="top" secondItem="9y0-DO-fWZ" secondAttribute="top" constant="150" id="cVA-iX-UTL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9y0-DO-fWZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" id="SGn-5V-JQi"/>
                 </viewController>
@@ -747,13 +749,13 @@
         <image name="Store" width="354" height="354"/>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
-        <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
+        <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <image name="chevron.down.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.up.circle" catalog="system" width="128" height="121"/>
         <image name="circle.grid.hex" catalog="system" width="128" height="112"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
-        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="tag.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Dark Gray">
@@ -768,5 +770,11 @@
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
