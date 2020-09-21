@@ -13,6 +13,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     // MARK: - Properties
     
+    var products: [Product] = []
+    var key: Int = 1
+    var count: Int = 1
+    
     // MARK: - Outlets
     
     @IBOutlet weak var bottomFadeView: UIView!
@@ -29,16 +33,27 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cartTableView.delegate = self
         cartTableView.dataSource = self
         setupSubviews()
+        updateTotal()
     }
     
     // MARK: - TableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? CartItemTableViewCell else { return UITableViewCell() }
+        
+        let product = products[indexPath.row]
+        cell.keyLabel.text = "\(key)."
+        key += 1
+        cell.valueLabel.text = product.title
+        cell.countLabel.text = "x\(count)"
+        count += 1
+        cell.priceLabel.text = "$\(product.price)"
+        
+        return cell
     }
     
     // MARK: - Methods
@@ -47,6 +62,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         applePayButton.layer.cornerRadius = 10.0
         enterCardDetailsButton.layer.cornerRadius = 10.0
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
+    }
+    
+    private func updateTotal() {
+        
     }
     
     // MARK: - Actions
