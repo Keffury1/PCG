@@ -26,7 +26,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var lowToHighButton: UIButton!
     @IBOutlet weak var highToLowButton: UIButton!
-    @IBOutlet weak var groupButton: UIButton!
+    @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var priceButton: UIButton!
     @IBOutlet weak var menuLabel: UIButton!
     @IBOutlet weak var menuButton: UIButton!
@@ -216,10 +216,8 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         productsCollectionView.reloadData()
     }
     
-    @IBAction func groupTapped(_ sender: Any) {
-        let array = self.products.sorted(by: { $0.category.rawValue < $1.category.rawValue })
-        self.products = array
-        productsCollectionView.reloadData()
+    @IBAction func cartTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "cartSegue", sender: self)
     }
     
     @IBAction func menuButtonTapped(_ sender: Any) {
