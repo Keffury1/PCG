@@ -622,14 +622,87 @@
                     <view key="view" contentMode="scaleToFill" id="pps-cb-bfB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a31-3J-m4d">
+                                <rect key="frame" x="0.0" y="529" width="414" height="313"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70W-no-dYA">
+                                <rect key="frame" x="0.0" y="50" width="414" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" name="Tan"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1Z-FL-464">
+                                <rect key="frame" x="0.0" y="25" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="8Hn-Fi-qhq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="50"/>
+                                <color key="textColor" name="Navy"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b3F-qg-sfy">
+                                <rect key="frame" x="20" y="195" width="374" height="463"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dDh-jW-1cr">
+                                <rect key="frame" x="20" y="678" width="374" height="114"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OG-P2-VmG">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="52"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Pay">
+                                            <color key="titleColor" name="White"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cm6-Hw-eDJ">
+                                        <rect key="frame" x="0.0" y="62" width="374" height="52"/>
+                                        <color key="backgroundColor" name="Navy"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="creditcard" catalog="system">
+                                            <color key="titleColor" name="White"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bBx-uY-Rch"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b1Z-FL-464" firstAttribute="top" secondItem="bBx-uY-Rch" secondAttribute="top" constant="25" id="4k9-xf-UEU"/>
+                            <constraint firstItem="b3F-qg-sfy" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" constant="20" id="6ry-fa-8X2"/>
+                            <constraint firstItem="bBx-uY-Rch" firstAttribute="bottom" secondItem="b3F-qg-sfy" secondAttribute="bottom" constant="150" id="EFe-jQ-FhP"/>
+                            <constraint firstItem="a31-3J-m4d" firstAttribute="top" secondItem="bBx-uY-Rch" secondAttribute="centerY" constant="125" id="EaZ-op-l5i"/>
+                            <constraint firstItem="70W-no-dYA" firstAttribute="top" secondItem="b1Z-FL-464" secondAttribute="top" constant="25" id="EcN-SX-rdj"/>
+                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="a31-3J-m4d" secondAttribute="trailing" id="GXp-1e-aj3"/>
+                            <constraint firstItem="a31-3J-m4d" firstAttribute="bottom" secondItem="pps-cb-bfB" secondAttribute="bottom" id="NQy-LV-fFP"/>
+                            <constraint firstItem="b3F-qg-sfy" firstAttribute="top" secondItem="b1Z-FL-464" secondAttribute="bottom" constant="20" id="PdE-xS-3Dh"/>
+                            <constraint firstItem="70W-no-dYA" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" id="Rf6-Sr-AuZ"/>
+                            <constraint firstItem="b1Z-FL-464" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" id="YS7-XE-C2x"/>
+                            <constraint firstAttribute="bottom" secondItem="dDh-jW-1cr" secondAttribute="bottom" constant="50" id="Z6e-cm-Os5"/>
+                            <constraint firstItem="a31-3J-m4d" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" id="amb-gW-4AK"/>
+                            <constraint firstItem="dDh-jW-1cr" firstAttribute="top" secondItem="b3F-qg-sfy" secondAttribute="bottom" constant="20" id="fr3-4j-Nxg"/>
+                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="b3F-qg-sfy" secondAttribute="trailing" constant="20" id="gtH-e0-wxy"/>
+                            <constraint firstItem="dDh-jW-1cr" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" constant="20" id="hUl-06-FNl"/>
+                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="b1Z-FL-464" secondAttribute="trailing" id="tWr-Mw-4uG"/>
+                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="70W-no-dYA" secondAttribute="trailing" id="uDn-HX-8ma"/>
+                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="dDh-jW-1cr" secondAttribute="trailing" constant="20" id="xgC-D6-0zc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ex0-If-Ckl"/>
+                    <connections>
+                        <outlet property="applePayButton" destination="4OG-P2-VmG" id="5ax-8j-ykg"/>
+                        <outlet property="bottomFadeView" destination="a31-3J-m4d" id="te1-qR-OSL"/>
+                        <outlet property="cartTableView" destination="b3F-qg-sfy" id="hZG-lg-XFK"/>
+                        <outlet property="enterCardDetailsButton" destination="Cm6-Hw-eDJ" id="qow-C0-Q7f"/>
+                        <outlet property="totalLabel" destination="b1Z-FL-464" id="Imm-66-aT2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKx-eG-ZT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1739" y="1983"/>
+            <point key="canvasLocation" x="-1739.1304347826087" y="1982.8125"/>
         </scene>
         <!--Customize View Controller-->
         <scene sceneID="xd6-sI-cdb">
@@ -768,6 +841,7 @@
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <image name="chevron.down.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.up.circle" catalog="system" width="128" height="121"/>
+        <image name="creditcard" catalog="system" width="128" height="88"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>

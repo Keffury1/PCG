@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.nameLabel.text = review.name
         cell.reviewView.text = review.review
         cell.layer.cornerRadius = 10.0
-        cell.addGradient(color: UIColor.init(named: "Tan")!.cgColor)
+        cell.addTopDownGradient(color: UIColor.init(named: "Tan")!.cgColor)
         
         return cell
     }
@@ -59,7 +59,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Methods
     
     private func setupSubviews() {
-        headerView.addGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
+        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         
         membershipView.layer.cornerRadius = 15
         membershipView.addShadow()

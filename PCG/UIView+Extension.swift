@@ -17,7 +17,7 @@ extension UIView {
         self.layer.shadowOpacity = 0.25
     }
     
-    func addGradient(color: CGColor) {
+    func addTopDownGradient(color: CGColor) {
         let gradient = CAGradientLayer()
 
         gradient.frame = self.bounds
@@ -25,6 +25,18 @@ extension UIView {
 
         gradient.startPoint = CGPoint(x: 0.5, y: 1)
         gradient.endPoint = CGPoint(x: 0.5, y: 0)
+        self.layer.insertSublayer(gradient, at: 0)
+        self.clipsToBounds = true
+    }
+    
+    func addBottomUpGradient(color: CGColor) {
+        let gradient = CAGradientLayer()
+
+        gradient.frame = self.bounds
+        gradient.colors = [UIColor.white.cgColor, color]
+
+        gradient.startPoint = CGPoint(x: 0.5, y: 0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1)
         self.layer.insertSublayer(gradient, at: 0)
         self.clipsToBounds = true
     }

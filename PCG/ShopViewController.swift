@@ -91,7 +91,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Methods
     
     private func setupSubviews() {
-        headerView.addGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
+        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         highToLowButton.transform = CGAffineTransform(scaleX: -1, y: 1)
         setupButtons()
         choicesView.layer.cornerRadius = 10.0
