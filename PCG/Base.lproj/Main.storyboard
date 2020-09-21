@@ -279,7 +279,7 @@
                                                         <rect key="frame" x="111.5" y="0.0" width="91" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="Navy"/>
-                                                        <state key="normal" image="circle.grid.hex" catalog="system">
+                                                        <state key="normal" image="circle.grid.2x2" catalog="system">
                                                             <color key="titleColor" name="Navy"/>
                                                         </state>
                                                         <connections>
@@ -456,7 +456,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
                                                 <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                <state key="normal" title="Dog Treat Jar">
+                                                <state key="normal" title="Jars">
                                                     <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
@@ -467,7 +467,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="0.0"/>
                                                 <color key="backgroundColor" name="Navy"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                <state key="normal" title="Lantern">
+                                                <state key="normal" title="Lanterns">
                                                     <color key="titleColor" name="White"/>
                                                 </state>
                                                 <connections>
@@ -607,7 +607,6 @@
                         <outletCollection property="productButtonCollection" destination="mTw-Zo-1Ib" collectionClass="NSMutableArray" id="vYG-dD-9wf"/>
                         <outletCollection property="productButtonCollection" destination="o7a-bj-sAy" collectionClass="NSMutableArray" id="fTr-lp-0WU"/>
                         <outletCollection property="productButtonCollection" destination="tHH-93-ndz" collectionClass="NSMutableArray" id="5Ww-J6-nxM"/>
-                        <segue destination="bAr-s3-YLh" kind="show" identifier="paymentSegue" id="EdZ-KG-i8f"/>
                         <segue destination="Kjq-ja-Hdz" kind="show" identifier="customizeSegue" id="xL5-BQ-qFb"/>
                     </connections>
                 </viewController>
@@ -615,37 +614,36 @@
             </objects>
             <point key="canvasLocation" x="-2739.130434782609" y="2287.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Customize View Controller-->
         <scene sceneID="xd6-sI-cdb">
             <objects>
-                <viewController id="Kjq-ja-Hdz" sceneMemberID="viewController">
+                <viewController id="Kjq-ja-Hdz" customClass="CustomizeViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voA-ki-vad">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7y-gZ-E1h">
+                                <rect key="frame" x="186" y="393.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TId-8W-FIS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b7y-gZ-E1h" firstAttribute="centerY" secondItem="TId-8W-FIS" secondAttribute="centerY" id="Eho-OF-Jko"/>
+                            <constraint firstItem="b7y-gZ-E1h" firstAttribute="centerX" secondItem="TId-8W-FIS" secondAttribute="centerX" id="Jcb-wR-IeC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Q1-cR-dU8"/>
+                    <connections>
+                        <outlet property="name" destination="b7y-gZ-E1h" id="jDg-jl-VQ7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIp-ck-lYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1713" y="1967"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="9aY-j1-RHE">
-            <objects>
-                <viewController id="bAr-s3-YLh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qrD-q0-Czf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="afZ-9I-ncq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="qpj-3x-naQ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WWX-Dc-ixX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1713" y="2670"/>
+            <point key="canvasLocation" x="-1758" y="2288"/>
         </scene>
         <!--More-->
         <scene sceneID="s39-xV-bTQ">
@@ -752,7 +750,7 @@
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <image name="chevron.down.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.up.circle" catalog="system" width="128" height="121"/>
-        <image name="circle.grid.hex" catalog="system" width="128" height="112"/>
+        <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>

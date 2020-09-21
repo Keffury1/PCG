@@ -282,14 +282,10 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "paymentSegue" {
-            if let _ = segue.destination as? PaymentViewController  {
-                
-            }
-        } else if segue.identifier == "customizeSegue" {
+        if segue.identifier == "customizeSegue" {
             if let customizeVC = segue.destination as? CustomizeViewController {
                 customizeVC.product = self.product
             }
-        }
+        } 
     }
 }

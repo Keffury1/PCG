@@ -7,6 +7,5 @@ target 'PCG' do
   # Pods for PCG
   
   pod "Mobile-Buy-SDK"
-  pod 'Firebase/Analytics'
 
 end
