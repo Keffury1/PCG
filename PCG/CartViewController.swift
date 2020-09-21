@@ -65,7 +65,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func updateTotal() {
-        
+        totalLabel.font = UIFont(name: "BebasNeue-Regular", size: 50)
     }
     
     // MARK: - Actions
