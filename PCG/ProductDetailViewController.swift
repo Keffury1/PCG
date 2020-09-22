@@ -7,18 +7,15 @@
 //
 
 import UIKit
-import MobileBuySDK
 
-class CustomizeViewController: UIViewController {
+class ProductDetailViewController: UIViewController {
 
     // MARK: - Properties
     
     var product: Product?
-    var shopify = Shopify()
     
     // MARK: - Outlets
     
-    @IBOutlet weak var name: UILabel!
     
     // MARK: - Views
     
@@ -30,6 +27,7 @@ class CustomizeViewController: UIViewController {
     // MARK: - Methods
     
     private func updateViews() {
+        
     }
     
     // MARK: - Actions

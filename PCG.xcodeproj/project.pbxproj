@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		370AE5FA24F96988000B3683 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370AE5F924F96988000B3683 /* UIView+Extension.swift */; };
 		37125D742489A20B00E716CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37125D732489A20A00E716CA /* WebKit.framework */; };
-		3755178F24F9B8AE002643F7 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755178E24F9B8AE002643F7 /* CustomizeViewController.swift */; };
+		3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */; };
 		37641254251516EF00730747 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37641253251516EF00730747 /* GoogleService-Info.plist */; };
 		3764127725167F5600730747 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3764127625167F5600730747 /* Shopify.swift */; };
 		376412E625192E1F00730747 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376412E525192E1F00730747 /* CartViewController.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		370AE5F924F96988000B3683 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		37125D732489A20A00E716CA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		3755178E24F9B8AE002643F7 /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
+		3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		37641253251516EF00730747 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3764127625167F5600730747 /* Shopify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify.swift; sourceTree = "<group>"; };
 		376412D62516B7F000730747 /* PCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PCG.entitlements; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 				37FC57A424F5690A00610C60 /* TabBarController.swift */,
 				37FC57A224F5646D00610C60 /* HomeViewController.swift */,
 				37FC57B024F5960C00610C60 /* ShopViewController.swift */,
-				3755178E24F9B8AE002643F7 /* CustomizeViewController.swift */,
+				3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */,
 				376412E525192E1F00730747 /* CartViewController.swift */,
 			);
 			name = "View Controllers";
@@ -343,7 +343,7 @@
 				37FC57C324F60F5100610C60 /* ProductController.swift in Sources */,
 				376412E92519560900730747 /* CartItemTableViewCell.swift in Sources */,
 				37FC57BD24F5FB3600610C60 /* ReviewCollectionViewCell.swift in Sources */,
-				3755178F24F9B8AE002643F7 /* CustomizeViewController.swift in Sources */,
+				3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */,
 				37FC57BB24F5F94D00610C60 /* Review.swift in Sources */,
 				37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */,
 				37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */,

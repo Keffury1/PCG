@@ -766,10 +766,10 @@
             </objects>
             <point key="canvasLocation" x="-1739.1304347826087" y="1982.8125"/>
         </scene>
-        <!--Customize View Controller-->
+        <!--Product Detail View Controller-->
         <scene sceneID="xd6-sI-cdb">
             <objects>
-                <viewController id="Kjq-ja-Hdz" customClass="CustomizeViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Kjq-ja-Hdz" customClass="ProductDetailViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voA-ki-vad">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

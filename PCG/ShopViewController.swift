@@ -281,7 +281,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "customizeSegue" {
-            if let customizeVC = segue.destination as? CustomizeViewController {
+            if let customizeVC = segue.destination as? ProductDetailViewController {
                 customizeVC.product = self.product
             }
         } 
