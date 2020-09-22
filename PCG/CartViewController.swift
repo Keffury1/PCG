@@ -52,6 +52,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.countLabel.text = "x\(count)"
         count += 1
         cell.priceLabel.text = "$\(product.price)"
+        cell.priceLabel.font = UIFont(name: "BebasNeue-Regular", size: 15)
+        cell.valueLabel.font = UIFont(name: "BebasNeue-Regular", size: 15)
+        cell.keyLabel.font = UIFont(name: "BebasNeue-Regular", size: 15)
+        cell.countLabel.font = UIFont(name: "BebasNeue-Regular", size: 15)
         
         return cell
     }
@@ -65,7 +69,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func updateTotal() {
-        totalLabel.font = UIFont(name: "BebasNeue-Regular", size: 50)
     }
     
     // MARK: - Actions
