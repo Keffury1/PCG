@@ -47,7 +47,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? CartItemTableViewCell else { return UITableViewCell() }
         
-        var product = products[indexPath.row]
+        let product = products[indexPath.row]
         cell.keyLabel.text = "\(key)."
         key += 1
         cell.valueLabel.text = product.title
