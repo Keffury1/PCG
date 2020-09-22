@@ -620,12 +620,24 @@
             <objects>
                 <viewController id="F1Y-PN-1Zr" customClass="CartViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pps-cb-bfB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a31-3J-m4d">
                                 <rect key="frame" x="0.0" y="529" width="414" height="313"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="c97-h9-YLd">
+                                        <rect key="frame" x="87" y="213" width="240" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="DCt-Gg-xxw"/>
+                                            <constraint firstAttribute="width" constant="240" id="NTq-Tn-3l6"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="c97-h9-YLd" secondAttribute="bottom" id="8cQ-ao-ELA"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 items" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70W-no-dYA">
                                 <rect key="frame" x="0.0" y="40" width="414" height="23.5"/>
@@ -643,7 +655,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b3F-qg-sfy">
-                                <rect key="frame" x="10" y="160" width="394" height="468"/>
+                                <rect key="frame" x="10" y="160" width="394" height="412"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itemCell" rowHeight="50" id="HHb-xd-64R" customClass="CartItemTableViewCell" customModule="PCG" customModuleProvider="target">
@@ -706,7 +718,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dDh-jW-1cr">
-                                <rect key="frame" x="20" y="658" width="374" height="120"/>
+                                <rect key="frame" x="20" y="602" width="374" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OG-P2-VmG">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
@@ -718,9 +730,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cm6-Hw-eDJ">
                                         <rect key="frame" x="0.0" y="65" width="374" height="55"/>
-                                        <color key="backgroundColor" name="Navy"/>
+                                        <color key="backgroundColor" name="Tan"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="creditcard" catalog="system">
+                                        <state key="normal" title="  Enter info" image="creditcard" catalog="system">
                                             <color key="titleColor" name="White"/>
                                         </state>
                                     </button>
@@ -733,15 +745,16 @@
                         <viewLayoutGuide key="safeArea" id="bBx-uY-Rch"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="c97-h9-YLd" firstAttribute="centerX" secondItem="bBx-uY-Rch" secondAttribute="centerX" id="1SE-RS-oty"/>
                             <constraint firstItem="b1Z-FL-464" firstAttribute="top" secondItem="bBx-uY-Rch" secondAttribute="top" constant="40" id="4k9-xf-UEU"/>
                             <constraint firstItem="b3F-qg-sfy" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" constant="10" id="6ry-fa-8X2"/>
-                            <constraint firstItem="bBx-uY-Rch" firstAttribute="bottom" secondItem="b3F-qg-sfy" secondAttribute="bottom" constant="180" id="EFe-jQ-FhP"/>
                             <constraint firstItem="a31-3J-m4d" firstAttribute="top" secondItem="bBx-uY-Rch" secondAttribute="centerY" constant="125" id="EaZ-op-l5i"/>
                             <constraint firstItem="70W-no-dYA" firstAttribute="top" secondItem="b1Z-FL-464" secondAttribute="top" id="EcN-SX-rdj"/>
                             <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="a31-3J-m4d" secondAttribute="trailing" id="GXp-1e-aj3"/>
                             <constraint firstItem="a31-3J-m4d" firstAttribute="bottom" secondItem="pps-cb-bfB" secondAttribute="bottom" id="NQy-LV-fFP"/>
                             <constraint firstItem="b3F-qg-sfy" firstAttribute="top" secondItem="b1Z-FL-464" secondAttribute="bottom" constant="20" id="PdE-xS-3Dh"/>
                             <constraint firstItem="70W-no-dYA" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" id="Rf6-Sr-AuZ"/>
+                            <constraint firstItem="c97-h9-YLd" firstAttribute="top" secondItem="dDh-jW-1cr" secondAttribute="bottom" constant="20" id="Sc0-zB-yIK"/>
                             <constraint firstItem="b1Z-FL-464" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" id="YS7-XE-C2x"/>
                             <constraint firstItem="a31-3J-m4d" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" id="amb-gW-4AK"/>
                             <constraint firstItem="dDh-jW-1cr" firstAttribute="top" secondItem="b3F-qg-sfy" secondAttribute="bottom" constant="30" id="fr3-4j-Nxg"/>
@@ -771,7 +784,7 @@
             <objects>
                 <viewController id="Kjq-ja-Hdz" customClass="ProductDetailViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voA-ki-vad">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdC-Aa-8Ko">
