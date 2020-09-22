@@ -13,6 +13,7 @@ class ProductDetailViewController: UIViewController {
     // MARK: - Properties
     
     var product: Product?
+    var cart: [Product]?
     
     // MARK: - Outlets
     
@@ -23,7 +24,6 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var customizeButton: UIButton!
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var bottomFadeView: UIView!
-    @IBOutlet weak var imageFadeView: UIView!
     
     // MARK: - Views
     
@@ -61,7 +61,6 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
-        
     }
     
     // MARK: - Navigation

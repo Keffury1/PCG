@@ -13,7 +13,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     // MARK: - Properties
     
-    var products: [Product] = []
+    var cart: [Product] = []
     var key: Int = 1
     
     // MARK: - Outlets
@@ -41,13 +41,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - TableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return cart.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? CartItemTableViewCell else { return UITableViewCell() }
         
-        let product = products[indexPath.row]
+        let product = cart[indexPath.row]
         cell.keyLabel.text = "\(key)."
         key += 1
         cell.valueLabel.text = product.title
@@ -67,7 +67,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            products.remove(at: indexPath.row)
+            cart.remove(at: indexPath.row)
             tableView.reloadData()
             updateTotal()
         }
@@ -84,7 +84,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func updateTotal() {
         var count: Double = 0.00
         var items: Int = 0
-        for product in self.products {
+        for product in self.cart {
             items += 1
             count += product.price
         }
