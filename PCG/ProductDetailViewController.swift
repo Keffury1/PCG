@@ -22,6 +22,8 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var productDescriptionTextView: UITextView!
     @IBOutlet weak var customizeButton: UIButton!
     @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var bottomFadeView: UIView!
+    @IBOutlet weak var imageFadeView: UIView!
     
     // MARK: - Views
     
@@ -40,7 +42,7 @@ class ProductDetailViewController: UIViewController {
         addToCartButton.layer.cornerRadius = 15
         addToCartButton.addShadow()
         
-        
+        bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
     }
     
     private func updateViews() {

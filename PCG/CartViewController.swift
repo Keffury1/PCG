@@ -76,8 +76,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Methods
     
     private func setupSubviews() {
-        applePayButton.layer.cornerRadius = 10.0
-        enterCardDetailsButton.layer.cornerRadius = 10.0
+        applePayButton.layer.cornerRadius = 15.0
+        enterCardDetailsButton.layer.cornerRadius = 15.0
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
     }
     
