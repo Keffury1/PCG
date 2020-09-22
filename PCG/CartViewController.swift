@@ -15,11 +15,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var products: [Product] = []
     var key: Int = 1
-    var count: Int = 1
     
     // MARK: - Outlets
     
     @IBOutlet weak var bottomFadeView: UIView!
+    @IBOutlet weak var itemsLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var applePayButton: UIButton!
@@ -34,6 +34,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cartTableView.dataSource = self
         setupSubviews()
         updateTotal()
+        cartTableView.reloadData()
+        updateTotal()
     }
     
     // MARK: - TableView Methods
@@ -45,19 +47,30 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? CartItemTableViewCell else { return UITableViewCell() }
         
-        let product = products[indexPath.row]
+        var product = products[indexPath.row]
         cell.keyLabel.text = "\(key)."
         key += 1
         cell.valueLabel.text = product.title
-        cell.countLabel.text = "x\(count)"
-        count += 1
+        cell.countLabel.text = "x\(product.count)"
         cell.priceLabel.text = "$\(product.price)"
-        cell.priceLabel.font = UIFont(name: "BebasNeue-Regular", size: 15)
-        cell.valueLabel.font = UIFont(name: "BebasNeue-Regular", size: 15)
-        cell.keyLabel.font = UIFont(name: "BebasNeue-Regular", size: 15)
-        cell.countLabel.font = UIFont(name: "BebasNeue-Regular", size: 15)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(50)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            products.remove(at: indexPath.row)
+            tableView.reloadData()
+            updateTotal()
+        }
     }
     
     // MARK: - Methods
@@ -69,6 +82,20 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func updateTotal() {
+        var count: Double = 0.00
+        var items: Int = 0
+        for product in self.products {
+            items += 1
+            count += product.price
+        }
+        
+        let doubleString = String(format: "%.2f", count)
+        if items == 1 {
+            itemsLabel.text = " \(items) item"
+        } else {
+            itemsLabel.text = " \(items) items"
+        }
+        totalLabel.text = "$\(doubleString)"
     }
     
     // MARK: - Actions

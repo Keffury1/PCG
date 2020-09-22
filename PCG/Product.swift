@@ -11,15 +11,17 @@ import UIKit
 
 struct Product {
     var title: String
-    var price: Int
+    var price: Double
     var image: UIImage
     var category: Categories
+    var count: Int
     
-    internal init(title: String, price: Int, image: UIImage, category: Categories) {
+    internal init(title: String, price: Double, image: UIImage, category: Categories, count: Int) {
         self.title = title
         self.price = price
         self.image = image
         self.category = category
+        self.count = count
     }
 }
 
