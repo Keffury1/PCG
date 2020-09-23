@@ -13,7 +13,6 @@ class ProductDetailViewController: UIViewController {
     // MARK: - Properties
     
     var product: Product?
-    var cart: [Product]?
     
     // MARK: - Outlets
     
@@ -61,6 +60,10 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
+        guard var product = product else { return }
+        product.count += 1
+        Global.sharedInstance.cart.append(product)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Navigation

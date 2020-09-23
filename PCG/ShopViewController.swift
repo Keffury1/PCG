@@ -284,15 +284,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "productDetailSegue" {
             if let detailVC = segue.destination as? ProductDetailViewController {
                 detailVC.product = self.product
-                detailVC.cart = self.cart
-            }
-        } else if segue.identifier == "cartSegue" {
-            if let cartVC = segue.destination as? CartViewController {
-                if let cart = cart {
-                    cartVC.cart = cart
-                } else {
-                    cartVC.cart = []
-                }
             }
         }
     }

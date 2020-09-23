@@ -9,11 +9,9 @@
 import UIKit
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
 
     // MARK: - Properties
     
-    var cart: [Product] = []
     var key: Int = 1
     
     // MARK: - Outlets
@@ -41,15 +39,15 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - TableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cart.count
+        return Global.sharedInstance.cart.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? CartItemTableViewCell else { return UITableViewCell() }
         
-        let product = cart[indexPath.row]
         cell.keyLabel.text = "\(key)."
         key += 1
+        let product = Global.sharedInstance.cart[indexPath.row]
         cell.valueLabel.text = product.title
         cell.countLabel.text = "x\(product.count)"
         cell.priceLabel.text = "$\(product.price)"
@@ -67,7 +65,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            cart.remove(at: indexPath.row)
+            Global.sharedInstance.cart.remove(at: indexPath.row)
             tableView.reloadData()
             updateTotal()
         }
@@ -86,7 +84,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func updateTotal() {
         var count: Double = 0.00
         var items: Int = 0
-        for product in self.cart {
+        for product in Global.sharedInstance.cart {
             items += 1
             count += product.price
         }
