@@ -893,11 +893,68 @@
                         <outlet property="productImageView" destination="t96-87-kIB" id="NGu-aU-4El"/>
                         <outlet property="productPriceLabel" destination="Mey-4p-xel" id="Usa-Hz-HUg"/>
                         <outlet property="productTitleLabel" destination="z3R-TZ-QFE" id="c2L-NH-O1r"/>
+                        <segue destination="1ZU-r9-Rhi" kind="show" identifier="customizeSegue" id="ntR-bA-rBy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIp-ck-lYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1739.1304347826087" y="2706.6964285714284"/>
+        </scene>
+        <!--Customize View Controller-->
+        <scene sceneID="2lb-jJ-DxA">
+            <objects>
+                <viewController id="1ZU-r9-Rhi" customClass="CustomizeViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kyu-vG-xkN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JrT-Qe-yc4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="404"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RVg-fb-OC8">
+                                <rect key="frame" x="107" y="479" width="200" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inscription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMZ-rI-SzG">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The Miller's" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dll-WA-YwM">
+                                        <rect key="frame" x="0.0" y="70.5" width="200" height="29.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="inscriptionEditingEnded:" destination="1ZU-r9-Rhi" eventType="editingDidEnd" id="5IV-NK-EPb"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="PsQ-in-qPW"/>
+                                    <constraint firstAttribute="height" constant="100" id="r5r-sT-bms"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iAK-Be-Len"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iAK-Be-Len" firstAttribute="centerY" secondItem="JrT-Qe-yc4" secondAttribute="bottom" id="9Ja-ZY-6xY"/>
+                            <constraint firstItem="JrT-Qe-yc4" firstAttribute="trailing" secondItem="iAK-Be-Len" secondAttribute="trailing" id="EDF-ol-vrE"/>
+                            <constraint firstItem="JrT-Qe-yc4" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" id="HMI-3g-RVH"/>
+                            <constraint firstItem="RVg-fb-OC8" firstAttribute="centerX" secondItem="iAK-Be-Len" secondAttribute="centerX" id="ZAD-tU-dVe"/>
+                            <constraint firstItem="RVg-fb-OC8" firstAttribute="top" secondItem="JrT-Qe-yc4" secondAttribute="bottom" constant="75" id="d1F-eq-WeK"/>
+                            <constraint firstItem="JrT-Qe-yc4" firstAttribute="top" secondItem="iAK-Be-Len" secondAttribute="top" id="lYn-OA-gX9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LcM-Lc-yAx"/>
+                    <connections>
+                        <outlet property="inscriptionTextField" destination="dll-WA-YwM" id="JPf-Mw-MMp"/>
+                        <outlet property="productImageView" destination="JrT-Qe-yc4" id="dhL-pH-gVx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJe-pG-rjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-713.04347826086962" y="2526.5625"/>
         </scene>
         <!--More-->
         <scene sceneID="s39-xV-bTQ">

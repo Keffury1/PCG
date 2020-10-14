@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,11 +11,12 @@
 		37125D742489A20B00E716CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37125D732489A20A00E716CA /* WebKit.framework */; };
 		3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */; };
 		37641254251516EF00730747 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37641253251516EF00730747 /* GoogleService-Info.plist */; };
-		3764127725167F5600730747 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3764127625167F5600730747 /* Shopify.swift */; };
 		376412E625192E1F00730747 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376412E525192E1F00730747 /* CartViewController.swift */; };
 		376412E92519560900730747 /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376412E82519560900730747 /* CartItemTableViewCell.swift */; };
 		376412EE2519588800730747 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376412EC2519588800730747 /* BebasNeue-Regular.ttf */; };
 		3790FDE0251AC25C00154C21 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3790FDDF251AC25C00154C21 /* Global.swift */; };
+		379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */; };
+		379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */; };
 		37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F5244E4338001F6421 /* AppDelegate.swift */; };
 		37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F7244E4338001F6421 /* SceneDelegate.swift */; };
 		37E270FD244E4338001F6421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E270FB244E4338001F6421 /* Main.storyboard */; };
@@ -30,7 +31,6 @@
 		37FC57BD24F5FB3600610C60 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57BC24F5FB3600610C60 /* ReviewCollectionViewCell.swift */; };
 		37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57BE24F5FC4800610C60 /* ReviewController.swift */; };
 		37FC57C324F60F5100610C60 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57C224F60F5100610C60 /* ProductController.swift */; };
-		97B74CFD025DA45A1D9B1FB7 /* Pods_PCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F2D6E650B8653F98F9F663 /* Pods_PCG.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +38,12 @@
 		37125D732489A20A00E716CA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		37641253251516EF00730747 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3764127625167F5600730747 /* Shopify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify.swift; sourceTree = "<group>"; };
 		376412D62516B7F000730747 /* PCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PCG.entitlements; sourceTree = "<group>"; };
 		376412E525192E1F00730747 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		376412E82519560900730747 /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
 		376412EC2519588800730747 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		3790FDDF251AC25C00154C21 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
 		37E270F2244E4338001F6421 /* PCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E270F5244E4338001F6421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E270F7244E4338001F6421 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,9 +60,6 @@
 		37FC57BC24F5FB3600610C60 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		37FC57BE24F5FC4800610C60 /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		37FC57C224F60F5100610C60 /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
-		6CA20B7241BEAC1107F2D39D /* Pods-PCG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PCG.release.xcconfig"; path = "Target Support Files/Pods-PCG/Pods-PCG.release.xcconfig"; sourceTree = "<group>"; };
-		72F2D6E650B8653F98F9F663 /* Pods_PCG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PCG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95FA3EE6E92F42B4A7CD8638 /* Pods-PCG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PCG.debug.xcconfig"; path = "Target Support Files/Pods-PCG/Pods-PCG.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37125D742489A20B00E716CA /* WebKit.framework in Frameworks */,
-				97B74CFD025DA45A1D9B1FB7 /* Pods_PCG.framework in Frameworks */,
+				379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				37125D732489A20A00E716CA /* WebKit.framework */,
-				72F2D6E650B8653F98F9F663 /* Pods_PCG.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,7 +94,6 @@
 		376412632516769700730747 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				3764127625167F5600730747 /* Shopify.swift */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -109,7 +104,6 @@
 				37E270F4244E4338001F6421 /* PCG */,
 				37E270F3244E4338001F6421 /* Products */,
 				37125D722489A20A00E716CA /* Frameworks */,
-				EF43DBF0FDC7613D1F013C25 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +160,7 @@
 				37FC57A224F5646D00610C60 /* HomeViewController.swift */,
 				37FC57B024F5960C00610C60 /* ShopViewController.swift */,
 				3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */,
+				379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */,
 				376412E525192E1F00730747 /* CartViewController.swift */,
 			);
 			name = "View Controllers";
@@ -216,15 +211,6 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
-		EF43DBF0FDC7613D1F013C25 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				95FA3EE6E92F42B4A7CD8638 /* Pods-PCG.debug.xcconfig */,
-				6CA20B7241BEAC1107F2D39D /* Pods-PCG.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,17 +218,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37E27106244E4338001F6421 /* Build configuration list for PBXNativeTarget "PCG" */;
 			buildPhases = (
-				E28B0E7A2A3AA13BA5411F03 /* [CP] Check Pods Manifest.lock */,
 				37E270EE244E4338001F6421 /* Sources */,
 				37E270EF244E4338001F6421 /* Frameworks */,
 				37E270F0244E4338001F6421 /* Resources */,
-				A2EC33F775A8359CDC986DBF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PCG;
+			packageProductDependencies = (
+				379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */,
+			);
 			productName = PCG;
 			productReference = 37E270F2244E4338001F6421 /* PCG.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +258,9 @@
 				Base,
 			);
 			mainGroup = 37E270E9244E4338001F6421;
+			packageReferences = (
+				379C3BCB253623F6003D22C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 37E270F3244E4338001F6421 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -295,48 +285,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		A2EC33F775A8359CDC986DBF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E28B0E7A2A3AA13BA5411F03 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PCG-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		37E270EE244E4338001F6421 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -349,12 +297,12 @@
 				3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */,
 				37FC57BB24F5F94D00610C60 /* Review.swift in Sources */,
 				37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */,
+				379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */,
 				37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */,
 				376412E625192E1F00730747 /* CartViewController.swift in Sources */,
 				370AE5FA24F96988000B3683 /* UIView+Extension.swift in Sources */,
 				37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */,
 				37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */,
-				3764127725167F5600730747 /* Shopify.swift in Sources */,
 				37FC57B324F59F0F00610C60 /* ProductCollectionViewCell.swift in Sources */,
 				37FC57A324F5646D00610C60 /* HomeViewController.swift in Sources */,
 				37FC57B524F5A07900610C60 /* Product.swift in Sources */,
@@ -500,7 +448,6 @@
 		};
 		37E27107244E4338001F6421 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95FA3EE6E92F42B4A7CD8638 /* Pods-PCG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PCG/PCG.entitlements;
@@ -520,7 +467,6 @@
 		};
 		37E27108244E4338001F6421 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CA20B7241BEAC1107F2D39D /* Pods-PCG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PCG/PCG.entitlements;
@@ -560,6 +506,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		379C3BCB253623F6003D22C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 379C3BCB253623F6003D22C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 37E270EA244E4338001F6421 /* Project object */;
 }

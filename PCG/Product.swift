@@ -14,14 +14,16 @@ struct Product {
     var description: String
     var price: Double
     var image: UIImage
+    var blankImage: UIImage?
     var category: Categories
     var count: Int
     
-    internal init(title: String, description: String, price: Double, image: UIImage, category: Categories, count: Int) {
+    internal init(title: String, description: String, price: Double, image: UIImage, blankImage: UIImage?, category: Categories, count: Int) {
         self.title = title
         self.description = description
         self.price = price
         self.image = image
+        self.blankImage = blankImage
         self.category = category
         self.count = count
     }

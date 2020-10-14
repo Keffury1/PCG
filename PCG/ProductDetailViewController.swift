@@ -56,7 +56,7 @@ class ProductDetailViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func customizeButtonTapped(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "customizeSegue", sender: self)
     }
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
@@ -69,6 +69,11 @@ class ProductDetailViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "customizeSegue" {
+            if let customizeVC = segue.destination as? CustomizeViewController, let product = product {
+                customizeVC.product = product
+            }
+        }
     }
 
 }
