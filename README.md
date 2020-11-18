@@ -21,7 +21,7 @@ Perfect Closing Gift
 You can clone and build this project in Xcode.
 
 
-## Overview
+## App Overview
 
 - This app is designed for a popular merchandising company dealing in closing gifts for real estate agents
 - Always on the go, agents need to handle the gift giving aspect of the job smoothly
