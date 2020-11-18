@@ -8,7 +8,6 @@ Perfect Closing Gift
 [<img src="https://github.com/Lambda-School-Labs/wowo-ios/blob/master/README_images/Robert.png?raw=true" width = "200" />](https://github.com/Keffury1)
 
 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Keffury1)
-
 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/robert-keffury-426188142/)
 
 
