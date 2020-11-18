@@ -23,7 +23,7 @@ You can clone and build this project in Xcode.
 
 ## App Overview
 
-- This app is designed for a popular merchandising company dealing in closing gifts for real estate agents
+- This app has been designed for a popular merchandising company dealing in closing gifts for real estate agents
 - Always on the go, agents need to handle the gift giving aspect of the job smoothly
 - With the features listed below, we have made that process much simpler & ripe for automated repurchasing
 
@@ -42,7 +42,7 @@ You can clone and build this project in Xcode.
 
 ### Authentication API here
 
-Authentication is done through the use of AppleID.
+Authentication is done through the use of AppleID & FaceID
 
 
 ### Payment API here
