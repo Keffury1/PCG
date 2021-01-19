@@ -17,6 +17,7 @@ struct Product {
     var blankImage: UIImage?
     var category: Categories
     var count: Int
+    var templates: [Template]?
     
     internal init(title: String, description: String, price: Double, image: UIImage, blankImage: UIImage?, category: Categories, count: Int) {
         self.title = title
