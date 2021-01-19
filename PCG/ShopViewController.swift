@@ -56,7 +56,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     // MARK: - Collection View Methods
-    
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products.count

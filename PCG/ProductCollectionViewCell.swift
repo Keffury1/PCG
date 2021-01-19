@@ -25,6 +25,5 @@ class ProductCollectionViewCell: UICollectionViewCell {
         productImageView.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
         productImageView.layer.shadowRadius = 5
         productImageView.layer.shadowOpacity = 0.25
-        productImageView.layer.cornerRadius = 10
     }
 }
