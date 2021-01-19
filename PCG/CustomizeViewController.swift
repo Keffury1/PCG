@@ -27,21 +27,29 @@ class CustomizeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
         setupSubviews()
+        updateViews()
     }
     
     // MARK: - Methods
     
     private func setupSubviews() {
         templatesCollectionView.dataSource = self
+        templatesCollectionView.delegate = self
         addToCartButton.layer.cornerRadius = 15
         addToCartButton.addShadow()
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
+        firstTemplateImageView.layer.cornerRadius = 10
+        firstTemplateImageView.clipsToBounds = true
     }
     
     private func updateViews() {
-        guard let _ = product else { return }
+        guard let product = product else { return }
+        firstTemplateImageView.image = product.templates?.first?.image
+    }
+    
+    private func addCustomization(for template: Template) {
+        
     }
     
     // MARK: - Actions
@@ -56,14 +64,29 @@ class CustomizeViewController: UIViewController {
 
 }
 
-extension CustomizeViewController: UICollectionViewDataSource {
+extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return product?.templates?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateCell", for: indexPath) as? TemplateCollectionViewCell else { return UICollectionViewCell() }
+        guard let product = product else { return UICollectionViewCell() }
+        
+        if let template = product.templates?[indexPath.row] {
+            cell.templateImageView.image = template.image
+            cell.templateImageView.layer.cornerRadius = 10
+            cell.templateImageView.clipsToBounds = false
+        }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let product = product else { return }
+        if let template = product.templates?[indexPath.row] {
+            firstTemplateImageView.image = template.image
+            addCustomization(for: template)
+        }
     }
 }
