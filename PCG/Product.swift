@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct Product {
+    
     var title: String
     var description: String
     var price: Double
@@ -19,7 +20,7 @@ struct Product {
     var count: Int
     var templates: [Template]?
     
-    internal init(title: String, description: String, price: Double, image: UIImage, blankImage: UIImage?, category: Categories, count: Int) {
+    internal init(title: String, description: String, price: Double, image: UIImage, blankImage: UIImage? = nil, category: Categories, count: Int, templates: [Template]? = nil) {
         self.title = title
         self.description = description
         self.price = price
@@ -27,6 +28,7 @@ struct Product {
         self.blankImage = blankImage
         self.category = category
         self.count = count
+        self.templates = templates
     }
 }
 

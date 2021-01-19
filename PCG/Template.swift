@@ -12,34 +12,28 @@ import UIKit
 struct Template {
 
     var image: UIImage
-    var hisFirstName: Bool
-    var hisLastName: Bool
-    var herFirstName: Bool
-    var herLastName: Bool
-    var fullName: Bool
-    var photo: Bool
-    var initials: Bool
-    var shortDate: Bool
-    var longDate: Bool
-    var address: Bool
-    var state: Bool
-    var year: Bool
-    var monthYear: Bool
+    var needs: [Need]
     
-    internal init(image: UIImage, hisFirstName: Bool, hisLastName: Bool, herFirstName: Bool, herLastName: Bool, fullName: Bool, photo: Bool, initials: Bool, shortDate: Bool, longDate: Bool, address: Bool, state: Bool, year: Bool, monthYear: Bool) {
+    internal init(image: UIImage, needs: [Need]) {
         self.image = image
-        self.hisFirstName = hisFirstName
-        self.hisLastName = hisLastName
-        self.herFirstName = herFirstName
-        self.herLastName = herLastName
-        self.fullName = fullName
-        self.photo = photo
-        self.initials = initials
-        self.shortDate = shortDate
-        self.longDate = longDate
-        self.address = address
-        self.state = state
-        self.year = year
-        self.monthYear = monthYear
+        self.needs = needs
     }
 }
+
+enum Need {
+    case hisFirstName
+    case hisLastName
+    case hisLastInitial
+    case herFirstName
+    case herLastName
+    case fullName
+    case photo
+    case initials
+    case shortDate
+    case longDate
+    case address
+    case state
+    case year
+    case monthYear
+}
+
