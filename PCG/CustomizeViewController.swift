@@ -21,6 +21,7 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
+    @IBOutlet weak var customizerView: UIView!
     
     // MARK: - Views
     
