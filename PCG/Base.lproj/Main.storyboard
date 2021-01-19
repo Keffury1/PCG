@@ -840,12 +840,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t96-87-kIB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="304"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mey-4p-xel">
-                                <rect key="frame" x="0.0" y="367" width="414" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" name="Light Gray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3R-TZ-QFE">
                                 <rect key="frame" x="0.0" y="327" width="414" height="40"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="29"/>
@@ -853,7 +847,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjH-6Q-nPL">
-                                <rect key="frame" x="10" y="404" width="394" height="198"/>
+                                <rect key="frame" x="10" y="387" width="394" height="215"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" name="Dark Gray"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -866,21 +860,18 @@
                             <constraint firstAttribute="trailing" secondItem="wdC-Aa-8Ko" secondAttribute="trailing" id="1IS-3E-VE7"/>
                             <constraint firstItem="TId-8W-FIS" firstAttribute="trailing" secondItem="z3R-TZ-QFE" secondAttribute="trailing" id="1rz-0r-o1O"/>
                             <constraint firstItem="wdC-Aa-8Ko" firstAttribute="leading" secondItem="voA-ki-vad" secondAttribute="leading" id="4ZB-jk-ds6"/>
-                            <constraint firstItem="Mey-4p-xel" firstAttribute="trailing" secondItem="z3R-TZ-QFE" secondAttribute="trailing" id="DzS-zx-y43"/>
                             <constraint firstItem="t96-87-kIB" firstAttribute="trailing" secondItem="TId-8W-FIS" secondAttribute="trailing" id="G8R-3n-kLh"/>
                             <constraint firstItem="xUW-R4-k5p" firstAttribute="top" secondItem="OjH-6Q-nPL" secondAttribute="bottom" id="OB3-SW-rfd"/>
                             <constraint firstItem="OjH-6Q-nPL" firstAttribute="centerX" secondItem="TId-8W-FIS" secondAttribute="centerX" id="PKv-Jk-V5V"/>
-                            <constraint firstItem="OjH-6Q-nPL" firstAttribute="top" secondItem="Mey-4p-xel" secondAttribute="bottom" constant="19" id="UfK-I7-6jq"/>
                             <constraint firstItem="wdC-Aa-8Ko" firstAttribute="top" secondItem="TId-8W-FIS" secondAttribute="centerY" constant="125" id="V1h-JP-qL1"/>
                             <constraint firstItem="t96-87-kIB" firstAttribute="leading" secondItem="TId-8W-FIS" secondAttribute="leading" id="Wvv-K7-vsZ"/>
                             <constraint firstAttribute="bottom" secondItem="wdC-Aa-8Ko" secondAttribute="bottom" id="dJS-Eh-ahl"/>
                             <constraint firstItem="z3R-TZ-QFE" firstAttribute="top" secondItem="t96-87-kIB" secondAttribute="bottom" constant="23" id="jMq-fS-N8V"/>
-                            <constraint firstItem="Mey-4p-xel" firstAttribute="top" secondItem="z3R-TZ-QFE" secondAttribute="bottom" id="lWl-Oj-sMq"/>
                             <constraint firstItem="OjH-6Q-nPL" firstAttribute="leading" secondItem="TId-8W-FIS" secondAttribute="leading" constant="10" id="me2-go-vYh"/>
                             <constraint firstItem="z3R-TZ-QFE" firstAttribute="leading" secondItem="TId-8W-FIS" secondAttribute="leading" id="rZB-ye-m0k"/>
                             <constraint firstItem="TId-8W-FIS" firstAttribute="centerY" secondItem="t96-87-kIB" secondAttribute="bottom" constant="100" id="uhJ-vk-DN9"/>
                             <constraint firstItem="TId-8W-FIS" firstAttribute="trailing" secondItem="OjH-6Q-nPL" secondAttribute="trailing" constant="10" id="whA-Pu-xoA"/>
-                            <constraint firstItem="Mey-4p-xel" firstAttribute="leading" secondItem="z3R-TZ-QFE" secondAttribute="leading" id="xbi-xJ-q3H"/>
+                            <constraint firstItem="OjH-6Q-nPL" firstAttribute="top" secondItem="z3R-TZ-QFE" secondAttribute="bottom" constant="20" id="xCW-mf-t5U"/>
                             <constraint firstItem="t96-87-kIB" firstAttribute="top" secondItem="TId-8W-FIS" secondAttribute="top" id="zcT-BV-pPI"/>
                         </constraints>
                     </view>
@@ -891,7 +882,6 @@
                         <outlet property="customizeButton" destination="6AV-z3-ZBt" id="m0z-iV-w54"/>
                         <outlet property="productDescriptionTextView" destination="OjH-6Q-nPL" id="SN2-HU-Dij"/>
                         <outlet property="productImageView" destination="t96-87-kIB" id="NGu-aU-4El"/>
-                        <outlet property="productPriceLabel" destination="Mey-4p-xel" id="Usa-Hz-HUg"/>
                         <outlet property="productTitleLabel" destination="z3R-TZ-QFE" id="c2L-NH-O1r"/>
                         <segue destination="1ZU-r9-Rhi" kind="show" identifier="customizeSegue" id="ntR-bA-rBy"/>
                     </connections>

@@ -18,7 +18,6 @@ class ProductDetailViewController: UIViewController {
     
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productTitleLabel: UILabel!
-    @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productDescriptionTextView: UITextView!
     @IBOutlet weak var customizeButton: UIButton!
     @IBOutlet weak var addToCartButton: UIButton!
@@ -50,7 +49,6 @@ class ProductDetailViewController: UIViewController {
         productImageView.image = product.image
         productTitleLabel.text = product.title
         productDescriptionTextView.text = product.description
-        productPriceLabel.text = "\(product.price)"
     }
     
     // MARK: - Actions
