@@ -17,26 +17,32 @@ class CustomizeViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var inscriptionTextField: UITextField!
-    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var bottomFadeView: UIView!
+    @IBOutlet weak var addToCartButton: UIButton!
     
     // MARK: - Views
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        setupSubviews()
     }
     
     // MARK: - Methods
     
+    private func setupSubviews() {
+        addToCartButton.layer.cornerRadius = 15
+        addToCartButton.addShadow()
+        bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
+    }
+    
     private func updateViews() {
-        guard let product = product else { return }
-        productImageView.image = product.blankImage
+        guard let _ = product else { return }
     }
     
     // MARK: - Actions
     
-    @IBAction func inscriptionEditingEnded(_ sender: Any) {
+    @IBAction func addToCartButtonTapped(_ sender: Any) {
     }
     
     // MARK: - Navigation

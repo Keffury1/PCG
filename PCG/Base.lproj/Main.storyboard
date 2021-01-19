@@ -898,48 +898,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JrT-Qe-yc4">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="404"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RVg-fb-OC8">
-                                <rect key="frame" x="107" y="479" width="200" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiP-pO-t93">
+                                <rect key="frame" x="0.0" y="554" width="414" height="288"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inscription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMZ-rI-SzG">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The Miller's" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dll-WA-YwM">
-                                        <rect key="frame" x="0.0" y="70.5" width="200" height="29.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="QOe-Uv-QQS">
+                                        <rect key="frame" x="87" y="188" width="240" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="4z4-EH-1rT"/>
+                                            <constraint firstAttribute="width" constant="240" id="jmS-Ta-cJz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezl-Al-LPE">
+                                        <rect key="frame" x="20" y="115.5" width="374" height="52.5"/>
+                                        <color key="backgroundColor" name="Navy"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52.5" id="3rt-qR-SWt"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="  Add to Cart" image="cart" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
-                                            <action selector="inscriptionEditingEnded:" destination="1ZU-r9-Rhi" eventType="editingDidEnd" id="5IV-NK-EPb"/>
+                                            <action selector="addToCartButtonTapped:" destination="1ZU-r9-Rhi" eventType="touchUpInside" id="hxW-t5-467"/>
                                         </connections>
-                                    </textField>
+                                    </button>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="PsQ-in-qPW"/>
-                                    <constraint firstAttribute="height" constant="100" id="r5r-sT-bms"/>
+                                    <constraint firstItem="QOe-Uv-QQS" firstAttribute="centerX" secondItem="wiP-pO-t93" secondAttribute="centerX" id="Dqa-wl-mGa"/>
+                                    <constraint firstItem="QOe-Uv-QQS" firstAttribute="top" secondItem="Ezl-Al-LPE" secondAttribute="bottom" constant="20" id="Jxb-eM-9X8"/>
+                                    <constraint firstItem="Ezl-Al-LPE" firstAttribute="leading" secondItem="wiP-pO-t93" secondAttribute="leading" constant="20" id="fNB-kp-t5X"/>
+                                    <constraint firstAttribute="bottom" secondItem="QOe-Uv-QQS" secondAttribute="bottom" id="iSu-qh-7RY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ezl-Al-LPE" secondAttribute="trailing" constant="20" id="kd9-fg-AFH"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iAK-Be-Len"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iAK-Be-Len" firstAttribute="centerY" secondItem="JrT-Qe-yc4" secondAttribute="bottom" id="9Ja-ZY-6xY"/>
-                            <constraint firstItem="JrT-Qe-yc4" firstAttribute="trailing" secondItem="iAK-Be-Len" secondAttribute="trailing" id="EDF-ol-vrE"/>
-                            <constraint firstItem="JrT-Qe-yc4" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" id="HMI-3g-RVH"/>
-                            <constraint firstItem="RVg-fb-OC8" firstAttribute="centerX" secondItem="iAK-Be-Len" secondAttribute="centerX" id="ZAD-tU-dVe"/>
-                            <constraint firstItem="RVg-fb-OC8" firstAttribute="top" secondItem="JrT-Qe-yc4" secondAttribute="bottom" constant="75" id="d1F-eq-WeK"/>
-                            <constraint firstItem="JrT-Qe-yc4" firstAttribute="top" secondItem="iAK-Be-Len" secondAttribute="top" id="lYn-OA-gX9"/>
+                            <constraint firstItem="wiP-pO-t93" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" id="Hqh-B9-qJK"/>
+                            <constraint firstItem="wiP-pO-t93" firstAttribute="bottom" secondItem="kyu-vG-xkN" secondAttribute="bottom" id="IVX-Se-Afy"/>
+                            <constraint firstItem="iAK-Be-Len" firstAttribute="trailing" secondItem="wiP-pO-t93" secondAttribute="trailing" id="gz7-Lf-jkX"/>
+                            <constraint firstItem="wiP-pO-t93" firstAttribute="top" secondItem="iAK-Be-Len" secondAttribute="centerY" constant="150" id="lLm-iE-9Xt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LcM-Lc-yAx"/>
                     <connections>
-                        <outlet property="inscriptionTextField" destination="dll-WA-YwM" id="JPf-Mw-MMp"/>
-                        <outlet property="productImageView" destination="JrT-Qe-yc4" id="dhL-pH-gVx"/>
+                        <outlet property="addToCartButton" destination="Ezl-Al-LPE" id="aq3-zh-P88"/>
+                        <outlet property="bottomFadeView" destination="wiP-pO-t93" id="FDc-mZ-H9M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJe-pG-rjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
