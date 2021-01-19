@@ -10,7 +10,6 @@ import UIKit
 import IQKeyboardManagerSwift
 
 class CustomizeViewController: UIViewController {
-
     // MARK: - Properties
     
     var product: Product?
@@ -49,7 +48,66 @@ class CustomizeViewController: UIViewController {
     }
     
     private func addCustomization(for template: Template) {
-        
+        for need in template.needs {
+            switch need {
+            case .hisFirstName:
+                addTextFieldToCustomizer(need: .hisFirstName)
+            case .hisLastName:
+                addTextFieldToCustomizer(need: .hisLastName)
+            case .hisLastInitial:
+                addTextFieldToCustomizer(need: .hisLastInitial)
+            case .herFirstName:
+                addTextFieldToCustomizer(need: .herFirstName)
+            case .herLastName:
+                addTextFieldToCustomizer(need: .herLastName)
+            case .fullName:
+                addTextFieldToCustomizer(need: .fullName)
+            case .photo:
+                return
+            case .initials:
+                addTextFieldToCustomizer(need: .initials)
+            case .shortDate:
+                addPickerToCustomizer(need: .shortDate)
+            case .longDate:
+                addPickerToCustomizer(need: .longDate)
+            case .address:
+                addTextFieldToCustomizer(need: .address)
+            case .state:
+                addPickerToCustomizer(need: .state)
+            case .year:
+                addPickerToCustomizer(need: .year)
+            case .monthYear:
+                addPickerToCustomizer(need: .monthYear)
+            }
+        }
+    }
+    
+    private func addPickerToCustomizer(need: Need) {
+        switch need {
+        case .shortDate:
+            return
+        case .longDate:
+            return
+        case .state:
+            return
+        case .year:
+            return
+        case .monthYear:
+            return
+        default:
+            return
+        }
+    }
+    
+    private func addTextFieldToCustomizer(need: Need) {
+        switch need {
+        case .initials:
+            return
+        case .hisLastInitial:
+            return
+        default:
+            return
+        }
     }
     
     // MARK: - Actions
