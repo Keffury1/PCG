@@ -19,6 +19,8 @@ class CustomizeViewController: UIViewController {
     
     @IBOutlet weak var bottomFadeView: UIView!
     @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var firstTemplateImageView: UIImageView!
+    @IBOutlet weak var templatesCollectionView: UICollectionView!
     
     // MARK: - Views
     
@@ -31,6 +33,7 @@ class CustomizeViewController: UIViewController {
     // MARK: - Methods
     
     private func setupSubviews() {
+        templatesCollectionView.dataSource = self
         addToCartButton.layer.cornerRadius = 15
         addToCartButton.addShadow()
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
@@ -50,4 +53,16 @@ class CustomizeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 
+}
+
+extension CustomizeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateCell", for: indexPath) as? TemplateCollectionViewCell else { return UICollectionViewCell() }
+        
+        return cell
+    }
 }
