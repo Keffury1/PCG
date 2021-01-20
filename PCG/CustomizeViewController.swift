@@ -13,6 +13,7 @@ class CustomizeViewController: UIViewController {
     // MARK: - Properties
     
     var product: Product?
+    var template: Template?
     
     // MARK: - Outlets
     
@@ -20,7 +21,10 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
-    @IBOutlet weak var customizerView: UIView!
+    @IBOutlet weak var customizerTableView: UITableView!
+    @IBOutlet weak var customizeTextFieldView: UIView!
+    @IBOutlet weak var customizeTextField: UITextField!
+    @IBOutlet weak var dismissCustomizeTFVButton: UIButton!
     
     // MARK: - Views
     
@@ -35,6 +39,8 @@ class CustomizeViewController: UIViewController {
     private func setupSubviews() {
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
+        customizerTableView.dataSource = self
+        customizerTableView.delegate = self
         addToCartButton.layer.cornerRadius = 15
         addToCartButton.addShadow()
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
@@ -48,9 +54,6 @@ class CustomizeViewController: UIViewController {
     }
     
     private func addCustomization(for template: Template) {
-        
-        customizerView.subviews.forEach({ $0.removeFromSuperview() })
-        
         for need in template.needs {
             switch need {
             case .hisFirstName:
@@ -90,6 +93,9 @@ class CustomizeViewController: UIViewController {
     @IBAction func addToCartButtonTapped(_ sender: Any) {
     }
     
+    @IBAction func dismissCustomizeTFVButtonTapped(_ sender: Any) {
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -120,6 +126,31 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         if let template = product.templates?[indexPath.row] {
             firstTemplateImageView.image = template.image
             addCustomization(for: template)
+            self.template = template
+        }
+    }
+}
+
+extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return template?.needs.count ?? 0
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customizerCell", for: indexPath) as? CustomizerTableViewCell else { return UITableViewCell() }
+        
+        if let need = template?.needs[indexPath.row] {
+            cell.needLabel.text = need.rawValue
+            cell.needImageView.image = UIImage.init(named: "\(need.rawValue)")
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let _ = template?.needs[indexPath.row] {
+            
         }
     }
 }

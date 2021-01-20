@@ -20,7 +20,7 @@ struct Template {
     }
 }
 
-enum Need {
+enum Need: String {
     case hisFirstName
     case hisLastName
     case hisLastInitial
