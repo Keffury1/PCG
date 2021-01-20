@@ -25,6 +25,9 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var customizeTextFieldView: UIView!
     @IBOutlet weak var customizeTextField: UITextField!
     @IBOutlet weak var dismissCustomizeTFVButton: UIButton!
+    @IBOutlet weak var customizeDateView: UIView!
+    @IBOutlet weak var customizeDatePicker: UIDatePicker!
+    @IBOutlet weak var dismissCustomizeDateViewButton: UIButton!
     
     // MARK: - Views
     
@@ -94,6 +97,8 @@ class CustomizeViewController: UIViewController {
     }
     
     @IBAction func dismissCustomizeTFVButtonTapped(_ sender: Any) {
+    }
+    @IBAction func dismissCustomizeDateViewButtonTapped(_ sender: Any) {
     }
     
     // MARK: - Navigation
