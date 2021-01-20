@@ -48,65 +48,40 @@ class CustomizeViewController: UIViewController {
     }
     
     private func addCustomization(for template: Template) {
+        
+        customizerView.subviews.forEach({ $0.removeFromSuperview() })
+        
         for need in template.needs {
             switch need {
             case .hisFirstName:
-                addTextFieldToCustomizer(need: .hisFirstName)
+                return
             case .hisLastName:
-                addTextFieldToCustomizer(need: .hisLastName)
+                return
             case .hisLastInitial:
-                addTextFieldToCustomizer(need: .hisLastInitial)
+                return
             case .herFirstName:
-                addTextFieldToCustomizer(need: .herFirstName)
+                return
             case .herLastName:
-                addTextFieldToCustomizer(need: .herLastName)
+                return
             case .fullName:
-                addTextFieldToCustomizer(need: .fullName)
+                return
             case .photo:
                 return
             case .initials:
-                addTextFieldToCustomizer(need: .initials)
+                return
             case .shortDate:
-                addPickerToCustomizer(need: .shortDate)
+                return
             case .longDate:
-                addPickerToCustomizer(need: .longDate)
+                return
             case .address:
-                addTextFieldToCustomizer(need: .address)
+                return
             case .state:
-                addPickerToCustomizer(need: .state)
+                return
             case .year:
-                addPickerToCustomizer(need: .year)
+                return
             case .monthYear:
-                addPickerToCustomizer(need: .monthYear)
+                return
             }
-        }
-    }
-    
-    private func addPickerToCustomizer(need: Need) {
-        switch need {
-        case .shortDate:
-            return
-        case .longDate:
-            return
-        case .state:
-            return
-        case .year:
-            return
-        case .monthYear:
-            return
-        default:
-            return
-        }
-    }
-    
-    private func addTextFieldToCustomizer(need: Need) {
-        switch need {
-        case .initials:
-            return
-        case .hisLastInitial:
-            return
-        default:
-            return
         }
     }
     
