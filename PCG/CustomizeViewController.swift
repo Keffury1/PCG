@@ -24,10 +24,10 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var customizerTableView: UITableView!
     @IBOutlet weak var customizeTextFieldView: UIView!
     @IBOutlet weak var customizeTextField: UITextField!
-    @IBOutlet weak var dismissCustomizeTFVButton: UIButton!
+    @IBOutlet weak var saveCustomTextButton: UIButton!
     @IBOutlet weak var customizeDateView: UIView!
     @IBOutlet weak var customizeDatePicker: UIDatePicker!
-    @IBOutlet weak var dismissCustomizeDateViewButton: UIButton!
+    @IBOutlet weak var saveCustomDateButton: UIButton!
     
     // MARK: - Views
     
@@ -40,6 +40,7 @@ class CustomizeViewController: UIViewController {
     // MARK: - Methods
     
     private func setupSubviews() {
+        customizeTextField.delegate = self
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
         customizerTableView.dataSource = self
@@ -56,38 +57,23 @@ class CustomizeViewController: UIViewController {
         firstTemplateImageView.image = product.templates?.first?.image
     }
     
-    private func addCustomization(for template: Template) {
-        for need in template.needs {
-            switch need {
-            case .hisFirstName:
-                return
-            case .hisLastName:
-                return
-            case .hisLastInitial:
-                return
-            case .herFirstName:
-                return
-            case .herLastName:
-                return
-            case .fullName:
-                return
-            case .photo:
-                return
-            case .initials:
-                return
-            case .shortDate:
-                return
-            case .longDate:
-                return
-            case .address:
-                return
-            case .state:
-                return
-            case .year:
-                return
-            case .monthYear:
-                return
-            }
+    func switchDatePicker() {
+        if customizeDateView.alpha == 1 {
+            customizeDateView.alpha = 0
+            customizeDateView.isUserInteractionEnabled = false
+        } else {
+            customizeDateView.alpha = 1
+            customizeDateView.isUserInteractionEnabled = true
+        }
+    }
+    
+    func switchTextField() {
+        if customizerTableView.alpha == 1 {
+            customizerTableView.alpha = 0
+            customizerTableView.isUserInteractionEnabled = false
+        } else {
+            customizerTableView.alpha = 1
+            customizerTableView.isUserInteractionEnabled = true
         }
     }
     
@@ -96,9 +82,12 @@ class CustomizeViewController: UIViewController {
     @IBAction func addToCartButtonTapped(_ sender: Any) {
     }
     
-    @IBAction func dismissCustomizeTFVButtonTapped(_ sender: Any) {
+    @IBAction func saveCustomTextButtonTapped(_ sender: Any) {
+        switchTextField()
     }
-    @IBAction func dismissCustomizeDateViewButtonTapped(_ sender: Any) {
+    
+    @IBAction func saveCustomDateButtonTapped(_ sender: Any) {
+        switchDatePicker()
     }
     
     // MARK: - Navigation
@@ -130,8 +119,8 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         guard let product = product else { return }
         if let template = product.templates?[indexPath.row] {
             firstTemplateImageView.image = template.image
-            addCustomization(for: template)
             self.template = template
+            self.customizerTableView.reloadData()
         }
     }
 }
@@ -139,7 +128,6 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
 extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return template?.needs.count ?? 0
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -154,8 +142,41 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let _ = template?.needs[indexPath.row] {
-            
+        if let need = template?.needs[indexPath.row] {
+            switch need {
+            case .hisFirstName:
+                switchTextField()
+            case .hisLastName:
+                switchTextField()
+            case .hisLastInitial:
+                switchTextField()
+            case .herFirstName:
+                switchTextField()
+            case .herLastName:
+                switchTextField()
+            case .fullName:
+                switchTextField()
+            case .photo:
+                return
+            case .initials:
+                switchTextField()
+            case .shortDate:
+                switchDatePicker()
+            case .longDate:
+                switchDatePicker()
+            case .address:
+                switchTextField()
+            case .state:
+                return
+            case .year:
+                switchDatePicker()
+            case .monthYear:
+                switchDatePicker()
+            }
         }
     }
+}
+
+extension CustomizeViewController: UITextFieldDelegate {
+    
 }

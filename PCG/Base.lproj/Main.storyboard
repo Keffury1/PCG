@@ -932,7 +932,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Ezl-Al-LPE" secondAttribute="trailing" constant="20" id="kd9-fg-AFH"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gPg-cR-cQJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gPg-cR-cQJ">
                                 <rect key="frame" x="20" y="410.5" width="394" height="284"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1040,56 +1040,59 @@
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ng-7X-BkP">
                                 <rect key="frame" x="82" y="329" width="250" height="150"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7S-pF-WAJ">
-                                        <rect key="frame" x="25" y="58" width="200" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="Dnn-N4-XND"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tU-jH-wet">
-                                        <rect key="frame" x="215" y="115" width="30" height="30"/>
-                                        <state key="normal" title="✕">
-                                            <color key="titleColor" name="Navy"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="dismissCustomizeTFVButtonTapped:" destination="1ZU-r9-Rhi" eventType="touchUpInside" id="S0e-8H-b82"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tda-jy-zk8">
+                                        <rect key="frame" x="10" y="58" width="230" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7S-pF-WAJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="191" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tU-jH-wet">
+                                                <rect key="frame" x="211" y="0.0" width="19" height="34"/>
+                                                <color key="tintColor" name="Navy"/>
+                                                <state key="normal" image="square.and.arrow.down" catalog="system">
+                                                    <color key="titleColor" name="Navy"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="saveCustomTextButtonTapped:" destination="1ZU-r9-Rhi" eventType="touchUpInside" id="S0e-8H-b82"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="w7S-pF-WAJ" firstAttribute="centerX" secondItem="4Ng-7X-BkP" secondAttribute="centerX" id="49v-lh-Yel"/>
-                                    <constraint firstItem="w7S-pF-WAJ" firstAttribute="centerY" secondItem="4Ng-7X-BkP" secondAttribute="centerY" id="9mr-S7-KM4"/>
-                                    <constraint firstAttribute="trailing" secondItem="5tU-jH-wet" secondAttribute="trailing" constant="5" id="D8V-rM-a2O"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tda-jy-zk8" secondAttribute="trailing" constant="10" id="IKA-2Q-ON9"/>
+                                    <constraint firstItem="Tda-jy-zk8" firstAttribute="leading" secondItem="4Ng-7X-BkP" secondAttribute="leading" constant="10" id="PMt-op-sBZ"/>
+                                    <constraint firstItem="Tda-jy-zk8" firstAttribute="centerY" secondItem="4Ng-7X-BkP" secondAttribute="centerY" id="V0j-B1-UnQ"/>
                                     <constraint firstAttribute="height" constant="150" id="YGn-g3-YsU"/>
                                     <constraint firstAttribute="width" constant="250" id="g5o-IC-eTi"/>
-                                    <constraint firstAttribute="bottom" secondItem="5tU-jH-wet" secondAttribute="bottom" constant="5" id="yRB-Tm-IC2"/>
                                 </constraints>
                             </view>
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bbh-BS-1RP">
-                                <rect key="frame" x="0.0" y="210" width="414" height="388"/>
+                                <rect key="frame" x="0.0" y="206.5" width="414" height="395"/>
                                 <subviews>
                                     <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="D0Z-CD-a5f">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="353"/>
                                         <color key="tintColor" name="Tan"/>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2L-Tr-Jto">
-                                        <rect key="frame" x="379" y="353" width="30" height="30"/>
-                                        <state key="normal" title="✕">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2L-Tr-Jto">
+                                        <rect key="frame" x="375" y="353" width="19" height="22"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="square.and.arrow.down" catalog="system">
                                             <color key="titleColor" name="Navy"/>
                                         </state>
                                         <connections>
-                                            <action selector="dismissCustomizeDateViewButtonTapped:" destination="1ZU-r9-Rhi" eventType="touchUpInside" id="TB5-MZ-KBa"/>
+                                            <action selector="saveCustomDateButtonTapped:" destination="1ZU-r9-Rhi" eventType="touchUpInside" id="TB5-MZ-KBa"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="K2L-Tr-Jto" secondAttribute="bottom" constant="5" id="5bQ-hi-C8Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="K2L-Tr-Jto" secondAttribute="bottom" constant="20" id="5bQ-hi-C8Y"/>
                                     <constraint firstAttribute="trailing" secondItem="D0Z-CD-a5f" secondAttribute="trailing" id="GrH-EB-rtH"/>
-                                    <constraint firstAttribute="trailing" secondItem="K2L-Tr-Jto" secondAttribute="trailing" constant="5" id="Nnz-jA-6C7"/>
+                                    <constraint firstAttribute="trailing" secondItem="K2L-Tr-Jto" secondAttribute="trailing" constant="20" id="Nnz-jA-6C7"/>
                                     <constraint firstItem="D0Z-CD-a5f" firstAttribute="leading" secondItem="Bbh-BS-1RP" secondAttribute="leading" id="ZH2-2w-sWi"/>
                                     <constraint firstItem="D0Z-CD-a5f" firstAttribute="top" secondItem="Bbh-BS-1RP" secondAttribute="top" id="tGW-ZC-gE2"/>
                                     <constraint firstItem="K2L-Tr-Jto" firstAttribute="top" secondItem="D0Z-CD-a5f" secondAttribute="bottom" id="z2I-I2-TLM"/>
@@ -1133,9 +1136,9 @@
                         <outlet property="customizeTextField" destination="w7S-pF-WAJ" id="A3e-jr-K4K"/>
                         <outlet property="customizeTextFieldView" destination="4Ng-7X-BkP" id="hBI-hr-bYx"/>
                         <outlet property="customizerTableView" destination="gPg-cR-cQJ" id="ltX-e2-cMb"/>
-                        <outlet property="dismissCustomizeDateViewButton" destination="K2L-Tr-Jto" id="9sI-6g-z02"/>
-                        <outlet property="dismissCustomizeTFVButton" destination="5tU-jH-wet" id="bXo-Z2-b4N"/>
                         <outlet property="firstTemplateImageView" destination="hl5-pX-fDR" id="P8v-1j-u25"/>
+                        <outlet property="saveCustomDateButton" destination="K2L-Tr-Jto" id="9sI-6g-z02"/>
+                        <outlet property="saveCustomTextButton" destination="5tU-jH-wet" id="bXo-Z2-b4N"/>
                         <outlet property="templatesCollectionView" destination="MYh-V5-e9F" id="Zhd-mb-P6k"/>
                     </connections>
                 </viewController>
@@ -1256,6 +1259,7 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="pencil.and.outline" catalog="system" width="128" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <image name="tag.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Dark Gray">
             <color red="0.28235294117647058" green="0.30196078431372547" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
