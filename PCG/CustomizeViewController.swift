@@ -86,8 +86,6 @@ class CustomizeViewController: UIViewController {
                 self.customizeDateView.alpha = 0
             }
             customizeDateView.isUserInteractionEnabled = false
-            customizeDatePicker.setDate(Date(), animated: false)
-            customizeDatePicker.preferredDatePickerStyle = .inline
         } else {
             UIView.animate(withDuration: 0.3) {
                 self.customizeDateView.alpha = 1
@@ -121,13 +119,13 @@ class CustomizeViewController: UIViewController {
     }
     
     func abandonCustomization() {
-        template?.fulfilled = []
         reset = true
         customizerTableView.setContentOffset(.zero, animated: true)
         customizerTableView.reloadData()
         abandonButton.alpha = 0
         abandonButton.isEnabled = false
         templatesCollectionView.isUserInteractionEnabled = true
+        customizeDatePicker.setDate(Date(), animated: false)
     }
     
     // MARK: - Actions
@@ -137,7 +135,6 @@ class CustomizeViewController: UIViewController {
     
     @IBAction func saveCustomTextButtonTapped(_ sender: Any) {
         if let entry = customizeTextField.text {
-            self.template?.fulfilled.append(entry)
             
             if let indexPath = indexPath {
                 guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
@@ -153,11 +150,12 @@ class CustomizeViewController: UIViewController {
     
     @IBAction func saveCustomDateButtonTapped(_ sender: Any) {
         let date = customizeDatePicker.date
-        self.template?.fulfilled.append(date.description)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
         
         if let indexPath = indexPath {
             guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
-            cell.needLabel.text = date.description
+            cell.needLabel.text = formatter.string(from: date)
             cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
         }
         
