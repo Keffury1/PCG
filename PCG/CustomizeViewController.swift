@@ -153,8 +153,32 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
         
         if let need = template?.needs[indexPath.row] {
             cell.needLabel.text = need.rawValue
-            cell.needImageView.image = UIImage.init(named: "\(need.rawValue)")
-            cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
+            switch need {
+            case .firstName:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .lastName:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .lastInitial:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .fullName:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .photo:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "camera")
+            case .initials:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .shortDate:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .longDate:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .address:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .state:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .year:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            case .monthYear:
+                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+            }
         }
         
         return cell
@@ -164,15 +188,11 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
         self.selectedIndex = indexPath.row
         if let need = template?.needs[indexPath.row] {
             switch need {
-            case .hisFirstName:
+            case .firstName:
                 switchTextField()
-            case .hisLastName:
+            case .lastName:
                 switchTextField()
-            case .hisLastInitial:
-                switchTextField()
-            case .herFirstName:
-                switchTextField()
-            case .herLastName:
+            case .lastInitial:
                 switchTextField()
             case .fullName:
                 switchTextField()

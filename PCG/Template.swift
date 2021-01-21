@@ -23,11 +23,9 @@ struct Template {
 }
 
 enum Need: String {
-    case hisFirstName
-    case hisLastName
-    case hisLastInitial
-    case herFirstName
-    case herLastName
+    case firstName
+    case lastName
+    case lastInitial
     case fullName
     case photo
     case initials
