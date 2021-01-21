@@ -23,6 +23,7 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
+    @IBOutlet weak var abandonButton: UIButton!
     @IBOutlet weak var customizerTableView: UITableView!
     @IBOutlet weak var customizeTextFieldView: UIView!
     @IBOutlet weak var customizeTextField: UITextField!
@@ -43,12 +44,17 @@ class CustomizeViewController: UIViewController {
     
     private func setupSubviews() {
         customizeTextField.delegate = self
+        
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
+        
         customizerTableView.dataSource = self
         customizerTableView.delegate = self
+        
         addToCartButton.layer.cornerRadius = 15
         addToCartButton.addShadow()
+        addToCartButton.isEnabled = false
+        
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
         firstTemplateImageView.layer.cornerRadius = 10
         firstTemplateImageView.clipsToBounds = true
@@ -63,6 +69,10 @@ class CustomizeViewController: UIViewController {
         customizeDateView.layer.borderColor = UIColor.init(named: "Light Gray")?.cgColor
         customizeDateView.layer.borderWidth = 2.0
         customizeDateView.addShadow()
+        
+        abandonButton.layer.cornerRadius = 10.0
+        abandonButton.isEnabled = false
+        abandonButton.alpha = 0
     }
     
     private func updateViews() {
@@ -102,6 +112,26 @@ class CustomizeViewController: UIViewController {
         }
     }
     
+    func dataEntered() {
+        if abandonButton.alpha == 0 {
+            abandonButton.alpha = 1
+            abandonButton.isEnabled = true
+            templatesCollectionView.isUserInteractionEnabled = false
+        } else {
+            return
+        }
+    }
+    
+    func abandonCustomization() {
+        template?.fulfilled = []
+        reset = true
+        customizerTableView.setContentOffset(.zero, animated: true)
+        customizerTableView.reloadData()
+        abandonButton.alpha = 0
+        abandonButton.isEnabled = false
+        templatesCollectionView.isUserInteractionEnabled = true
+    }
+    
     // MARK: - Actions
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
@@ -120,6 +150,7 @@ class CustomizeViewController: UIViewController {
         }
         
         switchTextField()
+        dataEntered()
     }
     
     @IBAction func saveCustomDateButtonTapped(_ sender: Any) {
@@ -133,6 +164,11 @@ class CustomizeViewController: UIViewController {
         }
         
         switchDatePicker()
+        dataEntered()
+    }
+    
+    @IBAction func abandonButtonTapped(_ sender: Any) {
+        abandonCustomization()
     }
     
     // MARK: - Navigation
