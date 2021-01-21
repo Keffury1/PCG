@@ -54,13 +54,13 @@ class CustomizeViewController: UIViewController {
         firstTemplateImageView.clipsToBounds = true
         
         customizeTextFieldView.layer.cornerRadius = 10
-        customizeTextFieldView.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
+        customizeTextFieldView.layer.borderColor = UIColor.init(named: "Light Gray")?.cgColor
         customizeTextFieldView.layer.borderWidth = 2.0
         customizeTextFieldView.addShadow()
         
         
         customizeDateView.layer.cornerRadius = 10
-        customizeDateView.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
+        customizeDateView.layer.borderColor = UIColor.init(named: "Light Gray")?.cgColor
         customizeDateView.layer.borderWidth = 2.0
         customizeDateView.addShadow()
     }
@@ -72,20 +72,32 @@ class CustomizeViewController: UIViewController {
     
     func switchDatePicker() {
         if customizeDateView.alpha == 1 {
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
+                self.customizeDateView.transform = .identity
+            }, completion: nil)
             customizeDateView.alpha = 0
             customizeDateView.isUserInteractionEnabled = false
         } else {
             customizeDateView.alpha = 1
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
+                self.customizeDateView.transform = .identity
+            }, completion: nil)
             customizeDateView.isUserInteractionEnabled = true
         }
     }
     
     func switchTextField() {
         if customizeTextFieldView.alpha == 1 {
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
+                self.customizeTextFieldView.transform = .identity
+            }, completion: nil)
             customizeTextFieldView.alpha = 0
             customizeTextFieldView.isUserInteractionEnabled = false
         } else {
             customizeTextFieldView.alpha = 1
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
+                self.customizeTextFieldView.transform = .identity
+            }, completion: nil)
             customizeTextFieldView.isUserInteractionEnabled = true
         }
     }
@@ -154,6 +166,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
             firstTemplateImageView.image = template.image
             self.template = template
             reset = true
+            customizerTableView.setContentOffset(.zero, animated: true)
             self.customizerTableView.reloadData()
         }
     }
