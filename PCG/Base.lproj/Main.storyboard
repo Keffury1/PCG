@@ -803,9 +803,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AV-z3-ZBt">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="52.5"/>
                                                 <color key="backgroundColor" name="Tan"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="Navy"/>
                                                 <state key="normal" title="  Customize" image="pencil.and.outline" catalog="system">
-                                                    <color key="titleColor" name="White"/>
+                                                    <color key="titleColor" name="Navy"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="customizeButtonTapped:" destination="Kjq-ja-Hdz" eventType="touchUpInside" id="FZy-Nh-erc"/>
@@ -936,7 +936,7 @@
                                 <rect key="frame" x="20" y="410.5" width="394" height="284"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customizerCell" rowHeight="75" id="m8c-La-14V" customClass="CustomizerTableViewCell" customModule="PCG" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customizerCell" rowHeight="75" id="m8c-La-14V" customClass="CustomizerTableViewCell" customModule="PCG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m8c-La-14V" id="dzE-BR-60f">

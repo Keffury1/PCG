@@ -14,7 +14,8 @@ class CustomizeViewController: UIViewController {
     
     var product: Product?
     var template: Template?
-    var selectedIndex: Int?
+    var indexPath: IndexPath?
+    var reset: Bool = false
     
     // MARK: - Outlets
     
@@ -69,12 +70,12 @@ class CustomizeViewController: UIViewController {
     }
     
     func switchTextField() {
-        if customizerTableView.alpha == 1 {
-            customizerTableView.alpha = 0
-            customizerTableView.isUserInteractionEnabled = false
+        if customizeTextFieldView.alpha == 1 {
+            customizeTextFieldView.alpha = 0
+            customizeTextFieldView.isUserInteractionEnabled = false
         } else {
-            customizerTableView.alpha = 1
-            customizerTableView.isUserInteractionEnabled = true
+            customizeTextFieldView.alpha = 1
+            customizeTextFieldView.isUserInteractionEnabled = true
         }
     }
     
@@ -87,10 +88,12 @@ class CustomizeViewController: UIViewController {
         if let entry = customizeTextField.text {
             self.template?.fulfilled.append(entry)
             
-            guard let cell = customizerTableView.visibleCells[selectedIndex!] as? CustomizerTableViewCell else { return }
-            
-            cell.needLabel.text = entry
-            cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+            if let indexPath = indexPath {
+                guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
+                cell.needLabel.text = entry
+                cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+
+            }
         }
         
         switchTextField()
@@ -100,10 +103,11 @@ class CustomizeViewController: UIViewController {
         let date = customizeDatePicker.date
         self.template?.fulfilled.append(date.description)
         
-        guard let cell = customizerTableView.visibleCells[selectedIndex!] as? CustomizerTableViewCell else { return }
-        
-        cell.needLabel.text = date.description
-        cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+        if let indexPath = indexPath {
+            guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
+            cell.needLabel.text = date.description
+            cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+        }
         
         switchDatePicker()
     }
@@ -138,6 +142,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         if let template = product.templates?[indexPath.row] {
             firstTemplateImageView.image = template.image
             self.template = template
+            reset = true
             self.customizerTableView.reloadData()
         }
     }
@@ -152,32 +157,34 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "customizerCell", for: indexPath) as? CustomizerTableViewCell else { return UITableViewCell() }
         
         if let need = template?.needs[indexPath.row] {
-            cell.needLabel.text = need.rawValue
+            if reset {
+                cell.needLabel.text = need.rawValue
+                cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
+            } else {
+                if cell.needLabel.text == "Label" {
+                    cell.needLabel.text = need.rawValue
+                    cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
+                }
+            }
             switch need {
             case .firstName:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+                cell.needImageView.image = UIImage.init(systemName: "signature")
             case .lastName:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+                cell.needImageView.image = UIImage.init(systemName: "signature")
             case .lastInitial:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+                cell.needImageView.image = UIImage.init(systemName: "signature")
             case .fullName:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+                cell.needImageView.image = UIImage.init(systemName: "signature")
             case .photo:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "camera")
+                cell.needImageView.image = UIImage.init(systemName: "camera")
             case .initials:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
-            case .shortDate:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
-            case .longDate:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+                cell.needImageView.image = UIImage.init(systemName: "signature")
+            case .date:
+                cell.needImageView.image = UIImage.init(systemName: "calendar.circle")
             case .address:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+                cell.needImageView.image = UIImage.init(systemName: "house.circle")
             case .state:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
-            case .year:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
-            case .monthYear:
-                cell.needButton.imageView?.image = UIImage.init(systemName: "signature")
+                cell.needImageView.image = UIImage.init(systemName: "mappin.circle")
             }
         }
         
@@ -185,37 +192,47 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedIndex = indexPath.row
+        self.indexPath = indexPath
+        self.reset = false
         if let need = template?.needs[indexPath.row] {
             switch need {
             case .firstName:
+                customizeTextField.placeholder = "First Name"
                 switchTextField()
             case .lastName:
+                customizeTextField.placeholder = "Last Name"
                 switchTextField()
             case .lastInitial:
+                customizeTextField.placeholder = "Last Initial"
                 switchTextField()
             case .fullName:
+                customizeTextField.placeholder = "Full Name"
                 switchTextField()
             case .photo:
                 return
             case .initials:
+                customizeTextField.placeholder = "Initials"
                 switchTextField()
-            case .shortDate:
-                switchDatePicker()
-            case .longDate:
+            case .date:
                 switchDatePicker()
             case .address:
+                customizeTextField.placeholder = "Address"
                 switchTextField()
             case .state:
                 return
-            case .year:
-                switchDatePicker()
-            case .monthYear:
-                switchDatePicker()
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
     }
 }
 
 extension CustomizeViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.text = nil
+        textField.resignFirstResponder()
+        textField.endEditing(true)
+    }
 }
