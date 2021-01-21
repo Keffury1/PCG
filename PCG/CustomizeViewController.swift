@@ -14,6 +14,7 @@ class CustomizeViewController: UIViewController {
     
     var product: Product?
     var template: Template?
+    var selectedIndex: Int?
     
     // MARK: - Outlets
     
@@ -83,10 +84,27 @@ class CustomizeViewController: UIViewController {
     }
     
     @IBAction func saveCustomTextButtonTapped(_ sender: Any) {
+        if let entry = customizeTextField.text {
+            self.template?.fulfilled.append(entry)
+            
+            guard let cell = customizerTableView.visibleCells[selectedIndex!] as? CustomizerTableViewCell else { return }
+            
+            cell.needLabel.text = entry
+            cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+        }
+        
         switchTextField()
     }
     
     @IBAction func saveCustomDateButtonTapped(_ sender: Any) {
+        let date = customizeDatePicker.date
+        self.template?.fulfilled.append(date.description)
+        
+        guard let cell = customizerTableView.visibleCells[selectedIndex!] as? CustomizerTableViewCell else { return }
+        
+        cell.needLabel.text = date.description
+        cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+        
         switchDatePicker()
     }
     
@@ -136,12 +154,14 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
         if let need = template?.needs[indexPath.row] {
             cell.needLabel.text = need.rawValue
             cell.needImageView.image = UIImage.init(named: "\(need.rawValue)")
+            cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
         if let need = template?.needs[indexPath.row] {
             switch need {
             case .hisFirstName:
@@ -178,5 +198,4 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension CustomizeViewController: UITextFieldDelegate {
-    
 }

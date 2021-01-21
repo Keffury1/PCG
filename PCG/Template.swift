@@ -13,10 +13,12 @@ struct Template {
 
     var image: UIImage
     var needs: [Need]
+    var fulfilled: [String]
     
-    internal init(image: UIImage, needs: [Need]) {
+    internal init(image: UIImage, needs: [Need], fulfilled: [String]) {
         self.image = image
         self.needs = needs
+        self.fulfilled = fulfilled
     }
 }
 
