@@ -52,6 +52,17 @@ class CustomizeViewController: UIViewController {
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
         firstTemplateImageView.layer.cornerRadius = 10
         firstTemplateImageView.clipsToBounds = true
+        
+        customizeTextFieldView.layer.cornerRadius = 10
+        customizeTextFieldView.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
+        customizeTextFieldView.layer.borderWidth = 2.0
+        customizeTextFieldView.addShadow()
+        
+        
+        customizeDateView.layer.cornerRadius = 10
+        customizeDateView.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
+        customizeDateView.layer.borderWidth = 2.0
+        customizeDateView.addShadow()
     }
     
     private func updateViews() {
