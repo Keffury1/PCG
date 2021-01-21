@@ -47,6 +47,8 @@ class ProductDetailViewController: UIViewController {
         guard let product = product else { return }
         
         productImageView.image = product.image
+        productImageView.layer.cornerRadius = 20.0
+        productImageView.clipsToBounds = true
         productTitleLabel.text = product.title
         productDescriptionTextView.text = product.description
     }
