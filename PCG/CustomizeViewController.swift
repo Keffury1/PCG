@@ -82,32 +82,30 @@ class CustomizeViewController: UIViewController {
     
     func switchDatePicker() {
         if customizeDateView.alpha == 1 {
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
-                self.customizeDateView.transform = .identity
-            }, completion: nil)
-            customizeDateView.alpha = 0
+            UIView.animate(withDuration: 0.3) {
+                self.customizeDateView.alpha = 0
+            }
             customizeDateView.isUserInteractionEnabled = false
+            customizeDatePicker.setDate(Date(), animated: false)
+            customizeDatePicker.preferredDatePickerStyle = .inline
         } else {
-            customizeDateView.alpha = 1
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
-                self.customizeDateView.transform = .identity
-            }, completion: nil)
+            UIView.animate(withDuration: 0.3) {
+                self.customizeDateView.alpha = 1
+            }
             customizeDateView.isUserInteractionEnabled = true
         }
     }
     
     func switchTextField() {
         if customizeTextFieldView.alpha == 1 {
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
-                self.customizeTextFieldView.transform = .identity
-            }, completion: nil)
-            customizeTextFieldView.alpha = 0
+            UIView.animate(withDuration: 0.3) {
+                self.customizeTextFieldView.alpha = 0
+            }
             customizeTextFieldView.isUserInteractionEnabled = false
         } else {
-            customizeTextFieldView.alpha = 1
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
-                self.customizeTextFieldView.transform = .identity
-            }, completion: nil)
+            UIView.animate(withDuration: 0.3) {
+                self.customizeTextFieldView.alpha = 1
+            }
             customizeTextFieldView.isUserInteractionEnabled = true
         }
     }
