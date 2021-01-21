@@ -16,6 +16,8 @@ class CustomizeViewController: UIViewController {
     var template: Template?
     var indexPath: IndexPath?
     var reset: Bool = false
+    var first: Bool = true
+    var entries: [Int:String] = [:]
     
     // MARK: - Outlets
     
@@ -38,6 +40,7 @@ class CustomizeViewController: UIViewController {
         super.viewDidLoad()
         setupSubviews()
         updateViews()
+        first = false
     }
     
     // MARK: - Methods
@@ -105,6 +108,19 @@ class CustomizeViewController: UIViewController {
                 self.customizeTextFieldView.alpha = 1
             }
             customizeTextFieldView.isUserInteractionEnabled = true
+            if let indexPath = indexPath {
+                let need = template?.needs[indexPath.row]
+                switch need {
+                case .initials:
+                    customizeTextField.autocapitalizationType = .allCharacters
+                case .lastInitial:
+                    customizeTextField.autocapitalizationType = .allCharacters
+                case .state:
+                    customizeTextField.autocapitalizationType = .allCharacters
+                default:
+                    customizeTextField.autocapitalizationType = .words
+                }
+            }
         }
     }
     
@@ -140,7 +156,7 @@ class CustomizeViewController: UIViewController {
                 guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
                 cell.needLabel.text = entry
                 cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
-
+                entries[indexPath.row] = entry
             }
         }
         
@@ -157,6 +173,7 @@ class CustomizeViewController: UIViewController {
             guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
             cell.needLabel.text = formatter.string(from: date)
             cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+            entries[indexPath.row] = formatter.string(from: date)
         }
         
         switchDatePicker()
@@ -217,10 +234,12 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.needLabel.text = need.rawValue
                 cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
             } else {
-                if cell.needLabel.text == "Label" {
+                if entries[indexPath.row] != nil {
+                    cell.needLabel.text = entries[indexPath.row]
+                } else {
                     cell.needLabel.text = need.rawValue
-                    cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
                 }
+                cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
             }
             switch need {
             case .firstName:
