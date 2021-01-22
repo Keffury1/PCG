@@ -57,6 +57,8 @@ class CustomizeViewController: UIViewController {
         addToCartButton.layer.cornerRadius = 15
         addToCartButton.addShadow()
         addToCartButton.isEnabled = false
+        addToCartButton.setTitle("", for: .normal)
+        addToCartButton.tintColor = UIColor.init(named: "Navy")
         
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
         firstTemplateImageView.layer.cornerRadius = 10
@@ -112,6 +114,18 @@ class CustomizeViewController: UIViewController {
         }
     }
     
+    func addToCartOn() {
+        addToCartButton.isEnabled = true
+        addToCartButton.setTitle("  Add to Cart", for: .normal)
+        addToCartButton.tintColor = .white
+    }
+    
+    func addToCartOff() {
+        addToCartButton.isEnabled = false
+        addToCartButton.setTitle("", for: .normal)
+        addToCartButton.tintColor = UIColor.init(named: "Navy")
+    }
+    
     func dataEntered() {
         if abandonButton.alpha == 0 {
             abandonButton.alpha = 1
@@ -135,6 +149,12 @@ class CustomizeViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
+        
+        //Add entries values to template fulfilled
+        //Add to cart
+        //Display added to cart animation (view cart, continue shopping)
+        //Go to cart if tapped, reset if continue shopping (addToCartOff)
+        
     }
     
     @IBAction func saveCustomTextButtonTapped(_ sender: Any) {
@@ -151,6 +171,9 @@ class CustomizeViewController: UIViewController {
         customizeTextField.text = nil
         switchTextField()
         dataEntered()
+        if entries.count == template?.needs.count {
+            addToCartOn()
+        }
     }
     
     @IBAction func saveCustomDateButtonTapped(_ sender: Any) {
@@ -167,6 +190,9 @@ class CustomizeViewController: UIViewController {
         
         switchDatePicker()
         dataEntered()
+        if entries.count == template?.needs.count {
+            addToCartOn()
+        }
     }
     
     @IBAction func abandonButtonTapped(_ sender: Any) {
