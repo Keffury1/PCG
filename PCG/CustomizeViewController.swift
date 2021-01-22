@@ -197,6 +197,7 @@ class CustomizeViewController: UIViewController {
     
     @IBAction func abandonButtonTapped(_ sender: Any) {
         abandonCustomization()
+        addToCartOff()
     }
     
     // MARK: - Navigation
