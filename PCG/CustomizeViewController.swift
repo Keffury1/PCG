@@ -108,19 +108,7 @@ class CustomizeViewController: UIViewController {
                 self.customizeTextFieldView.alpha = 1
             }
             customizeTextFieldView.isUserInteractionEnabled = true
-            if let indexPath = indexPath {
-                let need = template?.needs[indexPath.row]
-                switch need {
-                case .initials:
-                    customizeTextField.autocapitalizationType = .allCharacters
-                case .lastInitial:
-                    customizeTextField.autocapitalizationType = .allCharacters
-                case .state:
-                    customizeTextField.autocapitalizationType = .allCharacters
-                default:
-                    customizeTextField.autocapitalizationType = .words
-                }
-            }
+            customizeTextField.becomeFirstResponder()
         }
     }
     
@@ -160,6 +148,7 @@ class CustomizeViewController: UIViewController {
             }
         }
         
+        customizeTextField.text = nil
         switchTextField()
         dataEntered()
     }
@@ -236,10 +225,11 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
             } else {
                 if entries[indexPath.row] != nil {
                     cell.needLabel.text = entries[indexPath.row]
+                    cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
                 } else {
                     cell.needLabel.text = need.rawValue
+                    cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
                 }
-                cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
             }
             switch need {
             case .firstName:
@@ -294,7 +284,8 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
                 customizeTextField.placeholder = "Address"
                 switchTextField()
             case .state:
-                return
+                customizeTextField.placeholder = "State"
+                switchTextField()
             }
         }
     }
@@ -305,9 +296,20 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension CustomizeViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let entry = textField.text {
+            
+            if let indexPath = indexPath {
+                guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return false }
+                cell.needLabel.text = entry
+                cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+                entries[indexPath.row] = entry
+            }
+        }
+        
+        switchTextField()
+        dataEntered()
         textField.text = nil
-        textField.resignFirstResponder()
-        textField.endEditing(true)
+        return true
     }
 }

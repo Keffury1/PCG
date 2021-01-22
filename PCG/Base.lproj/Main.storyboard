@@ -1092,14 +1092,14 @@
                                 </constraints>
                             </view>
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bbh-BS-1RP">
-                                <rect key="frame" x="5" y="216" width="404" height="376"/>
+                                <rect key="frame" x="5" y="211" width="404" height="386"/>
                                 <subviews>
                                     <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="D0Z-CD-a5f">
-                                        <rect key="frame" x="20" y="0.0" width="364" height="334"/>
+                                        <rect key="frame" x="20" y="10" width="364" height="334"/>
                                         <color key="tintColor" name="Light Gray"/>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2L-Tr-Jto">
-                                        <rect key="frame" x="365" y="334" width="19" height="22"/>
+                                        <rect key="frame" x="365" y="344" width="19" height="22"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="square.and.arrow.down" catalog="system">
                                             <color key="titleColor" name="Navy"/>
@@ -1115,7 +1115,7 @@
                                     <constraint firstAttribute="trailing" secondItem="D0Z-CD-a5f" secondAttribute="trailing" constant="20" id="GrH-EB-rtH"/>
                                     <constraint firstAttribute="trailing" secondItem="K2L-Tr-Jto" secondAttribute="trailing" constant="20" id="Nnz-jA-6C7"/>
                                     <constraint firstItem="D0Z-CD-a5f" firstAttribute="leading" secondItem="Bbh-BS-1RP" secondAttribute="leading" constant="20" id="ZH2-2w-sWi"/>
-                                    <constraint firstItem="D0Z-CD-a5f" firstAttribute="top" secondItem="Bbh-BS-1RP" secondAttribute="top" id="tGW-ZC-gE2"/>
+                                    <constraint firstItem="D0Z-CD-a5f" firstAttribute="top" secondItem="Bbh-BS-1RP" secondAttribute="top" constant="10" id="tGW-ZC-gE2"/>
                                     <constraint firstItem="K2L-Tr-Jto" firstAttribute="top" secondItem="D0Z-CD-a5f" secondAttribute="bottom" id="z2I-I2-TLM"/>
                                 </constraints>
                             </view>
