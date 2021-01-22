@@ -159,6 +159,10 @@ class CustomizeViewController: UIViewController {
     
     @IBAction func saveCustomTextButtonTapped(_ sender: Any) {
         if let entry = customizeTextField.text {
+            if entry == "" {
+                switchTextField()
+                return
+            }
             
             if let indexPath = indexPath {
                 guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
@@ -325,6 +329,10 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
 extension CustomizeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let entry = textField.text {
+            if entry == "" {
+                switchTextField()
+                return true
+            }
             
             if let indexPath = indexPath {
                 guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return false }
