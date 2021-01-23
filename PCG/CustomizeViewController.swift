@@ -28,6 +28,7 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var abandonButton: UIButton!
     @IBOutlet weak var customizerTableView: UITableView!
     @IBOutlet weak var customizeTextFieldView: UIView!
+    @IBOutlet weak var enterLabel: UILabel!
     @IBOutlet weak var customizeTextField: UITextField!
     @IBOutlet weak var saveCustomTextButton: UIButton!
     @IBOutlet weak var customizeDateView: UIView!
@@ -202,6 +203,7 @@ class CustomizeViewController: UIViewController {
     @IBAction func abandonButtonTapped(_ sender: Any) {
         abandonCustomization()
         addToCartOff()
+        entries = [:]
     }
     
     // MARK: - Navigation
@@ -293,29 +295,36 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
         if let need = template?.needs[indexPath.row] {
             switch need {
             case .firstName:
-                customizeTextField.placeholder = "First Name"
+                enterLabel.text = "Enter \(need.rawValue)"
+                customizeTextField.placeholder = need.rawValue
                 switchTextField()
             case .lastName:
-                customizeTextField.placeholder = "Last Name"
+                enterLabel.text = "Enter \(need.rawValue)"
+                customizeTextField.placeholder = need.rawValue
                 switchTextField()
             case .lastInitial:
-                customizeTextField.placeholder = "Last Initial"
+                enterLabel.text = "Enter \(need.rawValue)"
+                customizeTextField.placeholder = need.rawValue
                 switchTextField()
             case .fullName:
-                customizeTextField.placeholder = "Full Name"
+                enterLabel.text = "Enter \(need.rawValue)"
+                customizeTextField.placeholder = need.rawValue
                 switchTextField()
             case .photo:
                 return
             case .initials:
-                customizeTextField.placeholder = "Initials"
+                enterLabel.text = "Enter \(need.rawValue)"
+                customizeTextField.placeholder = need.rawValue
                 switchTextField()
             case .date:
                 switchDatePicker()
             case .address:
-                customizeTextField.placeholder = "Address"
+                enterLabel.text = "Enter \(need.rawValue)"
+                customizeTextField.placeholder = need.rawValue
                 switchTextField()
             case .state:
-                customizeTextField.placeholder = "State"
+                enterLabel.text = "Enter \(need.rawValue)"
+                customizeTextField.placeholder = need.rawValue
                 switchTextField()
             }
         }
@@ -332,13 +341,13 @@ extension CustomizeViewController: UITextFieldDelegate {
             if entry == "" {
                 switchTextField()
                 return true
-            }
-            
-            if let indexPath = indexPath {
-                guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return false }
-                cell.needLabel.text = entry
-                cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
-                entries[indexPath.row] = entry
+            } else {
+                if let indexPath = indexPath {
+                    guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return false }
+                    cell.needLabel.text = entry
+                    cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+                    entries[indexPath.row] = entry
+                }
             }
         }
         
