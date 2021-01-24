@@ -34,6 +34,9 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var customizeDateView: UIView!
     @IBOutlet weak var customizeDatePicker: UIDatePicker!
     @IBOutlet weak var saveCustomDateButton: UIButton!
+    @IBOutlet weak var itemAddedView: UIView!
+    @IBOutlet weak var viewCartButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
     
     // MARK: - Views
     
@@ -79,6 +82,10 @@ class CustomizeViewController: UIViewController {
         abandonButton.layer.cornerRadius = 10.0
         abandonButton.isEnabled = false
         abandonButton.alpha = 0
+        
+        itemAddedView.isUserInteractionEnabled = false
+        itemAddedView.alpha = 0
+        itemAddedView.layer.cornerRadius = 10.0
     }
     
     private func updateViews() {
@@ -112,6 +119,20 @@ class CustomizeViewController: UIViewController {
             }
             customizeTextFieldView.isUserInteractionEnabled = true
             customizeTextField.becomeFirstResponder()
+        }
+    }
+    
+    func switchItemAdded() {
+        if itemAddedView.alpha == 1 {
+            UIView.animate(withDuration: 0.3) {
+                self.itemAddedView.alpha = 0
+            }
+            itemAddedView.isUserInteractionEnabled = false
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.itemAddedView.alpha = 1
+            }
+            itemAddedView.isUserInteractionEnabled = true
         }
     }
     
@@ -151,11 +172,14 @@ class CustomizeViewController: UIViewController {
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
         
-        //Add entries values to template fulfilled
-        //Add to cart
-        //Display added to cart animation (view cart, continue shopping)
-        //Go to cart if tapped, reset if continue shopping (addToCartOff)
+        guard entries.values.count == template?.needs.count, var product = product else { return }
         
+        for entry in entries.values {
+            template?.fulfilled.append(entry.description)
+        }
+        product.chosenTemplate = template
+        Global.sharedInstance.cart.append(product)
+        switchItemAdded()
     }
     
     @IBAction func saveCustomTextButtonTapped(_ sender: Any) {
@@ -204,6 +228,17 @@ class CustomizeViewController: UIViewController {
         abandonCustomization()
         addToCartOff()
         entries = [:]
+    }
+    
+    @IBAction func viewCartButtonTapped(_ sender: Any) {
+        switchItemAdded()
+        self.performSegue(withIdentifier: "viewCartSegue", sender: self)
+    }
+    
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        switchItemAdded()
+        addToCartOff()
+        abandonCustomization()
     }
     
     // MARK: - Navigation
