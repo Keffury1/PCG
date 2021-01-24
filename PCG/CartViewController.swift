@@ -36,6 +36,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         updateTotal()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - TableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
