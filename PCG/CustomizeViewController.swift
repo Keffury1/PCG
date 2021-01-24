@@ -34,6 +34,7 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var customizeDateView: UIView!
     @IBOutlet weak var customizeDatePicker: UIDatePicker!
     @IBOutlet weak var saveCustomDateButton: UIButton!
+    @IBOutlet weak var discardDateButton: UIButton!
     @IBOutlet weak var itemAddedView: UIView!
     @IBOutlet weak var viewCartButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
@@ -77,8 +78,6 @@ class CustomizeViewController: UIViewController {
         
         
         customizeDateView.layer.cornerRadius = 10
-        customizeDateView.layer.borderColor = UIColor.init(named: "Light Gray")?.cgColor
-        customizeDateView.layer.borderWidth = 2.0
         customizeDateView.addShadow()
         
         abandonButton.layer.cornerRadius = 10.0
@@ -243,6 +242,10 @@ class CustomizeViewController: UIViewController {
         switchItemAdded()
         addToCartOff()
         abandonCustomization()
+    }
+    
+    @IBAction func discardDateButtonTapped(_ sender: Any) {
+        switchDatePicker()
     }
     
     // MARK: - Navigation
