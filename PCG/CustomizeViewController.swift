@@ -37,6 +37,8 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var itemAddedView: UIView!
     @IBOutlet weak var viewCartButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var logoView: UIView!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     // MARK: - Views
     
@@ -86,6 +88,8 @@ class CustomizeViewController: UIViewController {
         itemAddedView.isUserInteractionEnabled = false
         itemAddedView.alpha = 0
         itemAddedView.layer.cornerRadius = 10.0
+        
+        logoView.alpha = 1
     }
     
     private func updateViews() {
@@ -268,6 +272,11 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let product = product else { return }
+        
+        if logoView.alpha == 1 {
+            logoView.alpha = 0
+        }
+        
         if let template = product.templates?[indexPath.row] {
             firstTemplateImageView.image = template.image
             self.template = template
@@ -305,13 +314,13 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
             case .lastName:
                 cell.needImageView.image = UIImage.init(systemName: "signature")
             case .lastInitial:
-                cell.needImageView.image = UIImage.init(systemName: "signature")
+                cell.needImageView.image = UIImage.init(systemName: "signpost.right")
             case .fullName:
                 cell.needImageView.image = UIImage.init(systemName: "signature")
             case .photo:
                 cell.needImageView.image = UIImage.init(systemName: "camera")
             case .initials:
-                cell.needImageView.image = UIImage.init(systemName: "signature")
+                cell.needImageView.image = UIImage.init(systemName: "signpost.right")
             case .date:
                 cell.needImageView.image = UIImage.init(systemName: "calendar.circle")
             case .address:
