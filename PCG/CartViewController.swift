@@ -52,9 +52,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.keyLabel.text = "\(key)."
         key += 1
         let product = Global.sharedInstance.cart[indexPath.row]
+        cell.countLabel.text = ""
         cell.valueLabel.text = product.title
-        cell.countLabel.text = "x\(product.count)"
-        cell.priceLabel.text = "$\(product.price)"
+        cell.priceLabel.text = "\(product.price)"
         
         return cell
     }
@@ -99,7 +99,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             itemsLabel.text = " \(items) items"
         }
-        totalLabel.text = "$\(doubleString)"
+        totalLabel.text = "\(doubleString)"
     }
     
     // MARK: - Actions
