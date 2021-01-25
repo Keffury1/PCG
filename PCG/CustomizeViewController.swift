@@ -40,6 +40,10 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var logoView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var customizeTextFieldViewCAP: UIView!
+    @IBOutlet weak var enterLabelCAP: UILabel!
+    @IBOutlet weak var customizeTextFieldCAP: UITextField!
+    @IBOutlet weak var saveCustomTextCAPButton: UIButton!
     
     // MARK: - Views
     
@@ -54,6 +58,7 @@ class CustomizeViewController: UIViewController {
     
     private func setupSubviews() {
         customizeTextField.delegate = self
+        customizeTextFieldCAP.delegate = self
         
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
@@ -75,6 +80,11 @@ class CustomizeViewController: UIViewController {
         customizeTextFieldView.layer.borderColor = UIColor.init(named: "Light Gray")?.cgColor
         customizeTextFieldView.layer.borderWidth = 2.0
         customizeTextFieldView.addShadow()
+        
+        customizeTextFieldViewCAP.layer.cornerRadius = 10
+        customizeTextFieldViewCAP.layer.borderColor = UIColor.init(named: "Light Gray")?.cgColor
+        customizeTextFieldViewCAP.layer.borderWidth = 2.0
+        customizeTextFieldViewCAP.addShadow()
         
         
         customizeDateView.layer.cornerRadius = 10
@@ -130,6 +140,21 @@ class CustomizeViewController: UIViewController {
             }
             customizeTextFieldView.isUserInteractionEnabled = true
             customizeTextField.becomeFirstResponder()
+        }
+    }
+    
+    func switchTextFieldCAP() {
+        if customizeTextFieldViewCAP.alpha == 1 {
+            UIView.animate(withDuration: 0.3) {
+                self.customizeTextFieldViewCAP.alpha = 0
+            }
+            customizeTextFieldViewCAP.isUserInteractionEnabled = false
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.customizeTextFieldViewCAP.alpha = 1
+            }
+            customizeTextFieldViewCAP.isUserInteractionEnabled = true
+            customizeTextFieldCAP.becomeFirstResponder()
         }
     }
     
@@ -214,6 +239,29 @@ class CustomizeViewController: UIViewController {
         
         customizeTextField.text = nil
         switchTextField()
+        dataEntered()
+        if entries.count == template?.needs.count {
+            addToCartOn()
+        }
+    }
+    
+    @IBAction func saveCustomTextCAPButtonTapped(_ sender: Any) {
+        if let entry = customizeTextFieldCAP.text {
+            if entry == "" {
+                switchTextFieldCAP()
+                return
+            }
+            
+            if let indexPath = indexPath {
+                guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
+                cell.needLabel.text = entry
+                cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+                entries[indexPath.row] = entry
+            }
+        }
+        
+        customizeTextFieldCAP.text = nil
+        switchTextFieldCAP()
         dataEntered()
         if entries.count == template?.needs.count {
             addToCartOn()
@@ -363,9 +411,9 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
                 customizeTextField.placeholder = need.rawValue
                 switchTextField()
             case .lastInitial:
-                enterLabel.text = "Enter \(need.rawValue)"
+                enterLabelCAP.text = "Enter \(need.rawValue)"
                 customizeTextField.placeholder = need.rawValue
-                switchTextField()
+                switchTextFieldCAP()
             case .fullName:
                 enterLabel.text = "Enter \(need.rawValue)"
                 customizeTextField.placeholder = need.rawValue
@@ -373,9 +421,9 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
             case .photo:
                 return
             case .initials:
-                enterLabel.text = "Enter \(need.rawValue)"
+                enterLabelCAP.text = "Enter \(need.rawValue)"
                 customizeTextField.placeholder = need.rawValue
-                switchTextField()
+                switchTextFieldCAP()
             case .date:
                 switchDatePicker()
             case .address:
@@ -383,9 +431,9 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
                 customizeTextField.placeholder = need.rawValue
                 switchTextField()
             case .state:
-                enterLabel.text = "Enter \(need.rawValue)"
+                enterLabelCAP.text = "Enter \(need.rawValue) initials"
                 customizeTextField.placeholder = need.rawValue
-                switchTextField()
+                switchTextFieldCAP()
             }
         }
     }
@@ -397,23 +445,44 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension CustomizeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let entry = textField.text {
-            if entry == "" {
-                switchTextField()
-                return true
-            } else {
-                if let indexPath = indexPath {
-                    guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return false }
-                    cell.needLabel.text = entry
-                    cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
-                    entries[indexPath.row] = entry
+        if textField == customizeTextField {
+            if let entry = textField.text {
+                if entry == "" {
+                    switchTextField()
+                    return true
+                } else {
+                    if let indexPath = indexPath {
+                        guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return false }
+                        cell.needLabel.text = entry
+                        cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+                        entries[indexPath.row] = entry
+                    }
                 }
             }
+            
+            switchTextField()
+            dataEntered()
+            textField.text = nil
+            return true
+        } else {
+            if let entry = textField.text {
+                if entry == "" {
+                    switchTextFieldCAP()
+                    return true
+                } else {
+                    if let indexPath = indexPath {
+                        guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return false }
+                        cell.needLabel.text = entry
+                        cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
+                        entries[indexPath.row] = entry
+                    }
+                }
+            }
+            
+            switchTextFieldCAP()
+            dataEntered()
+            textField.text = nil
+            return true
         }
-        
-        switchTextField()
-        dataEntered()
-        textField.text = nil
-        return true
     }
 }

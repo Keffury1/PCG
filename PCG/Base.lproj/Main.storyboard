@@ -1107,6 +1107,51 @@
                                     <constraint firstItem="fRr-nm-n8a" firstAttribute="leading" secondItem="bbE-dz-vgv" secondAttribute="leading" id="zSK-QH-LfY"/>
                                 </constraints>
                             </view>
+                            <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqJ-on-4GB">
+                                <rect key="frame" x="5" y="299" width="404" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter First Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O5-pc-h0y">
+                                        <rect key="frame" x="20" y="35" width="364" height="26.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" name="White"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gvq-JV-8Ef">
+                                        <rect key="frame" x="20" y="81.5" width="364" height="35"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0io-x3-EWo">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="Dark Gray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="0HW-rK-8yI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMO-C5-x40">
+                                                <rect key="frame" x="345" y="0.0" width="19" height="35"/>
+                                                <color key="tintColor" name="Tan"/>
+                                                <state key="normal" image="square.and.arrow.down" catalog="system">
+                                                    <color key="titleColor" name="Tan"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="saveCustomTextCAPButtonTapped:" destination="1ZU-r9-Rhi" eventType="touchUpInside" id="lto-Cr-igX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="Navy"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gvq-JV-8Ef" secondAttribute="trailing" constant="20" id="4cD-K6-1xE"/>
+                                    <constraint firstItem="3O5-pc-h0y" firstAttribute="top" secondItem="zqJ-on-4GB" secondAttribute="top" constant="35" id="TPf-cc-bRy"/>
+                                    <constraint firstItem="0io-x3-EWo" firstAttribute="top" secondItem="3O5-pc-h0y" secondAttribute="bottom" constant="20" id="tSw-lf-Dzp"/>
+                                    <constraint firstItem="gvq-JV-8Ef" firstAttribute="leading" secondItem="zqJ-on-4GB" secondAttribute="leading" constant="20" id="tis-Xb-xcB"/>
+                                    <constraint firstItem="3O5-pc-h0y" firstAttribute="leading" secondItem="gvq-JV-8Ef" secondAttribute="leading" id="uCx-N5-ZrP"/>
+                                    <constraint firstItem="3O5-pc-h0y" firstAttribute="trailing" secondItem="gvq-JV-8Ef" secondAttribute="trailing" id="vDQ-Eo-0l5"/>
+                                </constraints>
+                            </view>
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ng-7X-BkP">
                                 <rect key="frame" x="5" y="299" width="404" height="150"/>
                                 <subviews>
@@ -1227,9 +1272,11 @@
                             <constraint firstItem="MYh-V5-e9F" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" constant="10" id="EAe-33-Swf"/>
                             <constraint firstItem="4Ng-7X-BkP" firstAttribute="top" secondItem="MYh-V5-e9F" secondAttribute="top" id="Er1-U8-Sw4"/>
                             <constraint firstItem="bbE-dz-vgv" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" constant="10" id="GMY-Ft-faE"/>
+                            <constraint firstItem="zqJ-on-4GB" firstAttribute="trailing" secondItem="4Ng-7X-BkP" secondAttribute="trailing" id="H3x-91-fgu"/>
                             <constraint firstItem="wiP-pO-t93" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" id="Hqh-B9-qJK"/>
                             <constraint firstItem="Mro-cf-886" firstAttribute="top" secondItem="gPg-cR-cQJ" secondAttribute="top" id="IK2-cu-skj"/>
                             <constraint firstItem="wiP-pO-t93" firstAttribute="bottom" secondItem="kyu-vG-xkN" secondAttribute="bottom" id="IVX-Se-Afy"/>
+                            <constraint firstItem="zqJ-on-4GB" firstAttribute="leading" secondItem="4Ng-7X-BkP" secondAttribute="leading" id="K6r-6L-SnQ"/>
                             <constraint firstItem="Ezl-Al-LPE" firstAttribute="top" secondItem="gPg-cR-cQJ" secondAttribute="bottom" constant="10" id="MOK-G3-sDH"/>
                             <constraint firstItem="Mro-cf-886" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" id="N7o-Ku-VRL"/>
                             <constraint firstAttribute="bottom" secondItem="Mro-cf-886" secondAttribute="bottom" id="NdU-7o-DLk"/>
@@ -1239,6 +1286,8 @@
                             <constraint firstItem="Mro-cf-886" firstAttribute="trailing" secondItem="gPg-cR-cQJ" secondAttribute="trailing" id="Us3-Uk-FcA"/>
                             <constraint firstItem="MYh-V5-e9F" firstAttribute="top" secondItem="hl5-pX-fDR" secondAttribute="bottom" constant="10" id="Xpk-5Y-TVy"/>
                             <constraint firstItem="iAK-Be-Len" firstAttribute="trailing" secondItem="bbE-dz-vgv" secondAttribute="trailing" constant="10" id="YUj-CI-eED"/>
+                            <constraint firstItem="zqJ-on-4GB" firstAttribute="bottom" secondItem="4Ng-7X-BkP" secondAttribute="bottom" id="b1p-tC-4pr"/>
+                            <constraint firstItem="zqJ-on-4GB" firstAttribute="top" secondItem="4Ng-7X-BkP" secondAttribute="top" id="cCD-BZ-HAF"/>
                             <constraint firstItem="iAK-Be-Len" firstAttribute="trailing" secondItem="4Ng-7X-BkP" secondAttribute="trailing" constant="5" id="fkP-Os-wQH"/>
                             <constraint firstItem="iAK-Be-Len" firstAttribute="trailing" secondItem="wiP-pO-t93" secondAttribute="trailing" id="gz7-Lf-jkX"/>
                             <constraint firstAttribute="trailing" secondItem="Bbh-BS-1RP" secondAttribute="trailing" constant="5" id="hSO-dk-6Tb"/>
@@ -1262,16 +1311,20 @@
                         <outlet property="customizeDatePicker" destination="D0Z-CD-a5f" id="ueg-Lu-gfj"/>
                         <outlet property="customizeDateView" destination="Bbh-BS-1RP" id="bEL-yP-SaR"/>
                         <outlet property="customizeTextField" destination="w7S-pF-WAJ" id="A3e-jr-K4K"/>
+                        <outlet property="customizeTextFieldCAP" destination="0io-x3-EWo" id="uq8-n8-mgQ"/>
                         <outlet property="customizeTextFieldView" destination="4Ng-7X-BkP" id="hBI-hr-bYx"/>
+                        <outlet property="customizeTextFieldViewCAP" destination="zqJ-on-4GB" id="cK9-x0-0zm"/>
                         <outlet property="customizerTableView" destination="gPg-cR-cQJ" id="ltX-e2-cMb"/>
                         <outlet property="discardDateButton" destination="gOM-ib-xg7" id="XIB-UT-6Xx"/>
                         <outlet property="enterLabel" destination="uaP-G5-Hbw" id="HXD-bq-RAC"/>
+                        <outlet property="enterLabelCAP" destination="3O5-pc-h0y" id="Vvj-pA-7Ac"/>
                         <outlet property="firstTemplateImageView" destination="hl5-pX-fDR" id="P8v-1j-u25"/>
                         <outlet property="itemAddedView" destination="bbE-dz-vgv" id="lkP-X1-naA"/>
                         <outlet property="logoImageView" destination="Ea3-dA-ad7" id="9WO-la-lAn"/>
                         <outlet property="logoView" destination="Mro-cf-886" id="lrl-SW-9cn"/>
                         <outlet property="saveCustomDateButton" destination="K2L-Tr-Jto" id="9sI-6g-z02"/>
                         <outlet property="saveCustomTextButton" destination="5tU-jH-wet" id="bXo-Z2-b4N"/>
+                        <outlet property="saveCustomTextCAPButton" destination="hMO-C5-x40" id="2NI-yd-9rb"/>
                         <outlet property="templatesCollectionView" destination="MYh-V5-e9F" id="Zhd-mb-P6k"/>
                         <outlet property="viewCartButton" destination="QE9-nv-dHh" id="jVv-W8-51j"/>
                         <segue destination="F1Y-PN-1Zr" kind="show" identifier="viewCartSegue" id="cYX-x8-UKn"/>
