@@ -13,19 +13,4 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layoutIfNeeded()
-        setupSubviews()
-    }
-    
-    private func setupSubviews() {
-        productImageView.layer.shadowColor = UIColor.black.cgColor
-        productImageView.layer.shadowOffset = CGSize(width: 2.0, height: 6.0)
-        productImageView.layer.shadowRadius = 5
-        productImageView.layer.shadowOpacity = 0.25
-        productImageView.layer.cornerRadius = 20.0
-        productImageView.clipsToBounds = true
-    }
 }

@@ -74,6 +74,8 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.priceLabel.text = ""
         }
         cell.productImageView.image = product.image
+        cell.productImageView.layer.cornerRadius = 10.0
+        cell.productImageView.clipsToBounds = true
         
         return cell
     }
