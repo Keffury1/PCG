@@ -242,6 +242,7 @@ class CustomizeViewController: UIViewController {
         switchItemAdded()
         addToCartOff()
         abandonCustomization()
+        entries = [:]
     }
     
     @IBAction func discardDateButtonTapped(_ sender: Any) {
