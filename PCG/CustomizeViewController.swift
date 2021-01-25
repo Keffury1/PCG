@@ -220,6 +220,7 @@ class CustomizeViewController: UIViewController {
         product.chosenTemplate = template
         Global.sharedInstance.cart.append(product)
         switchItemAdded()
+        
     }
     
     @IBAction func saveCustomTextButtonTapped(_ sender: Any) {

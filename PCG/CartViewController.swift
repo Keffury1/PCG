@@ -13,6 +13,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Properties
     
     var key: Int = 1
+    var addBadgeDelegate: AddBadgeToButtonDelegate?
     
     // MARK: - Outlets
     
@@ -34,6 +35,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         updateTotal()
         cartTableView.reloadData()
         updateTotal()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        addBadgeDelegate?.addBadgeToButton()
     }
     
     // MARK: - TableView Methods

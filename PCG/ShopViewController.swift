@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AddBadgeToButtonDelegate {
+    func addBadgeToButton()
+}
+
 class ShopViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Properties
@@ -27,7 +31,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var lowToHighButton: UIButton!
     @IBOutlet weak var highToLowButton: UIButton!
-    @IBOutlet weak var cartButton: UIButton!
+    @IBOutlet weak var cartButton: SSBadgeButton!
     @IBOutlet weak var priceButton: UIButton!
     @IBOutlet weak var menuLabel: UIButton!
     @IBOutlet weak var menuButton: UIButton!
@@ -53,6 +57,11 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         productsCollectionView.dataSource = self
         self.products = productController.products
         productsCollectionView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        addBadgeToCartButton()
     }
     
     // MARK: - Collection View Methods
@@ -135,6 +144,15 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         dogTreatJarButton.isEnabled = false
         lanternButton.isEnabled = false
         showAllButton.isEnabled = false
+    }
+    
+    func addBadgeToCartButton() {
+        cartButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 30)
+        if Global.sharedInstance.cart.count > 0 {
+            cartButton.badge = "\(Global.sharedInstance.cart.count)"
+        } else {
+            cartButton.badge = nil
+        }
     }
     
     func sortByCategory(category: Categories) {
@@ -285,7 +303,18 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "productDetailSegue" {
             if let detailVC = segue.destination as? ProductDetailViewController {
                 detailVC.product = self.product
+                detailVC.addBadgeDelegate = self
+            }
+        } else if segue.identifier == "cartSegue" {
+            if let detialVC = segue.destination as? CartViewController {
+                detialVC.addBadgeDelegate = self
             }
         }
+    }
+}
+
+extension ShopViewController: AddBadgeToButtonDelegate {
+    func addBadgeToButton() {
+        self.addBadgeToCartButton()
     }
 }

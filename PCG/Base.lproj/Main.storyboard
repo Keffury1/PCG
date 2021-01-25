@@ -273,7 +273,7 @@
                                                             <action selector="lowToHighTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="l2V-yl-Wni"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ov-ia-kVc">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ov-ia-kVc" customClass="SSBadgeButton" customModule="PCG" customModuleProvider="target">
                                                         <rect key="frame" x="111.5" y="0.0" width="91" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="Navy"/>
@@ -1431,7 +1431,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cYX-x8-UKn"/>
+        <segue reference="LX4-xO-KzN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="612" height="792"/>

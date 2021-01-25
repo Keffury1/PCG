@@ -13,6 +13,7 @@ class ProductDetailViewController: UIViewController {
     // MARK: - Properties
     
     var product: Product?
+    var addBadgeDelegate: AddBadgeToButtonDelegate?
     
     // MARK: - Outlets
     
@@ -29,6 +30,11 @@ class ProductDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         setupSubviews()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        addBadgeDelegate?.addBadgeToButton()
     }
     
     // MARK: - Methods
