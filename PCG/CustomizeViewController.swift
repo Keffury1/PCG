@@ -44,7 +44,6 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var enterLabelCAP: UILabel!
     @IBOutlet weak var customizeTextFieldCAP: UITextField!
     @IBOutlet weak var saveCustomTextCAPButton: UIButton!
-    @IBOutlet weak var coverView: UIView!
     
     // MARK: - Views
     
@@ -108,9 +107,6 @@ class CustomizeViewController: UIViewController {
         continueButton.layer.cornerRadius = 10.0
         continueButton.layer.borderColor = UIColor.white.cgColor
         continueButton.layer.borderWidth = 1.0
-        
-        coverView.alpha = 0
-        coverView.addCoverBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
     }
     
     private func updateViews() {
@@ -169,7 +165,7 @@ class CustomizeViewController: UIViewController {
             }
             itemAddedView.isUserInteractionEnabled = false
             customizerTableView.isUserInteractionEnabled = true
-            addToCartOn()
+            abandonCustomization()
         } else {
             UIView.animate(withDuration: 0.3) {
                 self.itemAddedView.alpha = 1
@@ -298,7 +294,6 @@ class CustomizeViewController: UIViewController {
     }
     
     @IBAction func viewCartButtonTapped(_ sender: Any) {
-        coverView.alpha = 1
         switchItemAdded()
         self.performSegue(withIdentifier: "viewCartSegue", sender: self)
     }

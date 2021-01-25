@@ -618,7 +618,7 @@
             <objects>
                 <viewController id="F1Y-PN-1Zr" customClass="CartViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pps-cb-bfB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a31-3J-m4d">
@@ -782,7 +782,7 @@
             <objects>
                 <viewController id="Kjq-ja-Hdz" customClass="ProductDetailViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voA-ki-vad">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdC-Aa-8Ko">
@@ -893,7 +893,7 @@
             <objects>
                 <viewController id="1ZU-r9-Rhi" customClass="CustomizeViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kyu-vG-xkN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiP-pO-t93">
@@ -1258,23 +1258,6 @@
                                     <constraint firstItem="Ea3-dA-ad7" firstAttribute="top" secondItem="Mro-cf-886" secondAttribute="top" constant="20" id="qRN-zt-RmP"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OE-Gy-WTt">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="HZZ-iS-Xm5">
-                                        <rect key="frame" x="57" y="254" width="300" height="300"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="hue-1x-3vs"/>
-                                            <constraint firstAttribute="height" constant="300" id="w0E-KJ-AOH"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="HZZ-iS-Xm5" firstAttribute="centerY" secondItem="2OE-Gy-WTt" secondAttribute="centerY" id="F2V-J1-I8W"/>
-                                    <constraint firstItem="HZZ-iS-Xm5" firstAttribute="centerX" secondItem="2OE-Gy-WTt" secondAttribute="centerX" id="m91-kD-3dV"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iAK-Be-Len"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1283,9 +1266,7 @@
                             <constraint firstItem="hl5-pX-fDR" firstAttribute="centerX" secondItem="iAK-Be-Len" secondAttribute="centerX" id="4Im-Cb-Mj4"/>
                             <constraint firstItem="gPg-cR-cQJ" firstAttribute="leading" secondItem="Ezl-Al-LPE" secondAttribute="leading" id="4Jm-wh-9P7"/>
                             <constraint firstItem="bbE-dz-vgv" firstAttribute="top" secondItem="MYh-V5-e9F" secondAttribute="top" id="8x2-71-Eq7"/>
-                            <constraint firstItem="2OE-Gy-WTt" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" id="9Jb-dx-t66"/>
                             <constraint firstItem="iAK-Be-Len" firstAttribute="trailing" secondItem="gPg-cR-cQJ" secondAttribute="trailing" id="9KC-6I-l54"/>
-                            <constraint firstItem="iAK-Be-Len" firstAttribute="bottom" secondItem="2OE-Gy-WTt" secondAttribute="bottom" id="9mx-CQ-mia"/>
                             <constraint firstItem="4Ng-7X-BkP" firstAttribute="centerX" secondItem="iAK-Be-Len" secondAttribute="centerX" id="AQk-vN-UiP"/>
                             <constraint firstItem="Bbh-BS-1RP" firstAttribute="centerY" secondItem="iAK-Be-Len" secondAttribute="centerY" id="D9C-X8-6y6"/>
                             <constraint firstItem="MYh-V5-e9F" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" constant="10" id="EAe-33-Swf"/>
@@ -1300,7 +1281,6 @@
                             <constraint firstItem="Mro-cf-886" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" id="N7o-Ku-VRL"/>
                             <constraint firstAttribute="bottom" secondItem="Mro-cf-886" secondAttribute="bottom" id="NdU-7o-DLk"/>
                             <constraint firstItem="4Ng-7X-BkP" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" constant="5" id="S21-SM-zfn"/>
-                            <constraint firstItem="2OE-Gy-WTt" firstAttribute="top" secondItem="iAK-Be-Len" secondAttribute="top" id="S2W-F9-0fU"/>
                             <constraint firstItem="hl5-pX-fDR" firstAttribute="top" secondItem="iAK-Be-Len" secondAttribute="top" constant="10" id="S5x-fJ-1XG"/>
                             <constraint firstItem="03t-Tw-rNk" firstAttribute="leading" secondItem="iAK-Be-Len" secondAttribute="leading" constant="20" id="TXW-4X-kp3"/>
                             <constraint firstItem="Mro-cf-886" firstAttribute="trailing" secondItem="gPg-cR-cQJ" secondAttribute="trailing" id="Us3-Uk-FcA"/>
@@ -1315,7 +1295,6 @@
                             <constraint firstItem="gPg-cR-cQJ" firstAttribute="top" secondItem="03t-Tw-rNk" secondAttribute="bottom" constant="6.5" id="iog-q8-Hyi"/>
                             <constraint firstItem="Ea3-dA-ad7" firstAttribute="centerY" secondItem="gPg-cR-cQJ" secondAttribute="centerY" id="j8V-6O-5nu"/>
                             <constraint firstItem="iAK-Be-Len" firstAttribute="centerY" secondItem="MYh-V5-e9F" secondAttribute="bottom" id="kBz-N6-uZz"/>
-                            <constraint firstItem="iAK-Be-Len" firstAttribute="trailing" secondItem="2OE-Gy-WTt" secondAttribute="trailing" id="kDb-Mm-drY"/>
                             <constraint firstItem="wiP-pO-t93" firstAttribute="top" secondItem="iAK-Be-Len" secondAttribute="centerY" constant="150" id="lLm-iE-9Xt"/>
                             <constraint firstItem="iAK-Be-Len" firstAttribute="trailing" secondItem="03t-Tw-rNk" secondAttribute="trailing" constant="20" id="vBt-De-eas"/>
                             <constraint firstItem="iAK-Be-Len" firstAttribute="trailing" secondItem="MYh-V5-e9F" secondAttribute="trailing" constant="10" id="vbv-WV-goI"/>
@@ -1329,7 +1308,6 @@
                         <outlet property="addToCartButton" destination="Ezl-Al-LPE" id="aq3-zh-P88"/>
                         <outlet property="bottomFadeView" destination="wiP-pO-t93" id="FDc-mZ-H9M"/>
                         <outlet property="continueButton" destination="BhF-AT-B7W" id="f0K-eN-Edq"/>
-                        <outlet property="coverView" destination="2OE-Gy-WTt" id="jIF-Gs-aKs"/>
                         <outlet property="customizeDatePicker" destination="D0Z-CD-a5f" id="ueg-Lu-gfj"/>
                         <outlet property="customizeDateView" destination="Bbh-BS-1RP" id="bEL-yP-SaR"/>
                         <outlet property="customizeTextField" destination="w7S-pF-WAJ" id="A3e-jr-K4K"/>
