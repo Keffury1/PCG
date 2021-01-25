@@ -89,6 +89,14 @@ class CustomizeViewController: UIViewController {
         itemAddedView.layer.cornerRadius = 10.0
         
         logoView.alpha = 1
+        
+        viewCartButton.layer.cornerRadius = 10.0
+        viewCartButton.layer.borderColor = UIColor.white.cgColor
+        viewCartButton.layer.borderWidth = 1.0
+        
+        continueButton.layer.cornerRadius = 10.0
+        continueButton.layer.borderColor = UIColor.white.cgColor
+        continueButton.layer.borderWidth = 1.0
     }
     
     private func updateViews() {
@@ -131,11 +139,15 @@ class CustomizeViewController: UIViewController {
                 self.itemAddedView.alpha = 0
             }
             itemAddedView.isUserInteractionEnabled = false
+            customizerTableView.isUserInteractionEnabled = true
+            addToCartOn()
         } else {
             UIView.animate(withDuration: 0.3) {
                 self.itemAddedView.alpha = 1
             }
             itemAddedView.isUserInteractionEnabled = true
+            customizerTableView.isUserInteractionEnabled = false
+            addToCartOff()
         }
     }
     
