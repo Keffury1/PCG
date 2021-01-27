@@ -23,6 +23,14 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var customizeButton: UIButton!
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var bottomFadeView: UIView!
+    @IBOutlet weak var whitePriceView: UIView!
+    @IBOutlet weak var whitePriceLabel: UILabel!
+    @IBOutlet weak var tanPriceView: UIView!
+    @IBOutlet weak var tanPriceLabel: UILabel!
+    @IBOutlet weak var navyPriceView: UIView!
+    @IBOutlet weak var navyPriceLabel: UILabel!
+    @IBOutlet weak var goldPriceView: UIView!
+    @IBOutlet weak var goldPriceLabel: UILabel!
     
     // MARK: - Views
     
@@ -47,6 +55,13 @@ class ProductDetailViewController: UIViewController {
         addToCartButton.addShadow()
         
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
+        
+        whitePriceView.layer.cornerRadius = whitePriceView.frame.width / 2
+        whitePriceView.layer.borderWidth = 0.5
+        whitePriceView.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
+        tanPriceView.layer.cornerRadius = tanPriceView.frame.width / 2
+        navyPriceView.layer.cornerRadius = navyPriceView.frame.width / 2
+        goldPriceView.layer.cornerRadius = goldPriceView.frame.width / 2
     }
     
     private func updateViews() {
