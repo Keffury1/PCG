@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CartViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
 
     // MARK: - Properties
     
@@ -19,8 +19,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var bottomFadeView: UIView!
     @IBOutlet weak var itemsLabel: UILabel!
+    @IBOutlet weak var cartCollectionView: UICollectionView!
     @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var applePayButton: UIButton!
     @IBOutlet weak var enterCardDetailsButton: UIButton!
     
@@ -29,11 +29,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cartTableView.delegate = self
-        cartTableView.dataSource = self
+        cartCollectionView.delegate = self
+        cartCollectionView.dataSource = self
         setupSubviews()
         updateTotal()
-        cartTableView.reloadData()
+        cartCollectionView.reloadData()
         updateTotal()
     }
     
@@ -42,39 +42,24 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         addBadgeDelegate?.addBadgeToButton()
     }
     
-    // MARK: - TableView Methods
+    // MARK: - CollectionView Methods
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Global.sharedInstance.cart.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? CartItemTableViewCell else { return UITableViewCell() }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as? CartItemCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.keyLabel.text = "\(key)."
-        key += 1
         let product = Global.sharedInstance.cart[indexPath.row]
-        cell.countLabel.text = ""
-        cell.valueLabel.text = product.title
-        cell.priceLabel.text = "\(product.price)"
+        cell.productImageView.image = product.chosenTemplate?.image ?? product.image
+        cell.productTitleLabel.text = product.title
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(50)
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
-            Global.sharedInstance.cart.remove(at: indexPath.row)
-            tableView.reloadData()
-            updateTotal()
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 170, height: 185)
     }
     
     // MARK: - Methods
@@ -102,6 +87,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             itemsLabel.text = " \(items) items"
         }
         totalLabel.text = "\(doubleString)"
+    }
+    
+    private func deleteItem() {
+        Global.sharedInstance.cart.remove(at: Int())
+        cartCollectionView.reloadData()
+        updateTotal()
     }
     
     // MARK: - Actions
