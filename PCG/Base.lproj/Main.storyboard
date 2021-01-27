@@ -46,6 +46,22 @@
             </objects>
             <point key="canvasLocation" x="-2739" y="907"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Oun-8Z-B7d">
+            <objects>
+                <viewController id="tQN-Xj-2V4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Px-5O-UtW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="73B-MB-jYg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pCH-cu-Ms6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rXS-fq-Qxo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1739" y="550"/>
+        </scene>
         <!--Home-->
         <scene sceneID="V2d-KA-I1F">
             <objects>
@@ -618,7 +634,7 @@
             <objects>
                 <viewController id="F1Y-PN-1Zr" customClass="CartViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pps-cb-bfB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a31-3J-m4d">
@@ -776,14 +792,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKx-eG-ZT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1739" y="1983"/>
+            <point key="canvasLocation" x="-1739" y="1996"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="xd6-sI-cdb">
             <objects>
                 <viewController id="Kjq-ja-Hdz" customClass="ProductDetailViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voA-ki-vad">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdC-Aa-8Ko">
@@ -896,7 +912,7 @@
             <objects>
                 <viewController id="1ZU-r9-Rhi" customClass="CustomizeViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kyu-vG-xkN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiP-pO-t93">
@@ -1398,8 +1414,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KS6-gU-zbM">
                                 <rect key="frame" x="20" y="663" width="374" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1d-0I-HQ3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELQ-tF-ZO6">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <color key="backgroundColor" name="Navy"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8j4-Sx-ko7"/>
+                                        </constraints>
+                                        <color key="tintColor" name="White"/>
+                                        <state key="normal" title=" Sign Up" image="highlighter" catalog="system">
+                                            <color key="titleColor" name="White"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="learnMoreButtonTapped:" destination="7fS-oC-6Ax" eventType="touchUpInside" id="vgb-FF-iEV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1d-0I-HQ3">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
                                         <color key="backgroundColor" name="White"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KC5-b7-4eu"/>
@@ -1412,41 +1442,27 @@
                                             <action selector="loginButtonTapped:" destination="7fS-oC-6Ax" eventType="touchUpInside" id="RGx-6m-Mqt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELQ-tF-ZO6">
-                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
-                                        <color key="backgroundColor" name="Navy"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="8j4-Sx-ko7"/>
-                                        </constraints>
-                                        <color key="tintColor" name="White"/>
-                                        <state key="normal" title="  Learn More" image="info.circle" catalog="system">
-                                            <color key="titleColor" name="White"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="learnMoreButtonTapped:" destination="7fS-oC-6Ax" eventType="touchUpInside" id="vgb-FF-iEV"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Z9d-ZO-zWs">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VUa-FD-3rr">
                                 <rect key="frame" x="0.0" y="605.5" width="414" height="27.5"/>
-                                <color key="pageIndicatorTintColor" name="Tan"/>
-                                <color key="currentPageIndicatorTintColor" name="Navy"/>
+                                <color key="pageIndicatorTintColor" name="Navy"/>
+                                <color key="currentPageIndicatorTintColor" name="Tan"/>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9y0-DO-fWZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9hh-cf-zXE" firstAttribute="leading" secondItem="KS6-gU-zbM" secondAttribute="leading" id="Bdc-fN-NRg"/>
-                            <constraint firstItem="Z9d-ZO-zWs" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" id="C8I-X4-qaP"/>
                             <constraint firstItem="5AF-ZR-nDY" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" id="FpD-VX-VCr"/>
+                            <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="VUa-FD-3rr" secondAttribute="trailing" id="Hay-4r-1Rq"/>
                             <constraint firstItem="5AF-ZR-nDY" firstAttribute="top" secondItem="FHI-Yj-bh2" secondAttribute="top" id="Mur-hT-jEM"/>
                             <constraint firstItem="KS6-gU-zbM" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" constant="20" id="TE6-sZ-1pp"/>
-                            <constraint firstItem="KS6-gU-zbM" firstAttribute="top" secondItem="Z9d-ZO-zWs" secondAttribute="bottom" constant="30" id="Umq-gv-VHK"/>
+                            <constraint firstItem="KS6-gU-zbM" firstAttribute="top" secondItem="VUa-FD-3rr" secondAttribute="bottom" constant="30" id="WGM-Kc-WOU"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="bottom" secondItem="KS6-gU-zbM" secondAttribute="bottom" constant="30" id="cIz-Ce-6Xq"/>
+                            <constraint firstItem="VUa-FD-3rr" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" id="flp-6N-hTh"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="KS6-gU-zbM" secondAttribute="trailing" constant="20" id="gos-nn-f8X"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="5AF-ZR-nDY" secondAttribute="trailing" id="hHO-dU-1LY"/>
-                            <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="Z9d-ZO-zWs" secondAttribute="trailing" id="sxG-Uz-ADY"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="9hh-cf-zXE" secondAttribute="trailing" id="uIR-x5-iVe"/>
                             <constraint firstItem="9hh-cf-zXE" firstAttribute="top" secondItem="9y0-DO-fWZ" secondAttribute="top" constant="10" id="wlz-yx-rDL"/>
                         </constraints>
@@ -1456,11 +1472,29 @@
                         <outlet property="headerView" destination="5AF-ZR-nDY" id="bcJ-pW-BDu"/>
                         <outlet property="learnMoreButton" destination="ELQ-tF-ZO6" id="Da0-mA-AXB"/>
                         <outlet property="loginButton" destination="z1d-0I-HQ3" id="nfL-1w-sZ2"/>
+                        <segue destination="7ZK-sj-Qn5" kind="show" identifier="signUpSegue" id="daS-Fz-Vmm"/>
+                        <segue destination="tQN-Xj-2V4" kind="show" identifier="loginSegue" id="k7D-V4-afc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwl-zD-bCc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2739" y="218"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="elc-pX-DHV">
+            <objects>
+                <viewController id="7ZK-sj-Qn5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u6U-T6-yPe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1Bz-Hb-9fZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zdx-oT-AgY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYM-PZ-b78" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1739" y="-153"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3PG-MM-nfx">
@@ -1504,8 +1538,8 @@
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="faceid" catalog="system" width="128" height="115"/>
+        <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="pencil.and.outline" catalog="system" width="128" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
