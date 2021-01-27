@@ -56,12 +56,20 @@ class ProductDetailViewController: UIViewController {
         
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
         
+        
+        guard let product = product else { return }
+        
         whitePriceView.layer.cornerRadius = whitePriceView.frame.width / 2
+        whitePriceView.addShadow()
         whitePriceView.layer.borderWidth = 0.5
         whitePriceView.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
+        whitePriceLabel.text = "$\(String(format: "%.0f", product.price))"
         tanPriceView.layer.cornerRadius = tanPriceView.frame.width / 2
+        tanPriceLabel.text = "$\(String(format: "%.0f", product.fiveUnitPrice))"
         navyPriceView.layer.cornerRadius = navyPriceView.frame.width / 2
+        navyPriceLabel.text = "$\(String(format: "%.0f", product.tenUnitPrice))"
         goldPriceView.layer.cornerRadius = goldPriceView.frame.width / 2
+        goldPriceLabel.text = "$\(String(format: "%.0f", product.twentyUnitPrice))"
     }
     
     private func updateViews() {

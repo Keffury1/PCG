@@ -14,6 +14,9 @@ struct Product {
     var title: String
     var description: String
     var price: Double
+    var fiveUnitPrice: Double
+    var tenUnitPrice: Double
+    var twentyUnitPrice: Double
     var image: UIImage
     var blankImage: UIImage?
     var category: Categories
@@ -21,10 +24,13 @@ struct Product {
     var templates: [Template]?
     var chosenTemplate: Template?
     
-    internal init(title: String, description: String, price: Double, image: UIImage, blankImage: UIImage? = nil, category: Categories, count: Int, templates: [Template]? = nil, chosenTemplate: Template? = nil) {
+    internal init(title: String, description: String, price: Double, fiveUnitPrice: Double, tenUnitPrice: Double, twentyUnitPrice: Double, image: UIImage, blankImage: UIImage? = nil, category: Categories, count: Int, templates: [Template]? = nil, chosenTemplate: Template? = nil) {
         self.title = title
         self.description = description
         self.price = price
+        self.fiveUnitPrice = fiveUnitPrice
+        self.tenUnitPrice = tenUnitPrice
+        self.twentyUnitPrice = twentyUnitPrice
         self.image = image
         self.blankImage = blankImage
         self.category = category

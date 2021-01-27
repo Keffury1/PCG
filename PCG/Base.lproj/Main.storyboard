@@ -372,6 +372,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="1wo-x8-ZcK" secondAttribute="trailing" id="3na-AI-4l7"/>
+                                                <constraint firstItem="a1l-aW-myO" firstAttribute="top" secondItem="1wo-x8-ZcK" secondAttribute="bottom" constant="10" id="8hl-Qj-e7p"/>
                                                 <constraint firstAttribute="bottom" secondItem="1wo-x8-ZcK" secondAttribute="bottom" constant="50" id="G56-Jm-l5m"/>
                                                 <constraint firstItem="1wo-x8-ZcK" firstAttribute="leading" secondItem="7sS-SE-hP5" secondAttribute="leading" id="MNk-zL-sfn"/>
                                                 <constraint firstAttribute="bottom" secondItem="a1l-aW-myO" secondAttribute="bottom" id="ez9-2j-C2u"/>
@@ -1487,13 +1488,13 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELQ-tF-ZO6">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                        <color key="backgroundColor" name="Navy"/>
+                                        <color key="backgroundColor" name="Tan"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8j4-Sx-ko7"/>
                                         </constraints>
-                                        <color key="tintColor" name="White"/>
+                                        <color key="tintColor" name="Navy"/>
                                         <state key="normal" title=" Sign Up" image="highlighter" catalog="system">
-                                            <color key="titleColor" name="White"/>
+                                            <color key="titleColor" name="Navy"/>
                                         </state>
                                         <connections>
                                             <action selector="signUpButtonTapped:" destination="7fS-oC-6Ax" eventType="touchUpInside" id="vgb-FF-iEV"/>
@@ -1501,13 +1502,13 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1d-0I-HQ3">
                                         <rect key="frame" x="0.0" y="70" width="374" height="50"/>
-                                        <color key="backgroundColor" name="White"/>
+                                        <color key="backgroundColor" name="Navy"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KC5-b7-4eu"/>
                                         </constraints>
-                                        <color key="tintColor" name="Navy"/>
+                                        <color key="tintColor" name="White"/>
                                         <state key="normal" title="  Login" image="faceid" catalog="system">
-                                            <color key="titleColor" name="Navy"/>
+                                            <color key="titleColor" name="White"/>
                                         </state>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="7fS-oC-6Ax" eventType="touchUpInside" id="RGx-6m-Mqt"/>
@@ -1522,7 +1523,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="110.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaM-Sb-SFK">
-                                                <rect key="frame" x="80" y="15.5" width="36" height="23.5"/>
+                                                <rect key="frame" x="80" y="15.5" width="294" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1548,6 +1549,7 @@
                                         <constraints>
                                             <constraint firstItem="RaM-Sb-SFK" firstAttribute="top" secondItem="wHJ-fo-DhI" secondAttribute="top" constant="-15" id="2Iv-M0-Ywh"/>
                                             <constraint firstAttribute="trailing" secondItem="uzR-IC-84s" secondAttribute="trailing" constant="8" id="Ury-Mr-ixF"/>
+                                            <constraint firstAttribute="trailing" secondItem="RaM-Sb-SFK" secondAttribute="trailing" id="Vof-lR-gV1"/>
                                             <constraint firstItem="RaM-Sb-SFK" firstAttribute="leading" secondItem="uzR-IC-84s" secondAttribute="leading" id="dMx-4h-NRb"/>
                                             <constraint firstAttribute="bottom" secondItem="uzR-IC-84s" secondAttribute="bottom" constant="5" id="ekw-od-nUu"/>
                                             <constraint firstItem="uzR-IC-84s" firstAttribute="leading" secondItem="wHJ-fo-DhI" secondAttribute="trailing" constant="20" id="kK2-O5-b9F"/>
@@ -1563,7 +1565,7 @@
                                         <rect key="frame" x="0.0" y="118.5" width="374" height="111"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCG-XZ-ldB">
-                                                <rect key="frame" x="80" y="15.5" width="27" height="23.5"/>
+                                                <rect key="frame" x="80" y="15.5" width="294" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1587,6 +1589,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="UCG-XZ-ldB" secondAttribute="trailing" id="8PO-iA-jZ5"/>
                                             <constraint firstItem="UCG-XZ-ldB" firstAttribute="top" secondItem="Hbw-WN-DXk" secondAttribute="top" constant="-15" id="AdX-Fd-j3q"/>
                                             <constraint firstAttribute="bottom" secondItem="keZ-pb-lcJ" secondAttribute="bottom" constant="5" id="KdM-PX-qY6"/>
                                             <constraint firstItem="UCG-XZ-ldB" firstAttribute="leading" secondItem="keZ-pb-lcJ" secondAttribute="leading" id="QPF-eo-pXq"/>
@@ -1604,7 +1607,7 @@
                                         <rect key="frame" x="0.0" y="237.5" width="374" height="110.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbM-or-6dp">
-                                                <rect key="frame" x="80" y="15" width="40.5" height="23.5"/>
+                                                <rect key="frame" x="80" y="15" width="294" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1633,6 +1636,7 @@
                                             <constraint firstItem="hIm-md-Qml" firstAttribute="centerY" secondItem="hax-hI-VpZ" secondAttribute="centerY" id="8f2-LH-qeo"/>
                                             <constraint firstAttribute="bottom" secondItem="JvR-Bj-MNX" secondAttribute="bottom" constant="5" id="C7C-NA-1DZ"/>
                                             <constraint firstItem="pbM-or-6dp" firstAttribute="top" secondItem="hIm-md-Qml" secondAttribute="top" constant="-15" id="O8z-g4-wZf"/>
+                                            <constraint firstAttribute="trailing" secondItem="pbM-or-6dp" secondAttribute="trailing" id="S0V-HM-leQ"/>
                                             <constraint firstItem="JvR-Bj-MNX" firstAttribute="top" secondItem="pbM-or-6dp" secondAttribute="bottom" constant="-5" id="UQ0-iI-PmH"/>
                                             <constraint firstItem="JvR-Bj-MNX" firstAttribute="leading" secondItem="hIm-md-Qml" secondAttribute="trailing" constant="20" id="tPm-lH-UHg"/>
                                             <constraint firstItem="pbM-or-6dp" firstAttribute="leading" secondItem="JvR-Bj-MNX" secondAttribute="leading" id="w8W-bd-60U"/>
@@ -1645,7 +1649,7 @@
                                         <rect key="frame" x="0.0" y="356" width="374" height="110.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-eb-UBI">
-                                                <rect key="frame" x="80" y="15" width="39" height="23.5"/>
+                                                <rect key="frame" x="80" y="15" width="294" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1669,6 +1673,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="qhn-eb-UBI" secondAttribute="trailing" id="1pl-4K-0WQ"/>
                                             <constraint firstItem="qhn-eb-UBI" firstAttribute="top" secondItem="A3s-yt-Qeb" secondAttribute="top" constant="-15" id="9WU-0f-suB"/>
                                             <constraint firstAttribute="trailing" secondItem="Gh8-Qw-ZpF" secondAttribute="trailing" constant="8" id="Gca-SI-atf"/>
                                             <constraint firstItem="qhn-eb-UBI" firstAttribute="leading" secondItem="Gh8-Qw-ZpF" secondAttribute="leading" id="LO2-wc-qWd"/>
