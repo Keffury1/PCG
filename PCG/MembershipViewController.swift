@@ -16,7 +16,7 @@ class MembershipViewController: UIViewController {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var learnMoreButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     // MARK: - Views
     
@@ -33,22 +33,33 @@ class MembershipViewController: UIViewController {
         loginButton.layer.borderWidth = 1.0
         loginButton.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
         loginButton.addShadow()
-        learnMoreButton.layer.cornerRadius = 10.0
-        learnMoreButton.addShadow()
+        signUpButton.layer.cornerRadius = 10.0
+        signUpButton.addShadow()
     }
     
     // MARK: - Actions
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        
+        // FaceID
+        self.performSegue(withIdentifier: "loginSegue", sender: self)
     }
     
-    @IBAction func learnMoreButtonTapped(_ sender: Any) {
-        
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "signUpSegue", sender: self)
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loginSegue" {
+            if let _ = segue.destination as? LoginViewController {
+                
+            }
+        } else if segue.identifier == "signUpSegue" {
+            if let _ = segue.destination as? SignUpViewController {
+                
+            }
+        }
+        
     }
 }

@@ -1425,7 +1425,7 @@
                                             <color key="titleColor" name="White"/>
                                         </state>
                                         <connections>
-                                            <action selector="learnMoreButtonTapped:" destination="7fS-oC-6Ax" eventType="touchUpInside" id="vgb-FF-iEV"/>
+                                            <action selector="signUpButtonTapped:" destination="7fS-oC-6Ax" eventType="touchUpInside" id="vgb-FF-iEV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1d-0I-HQ3">
@@ -1470,8 +1470,8 @@
                     <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" id="SGn-5V-JQi"/>
                     <connections>
                         <outlet property="headerView" destination="5AF-ZR-nDY" id="bcJ-pW-BDu"/>
-                        <outlet property="learnMoreButton" destination="ELQ-tF-ZO6" id="Da0-mA-AXB"/>
                         <outlet property="loginButton" destination="z1d-0I-HQ3" id="nfL-1w-sZ2"/>
+                        <outlet property="signUpButton" destination="ELQ-tF-ZO6" id="Da0-mA-AXB"/>
                         <segue destination="7ZK-sj-Qn5" kind="show" identifier="signUpSegue" id="daS-Fz-Vmm"/>
                         <segue destination="tQN-Xj-2V4" kind="show" identifier="loginSegue" id="k7D-V4-afc"/>
                     </connections>
