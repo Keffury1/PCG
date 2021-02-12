@@ -22,14 +22,9 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var productDescriptionTextView: UITextView!
     @IBOutlet weak var customizeButton: UIButton!
     @IBOutlet weak var bottomFadeView: UIView!
-    @IBOutlet weak var whitePriceView: UIView!
-    @IBOutlet weak var whitePriceLabel: UILabel!
-    @IBOutlet weak var tanPriceView: UIView!
-    @IBOutlet weak var tanPriceLabel: UILabel!
-    @IBOutlet weak var navyPriceView: UIView!
-    @IBOutlet weak var navyPriceLabel: UILabel!
-    @IBOutlet weak var goldPriceView: UIView!
-    @IBOutlet weak var goldPriceLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var priceWithSubLabel: UILabel!
+    
     
     // MARK: - Views
     
@@ -55,17 +50,10 @@ class ProductDetailViewController: UIViewController {
         
         guard let product = product else { return }
         
-        whitePriceView.layer.cornerRadius = whitePriceView.frame.width / 2
-        whitePriceView.addShadow()
-        whitePriceView.layer.borderWidth = 0.5
-        whitePriceView.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
-        whitePriceLabel.text = "$\(String(format: "%.0f", product.price))"
-        tanPriceView.layer.cornerRadius = tanPriceView.frame.width / 2
-        tanPriceLabel.text = "$\(String(format: "%.0f", product.fiveUnitPrice))"
-        navyPriceView.layer.cornerRadius = navyPriceView.frame.width / 2
-        navyPriceLabel.text = "$\(String(format: "%.0f", product.tenUnitPrice))"
-        goldPriceView.layer.cornerRadius = goldPriceView.frame.width / 2
-        goldPriceLabel.text = "$\(String(format: "%.0f", product.twentyUnitPrice))"
+        
+        priceLabel.text = "$\(String(format: "%.0f", product.price))"
+        
+        priceWithSubLabel.text = "$\(String(format: "%.0f", product.twentyUnitPrice))"
     }
     
     private func updateViews() {
@@ -82,13 +70,6 @@ class ProductDetailViewController: UIViewController {
     
     @IBAction func customizeButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "customizeSegue", sender: self)
-    }
-    
-    @IBAction func addToCartButtonTapped(_ sender: Any) {
-        guard var product = product else { return }
-        product.count += 1
-        Global.sharedInstance.cart.append(product)
-        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Navigation
