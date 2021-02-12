@@ -13,7 +13,6 @@ class ProductDetailViewController: UIViewController {
     // MARK: - Properties
     
     var product: Product?
-    var addBadgeDelegate: AddBadgeToButtonDelegate?
     
     // MARK: - Outlets
     
@@ -24,6 +23,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var bottomFadeView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var priceWithSubLabel: UILabel!
+    @IBOutlet weak var productDetailCollectionView: UICollectionView!
     
     
     // MARK: - Views
@@ -32,11 +32,6 @@ class ProductDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         setupSubviews()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        addBadgeDelegate?.addBadgeToButton()
     }
     
     // MARK: - Methods
