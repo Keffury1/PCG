@@ -14,6 +14,7 @@
 		376412EE2519588800730747 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376412EC2519588800730747 /* BebasNeue-Regular.ttf */; };
 		376B9A2E25BF40FC003E1EFC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376B9A2D25BF40FC003E1EFC /* UIButton+Extension.swift */; };
 		376B9A3125C09965003E1EFC /* MembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376B9A3025C09965003E1EFC /* MembershipViewController.swift */; };
+		377D772D25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D772C25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift */; };
 		3790FDE0251AC25C00154C21 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3790FDDF251AC25C00154C21 /* Global.swift */; };
 		379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */; };
 		379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */; };
@@ -48,6 +49,7 @@
 		376412EC2519588800730747 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		376B9A2D25BF40FC003E1EFC /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		376B9A3025C09965003E1EFC /* MembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewController.swift; sourceTree = "<group>"; };
+		377D772C25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		3790FDDF251AC25C00154C21 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
 		37B0071825C11C64005E0972 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				37B1988A25B7807C00E59CF6 /* TemplateCollectionViewCell.swift */,
 				37B1989225B7C4A400E59CF6 /* CustomizerTableViewCell.swift */,
 				37B0071825C11C64005E0972 /* CartItemCollectionViewCell.swift */,
+				377D772C25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */,
 				37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */,
 				37B8063525C1179C0082F1B6 /* LoginViewController.swift in Sources */,
+				377D772D25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift in Sources */,
 				370AE5FA24F96988000B3683 /* UIView+Extension.swift in Sources */,
 				37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */,
 				37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */,

@@ -32,6 +32,7 @@ class ProductDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         setupSubviews()
+        productDetailCollectionView.dataSource = self
     }
     
     // MARK: - Methods
@@ -77,4 +78,20 @@ class ProductDetailViewController: UIViewController {
         }
     }
 
+}
+
+extension ProductDetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return product?.images?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productDetailCell", for: indexPath) as? ProductDetailCollectionViewCell else { return UICollectionViewCell() }
+        
+        let image = product?.images?[indexPath.row]
+        cell.productDetailImageView.image = image
+        return cell
+    }
+    
+    
 }
