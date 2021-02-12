@@ -293,12 +293,9 @@
                                                         <rect key="frame" x="111.5" y="0.0" width="91" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="Navy"/>
-                                                        <state key="normal" image="cart" catalog="system">
+                                                        <state key="normal">
                                                             <color key="titleColor" name="Navy"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="cartTapped:" destination="3Qf-EQ-pdr" eventType="touchUpInside" id="s9b-6C-5ve"/>
-                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqe-nZ-HsK">
                                                         <rect key="frame" x="222.5" y="0.0" width="91.5" height="34"/>
@@ -621,159 +618,11 @@
                         <outletCollection property="productButtonCollection" destination="o7a-bj-sAy" collectionClass="NSMutableArray" id="fTr-lp-0WU"/>
                         <outletCollection property="productButtonCollection" destination="tHH-93-ndz" collectionClass="NSMutableArray" id="5Ww-J6-nxM"/>
                         <segue destination="Kjq-ja-Hdz" kind="show" identifier="productDetailSegue" id="xL5-BQ-qFb"/>
-                        <segue destination="F1Y-PN-1Zr" kind="show" identifier="cartSegue" id="LX4-xO-KzN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wv3-dj-UFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2739.130434782609" y="2287.5"/>
-        </scene>
-        <!--Cart View Controller-->
-        <scene sceneID="oNA-gS-iyI">
-            <objects>
-                <viewController id="F1Y-PN-1Zr" customClass="CartViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pps-cb-bfB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a31-3J-m4d">
-                                <rect key="frame" x="0.0" y="529" width="414" height="313"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="c97-h9-YLd">
-                                        <rect key="frame" x="87" y="213" width="240" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="DCt-Gg-xxw"/>
-                                            <constraint firstAttribute="width" constant="240" id="NTq-Tn-3l6"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="c97-h9-YLd" secondAttribute="bottom" id="8cQ-ao-ELA"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70W-no-dYA">
-                                <rect key="frame" x="10" y="40" width="404" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" name="Light Gray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1Z-FL-464">
-                                <rect key="frame" x="20" y="40" width="394" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="8Hn-Fi-qhq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="55"/>
-                                <color key="textColor" name="Navy"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dDh-jW-1cr">
-                                <rect key="frame" x="20" y="622" width="374" height="120"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OG-P2-VmG">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Pay">
-                                            <color key="titleColor" name="White"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cm6-Hw-eDJ">
-                                        <rect key="frame" x="0.0" y="65" width="374" height="55"/>
-                                        <color key="backgroundColor" name="Tan"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="  Enter info" image="creditcard" catalog="system">
-                                            <color key="titleColor" name="White"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Drq-0g-P9n"/>
-                                </constraints>
-                            </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="efe-hO-sH2">
-                                <rect key="frame" x="20" y="160" width="374" height="442"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OFe-li-FHj">
-                                    <size key="itemSize" width="169" height="184"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cartCell" id="Mqf-Pp-aBP" customClass="CartItemCollectionViewCell" customModule="PCG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="185"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y3p-PJ-STG">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="185"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3WG-4z-UUJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="145"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5h-4K-1g9">
-                                                    <rect key="frame" x="0.0" y="156.5" width="170" height="23.5"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="3WG-4z-UUJ" secondAttribute="bottom" constant="40" id="01S-si-ghf"/>
-                                                <constraint firstItem="3WG-4z-UUJ" firstAttribute="top" secondItem="Y3p-PJ-STG" secondAttribute="top" id="6Zs-b4-chD"/>
-                                                <constraint firstAttribute="bottom" secondItem="F5h-4K-1g9" secondAttribute="bottom" constant="5" id="QIr-dh-SNo"/>
-                                                <constraint firstItem="3WG-4z-UUJ" firstAttribute="leading" secondItem="Y3p-PJ-STG" secondAttribute="leading" id="cEY-Yw-22f"/>
-                                                <constraint firstItem="F5h-4K-1g9" firstAttribute="leading" secondItem="Y3p-PJ-STG" secondAttribute="leading" id="oRh-Ec-7I3"/>
-                                                <constraint firstAttribute="trailing" secondItem="F5h-4K-1g9" secondAttribute="trailing" id="wIM-EF-Kis"/>
-                                                <constraint firstAttribute="trailing" secondItem="3WG-4z-UUJ" secondAttribute="trailing" id="zR7-27-2A0"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="170" height="185"/>
-                                        <connections>
-                                            <outlet property="productImageView" destination="3WG-4z-UUJ" id="VQ0-xU-WAd"/>
-                                            <outlet property="productTitleLabel" destination="F5h-4K-1g9" id="Cia-K1-ok4"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="bBx-uY-Rch"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="c97-h9-YLd" firstAttribute="centerX" secondItem="bBx-uY-Rch" secondAttribute="centerX" id="1SE-RS-oty"/>
-                            <constraint firstItem="b1Z-FL-464" firstAttribute="top" secondItem="bBx-uY-Rch" secondAttribute="top" constant="40" id="4k9-xf-UEU"/>
-                            <constraint firstItem="a31-3J-m4d" firstAttribute="top" secondItem="bBx-uY-Rch" secondAttribute="centerY" constant="125" id="EaZ-op-l5i"/>
-                            <constraint firstItem="70W-no-dYA" firstAttribute="top" secondItem="b1Z-FL-464" secondAttribute="top" id="EcN-SX-rdj"/>
-                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="a31-3J-m4d" secondAttribute="trailing" id="GXp-1e-aj3"/>
-                            <constraint firstItem="efe-hO-sH2" firstAttribute="top" secondItem="b1Z-FL-464" secondAttribute="bottom" constant="20" id="Mge-hG-vJ8"/>
-                            <constraint firstItem="a31-3J-m4d" firstAttribute="bottom" secondItem="pps-cb-bfB" secondAttribute="bottom" id="NQy-LV-fFP"/>
-                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="efe-hO-sH2" secondAttribute="trailing" constant="20" id="PwB-8U-cn5"/>
-                            <constraint firstItem="70W-no-dYA" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" constant="10" id="Rf6-Sr-AuZ"/>
-                            <constraint firstItem="c97-h9-YLd" firstAttribute="top" secondItem="dDh-jW-1cr" secondAttribute="bottom" id="Sc0-zB-yIK"/>
-                            <constraint firstItem="b1Z-FL-464" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" constant="20" id="YS7-XE-C2x"/>
-                            <constraint firstItem="efe-hO-sH2" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" constant="20" id="aSc-St-6x0"/>
-                            <constraint firstItem="a31-3J-m4d" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" id="amb-gW-4AK"/>
-                            <constraint firstItem="dDh-jW-1cr" firstAttribute="leading" secondItem="bBx-uY-Rch" secondAttribute="leading" constant="20" id="hUl-06-FNl"/>
-                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="b1Z-FL-464" secondAttribute="trailing" id="tWr-Mw-4uG"/>
-                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="70W-no-dYA" secondAttribute="trailing" id="uDn-HX-8ma"/>
-                            <constraint firstItem="dDh-jW-1cr" firstAttribute="top" secondItem="efe-hO-sH2" secondAttribute="bottom" constant="20" id="uZl-l6-5Uz"/>
-                            <constraint firstItem="bBx-uY-Rch" firstAttribute="trailing" secondItem="dDh-jW-1cr" secondAttribute="trailing" constant="20" id="xgC-D6-0zc"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ex0-If-Ckl"/>
-                    <connections>
-                        <outlet property="applePayButton" destination="4OG-P2-VmG" id="5ax-8j-ykg"/>
-                        <outlet property="bottomFadeView" destination="a31-3J-m4d" id="te1-qR-OSL"/>
-                        <outlet property="cartCollectionView" destination="efe-hO-sH2" id="D1l-Qv-FbI"/>
-                        <outlet property="enterCardDetailsButton" destination="Cm6-Hw-eDJ" id="qow-C0-Q7f"/>
-                        <outlet property="itemsLabel" destination="70W-no-dYA" id="u5G-2Q-NtN"/>
-                        <outlet property="totalLabel" destination="b1Z-FL-464" id="Imm-66-aT2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mKx-eG-ZT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1739.1304347826087" y="1995.5357142857142"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="xd6-sI-cdb">
@@ -794,7 +643,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xUW-R4-k5p">
-                                        <rect key="frame" x="20" y="93" width="374" height="120"/>
+                                        <rect key="frame" x="20" y="160.5" width="374" height="52.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AV-z3-ZBt">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="52.5"/>
@@ -808,21 +657,9 @@
                                                     <action selector="customizeButtonTapped:" destination="Kjq-ja-Hdz" eventType="touchUpInside" id="FZy-Nh-erc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQC-VB-80s">
-                                                <rect key="frame" x="0.0" y="67.5" width="374" height="52.5"/>
-                                                <color key="backgroundColor" name="Navy"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                <color key="tintColor" name="White"/>
-                                                <state key="normal" title="  Add to Cart" image="cart" catalog="system">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="addToCartButtonTapped:" destination="Kjq-ja-Hdz" eventType="touchUpInside" id="WNo-iM-2aB"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="Hoo-ax-lxK"/>
+                                            <constraint firstAttribute="height" constant="52.5" id="rQQ-Hr-V0c"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -845,7 +682,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjH-6Q-nPL">
-                                <rect key="frame" x="10" y="424" width="394" height="198"/>
+                                <rect key="frame" x="10" y="424" width="394" height="265.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" name="Dark Gray"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -958,7 +795,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="8Q1-cR-dU8"/>
                     <connections>
-                        <outlet property="addToCartButton" destination="YQC-VB-80s" id="Pqk-OF-QFp"/>
                         <outlet property="bottomFadeView" destination="wdC-Aa-8Ko" id="aVb-0i-whG"/>
                         <outlet property="customizeButton" destination="6AV-z3-ZBt" id="m0z-iV-w54"/>
                         <outlet property="goldPriceLabel" destination="hao-Au-oUR" id="cFG-iz-9bM"/>
@@ -977,7 +813,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIp-ck-lYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1739.1304347826087" y="2706.6964285714284"/>
+            <point key="canvasLocation" x="-1803" y="2288"/>
         </scene>
         <!--Customize View Controller-->
         <scene sceneID="2lb-jJ-DxA">
@@ -998,7 +834,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="  Add to Cart" image="cart" catalog="system"/>
+                                        <state key="normal" title="  Purchase" image="creditcard.circle" catalog="system"/>
                                         <connections>
                                             <action selector="addToCartButtonTapped:" destination="1ZU-r9-Rhi" eventType="touchUpInside" id="hxW-t5-467"/>
                                         </connections>
@@ -1419,12 +1255,11 @@
                         <outlet property="saveCustomTextCAPButton" destination="hMO-C5-x40" id="2NI-yd-9rb"/>
                         <outlet property="templatesCollectionView" destination="MYh-V5-e9F" id="Zhd-mb-P6k"/>
                         <outlet property="viewCartButton" destination="QE9-nv-dHh" id="jVv-W8-51j"/>
-                        <segue destination="F1Y-PN-1Zr" kind="show" identifier="viewCartSegue" id="cYX-x8-UKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJe-pG-rjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-728.98550724637687" y="2706.6964285714284"/>
+            <point key="canvasLocation" x="-901" y="2288"/>
         </scene>
         <!--More-->
         <scene sceneID="s39-xV-bTQ">
@@ -1801,21 +1636,17 @@
             <point key="canvasLocation" x="-4517" y="1596"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="LX4-xO-KzN"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="612" height="792"/>
         <image name="Membership" width="354" height="354"/>
         <image name="Store" width="354" height="354"/>
         <image name="bag" catalog="system" width="128" height="128"/>
-        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <image name="chevron.down.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.up.circle" catalog="system" width="128" height="121"/>
         <image name="circle" catalog="system" width="128" height="121"/>
-        <image name="creditcard" catalog="system" width="128" height="88"/>
+        <image name="creditcard.circle" catalog="system" width="128" height="121"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="faceid" catalog="system" width="128" height="115"/>
@@ -1832,9 +1663,6 @@
         </namedColor>
         <namedColor name="Gold">
             <color red="0.84313725490196079" green="0.71764705882352942" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Light Gray">
-            <color red="0.5607843137254902" green="0.60784313725490191" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Navy">
             <color red="0.047058823529411764" green="0.094117647058823528" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

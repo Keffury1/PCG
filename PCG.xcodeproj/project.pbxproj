@@ -11,7 +11,6 @@
 		37125D742489A20B00E716CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37125D732489A20A00E716CA /* WebKit.framework */; };
 		3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */; };
 		37641254251516EF00730747 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37641253251516EF00730747 /* GoogleService-Info.plist */; };
-		376412E625192E1F00730747 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376412E525192E1F00730747 /* CartViewController.swift */; };
 		376412EE2519588800730747 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376412EC2519588800730747 /* BebasNeue-Regular.ttf */; };
 		376B9A2E25BF40FC003E1EFC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376B9A2D25BF40FC003E1EFC /* UIButton+Extension.swift */; };
 		376B9A3125C09965003E1EFC /* MembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376B9A3025C09965003E1EFC /* MembershipViewController.swift */; };
@@ -46,7 +45,6 @@
 		3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		37641253251516EF00730747 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		376412D62516B7F000730747 /* PCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PCG.entitlements; sourceTree = "<group>"; };
-		376412E525192E1F00730747 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		376412EC2519588800730747 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		376B9A2D25BF40FC003E1EFC /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		376B9A3025C09965003E1EFC /* MembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				37FC57B024F5960C00610C60 /* ShopViewController.swift */,
 				3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */,
 				379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */,
-				376412E525192E1F00730747 /* CartViewController.swift */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -345,7 +342,6 @@
 				37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */,
 				379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */,
 				37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */,
-				376412E625192E1F00730747 /* CartViewController.swift in Sources */,
 				37B8063525C1179C0082F1B6 /* LoginViewController.swift in Sources */,
 				370AE5FA24F96988000B3683 /* UIView+Extension.swift in Sources */,
 				37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */,

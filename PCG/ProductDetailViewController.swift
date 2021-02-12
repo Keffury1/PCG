@@ -21,7 +21,6 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var productDescriptionTextView: UITextView!
     @IBOutlet weak var customizeButton: UIButton!
-    @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var bottomFadeView: UIView!
     @IBOutlet weak var whitePriceView: UIView!
     @IBOutlet weak var whitePriceLabel: UILabel!
@@ -50,9 +49,6 @@ class ProductDetailViewController: UIViewController {
     private func setupSubviews() {
         customizeButton.layer.cornerRadius = 15
         customizeButton.addShadow()
-        
-        addToCartButton.layer.cornerRadius = 15
-        addToCartButton.addShadow()
         
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
         

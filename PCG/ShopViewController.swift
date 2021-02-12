@@ -234,10 +234,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         productsCollectionView.reloadData()
     }
     
-    @IBAction func cartTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "cartSegue", sender: self)
-    }
-    
     @IBAction func menuButtonTapped(_ sender: Any) {
         
         dropAndRetreiveButtons()
@@ -302,10 +298,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if let detailVC = segue.destination as? ProductDetailViewController {
                 detailVC.product = self.product
                 detailVC.addBadgeDelegate = self
-            }
-        } else if segue.identifier == "cartSegue" {
-            if let detialVC = segue.destination as? CartViewController {
-                detialVC.addBadgeDelegate = self
             }
         }
     }
