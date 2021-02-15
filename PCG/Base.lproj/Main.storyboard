@@ -13,38 +13,90 @@
         <!--Purchases-->
         <scene sceneID="Ueq-nf-8aV">
             <objects>
-                <viewController id="wId-EJ-1VH" sceneMemberID="viewController">
+                <viewController id="wId-EJ-1VH" customClass="PurchasesViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tgB-NW-41w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rfp-ft-R9A">
-                                <rect key="frame" x="20" y="194" width="374" height="619"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4hI-WJ-uN9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">-	List of purchases 
--	Option to re-purchase 
--	Option to re-customize 
--	Ability to have previously saved info displayed
-</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="purchaseCell" rowHeight="126" id="NcU-iT-qZ1" customClass="PurchaseTableViewCell" customModule="PCG" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="126"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NcU-iT-qZ1" id="a8D-mr-Ehv">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="126"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uj2-ib-Js3">
+                                                    <rect key="frame" x="15.5" y="25.5" width="352.5" height="75"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarbleWood Cutting Board" translatesAutoresizingMaskIntoConstraints="NO" id="Yit-yv-IQ5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="75" id="i88-tZ-I9P"/>
+                                                                <constraint firstAttribute="width" constant="75" id="mLa-b1-nLH"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="H4P-i7-I8c">
+                                                            <rect key="frame" x="95" y="0.0" width="257.5" height="75"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marble Wood Cutting Board" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbB-KS-5Mc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="257.5" height="31.5"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                                                    <color key="textColor" name="Navy"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Susan &amp; Greg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8i-1I-ruG">
+                                                                    <rect key="frame" x="0.0" y="21.5" width="92" height="32"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                                    <color key="textColor" name="Dark Gray"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/15/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2b-gs-KMT">
+                                                                    <rect key="frame" x="0.0" y="43.5" width="63" height="31.5"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                                                    <color key="textColor" name="Navy"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uj2-ib-Js3" firstAttribute="centerY" secondItem="a8D-mr-Ehv" secondAttribute="centerY" id="3ir-35-gMN"/>
+                                                <constraint firstItem="uj2-ib-Js3" firstAttribute="centerX" secondItem="a8D-mr-Ehv" secondAttribute="centerX" id="b1H-xc-rgX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="purchaseClientLabel" destination="M8i-1I-ruG" id="W2P-Rv-a4g"/>
+                                            <outlet property="purchaseDateLabel" destination="s2b-gs-KMT" id="SNr-yD-j3k"/>
+                                            <outlet property="purchaseImageView" destination="Yit-yv-IQ5" id="a15-Qh-ZZx"/>
+                                            <outlet property="purchaseTitleLabel" destination="jbB-KS-5Mc" id="WdA-MD-F8X"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="idS-yW-Iaw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Rfp-ft-R9A" firstAttribute="bottom" secondItem="idS-yW-Iaw" secondAttribute="bottom" id="7td-v5-Rkx"/>
-                            <constraint firstItem="Rfp-ft-R9A" firstAttribute="top" secondItem="idS-yW-Iaw" secondAttribute="top" constant="150" id="93R-2e-OAI"/>
-                            <constraint firstItem="Rfp-ft-R9A" firstAttribute="leading" secondItem="idS-yW-Iaw" secondAttribute="leading" constant="20" id="EZ4-qP-6Fn"/>
-                            <constraint firstAttribute="trailing" secondItem="Rfp-ft-R9A" secondAttribute="trailing" constant="20" id="hfN-ck-31P"/>
+                            <constraint firstItem="idS-yW-Iaw" firstAttribute="bottom" secondItem="4hI-WJ-uN9" secondAttribute="bottom" id="8gB-QK-fTk"/>
+                            <constraint firstItem="4hI-WJ-uN9" firstAttribute="leading" secondItem="idS-yW-Iaw" secondAttribute="leading" id="Xl2-a2-adF"/>
+                            <constraint firstItem="idS-yW-Iaw" firstAttribute="trailing" secondItem="4hI-WJ-uN9" secondAttribute="trailing" id="rCS-CT-uJ9"/>
+                            <constraint firstItem="4hI-WJ-uN9" firstAttribute="top" secondItem="idS-yW-Iaw" secondAttribute="top" id="s30-xg-Xm6"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Purchases" image="tag.circle" catalog="system" id="fMP-MX-aqi"/>
+                    <connections>
+                        <outlet property="purchasesTableView" destination="4hI-WJ-uN9" id="Xy4-o7-Kyh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Su-be-Nx2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2739" y="907"/>
+            <point key="canvasLocation" x="-2739.130434782609" y="906.69642857142856"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Oun-8Z-B7d">
@@ -60,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXS-fq-Qxo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1739" y="550"/>
+            <point key="canvasLocation" x="-848" y="218"/>
         </scene>
         <!--Home-->
         <scene sceneID="V2d-KA-I1F">
@@ -1486,7 +1538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYM-PZ-b78" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1739" y="-153"/>
+            <point key="canvasLocation" x="-1804" y="-174"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3PG-MM-nfx">
@@ -1514,6 +1566,7 @@
     </scenes>
     <resources>
         <image name="Logo" width="612" height="792"/>
+        <image name="MarbleWood Cutting Board" width="550" height="450"/>
         <image name="Shop" width="220" height="218"/>
         <image name="bag.circle" catalog="system" width="128" height="121"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>

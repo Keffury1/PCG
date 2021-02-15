@@ -49,7 +49,7 @@ class ProductDetailViewController: UIViewController {
         
         priceLabel.text = "$\(String(format: "%.0f", product.price))"
         
-        priceWithSubLabel.text = "$\(String(format: "%.0f", product.twentyUnitPrice))"
+        priceWithSubLabel.text = "$\(String(format: "%.0f", product.tenUnitPrice))"
     }
     
     private func updateViews() {
