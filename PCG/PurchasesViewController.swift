@@ -20,6 +20,7 @@ class PurchasesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        purchasesTableView.dataSource = self
     }
     
     // MARK: - Methods
@@ -29,6 +30,26 @@ class PurchasesViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPurchaseSegue" {
+            if let detailVC = segue.destination as? PurchaseDetailViewController {
+                // FIX ME
+                detailVC.purchase = nil
+            }
+        }
     }
 
+}
+
+extension PurchasesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "purchaseCell", for: indexPath) as? PurchaseTableViewCell else { return UITableViewCell() }
+        
+        return cell
+    }
+    
+    
 }
