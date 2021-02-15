@@ -51,7 +51,7 @@
             <objects>
                 <viewController id="tQN-Xj-2V4" customClass="LoginViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Px-5O-UtW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="73B-MB-jYg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -667,7 +667,7 @@
             <objects>
                 <viewController id="Kjq-ja-Hdz" customClass="ProductDetailViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voA-ki-vad">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdC-Aa-8Ko">
@@ -840,7 +840,7 @@
             <objects>
                 <viewController id="1ZU-r9-Rhi" customClass="CustomizeViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kyu-vG-xkN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiP-pO-t93">
@@ -854,7 +854,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="  Purchase" image="creditcard.circle" catalog="system"/>
+                                        <state key="normal" title="  Review Order" image="list.bullet.rectangle" catalog="system"/>
                                         <connections>
                                             <action selector="addToCartButtonTapped:" destination="1ZU-r9-Rhi" eventType="touchUpInside" id="hxW-t5-467"/>
                                         </connections>
@@ -1371,19 +1371,68 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Detailed text about the subscription" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bhF-Oz-lZ2">
+                                <rect key="frame" x="20" y="221.5" width="374" height="234"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" name="Navy"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DtX-EF-oCd">
+                                <rect key="frame" x="30" y="475.5" width="364" height="172.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benefits:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJB-a2-0MP">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
+                                        <color key="textColor" name="Navy"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●  10 unit pricing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZx-lB-dnN">
+                                        <rect key="frame" x="0.0" y="34.5" width="364" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" name="Navy"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●  3% credit to your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjE-2G-17H">
+                                        <rect key="frame" x="0.0" y="69" width="364" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" name="Navy"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●  25% off all accessories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGP-0Q-0ET">
+                                        <rect key="frame" x="0.0" y="103.5" width="364" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" name="Navy"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●  Free thank you cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbb-eM-hoL">
+                                        <rect key="frame" x="0.0" y="138" width="364" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" name="Navy"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9y0-DO-fWZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="DtX-EF-oCd" secondAttribute="trailing" constant="20" id="3aX-qe-DSs"/>
+                            <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="bhF-Oz-lZ2" secondAttribute="trailing" constant="20" id="8LU-YE-mJf"/>
                             <constraint firstItem="9hh-cf-zXE" firstAttribute="leading" secondItem="KS6-gU-zbM" secondAttribute="leading" id="Bdc-fN-NRg"/>
                             <constraint firstItem="5AF-ZR-nDY" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" id="FpD-VX-VCr"/>
                             <constraint firstItem="5AF-ZR-nDY" firstAttribute="top" secondItem="FHI-Yj-bh2" secondAttribute="top" id="Mur-hT-jEM"/>
+                            <constraint firstItem="bhF-Oz-lZ2" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" constant="20" id="OPm-sH-2hf"/>
+                            <constraint firstItem="KS6-gU-zbM" firstAttribute="top" secondItem="DtX-EF-oCd" secondAttribute="bottom" constant="30" id="OWZ-TN-hNd"/>
                             <constraint firstItem="KS6-gU-zbM" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" constant="20" id="TE6-sZ-1pp"/>
+                            <constraint firstItem="bhF-Oz-lZ2" firstAttribute="top" secondItem="9hh-cf-zXE" secondAttribute="bottom" constant="50" id="U3j-Pa-5wU"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="bottom" secondItem="KS6-gU-zbM" secondAttribute="bottom" constant="15" id="cIz-Ce-6Xq"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="KS6-gU-zbM" secondAttribute="trailing" constant="20" id="gos-nn-f8X"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="5AF-ZR-nDY" secondAttribute="trailing" id="hHO-dU-1LY"/>
+                            <constraint firstItem="DtX-EF-oCd" firstAttribute="top" secondItem="bhF-Oz-lZ2" secondAttribute="bottom" constant="20" id="jxT-0J-iDg"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="9hh-cf-zXE" secondAttribute="trailing" id="uIR-x5-iVe"/>
                             <constraint firstItem="9hh-cf-zXE" firstAttribute="top" secondItem="9y0-DO-fWZ" secondAttribute="top" constant="10" id="wlz-yx-rDL"/>
+                            <constraint firstItem="DtX-EF-oCd" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" constant="30" id="yE3-Pf-qtL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="person.circle" catalog="system" id="SGn-5V-JQi"/>
@@ -1428,7 +1477,7 @@
             <objects>
                 <viewController id="7ZK-sj-Qn5" customClass="SignUpViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u6U-T6-yPe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="1Bz-Hb-9fZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1472,12 +1521,12 @@
         <image name="chevron.down.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.up.circle" catalog="system" width="128" height="121"/>
         <image name="circle" catalog="system" width="128" height="121"/>
-        <image name="creditcard.circle" catalog="system" width="128" height="121"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="faceid" catalog="system" width="128" height="115"/>
         <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="member" width="512" height="512"/>
         <image name="pencil.and.outline" catalog="system" width="128" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
