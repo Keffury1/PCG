@@ -18,6 +18,7 @@
 		377D779825DB26E7008D0059 /* PurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D779725DB26E7008D0059 /* PurchaseTableViewCell.swift */; };
 		377D779C25DB275F008D0059 /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D779B25DB275F008D0059 /* PurchasesViewController.swift */; };
 		377D77A025DB2899008D0059 /* PurchaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D779F25DB2899008D0059 /* PurchaseDetailViewController.swift */; };
+		377D77A825DB5A54008D0059 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D77A725DB5A54008D0059 /* AccountViewController.swift */; };
 		3790FDE0251AC25C00154C21 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3790FDDF251AC25C00154C21 /* Global.swift */; };
 		379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */; };
 		379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */; };
@@ -26,7 +27,6 @@
 		37B1988F25B7836100E59CF6 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1988E25B7836100E59CF6 /* Template.swift */; };
 		37B1989325B7C4A400E59CF6 /* CustomizerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1989225B7C4A400E59CF6 /* CustomizerTableViewCell.swift */; };
 		37B8063125C1177E0082F1B6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8063025C1177E0082F1B6 /* SignUpViewController.swift */; };
-		37B8063525C1179C0082F1B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8063425C1179C0082F1B6 /* LoginViewController.swift */; };
 		37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F5244E4338001F6421 /* AppDelegate.swift */; };
 		37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F7244E4338001F6421 /* SceneDelegate.swift */; };
 		37E270FD244E4338001F6421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E270FB244E4338001F6421 /* Main.storyboard */; };
@@ -56,6 +56,7 @@
 		377D779725DB26E7008D0059 /* PurchaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTableViewCell.swift; sourceTree = "<group>"; };
 		377D779B25DB275F008D0059 /* PurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesViewController.swift; sourceTree = "<group>"; };
 		377D779F25DB2899008D0059 /* PurchaseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDetailViewController.swift; sourceTree = "<group>"; };
+		377D77A725DB5A54008D0059 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		3790FDDF251AC25C00154C21 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
 		37B0071825C11C64005E0972 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		37B1988E25B7836100E59CF6 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		37B1989225B7C4A400E59CF6 /* CustomizerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizerTableViewCell.swift; sourceTree = "<group>"; };
 		37B8063025C1177E0082F1B6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		37B8063425C1179C0082F1B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		37E270F2244E4338001F6421 /* PCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E270F5244E4338001F6421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E270F7244E4338001F6421 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,9 +140,9 @@
 		37B8062E25C117460082F1B6 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
+				377D77A725DB5A54008D0059 /* AccountViewController.swift */,
 				376B9A3025C09965003E1EFC /* MembershipViewController.swift */,
 				37B8063025C1177E0082F1B6 /* SignUpViewController.swift */,
-				37B8063425C1179C0082F1B6 /* LoginViewController.swift */,
 			);
 			name = Membership;
 			sourceTree = "<group>";
@@ -360,12 +360,12 @@
 				377D779825DB26E7008D0059 /* PurchaseTableViewCell.swift in Sources */,
 				3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */,
 				37B8063125C1177E0082F1B6 /* SignUpViewController.swift in Sources */,
+				377D77A825DB5A54008D0059 /* AccountViewController.swift in Sources */,
 				37FC57BB24F5F94D00610C60 /* Review.swift in Sources */,
 				37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */,
 				377D779C25DB275F008D0059 /* PurchasesViewController.swift in Sources */,
 				379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */,
 				37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */,
-				37B8063525C1179C0082F1B6 /* LoginViewController.swift in Sources */,
 				377D772D25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift in Sources */,
 				370AE5FA24F96988000B3683 /* UIView+Extension.swift in Sources */,
 				37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */,
