@@ -81,10 +81,17 @@ class CustomizeViewController: UIViewController {
         customizeTextFieldView.layer.borderWidth = 2.0
         customizeTextFieldView.addShadow()
         
+        saveCustomTextButton.layer.cornerRadius = 10.0
+        saveCustomTextButton.layer.borderWidth = 0.5
+        saveCustomTextButton.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
+        
         customizeTextFieldViewCAP.layer.cornerRadius = 10
         customizeTextFieldViewCAP.layer.borderColor = UIColor.init(named: "Light Gray")?.cgColor
         customizeTextFieldViewCAP.layer.borderWidth = 2.0
         customizeTextFieldViewCAP.addShadow()
+        saveCustomTextCAPButton.layer.cornerRadius = 10.0
+        saveCustomTextCAPButton.layer.borderWidth = 0.5
+        saveCustomTextCAPButton.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
         
         
         customizeDateView.layer.cornerRadius = 10

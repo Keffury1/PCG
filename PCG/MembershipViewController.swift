@@ -172,11 +172,7 @@ class MembershipViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "loginSegue" {
-            if let _ = segue.destination as? LoginViewController {
-                
-            }
-        } else if segue.identifier == "signUpSegue" {
+        if segue.identifier == "signUpSegue" {
             if let _ = segue.destination as? SignUpViewController {
                 
             }

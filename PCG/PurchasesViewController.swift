@@ -14,16 +14,22 @@ class PurchasesViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var purchasesTableView: UITableView!
     
     // MARK: - Views
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        purchasesTableView.dataSource = self
+        setupSubviews()
     }
     
     // MARK: - Methods
+    
+    private func setupSubviews() {
+        purchasesTableView.dataSource = self
+        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
+    }
     
     // MARK: - Actions
     

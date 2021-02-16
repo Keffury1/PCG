@@ -12,6 +12,8 @@ class AccountViewController: UIViewController {
 
     // MARK: - Properties
     
+    var loggedIn: Bool = false
+    
     // MARK: - Outlets
     
     @IBOutlet weak var headerView: UIView!
@@ -27,9 +29,14 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSubviews()
     }
     
     // MARK: - Methods
+    
+    private func setupSubviews() {
+        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
+    }
     
     // MARK: - Actions
     
