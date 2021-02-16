@@ -390,7 +390,7 @@
                                                         <rect key="frame" x="111.5" y="0.0" width="91" height="34"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="Navy"/>
-                                                        <state key="normal">
+                                                        <state key="normal" image="textformat.abc.dottedunderline" catalog="system">
                                                             <color key="titleColor" name="Navy"/>
                                                         </state>
                                                     </button>
@@ -819,7 +819,7 @@
                                 <rect key="frame" x="20" y="20" width="374" height="284"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjH-6Q-nPL">
-                                <rect key="frame" x="10" y="509.5" width="384" height="180"/>
+                                <rect key="frame" x="10" y="509.5" width="384" height="170"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" name="Dark Gray"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -872,7 +872,7 @@
                             <constraint firstItem="wdC-Aa-8Ko" firstAttribute="leading" secondItem="voA-ki-vad" secondAttribute="leading" id="4ZB-jk-ds6"/>
                             <constraint firstItem="TId-8W-FIS" firstAttribute="trailing" secondItem="OjH-6Q-nPL" secondAttribute="trailing" constant="20" id="Ap3-Ft-nPF"/>
                             <constraint firstItem="t96-87-kIB" firstAttribute="trailing" secondItem="TId-8W-FIS" secondAttribute="trailing" constant="-20" id="G8R-3n-kLh"/>
-                            <constraint firstItem="xUW-R4-k5p" firstAttribute="top" secondItem="OjH-6Q-nPL" secondAttribute="bottom" id="OB3-SW-rfd"/>
+                            <constraint firstItem="xUW-R4-k5p" firstAttribute="top" secondItem="OjH-6Q-nPL" secondAttribute="bottom" constant="10" id="OB3-SW-rfd"/>
                             <constraint firstItem="FJ9-xf-LTz" firstAttribute="trailing" secondItem="t96-87-kIB" secondAttribute="trailing" id="ObM-c1-YDn"/>
                             <constraint firstItem="wdC-Aa-8Ko" firstAttribute="top" secondItem="TId-8W-FIS" secondAttribute="centerY" constant="125" id="V1h-JP-qL1"/>
                             <constraint firstItem="t96-87-kIB" firstAttribute="leading" secondItem="TId-8W-FIS" secondAttribute="leading" constant="20" id="Wvv-K7-vsZ"/>
@@ -1560,7 +1560,7 @@
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Detailed text about the subscription" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bhF-Oz-lZ2">
                                 <rect key="frame" x="20" y="197.5" width="374" height="253"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" name="Navy"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1600,6 +1600,19 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQW-gp-SPV">
+                                <rect key="frame" x="364" y="30.5" width="30" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="9xP-YA-d9q"/>
+                                    <constraint firstAttribute="height" constant="30" id="YU7-u2-cCI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" name="Navy"/>
+                                <state key="normal" backgroundImage="house.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="homeButtonTapped:" destination="7fS-oC-6Ax" eventType="touchUpInside" id="cqp-xR-dNz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9y0-DO-fWZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1608,6 +1621,7 @@
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="bhF-Oz-lZ2" secondAttribute="trailing" constant="20" id="8LU-YE-mJf"/>
                             <constraint firstItem="9hh-cf-zXE" firstAttribute="leading" secondItem="KS6-gU-zbM" secondAttribute="leading" id="Bdc-fN-NRg"/>
                             <constraint firstItem="5AF-ZR-nDY" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" id="FpD-VX-VCr"/>
+                            <constraint firstItem="PQW-gp-SPV" firstAttribute="top" secondItem="9hh-cf-zXE" secondAttribute="top" id="KAD-n5-irp"/>
                             <constraint firstItem="5AF-ZR-nDY" firstAttribute="top" secondItem="FHI-Yj-bh2" secondAttribute="top" id="Mur-hT-jEM"/>
                             <constraint firstItem="bhF-Oz-lZ2" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" constant="20" id="OPm-sH-2hf"/>
                             <constraint firstItem="KS6-gU-zbM" firstAttribute="top" secondItem="DtX-EF-oCd" secondAttribute="bottom" constant="30" id="OWZ-TN-hNd"/>
@@ -1617,6 +1631,7 @@
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="KS6-gU-zbM" secondAttribute="trailing" constant="20" id="gos-nn-f8X"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="5AF-ZR-nDY" secondAttribute="trailing" id="hHO-dU-1LY"/>
                             <constraint firstItem="DtX-EF-oCd" firstAttribute="top" secondItem="bhF-Oz-lZ2" secondAttribute="bottom" constant="20" id="jxT-0J-iDg"/>
+                            <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="PQW-gp-SPV" secondAttribute="trailing" constant="20" id="lGE-Bc-FPO"/>
                             <constraint firstItem="9y0-DO-fWZ" firstAttribute="trailing" secondItem="9hh-cf-zXE" secondAttribute="trailing" id="uIR-x5-iVe"/>
                             <constraint firstItem="9hh-cf-zXE" firstAttribute="top" secondItem="9y0-DO-fWZ" secondAttribute="top" constant="30" id="wlz-yx-rDL"/>
                             <constraint firstItem="DtX-EF-oCd" firstAttribute="leading" secondItem="9y0-DO-fWZ" secondAttribute="leading" constant="30" id="yE3-Pf-qtL"/>
@@ -1626,6 +1641,7 @@
                     <navigationItem key="navigationItem" id="VQe-hB-wCD"/>
                     <connections>
                         <outlet property="headerView" destination="5AF-ZR-nDY" id="bcJ-pW-BDu"/>
+                        <outlet property="homeButton" destination="PQW-gp-SPV" id="fN3-MI-tkm"/>
                         <outlet property="loginButton" destination="z1d-0I-HQ3" id="nfL-1w-sZ2"/>
                         <outlet property="signUpButton" destination="ELQ-tF-ZO6" id="Da0-mA-AXB"/>
                         <segue destination="7ZK-sj-Qn5" kind="show" identifier="signUpSegue" id="daS-Fz-Vmm"/>
@@ -1690,6 +1706,7 @@
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.circle" catalog="system" width="128" height="121"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="member" width="512" height="512"/>
         <image name="pencil.and.outline" catalog="system" width="128" height="128"/>
@@ -1697,6 +1714,7 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <image name="tag.circle" catalog="system" width="128" height="121"/>
+        <image name="textformat.abc.dottedunderline" catalog="system" width="128" height="81"/>
         <image name="xmark.bin" catalog="system" width="128" height="93"/>
         <image name="xmark.seal" catalog="system" width="128" height="128"/>
         <namedColor name="Dark Gray">

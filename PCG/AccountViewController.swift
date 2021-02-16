@@ -32,6 +32,13 @@ class AccountViewController: UIViewController {
         setupSubviews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if !loggedIn {
+            self.performSegue(withIdentifier: "loggedOutSegue", sender: self)
+        }
+    }
+    
     // MARK: - Methods
     
     private func setupSubviews() {
@@ -49,6 +56,11 @@ class AccountViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loggedOutSegue" {
+            if let detailVC = segue.destination as? MembershipViewController {
+                detailVC.parentVC = self
+            }
+        }
     }
 
 }
