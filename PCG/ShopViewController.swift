@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol AddBadgeToButtonDelegate {
-    func addBadgeToButton()
-}
-
 class ShopViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Properties
@@ -25,7 +21,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Outlets
 
-    
     @IBOutlet var productButtonCollection: [UIButton]!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var filterView: UIView!
@@ -59,11 +54,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         productsCollectionView.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        addBadgeToCartButton()
-    }
-    
     // MARK: - Collection View Methods
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,11 +66,12 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let product = products[indexPath.row]
         
-        cell.titleLabel.text = product.title
         if price {
             cell.priceLabel.text = "$\(product.price)"
+            cell.titleLabel.text = product.title
         } else {
             cell.priceLabel.text = ""
+            cell.titleLabel.text = product.title
         }
         cell.productImageView.image = product.image
         
@@ -142,15 +133,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         dogTreatJarButton.isEnabled = false
         lanternButton.isEnabled = false
         showAllButton.isEnabled = false
-    }
-    
-    func addBadgeToCartButton() {
-        cartButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 30)
-        if Global.sharedInstance.cart.count > 0 {
-            cartButton.badge = "\(Global.sharedInstance.cart.count)"
-        } else {
-            cartButton.badge = nil
-        }
     }
     
     func sortByCategory(category: Categories) {
@@ -299,11 +281,5 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 detailVC.product = self.product
             }
         }
-    }
-}
-
-extension ShopViewController: AddBadgeToButtonDelegate {
-    func addBadgeToButton() {
-        self.addBadgeToCartButton()
     }
 }
