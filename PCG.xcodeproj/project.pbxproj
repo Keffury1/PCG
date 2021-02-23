@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		370AE5FA24F96988000B3683 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370AE5F924F96988000B3683 /* UIView+Extension.swift */; };
 		37125D742489A20B00E716CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37125D732489A20A00E716CA /* WebKit.framework */; };
+		374E50A525E48D37004320B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 374E50A425E48D37004320B5 /* GoogleService-Info.plist */; };
+		374E50B725E48F1B004320B5 /* PurchaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E50B625E48F1B004320B5 /* PurchaseController.swift */; };
 		3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */; };
-		37641254251516EF00730747 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37641253251516EF00730747 /* GoogleService-Info.plist */; };
 		376412EE2519588800730747 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376412EC2519588800730747 /* BebasNeue-Regular.ttf */; };
 		376B9A2E25BF40FC003E1EFC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376B9A2D25BF40FC003E1EFC /* UIButton+Extension.swift */; };
 		376B9A3125C09965003E1EFC /* MembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376B9A3025C09965003E1EFC /* MembershipViewController.swift */; };
@@ -19,7 +20,6 @@
 		377D779C25DB275F008D0059 /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D779B25DB275F008D0059 /* PurchasesViewController.swift */; };
 		377D77A025DB2899008D0059 /* PurchaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D779F25DB2899008D0059 /* PurchaseDetailViewController.swift */; };
 		377D77A825DB5A54008D0059 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D77A725DB5A54008D0059 /* AccountViewController.swift */; };
-		3790FDE0251AC25C00154C21 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3790FDDF251AC25C00154C21 /* Global.swift */; };
 		379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */; };
 		379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */; };
 		37B0071925C11C64005E0972 /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0071825C11C64005E0972 /* CartItemCollectionViewCell.swift */; };
@@ -41,13 +41,17 @@
 		37FC57BD24F5FB3600610C60 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57BC24F5FB3600610C60 /* ReviewCollectionViewCell.swift */; };
 		37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57BE24F5FC4800610C60 /* ReviewController.swift */; };
 		37FC57C324F60F5100610C60 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57C224F60F5100610C60 /* ProductController.swift */; };
+		EA6C026F322F389E279BB791 /* Pods_PCG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7017DDAC3BD9B7502B797F87 /* Pods_PCG.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09222475417F5C663C7BE357 /* Pods-PCG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PCG.release.xcconfig"; path = "Target Support Files/Pods-PCG/Pods-PCG.release.xcconfig"; sourceTree = "<group>"; };
+		1706EF97111992D2D42C85F1 /* Pods-PCG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PCG.debug.xcconfig"; path = "Target Support Files/Pods-PCG/Pods-PCG.debug.xcconfig"; sourceTree = "<group>"; };
 		370AE5F924F96988000B3683 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		37125D732489A20A00E716CA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		374E50A425E48D37004320B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		374E50B625E48F1B004320B5 /* PurchaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseController.swift; sourceTree = "<group>"; };
 		3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
-		37641253251516EF00730747 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		376412D62516B7F000730747 /* PCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PCG.entitlements; sourceTree = "<group>"; };
 		376412EC2519588800730747 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		376B9A2D25BF40FC003E1EFC /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -57,7 +61,6 @@
 		377D779B25DB275F008D0059 /* PurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesViewController.swift; sourceTree = "<group>"; };
 		377D779F25DB2899008D0059 /* PurchaseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDetailViewController.swift; sourceTree = "<group>"; };
 		377D77A725DB5A54008D0059 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		3790FDDF251AC25C00154C21 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
 		37B0071825C11C64005E0972 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		37B1988A25B7807C00E59CF6 /* TemplateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		37FC57BC24F5FB3600610C60 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		37FC57BE24F5FC4800610C60 /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		37FC57C224F60F5100610C60 /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
+		7017DDAC3BD9B7502B797F87 /* Pods_PCG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PCG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			files = (
 				37125D742489A20B00E716CA /* WebKit.framework in Frameworks */,
 				379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */,
+				EA6C026F322F389E279BB791 /* Pods_PCG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				37125D732489A20A00E716CA /* WebKit.framework */,
+				7017DDAC3BD9B7502B797F87 /* Pods_PCG.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,6 +169,7 @@
 				37E270F4244E4338001F6421 /* PCG */,
 				37E270F3244E4338001F6421 /* Products */,
 				37125D722489A20A00E716CA /* Frameworks */,
+				E333A8DAF64FF86E80C5E4D8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,7 +204,7 @@
 			children = (
 				37E270FE244E4338001F6421 /* Assets.xcassets */,
 				37E27103244E4338001F6421 /* Info.plist */,
-				37641253251516EF00730747 /* GoogleService-Info.plist */,
+				374E50A425E48D37004320B5 /* GoogleService-Info.plist */,
 				376412EC2519588800730747 /* BebasNeue-Regular.ttf */,
 			);
 			name = Resources;
@@ -261,7 +268,7 @@
 			children = (
 				37FC57BE24F5FC4800610C60 /* ReviewController.swift */,
 				37FC57C224F60F5100610C60 /* ProductController.swift */,
-				3790FDDF251AC25C00154C21 /* Global.swift */,
+				374E50B625E48F1B004320B5 /* PurchaseController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -273,6 +280,15 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		E333A8DAF64FF86E80C5E4D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1706EF97111992D2D42C85F1 /* Pods-PCG.debug.xcconfig */,
+				09222475417F5C663C7BE357 /* Pods-PCG.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,9 +296,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37E27106244E4338001F6421 /* Build configuration list for PBXNativeTarget "PCG" */;
 			buildPhases = (
+				9B7E88E8AE7F7842C11FD7E5 /* [CP] Check Pods Manifest.lock */,
 				37E270EE244E4338001F6421 /* Sources */,
 				37E270EF244E4338001F6421 /* Frameworks */,
 				37E270F0244E4338001F6421 /* Resources */,
+				B2B95DC7D057360276A8F427 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,13 +357,55 @@
 			files = (
 				376412EE2519588800730747 /* BebasNeue-Regular.ttf in Resources */,
 				37E27102244E4338001F6421 /* LaunchScreen.storyboard in Resources */,
-				37641254251516EF00730747 /* GoogleService-Info.plist in Resources */,
+				374E50A525E48D37004320B5 /* GoogleService-Info.plist in Resources */,
 				37E270FF244E4338001F6421 /* Assets.xcassets in Resources */,
 				37E270FD244E4338001F6421 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B7E88E8AE7F7842C11FD7E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PCG-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2B95DC7D057360276A8F427 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		37E270EE244E4338001F6421 /* Sources */ = {
@@ -359,6 +419,7 @@
 				377D77A025DB2899008D0059 /* PurchaseDetailViewController.swift in Sources */,
 				377D779825DB26E7008D0059 /* PurchaseTableViewCell.swift in Sources */,
 				3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */,
+				374E50B725E48F1B004320B5 /* PurchaseController.swift in Sources */,
 				37B8063125C1177E0082F1B6 /* SignUpViewController.swift in Sources */,
 				377D77A825DB5A54008D0059 /* AccountViewController.swift in Sources */,
 				37FC57BB24F5F94D00610C60 /* Review.swift in Sources */,
@@ -376,7 +437,6 @@
 				37B1988F25B7836100E59CF6 /* Template.swift in Sources */,
 				376B9A3125C09965003E1EFC /* MembershipViewController.swift in Sources */,
 				37FC57B524F5A07900610C60 /* Product.swift in Sources */,
-				3790FDE0251AC25C00154C21 /* Global.swift in Sources */,
 				37B0071925C11C64005E0972 /* CartItemCollectionViewCell.swift in Sources */,
 				376B9A2E25BF40FC003E1EFC /* UIButton+Extension.swift in Sources */,
 			);
@@ -522,6 +582,7 @@
 		};
 		37E27107244E4338001F6421 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1706EF97111992D2D42C85F1 /* Pods-PCG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PCG/PCG.entitlements;
@@ -542,6 +603,7 @@
 		};
 		37E27108244E4338001F6421 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09222475417F5C663C7BE357 /* Pods-PCG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PCG/PCG.entitlements;

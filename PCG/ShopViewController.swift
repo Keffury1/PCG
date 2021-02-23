@@ -73,7 +73,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.priceLabel.text = ""
             cell.titleLabel.text = product.title
         }
-        cell.productImageView.image = product.image
+        cell.productImageView.image = UIImage(named: product.image)
         
         return cell
     }

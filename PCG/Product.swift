@@ -9,23 +9,22 @@
 import Foundation
 import UIKit
 
-struct Product {
-    
+struct Product: Codable {
     var title: String
     var description: String
     var price: Double
     var fiveUnitPrice: Double
     var tenUnitPrice: Double
     var twentyUnitPrice: Double
-    var image: UIImage
-    var blankImage: UIImage?
+    var image: String
+    var blankImage: String?
     var category: Categories
     var count: Int
     var templates: [Template]?
     var chosenTemplate: Template?
-    var images: [UIImage]?
+    var images: [String]?
     
-    internal init(title: String, description: String, price: Double, fiveUnitPrice: Double, tenUnitPrice: Double, twentyUnitPrice: Double, image: UIImage, blankImage: UIImage? = nil, category: Categories, count: Int, templates: [Template]? = nil, chosenTemplate: Template? = nil, images: [UIImage]? = nil) {
+    internal init(title: String, description: String, price: Double, fiveUnitPrice: Double, tenUnitPrice: Double, twentyUnitPrice: Double, image: String, blankImage: String? = nil, category: Categories, count: Int, templates: [Template]? = nil, chosenTemplate: Template? = nil, images: [String]? = nil) {
         self.title = title
         self.description = description
         self.price = price
@@ -42,7 +41,7 @@ struct Product {
     }
 }
 
-enum Categories: Int {
+enum Categories: Int, Codable {
     case CuttingBoard = 1
     case CheeseBoard = 2
     case KnifeSet = 3

@@ -9,20 +9,19 @@
 import Foundation
 import UIKit
 
-struct Template {
-
-    var image: UIImage
+struct Template: Codable {
+    var image: String
     var needs: [Need]
     var fulfilled: [String]
     
-    internal init(image: UIImage, needs: [Need], fulfilled: [String]) {
+    internal init(image: String, needs: [Need], fulfilled: [String]) {
         self.image = image
         self.needs = needs
         self.fulfilled = fulfilled
     }
 }
 
-enum Need: String {
+enum Need: String, Codable {
     case firstName = "First Name"
     case lastName = "Last Name"
     case lastInitial = "Last Initial"
@@ -33,4 +32,3 @@ enum Need: String {
     case address = "Address"
     case state = "State"
 }
-

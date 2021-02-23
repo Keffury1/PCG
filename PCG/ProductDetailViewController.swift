@@ -55,7 +55,7 @@ class ProductDetailViewController: UIViewController {
     private func updateViews() {
         guard let product = product else { return }
         
-        productImageView.image = product.image
+        productImageView.image = UIImage(named: product.image)
         productImageView.layer.cornerRadius = 20.0
         productImageView.clipsToBounds = true
         productTitleLabel.text = product.title
@@ -89,7 +89,7 @@ extension ProductDetailViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productDetailCell", for: indexPath) as? ProductDetailCollectionViewCell else { return UICollectionViewCell() }
         
         let image = product?.images?[indexPath.row]
-        cell.productDetailImageView.image = image
+        cell.productDetailImageView.image = UIImage(named: image!)
         return cell
     }
     

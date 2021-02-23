@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>34529319809-qsp7i5s07u870og5l65ff4op5k6edb59.apps.googleusercontent.com</string>
+	<string>49087768493-jni0uhh63iim7qsrmpm985uh75mu7rjm.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.34529319809-qsp7i5s07u870og5l65ff4op5k6edb59</string>
+	<string>com.googleusercontent.apps.49087768493-jni0uhh63iim7qsrmpm985uh75mu7rjm</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCSUWUm-tFsLmD_m11YQeZiLsroLsooGtw</string>
+	<string>AIzaSyAz3EahYJREIYCPdavSvms9o2Szr0Jf_5U</string>
 	<key>GCM_SENDER_ID</key>
-	<string>34529319809</string>
+	<string>49087768493</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.BobbyKeffury.PCG</string>
 	<key>PROJECT_ID</key>
-	<string>perfectclosinggift-9c20f</string>
+	<string>perfect-closing-gift</string>
 	<key>STORAGE_BUCKET</key>
-	<string>perfectclosinggift-9c20f.appspot.com</string>
+	<string>perfect-closing-gift.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:34529319809:ios:be7ad48bf21d15e159e680</string>
-	<key>DATABASE_URL</key>
-	<string>https://perfectclosinggift-9c20f.firebaseio.com</string>
+	<string>1:49087768493:ios:e7dff6336dd3b3f8a2a324</string>
 </dict>
 </plist>

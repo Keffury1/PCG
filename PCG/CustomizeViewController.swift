@@ -22,7 +22,7 @@ class CustomizeViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var bottomFadeView: UIView!
-    @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var reviewOrderButton: UIButton!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
     @IBOutlet weak var abandonButton: UIButton!
@@ -66,11 +66,11 @@ class CustomizeViewController: UIViewController {
         customizerTableView.dataSource = self
         customizerTableView.delegate = self
         
-        addToCartButton.layer.cornerRadius = 15
-        addToCartButton.addShadow()
-        addToCartButton.isEnabled = false
-        addToCartButton.setTitle("", for: .normal)
-        addToCartButton.tintColor = UIColor.init(named: "Navy")
+        reviewOrderButton.layer.cornerRadius = 15
+        reviewOrderButton.addShadow()
+        reviewOrderButton.isEnabled = false
+        reviewOrderButton.setTitle("", for: .normal)
+        reviewOrderButton.tintColor = UIColor.init(named: "Navy")
         
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
         firstTemplateImageView.layer.cornerRadius = 10
@@ -118,7 +118,7 @@ class CustomizeViewController: UIViewController {
     
     private func updateViews() {
         guard let product = product else { return }
-        firstTemplateImageView.image = product.templates?.first?.image
+        firstTemplateImageView.image = UIImage(named: (product.templates?.first!.image)!)
     }
     
     func switchDatePicker() {
@@ -184,15 +184,15 @@ class CustomizeViewController: UIViewController {
     }
     
     func addToCartOn() {
-        addToCartButton.isEnabled = true
-        addToCartButton.setTitle("  Add to Cart", for: .normal)
-        addToCartButton.tintColor = .white
+        reviewOrderButton.isEnabled = true
+        reviewOrderButton.setTitle("  Add to Cart", for: .normal)
+        reviewOrderButton.tintColor = .white
     }
     
     func addToCartOff() {
-        addToCartButton.isEnabled = false
-        addToCartButton.setTitle("", for: .normal)
-        addToCartButton.tintColor = UIColor.init(named: "Navy")
+        reviewOrderButton.isEnabled = false
+        reviewOrderButton.setTitle("", for: .normal)
+        reviewOrderButton.tintColor = UIColor.init(named: "Navy")
     }
     
     func dataEntered() {
@@ -217,7 +217,7 @@ class CustomizeViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func addToCartButtonTapped(_ sender: Any) {
+    @IBAction func reviewButtonTapped(_ sender: Any) {
         
         guard entries.values.count == template?.needs.count, var product = product else { return }
         
@@ -225,9 +225,7 @@ class CustomizeViewController: UIViewController {
             template?.fulfilled.append(entry.description)
         }
         product.chosenTemplate = template
-        Global.sharedInstance.cart.append(product)
         switchItemAdded()
-        
     }
     
     @IBAction func saveCustomTextButtonTapped(_ sender: Any) {
@@ -334,7 +332,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         guard let product = product else { return UICollectionViewCell() }
         
         if let template = product.templates?[indexPath.row] {
-            cell.templateImageView.image = template.image
+            cell.templateImageView.image = UIImage(named: template.image)
             cell.templateImageView.layer.cornerRadius = 10
             cell.templateImageView.clipsToBounds = false
         }
@@ -350,7 +348,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         }
         
         if let template = product.templates?[indexPath.row] {
-            firstTemplateImageView.image = template.image
+            firstTemplateImageView.image = UIImage(named: template.image)
             self.template = template
             reset = true
             customizerTableView.setContentOffset(.zero, animated: true)
