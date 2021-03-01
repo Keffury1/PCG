@@ -118,7 +118,7 @@ class CustomizeViewController: UIViewController {
     
     private func updateViews() {
         guard let product = product else { return }
-        firstTemplateImageView.image = UIImage(named: (product.templates?.first!.image)!)
+        firstTemplateImageView.image = UIImage(named: (product.templates?.first!.image) ?? "")
     }
     
     func switchDatePicker() {
