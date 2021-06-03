@@ -73,13 +73,13 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.priceLabel.text = ""
             cell.titleLabel.text = product.title
         }
+        
         cell.productImageView.image = UIImage(named: product.image)
+        cell.productImageView.layer.cornerRadius = 10
+        cell.productImageView.clipsToBounds = true
+        cell.productImageView.addShadow()
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 220)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

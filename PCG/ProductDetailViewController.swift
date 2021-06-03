@@ -88,14 +88,16 @@ class ProductDetailViewController: UIViewController {
 
 extension ProductDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return product?.images?.count ?? 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productDetailCell", for: indexPath) as? ProductDetailCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productImageCell", for: indexPath) as? ProductDetailCollectionViewCell else { return UICollectionViewCell() }
         
-        let image = product?.images?[indexPath.row]
-        cell.productDetailImageView.image = UIImage(named: image!)
+        cell.productDetailImageView.image = UIImage(named: product!.image)
+        cell.productDetailImageView.layer.cornerRadius = 10
+        cell.productDetailImageView.clipsToBounds = true
+        cell.productDetailImageView.addShadow()
         return cell
     }
     
