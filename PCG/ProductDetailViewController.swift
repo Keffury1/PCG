@@ -13,6 +13,7 @@ class ProductDetailViewController: UIViewController {
     // MARK: - Properties
     
     var product: Product?
+    var price: Bool?
     
     // MARK: - Outlets
     
@@ -23,6 +24,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var bottomFadeView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var priceWithSubLabel: UILabel!
+    @IBOutlet weak var withSubLabel: UILabel!
     @IBOutlet weak var productDetailCollectionView: UICollectionView!
     
     
@@ -43,13 +45,17 @@ class ProductDetailViewController: UIViewController {
         
         bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
         
-        
         guard let product = product else { return }
         
-        
-        priceLabel.text = "$\(String(format: "%.0f", product.price))"
-        
-        priceWithSubLabel.text = "$\(String(format: "%.0f", product.tenUnitPrice))"
+        if price! {
+            priceLabel.text = "$\(String(format: "%.0f", product.price))"
+            priceWithSubLabel.text = "$\(String(format: "%.0f", product.tenUnitPrice))"
+            withSubLabel.alpha = 1
+        } else {
+            priceLabel.text = ""
+            priceWithSubLabel.text = ""
+            withSubLabel.alpha = 0
+        }
     }
     
     private func updateViews() {

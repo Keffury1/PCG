@@ -279,6 +279,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "productDetailSegue" {
             if let detailVC = segue.destination as? ProductDetailViewController {
                 detailVC.product = self.product
+                detailVC.price = price
             }
         }
     }
