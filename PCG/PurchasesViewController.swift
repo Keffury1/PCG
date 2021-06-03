@@ -12,10 +12,14 @@ class PurchasesViewController: UIViewController {
 
     // MARK: - Properties
     
+    var products: [String] = []
+    
     // MARK: - Outlets
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var purchasesTableView: UITableView!
+    @IBOutlet weak var emptyTableView: UIView!
+    @IBOutlet weak var viewProductsButton: UIButton!
     
     // MARK: - Views
     
@@ -29,9 +33,14 @@ class PurchasesViewController: UIViewController {
     private func setupSubviews() {
         purchasesTableView.dataSource = self
         headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
+        viewProductsButton.layer.cornerRadius = 10
     }
     
     // MARK: - Actions
+    
+    @IBAction func viewProductsButtonTapped(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 3
+    }
     
     // MARK: - Navigation
     
@@ -48,7 +57,18 @@ class PurchasesViewController: UIViewController {
 
 extension PurchasesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if products.count == 0 {
+            emptyTableView.alpha = 1
+            emptyTableView.isUserInteractionEnabled = true
+            purchasesTableView.alpha = 0
+            purchasesTableView.isUserInteractionEnabled = false
+        } else {
+            emptyTableView.alpha = 0
+            emptyTableView.isUserInteractionEnabled = false
+            purchasesTableView.alpha = 1
+            purchasesTableView.isUserInteractionEnabled = true
+        }
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

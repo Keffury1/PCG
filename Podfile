@@ -6,7 +6,5 @@ target 'PCG' do
   use_frameworks!
 
   # Pods for PCG
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
 
 end

@@ -87,11 +87,55 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ub-qp-5aW">
+                                <rect key="frame" x="82" y="303.5" width="250" height="250"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="z8x-Dz-hqY">
+                                        <rect key="frame" x="5" y="10" width="240" height="180"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Purchases Yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tG-eV-3ve">
+                                        <rect key="frame" x="48" y="162.5" width="154.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" name="Navy"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvl-1h-aDY">
+                                        <rect key="frame" x="50" y="200" width="150" height="40"/>
+                                        <color key="backgroundColor" name="Navy"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="EEv-2D-Jjf"/>
+                                            <constraint firstAttribute="height" constant="40" id="MJD-xs-DMc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="View Products">
+                                            <color key="titleColor" name="White"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="viewProductsButtonTapped:" destination="wId-EJ-1VH" eventType="touchUpInside" id="oxm-JM-FcW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="1Jx-aR-yTt"/>
+                                    <constraint firstAttribute="width" constant="250" id="6eU-ik-IqB"/>
+                                    <constraint firstItem="tvl-1h-aDY" firstAttribute="top" secondItem="3tG-eV-3ve" secondAttribute="bottom" constant="10" id="7br-jl-cWJ"/>
+                                    <constraint firstItem="z8x-Dz-hqY" firstAttribute="top" secondItem="2Ub-qp-5aW" secondAttribute="top" constant="10" id="8nl-15-82i"/>
+                                    <constraint firstItem="tvl-1h-aDY" firstAttribute="top" secondItem="z8x-Dz-hqY" secondAttribute="bottom" constant="10" id="Lqj-GL-He0"/>
+                                    <constraint firstItem="3tG-eV-3ve" firstAttribute="centerX" secondItem="2Ub-qp-5aW" secondAttribute="centerX" id="P3r-FJ-hLd"/>
+                                    <constraint firstAttribute="bottom" secondItem="tvl-1h-aDY" secondAttribute="bottom" constant="10" id="Z7t-IR-qib"/>
+                                    <constraint firstAttribute="trailing" secondItem="z8x-Dz-hqY" secondAttribute="trailing" constant="5" id="q46-tD-stf"/>
+                                    <constraint firstItem="z8x-Dz-hqY" firstAttribute="leading" secondItem="2Ub-qp-5aW" secondAttribute="leading" constant="5" id="rbK-Wb-qde"/>
+                                    <constraint firstItem="tvl-1h-aDY" firstAttribute="centerX" secondItem="2Ub-qp-5aW" secondAttribute="centerX" id="yFZ-7V-DmO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="idS-yW-Iaw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2Ub-qp-5aW" firstAttribute="centerX" secondItem="idS-yW-Iaw" secondAttribute="centerX" id="2af-sz-fyP"/>
                             <constraint firstItem="idS-yW-Iaw" firstAttribute="bottom" secondItem="4hI-WJ-uN9" secondAttribute="bottom" id="8gB-QK-fTk"/>
+                            <constraint firstItem="2Ub-qp-5aW" firstAttribute="centerY" secondItem="idS-yW-Iaw" secondAttribute="centerY" id="Jjd-7S-kfn"/>
                             <constraint firstItem="4hI-WJ-uN9" firstAttribute="top" secondItem="idS-yW-Iaw" secondAttribute="top" constant="40" id="Xju-B5-JMs"/>
                             <constraint firstItem="4hI-WJ-uN9" firstAttribute="leading" secondItem="idS-yW-Iaw" secondAttribute="leading" id="Xl2-a2-adF"/>
                             <constraint firstItem="xSg-Aq-CIZ" firstAttribute="trailing" secondItem="idS-yW-Iaw" secondAttribute="trailing" id="hP6-6C-8Yg"/>
@@ -102,8 +146,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Purchases" image="tag.circle" catalog="system" id="fMP-MX-aqi"/>
                     <connections>
+                        <outlet property="emptyTableView" destination="2Ub-qp-5aW" id="Yix-rg-hXa"/>
                         <outlet property="headerView" destination="xSg-Aq-CIZ" id="F5P-ni-ihe"/>
                         <outlet property="purchasesTableView" destination="4hI-WJ-uN9" id="Xy4-o7-Kyh"/>
+                        <outlet property="viewProductsButton" destination="tvl-1h-aDY" id="loZ-sX-gTu"/>
                         <segue destination="jXD-jT-y2g" kind="show" identifier="showPurchaseSegue" id="zMP-D5-aVy"/>
                     </connections>
                 </viewController>
@@ -116,7 +162,7 @@
             <objects>
                 <viewController id="jXD-jT-y2g" customClass="PurchaseDetailViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MEl-xs-1i9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyL-70-bXT">
@@ -689,6 +735,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Products" image="bag.circle" catalog="system" id="v40-Bc-nQl"/>
+                    <navigationItem key="navigationItem" id="dbI-rZ-I1q"/>
                     <connections>
                         <outlet property="cartButton" destination="3Ov-ia-kVc" id="eTr-Vo-MMu"/>
                         <outlet property="cheeseBoardsButton" destination="bHN-wn-VKV" id="LiI-qU-0HU"/>
@@ -730,7 +777,7 @@
             <objects>
                 <viewController id="Kjq-ja-Hdz" customClass="ProductDetailViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voA-ki-vad">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdC-Aa-8Ko">
@@ -908,7 +955,7 @@
             <objects>
                 <viewController id="1ZU-r9-Rhi" customClass="CustomizeViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kyu-vG-xkN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiP-pO-t93">
@@ -1506,7 +1553,7 @@
             <objects>
                 <viewController id="7fS-oC-6Ax" customClass="MembershipViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FHI-Yj-bh2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AF-ZR-nDY">
@@ -1653,7 +1700,7 @@
             <objects>
                 <viewController id="7ZK-sj-Qn5" customClass="SignUpViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u6U-T6-yPe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="1Bz-Hb-9fZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
