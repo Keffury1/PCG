@@ -12,6 +12,7 @@
 		374E50A525E48D37004320B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 374E50A425E48D37004320B5 /* GoogleService-Info.plist */; };
 		374E50B725E48F1B004320B5 /* PurchaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E50B625E48F1B004320B5 /* PurchaseController.swift */; };
 		3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */; };
+		375B611A2669ADF4008F6639 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375B61192669ADF4008F6639 /* CartViewController.swift */; };
 		376412EE2519588800730747 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376412EC2519588800730747 /* BebasNeue-Regular.ttf */; };
 		376B9A2E25BF40FC003E1EFC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376B9A2D25BF40FC003E1EFC /* UIButton+Extension.swift */; };
 		376B9A3125C09965003E1EFC /* MembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376B9A3025C09965003E1EFC /* MembershipViewController.swift */; };
@@ -21,7 +22,7 @@
 		377D77A025DB2899008D0059 /* PurchaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D779F25DB2899008D0059 /* PurchaseDetailViewController.swift */; };
 		377D77A825DB5A54008D0059 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D77A725DB5A54008D0059 /* AccountViewController.swift */; };
 		379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */; };
-		379C3BCD253623F6003D22C1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* SwiftPackageProductDependency */; };
+		379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */; };
 		37B0071925C11C64005E0972 /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0071825C11C64005E0972 /* CartItemCollectionViewCell.swift */; };
 		37B1988B25B7807C00E59CF6 /* TemplateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1988A25B7807C00E59CF6 /* TemplateCollectionViewCell.swift */; };
 		37B1988F25B7836100E59CF6 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1988E25B7836100E59CF6 /* Template.swift */; };
@@ -52,6 +53,7 @@
 		374E50A425E48D37004320B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		374E50B625E48F1B004320B5 /* PurchaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseController.swift; sourceTree = "<group>"; };
 		3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		375B61192669ADF4008F6639 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		376412D62516B7F000730747 /* PCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PCG.entitlements; sourceTree = "<group>"; };
 		376412EC2519588800730747 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		376B9A2D25BF40FC003E1EFC /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37125D742489A20B00E716CA /* WebKit.framework in Frameworks */,
-				379C3BCD253623F6003D22C1 /* BuildFile in Frameworks */,
+				379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */,
 				EA6C026F322F389E279BB791 /* Pods_PCG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +161,7 @@
 				37FC57B024F5960C00610C60 /* ShopViewController.swift */,
 				3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */,
 				379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */,
+				375B61192669ADF4008F6639 /* CartViewController.swift */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -307,7 +310,7 @@
 			);
 			name = PCG;
 			packageProductDependencies = (
-				379C3BCC253623F6003D22C1 /* SwiftPackageProductDependency */,
+				379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */,
 			);
 			productName = PCG;
 			productReference = 37E270F2244E4338001F6421 /* PCG.app */;
@@ -338,7 +341,7 @@
 			);
 			mainGroup = 37E270E9244E4338001F6421;
 			packageReferences = (
-				379C3BCB253623F6003D22C1 /* RemoteSwiftPackageReference */,
+				379C3BCB253623F6003D22C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 37E270F3244E4338001F6421 /* Products */;
 			projectDirPath = "";
@@ -410,6 +413,7 @@
 				379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */,
 				37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */,
 				377D772D25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift in Sources */,
+				375B611A2669ADF4008F6639 /* CartViewController.swift in Sources */,
 				370AE5FA24F96988000B3683 /* UIView+Extension.swift in Sources */,
 				37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */,
 				37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */,
@@ -628,7 +632,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		379C3BCB253623F6003D22C1 /* RemoteSwiftPackageReference */ = {
+		379C3BCB253623F6003D22C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -639,9 +643,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		379C3BCC253623F6003D22C1 /* SwiftPackageProductDependency */ = {
+		379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 379C3BCB253623F6003D22C1 /* RemoteSwiftPackageReference */;
+			package = 379C3BCB253623F6003D22C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
