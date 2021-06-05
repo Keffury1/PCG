@@ -175,10 +175,12 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/anim/anim.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/stepr/stepr.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/anim/anim.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/stepr/stepr.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

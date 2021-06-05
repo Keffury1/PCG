@@ -23,10 +23,10 @@
 		377D77A825DB5A54008D0059 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D77A725DB5A54008D0059 /* AccountViewController.swift */; };
 		379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */; };
 		379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */; };
-		37B0071925C11C64005E0972 /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0071825C11C64005E0972 /* CartItemCollectionViewCell.swift */; };
 		37B1988B25B7807C00E59CF6 /* TemplateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1988A25B7807C00E59CF6 /* TemplateCollectionViewCell.swift */; };
 		37B1988F25B7836100E59CF6 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1988E25B7836100E59CF6 /* Template.swift */; };
 		37B1989325B7C4A400E59CF6 /* CustomizerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1989225B7C4A400E59CF6 /* CustomizerTableViewCell.swift */; };
+		37B5BCB6266BE5930017AAE5 /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5BCB5266BE5930017AAE5 /* CartItemTableViewCell.swift */; };
 		37B8063125C1177E0082F1B6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8063025C1177E0082F1B6 /* SignUpViewController.swift */; };
 		37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F5244E4338001F6421 /* AppDelegate.swift */; };
 		37E270F8244E4338001F6421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E270F7244E4338001F6421 /* SceneDelegate.swift */; };
@@ -64,10 +64,10 @@
 		377D779F25DB2899008D0059 /* PurchaseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDetailViewController.swift; sourceTree = "<group>"; };
 		377D77A725DB5A54008D0059 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
-		37B0071825C11C64005E0972 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		37B1988A25B7807C00E59CF6 /* TemplateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewCell.swift; sourceTree = "<group>"; };
 		37B1988E25B7836100E59CF6 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		37B1989225B7C4A400E59CF6 /* CustomizerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizerTableViewCell.swift; sourceTree = "<group>"; };
+		37B5BCB5266BE5930017AAE5 /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
 		37B8063025C1177E0082F1B6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		37E270F2244E4338001F6421 /* PCG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E270F5244E4338001F6421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -240,9 +240,9 @@
 				37FC57BC24F5FB3600610C60 /* ReviewCollectionViewCell.swift */,
 				37B1988A25B7807C00E59CF6 /* TemplateCollectionViewCell.swift */,
 				37B1989225B7C4A400E59CF6 /* CustomizerTableViewCell.swift */,
-				37B0071825C11C64005E0972 /* CartItemCollectionViewCell.swift */,
 				377D772C25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift */,
 				377D779725DB26E7008D0059 /* PurchaseTableViewCell.swift */,
+				37B5BCB5266BE5930017AAE5 /* CartItemTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -411,6 +411,7 @@
 				37FC57BF24F5FC4800610C60 /* ReviewController.swift in Sources */,
 				377D779C25DB275F008D0059 /* PurchasesViewController.swift in Sources */,
 				379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */,
+				37B5BCB6266BE5930017AAE5 /* CartItemTableViewCell.swift in Sources */,
 				37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */,
 				377D772D25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift in Sources */,
 				375B611A2669ADF4008F6639 /* CartViewController.swift in Sources */,
@@ -423,7 +424,6 @@
 				37B1988F25B7836100E59CF6 /* Template.swift in Sources */,
 				376B9A3125C09965003E1EFC /* MembershipViewController.swift in Sources */,
 				37FC57B524F5A07900610C60 /* Product.swift in Sources */,
-				37B0071925C11C64005E0972 /* CartItemCollectionViewCell.swift in Sources */,
 				376B9A2E25BF40FC003E1EFC /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
