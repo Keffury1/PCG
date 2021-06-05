@@ -50,10 +50,14 @@ class ProductDetailViewController: UIViewController {
         if price! {
             priceLabel.text = "$\(String(format: "%.0f", product.price))"
             priceWithSubLabel.text = "$\(String(format: "%.0f", product.tenUnitPrice))"
+            priceWithSubLabel.isHidden = false
+            withSubLabel.isHidden = false
             withSubLabel.alpha = 1
         } else {
             priceLabel.text = ""
             priceWithSubLabel.text = ""
+            priceWithSubLabel.isHidden = true
+            withSubLabel.isHidden = true
             withSubLabel.alpha = 0
         }
     }
@@ -100,6 +104,4 @@ extension ProductDetailViewController: UICollectionViewDataSource {
         cell.productDetailImageView.addShadow()
         return cell
     }
-    
-    
 }

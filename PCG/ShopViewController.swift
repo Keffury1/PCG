@@ -68,9 +68,11 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         if price {
             cell.priceLabel.text = "$\(product.price)"
+            cell.priceLabel.isHidden = false
             cell.titleLabel.text = product.title
         } else {
             cell.priceLabel.text = ""
+            cell.priceLabel.isHidden = true
             cell.titleLabel.text = product.title
         }
         
