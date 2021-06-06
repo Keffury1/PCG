@@ -1,3 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks.sh
-${BUILT_PRODUCTS_DIR}/anim/anim.framework
-${BUILT_PRODUCTS_DIR}/stepr/stepr.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
