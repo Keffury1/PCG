@@ -17,14 +17,12 @@ struct Product: Codable {
     var tenUnitPrice: Double
     var twentyUnitPrice: Double
     var image: String
-    var blankImage: String?
     var category: Categories
     var count: Int
     var templates: [Template]?
     var chosenTemplate: Template?
-    var images: [String]?
     
-    internal init(title: String, description: String, price: Double, fiveUnitPrice: Double, tenUnitPrice: Double, twentyUnitPrice: Double, image: String, blankImage: String? = nil, category: Categories, count: Int, templates: [Template]? = nil, chosenTemplate: Template? = nil, images: [String]? = nil) {
+    internal init(title: String, description: String, price: Double, fiveUnitPrice: Double, tenUnitPrice: Double, twentyUnitPrice: Double, image: String, category: Categories, count: Int, templates: [Template]? = nil, chosenTemplate: Template? = nil) {
         self.title = title
         self.description = description
         self.price = price
@@ -32,12 +30,10 @@ struct Product: Codable {
         self.tenUnitPrice = tenUnitPrice
         self.twentyUnitPrice = twentyUnitPrice
         self.image = image
-        self.blankImage = blankImage
         self.category = category
         self.count = count
         self.templates = templates
         self.chosenTemplate = chosenTemplate
-        self.images = images
     }
 }
 
