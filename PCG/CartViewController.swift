@@ -88,7 +88,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         let item = cart[indexPath.row]
         
         cell.productImageView.image = UIImage(named: item.image)
-        cell.titleLabel.text = item.title.capitalized
+        cell.titleLabel.text = item.name.capitalized
         cell.detailLabel.text = item.description
         cell.priceLabel.text = "$\(item.price)"
         cell.countLabel.text = "\(item.count)"

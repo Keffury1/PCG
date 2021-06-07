@@ -48,8 +48,8 @@ class ProductDetailViewController: UIViewController {
         guard let product = product else { return }
         
         if price! {
-            priceLabel.text = "$\(String(format: "%.0f", product.price))"
-            priceWithSubLabel.text = "$\(String(format: "%.0f", product.tenUnitPrice))"
+            priceLabel.text = "$\(product.price)"
+            priceWithSubLabel.text = "$\(product.discountPrice)"
             priceWithSubLabel.isHidden = false
             withSubLabel.isHidden = false
             withSubLabel.alpha = 1
@@ -65,10 +65,10 @@ class ProductDetailViewController: UIViewController {
     private func updateViews() {
         guard let product = product else { return }
         
-        productImageView.image = UIImage(named: product.image)
+        productImageView.image = UIImage(named: product.name)
         productImageView.layer.cornerRadius = 20.0
         productImageView.clipsToBounds = true
-        productTitleLabel.text = product.title
+        productTitleLabel.text = product.name
         productDescriptionTextView.text = product.description
     }
     
@@ -98,7 +98,7 @@ extension ProductDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productImageCell", for: indexPath) as? ProductDetailCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.productDetailImageView.image = UIImage(named: product!.image)
+        cell.productDetailImageView.image = UIImage(named: product!.name)
         cell.productDetailImageView.layer.cornerRadius = 10
         cell.productDetailImageView.clipsToBounds = true
         cell.productDetailImageView.addShadow()

@@ -1,0 +1,886 @@
+[
+  {
+    "id": 1,
+    "name": "Holiday Cottage Ornament",
+    "image": "https://www.dropbox.com/s/4238qzu1er2aeqs/Cottage%20Ornament.jpg?dl=0",
+    "category": "Ornament",
+    "price": 30,
+    "discountPrice": 25,
+    "description": "Give your client a charming wooden cottage to commemorate the purchase of their home",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 2,
+    "name": "Dog Treat Jar",
+    "image": "https://www.dropbox.com/s/ts6jrkjjkhdab3l/Dog%20Treat%20Jar.jpg?dl=0",
+    "category": "DogTreatJar",
+    "price": 40,
+    "discountPrice": 35,
+    "description": "Give your client's furry friend a special treat on closing day This refillable treat jar is personalized with your client's pup's name & comes with 18 matching peanut butter personalized cookies!",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 3,
+    "name": "Welcome Mat",
+    "image": "https://www.dropbox.com/s/29sfyn8k814orun/Doormat.jpg?dl=0",
+    "category": "Doormat",
+    "price": 0,
+    "discountPrice": 0,
+    "description": "",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 4,
+    "name": "Glass Cutting Board LG",
+    "image": "https://www.dropbox.com/s/sqpts9mm3j0jkua/Glass%20Cutting%20Board.jpg?dl=0",
+    "category": "CuttingBoard",
+    "price": 42,
+    "discountPrice": 36,
+    "description": "These exclusive cutting boards are antibacterial, shatter resistant & can be used with all food types When they're not busy preparing the daily meal, these beautiful cutting boards will be displayed as kitchen décor",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 5,
+    "name": "Glass Cutting Board SM",
+    "image": "",
+    "category": "CuttingBoard",
+    "price": 32,
+    "discountPrice": 25,
+    "description": "These exclusive cutting boards are antibacterial, shatter resistant & can be used with all food types When they're not busy preparing the daily meal, these beautiful cutting boards will be displayed as kitchen décor",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 6,
+    "name": "Tumbled Marble Coaster Set",
+    "image": "",
+    "category": "CoasterSet",
+    "price": 0,
+    "discountPrice": 0,
+    "description": "",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 7,
+    "name": "Glass Ornament",
+    "image": "https://www.dropbox.com/s/p4gf4jq18jeeqer/Glass%20Ornament.jpg?dl=0",
+    "category": "Ornament",
+    "price": 0,
+    "discountPrice": 0,
+    "description": "",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 8,
+    "name": "Santoku Knife Set",
+    "image": "https://www.dropbox.com/s/e8hbxxj8bwyxp8v/Knife%20Set.jpg?dl=0",
+    "category": "KnifeSet",
+    "price": 195,
+    "discountPrice": 185,
+    "description": "The Santoku knives are hand forged in Germany with the highest quality carbon stainless steel for exceptional durability Each blade is laser pricision measured to guarantee world class sharpness",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 9,
+    "name": "Rustic Lantern",
+    "image": "https://www.dropbox.com/s/pcgofir4r7utxzj/Lantern.jpg?dl=0",
+    "category": "Lantern",
+    "price": 70,
+    "discountPrice": 57,
+    "description": "Be the focal point of your client's home with our captivating personalized rustic lanterns The delightful flicker of a candle illuminates your client's name",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 10,
+    "name": "Maple Cutting Board",
+    "image": "https://www.dropbox.com/s/5k5n1ms9c9qzvao/Maple%20Cutting%20Board.jpg?dl=0",
+    "category": "CuttingBoard",
+    "price": 63,
+    "discountPrice": 50,
+    "description": "Maple wood, which is light in color and full of subtle grain marks, makes and excellent complement to your client's kitchen Maple is a hard wood which resists scarring and provides a natural protection against microbial contamination",
+    "count": 0,
+    "templates": [
+        {
+          "id": 1,
+          "name": "Maple3LTR",
+          "image": "https://www.dropbox.com/s/smmbhxrcdllec8j/Maple3LTR.jpg?dl=0",
+          "needs": [
+              {
+                "id": 6,
+                "name": "initials"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 2,
+          "name": "MapleAntler",
+          "image": "https://www.dropbox.com/s/c8s1fph703qst78/MapleAntler.jpg?dl=0",
+          "needs": [
+              {
+                "id": 6,
+                "name": "initials"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 3,
+          "name": "MapleBold",
+          "image": "https://www.dropbox.com/s/ii2i01zsuslz99q/MapleBold.jpg?dl=0",
+          "needs": [
+              {
+                  "id": 1,
+                  "name": "firstName"
+              },
+              {
+                  "id": 1,
+                  "name": "firstName"
+              },
+              {
+                  "id": 2,
+                  "name": "lastName"
+              },
+              {
+                  "id": 3,
+                  "name": "lastInitial"
+              },
+              {
+                  "id": 7,
+                  "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 4,
+          "name": "MapleChampagne",
+          "image": "https://www.dropbox.com/s/2h68sigqhwj6bk6/MapleChampagne.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 5,
+          "name": "MapleElegant",
+          "image": "https://www.dropbox.com/s/bucbp897kuuusk9/MapleElegant.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 6,
+          "name": "MapleF&F",
+          "image": "https://www.dropbox.com/s/9cbk0bfi739tnp5/MapleF%26F.jpg?dl=0",
+          "needs": [
+              {
+                "id": 8,
+                "name": "address"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 7,
+          "name": "MapleHome",
+          "image": "https://www.dropbox.com/s/5nk1yvco8zgqg1g/MapleHome.jpg?dl=0",
+          "needs": [
+              {
+                "id": 9,
+                "name": "state"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 8,
+          "name": "MapleHSH",
+          "image": "https://www.dropbox.com/s/moi8dpdqbxjgtzh/MapleHSH.jpg?dl=0",
+          "needs": [
+              {
+                  "id": 1,
+                  "name": "firstName"
+              },
+              {
+                  "id": 1,
+                  "name": "firstName"
+              },
+              {
+                  "id": 7,
+                  "name": "date"
+              }
+              
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 9,
+          "name": "MapleImpact",
+          "image": "https://www.dropbox.com/s/wgnv6e12ry3h67f/MapleImpact.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 10,
+          "name": "MapleKey",
+          "image": "https://www.dropbox.com/s/72pqr8eq41cnone/MapleKey.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 11,
+          "name": "MapleLeaf",
+          "image": "https://www.dropbox.com/s/dvxeuusegivg2kx/MapleLeaf.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 12,
+          "name": "MapleRustic",
+          "image": "https://www.dropbox.com/s/i2nxmyn4nlgkbl7/MapleRustic.jpg?dl=0",
+          "needs": [
+              {
+                "id": 7,
+                "name": "date"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 13,
+          "name": "MapleScript",
+          "image": "https://www.dropbox.com/s/qceczjd6y5w9ldx/MapleScript.jpg?dl=0",
+          "needs": [
+              {
+                "id": 6,
+                "name": "initials"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 14,
+          "name": "MapleVisionary",
+          "image": "https://www.dropbox.com/s/qtciozn1gagge5v/MapleVisionary.jpg?dl=0",
+          "needs": [
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 15,
+          "name": "MapleWhimsical",
+          "image": "https://www.dropbox.com/s/usnguvfk4gx38yj/MapleWhimsical.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        }
+    ],
+    "chosenTemplate": []
+  },
+  {
+    "id": 11,
+    "name": "Italian Marble Wood Cheese Board",
+    "image": "https://www.dropbox.com/s/6tw7whhmly0eje2/MarbleWood%20Cutting%20Board.jpg?dl=0",
+    "category": "CheeseBoard",
+    "price": 70,
+    "discountPrice": 60,
+    "description": "With classic white mable on top & acacia wood on the bottom, these gorgeous boards are the perfect home decor",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 12,
+    "name": "Italian Marble Wood Coaster Set",
+    "image": "",
+    "category": "CoasterSet",
+    "price": 0,
+    "discountPrice": 0,
+    "description": "",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 13,
+    "name": "Open House Doormat",
+    "image": "https://www.dropbox.com/s/2se6bvnz4zmbc15/Realtor%20Doormat.jpg?dl=0",
+    "category": "Doormat",
+    "price": 60,
+    "discountPrice": 45,
+    "description": "Each open house doormat is made from a tufted looped polyester with a non-skid rubberized backing and black edges Your design is printed into the mat, which creates a durable, weather-resistant image that lasts!",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 14,
+    "name": "Slate Cheese Board",
+    "image": "https://www.dropbox.com/s/x7dl642w9xgjr4w/Slate%20Cheese%20Board.jpg?dl=0",
+    "category": "CheeseBoard",
+    "price": 60,
+    "discountPrice": 47,
+    "description": "Our charcoal slate cutting boards offer a beautifully rustic, organic surface to match any type of household From a farmhouse styled home to a bachelor pad, these slate cutting boards are sure to make a statement",
+    "count": 0,
+    "templates": [
+        {
+          "id": 16,
+          "name": "Slate3LTR",
+          "image": "https://www.dropbox.com/s/r6ng0b8muvjnsd2/Slate3LTR.jpg?dl=0",
+          "needs": [
+              {
+                "id": 6,
+                "name": "initials"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 17,
+          "name": "SlateAntler",
+          "image": "https://www.dropbox.com/s/ltfe54v95g01hdw/SlateAntler.jpg?dl=0",
+          "needs": [
+              {
+                "id": 6,
+                "name": "initials"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 18,
+          "name": "SlateBold",
+          "image": "https://www.dropbox.com/s/7siykb6mnbuo29y/SlateBold.jpg?dl=0",
+          "needs": [
+              {
+                  "id": 1,
+                  "name": "firstName"
+              },
+              {
+                  "id": 1,
+                  "name": "firstName"
+              },
+              {
+                  "id": 2,
+                  "name": "lastName"
+              },
+              {
+                  "id": 3,
+                  "name": "lastInitial"
+              },
+              {
+                  "id": 7,
+                  "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 19,
+          "name": "SlateChampagne",
+          "image": "https://www.dropbox.com/s/ygumaf8q8evsnxt/SlateChampagne.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 20,
+          "name": "SlateElegant",
+          "image": "https://www.dropbox.com/s/qpxj7ozw8b2fuof/SlateElegant.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 21,
+          "name": "SlateF&F",
+          "image": "https://www.dropbox.com/s/0tse1bvuhg4jvys/SlateF%26F.jpg?dl=0",
+          "needs": [
+              {
+                "id": 8,
+                "name": "address"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 22,
+          "name": "SlateHome",
+          "image": "https://www.dropbox.com/s/bs5k39m26j2lbj8/SlateHome.jpg?dl=0",
+          "needs": [
+              {
+                "id": 9,
+                "name": "state"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 23,
+          "name": "SlateHSH",
+          "image": "https://www.dropbox.com/s/50rpgd2v8e9doge/SlateHSH.jpg?dl=0",
+          "needs": [
+              {
+                  "id": 1,
+                  "name": "firstName"
+              },
+              {
+                  "id": 1,
+                  "name": "firstName"
+              },
+              {
+                  "id": 7,
+                  "name": "date"
+              }
+              
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 24,
+          "name": "SlateImpact",
+          "image": "https://www.dropbox.com/s/ygt7gl78mkb3ba0/SlateImpact.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 25,
+          "name": "SlateKey",
+          "image": "https://www.dropbox.com/s/6llwxl5hd88fpeh/SlateKey.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 26,
+          "name": "SlateLeaf",
+          "image": "https://www.dropbox.com/s/q3daoobfkmfd7xm/SlateLeaf.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 27,
+          "name": "SlateRustic",
+          "image": "https://www.dropbox.com/s/no8ra58bo4svc3e/SlateRustic.jpg?dl=0",
+          "needs": [
+              {
+                "id": 7,
+                "name": "date"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 28,
+          "name": "SlateScript",
+          "image": "https://www.dropbox.com/s/zcxgj7uoq5zrqbu/SlateScript.jpg?dl=0",
+          "needs": [
+              {
+                "id": 6,
+                "name": "initials"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 29,
+          "name": "SlateVisionary",
+          "image": "https://www.dropbox.com/s/cmsbfz09ct2zyy2/SlateVisionary.jpg?dl=0",
+          "needs": [
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+          "id": 30,
+          "name": "SlateWhimsical",
+          "image": "https://www.dropbox.com/s/mot4yuvpqubl46g/SlateWhimsical.jpg?dl=0",
+          "needs": [
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 1,
+                "name": "firstName"
+              },
+              {
+                "id": 2,
+                "name": "lastName"
+              },
+              {
+                "id": 7,
+                "name": "date"
+              }
+          ],
+          "fulfilled": []
+        },
+        {
+            "id": 31,
+            "name": "SlatePoppy",
+            "image": "https://www.dropbox.com/s/e2v940wuy4kp36s/SlatePoppy.jpg?dl=0",
+            "needs": [
+                {
+                    "id": 1,
+                    "name": "firstName"
+                },
+                {
+                    "id": 1,
+                    "name": "firstName"
+                },
+                {
+                  "id": 7,
+                  "name": "date"
+                }
+            ],
+            "fulfilled": []
+        }
+    ],
+    "chosenTemplate": []
+  },
+  {
+    "id": 15,
+    "name": "Slate Coaster Set",
+    "image": "",
+    "category": "CoasterSet",
+    "price": 0,
+    "discountPrice": 0,
+    "description": "",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 16,
+    "name": "Classic Address Stamp",
+    "image": "https://www.dropbox.com/s/9lghdthyvoxw4dy/Stamp.jpg?dl=0",
+    "category": "Stamp",
+    "price": 27,
+    "discountPrice": 22,
+    "description": "Our self-inking address stamps last for thousands of impressions and are a much-needed gift that your client will use on a regular basis",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 17,
+    "name": "Monogram Address Stamp",
+    "image": "",
+    "category": "Stamp",
+    "price": 37,
+    "discountPrice": 33,
+    "description": "Our self-inking address stamps last for thousands of impressions and are a much-needed gift that your client will use on a regular basis",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 18,
+    "name": "Laguiole Steak Knife Set",
+    "image": "https://www.dropbox.com/s/yhdjgjk6j5qbgjs/Steak%20Knife%20Set.jpg?dl=0",
+    "category": "KnifeSet",
+    "price": 125,
+    "discountPrice": 109,
+    "description": "Made in Francem these knives were inspired by pocket knives used by French Shepherds 200 years ago Each blade is made from high quality stainless steel, light weight acrylic handle (Ivory) with a beautiful Platine detailing down the spine",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 19,
+    "name": "3-Tool Cheese Board",
+    "image": "https://www.dropbox.com/s/7hsv94l1gi8qqfi/Three%20Tool.jpg?dl=0",
+    "category": "CheeseBoard",
+    "price": 88,
+    "discountPrice": 77,
+    "description": "The bamboo is topped by a tempered Pyrex cutting board that is conveniently removeable, so it can double as a serving tray There is no need to go back to the kitchen for a cheese knife Simply pull out the 'hidden' drawer & you'll find 3 varieties of cheese tools ready to use",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 20,
+    "name": "Wrought Iron Stand LG",
+    "image": "",
+    "category": "AddOn",
+    "price": 14,
+    "discountPrice": 0,
+    "description": "",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  },
+  {
+    "id": 21,
+    "name": "Wrought Iron Stand SM",
+    "image": "",
+    "category": "AddOn",
+    "price": 10,
+    "discountPrice": 0,
+    "description": "",
+    "count": 0,
+    "templates": [],
+    "chosenTemplate": []
+  }
+]

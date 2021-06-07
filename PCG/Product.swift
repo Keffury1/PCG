@@ -10,31 +10,16 @@ import Foundation
 import UIKit
 
 struct Product: Codable {
-    var title: String
-    var description: String
-    var price: Double
-    var fiveUnitPrice: Double
-    var tenUnitPrice: Double
-    var twentyUnitPrice: Double
+    var id: Int
+    var name: String
     var image: String
-    var category: Categories
+    var category: String
+    var price: Int
+    var discountPrice: Int
+    var description: String
     var count: Int
     var templates: [Template]?
-    var chosenTemplate: Template?
-    
-    internal init(title: String, description: String, price: Double, fiveUnitPrice: Double, tenUnitPrice: Double, twentyUnitPrice: Double, image: String, category: Categories, count: Int, templates: [Template]? = nil, chosenTemplate: Template? = nil) {
-        self.title = title
-        self.description = description
-        self.price = price
-        self.fiveUnitPrice = fiveUnitPrice
-        self.tenUnitPrice = tenUnitPrice
-        self.twentyUnitPrice = twentyUnitPrice
-        self.image = image
-        self.category = category
-        self.count = count
-        self.templates = templates
-        self.chosenTemplate = chosenTemplate
-    }
+    var chosenTemplate: [Template]?
 }
 
 enum Categories: Int, Codable {

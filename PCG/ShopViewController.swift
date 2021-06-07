@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ShopViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -48,9 +49,16 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         setupSubviews()
         
+        productController.loadProducts()
         productsCollectionView.delegate = self
         productsCollectionView.dataSource = self
-        self.products = productController.products
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        guard let products = productController.products else { return }
+        self.products = products
         productsCollectionView.reloadData()
     }
     
@@ -69,14 +77,14 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if price {
             cell.priceLabel.text = "$\(product.price)"
             cell.priceLabel.isHidden = false
-            cell.titleLabel.text = product.title
+            cell.titleLabel.text = product.name
         } else {
             cell.priceLabel.text = ""
             cell.priceLabel.isHidden = true
-            cell.titleLabel.text = product.title
+            cell.titleLabel.text = product.name
         }
         
-        cell.productImageView.image = UIImage(named: product.image)
+        cell.productImageView.image = UIImage(named: product.name)
         cell.productImageView.layer.cornerRadius = 10
         cell.productImageView.clipsToBounds = true
         cell.productImageView.addShadow()
@@ -137,9 +145,9 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         showAllButton.isEnabled = false
     }
     
-    func sortByCategory(category: Categories) {
+    func sortByCategory(category: String) {
         var array: [Product] = []
-        for item in productController.products {
+        for item in productController.products! {
             if item.category == category {
                 array.append(item)
             }
@@ -231,46 +239,46 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func cuttingBoardButtonTapped(_ sender: Any) {
         removeChoices("Cutting Boards")
-        sortByCategory(category: .CuttingBoard)
+        sortByCategory(category: "CuttingBoard")
     }
     
     @IBAction func cheeseBoardButtonTapped(_ sender: Any) {
         removeChoices("Cheese Boards")
-        sortByCategory(category: .CheeseBoard)
+        sortByCategory(category: "CheeseBoard")
     }
     
     @IBAction func knifeSetsButtonTapped(_ sender: Any) {
         removeChoices("Knife Sets")
-        sortByCategory(category: .KnifeSet)
+        sortByCategory(category: "KnifeSet")
     }
     
     @IBAction func ornamentsButtonTapped(_ sender: Any) {
         removeChoices("Ornaments")
-        sortByCategory(category: .Ornament)
+        sortByCategory(category: "Ornament")
     }
     
     @IBAction func doormatsButtonTapped(_ sender: Any) {
         removeChoices("Doormats")
-        sortByCategory(category: .Doormat)
+        sortByCategory(category: "Doormat")
     }
     
     @IBAction func stampsButtonTapped(_ sender: Any) {
         removeChoices("Stamps")
-        sortByCategory(category: .Stamps)
+        sortByCategory(category: "Stamps")
     }
     
     @IBAction func dogTreatJarButtonTapped(_ sender: Any) {
         removeChoices("Dog Treat Jar")
-        sortByCategory(category: .DogTreatJar)
+        sortByCategory(category: "DogTreatJar")
     }
     
     @IBAction func lanternButtonTapped(_ sender: Any) {
         removeChoices("Lantern")
-        sortByCategory(category: .Lantern)
+        sortByCategory(category: "Lantern")
     }
     
     @IBAction func showAllButtonTapped(_ sender: Any) {
-        self.products = productController.products
+        self.products = productController.products!
         productsCollectionView.reloadData()
         removeChoices("Menu")
     }

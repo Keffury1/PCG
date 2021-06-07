@@ -9,11 +9,7 @@
 import Foundation
 
 struct Review: Codable {
-    var name: String
+    var username: String
     var review: String
-    
-    internal init(name: String, review: String) {
-        self.name = name
-        self.review = review
-    }
+    var product: String
 }

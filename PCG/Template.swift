@@ -10,15 +10,16 @@ import Foundation
 import UIKit
 
 struct Template: Codable {
+    var id: Int
+    var name: String
     var image: String
-    var needs: [Need]
+    var needs: [Needs]
     var fulfilled: [String]
-    
-    internal init(image: String, needs: [Need], fulfilled: [String]) {
-        self.image = image
-        self.needs = needs
-        self.fulfilled = fulfilled
-    }
+}
+
+struct Needs: Codable {
+    var id: Int
+    var name: String
 }
 
 enum Need: String, Codable {

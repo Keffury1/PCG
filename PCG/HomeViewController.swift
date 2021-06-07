@@ -29,6 +29,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         setupSubviews()
         
+        reviewController.loadReviews()
         reviewsCollectionView.delegate = self
         reviewsCollectionView.dataSource = self
         reviewsCollectionView.layer.cornerRadius = 10.0
@@ -37,14 +38,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Colllection View Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return reviewController.reviews.count
+        if let reviews = reviewController.reviews {
+            return reviews.count
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reviewCell", for: indexPath) as? ReviewCollectionViewCell else { return UICollectionViewCell() }
         
-        let review = reviewController.reviews[indexPath.row]
-        cell.nameLabel.text = review.name
+        guard let reviews = reviewController.reviews else { return UICollectionViewCell() }
+        let review = reviews[indexPath.row]
+        cell.nameLabel.text = review.username
         cell.reviewView.text = review.review
         cell.layer.cornerRadius = 10.0
         cell.addTopDownGradient(color: UIColor.init(named: "Tan")!.cgColor)

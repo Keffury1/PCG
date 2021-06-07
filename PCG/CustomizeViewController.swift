@@ -118,7 +118,11 @@ class CustomizeViewController: UIViewController {
     
     private func updateViews() {
         guard let product = product else { return }
-        firstTemplateImageView.image = UIImage(named: (product.templates?.first!.image) ?? "")
+        if product.templates?.isEmpty == true {
+            return
+        } else {
+            firstTemplateImageView.image = UIImage(named: (product.templates?.first!.name) ?? "")
+        }
     }
     
     func switchDatePicker() {
@@ -224,7 +228,10 @@ class CustomizeViewController: UIViewController {
         for entry in entries.values {
             template?.fulfilled.append(entry.description)
         }
-        product.chosenTemplate = template
+        if let chosenTemplate = template {
+            product.chosenTemplate = []
+            product.chosenTemplate?.append(chosenTemplate)
+        }
         switchItemAdded()
     }
     
@@ -332,7 +339,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         guard let product = product else { return UICollectionViewCell() }
         
         if let template = product.templates?[indexPath.row] {
-            cell.templateImageView.image = UIImage(named: template.image)
+            cell.templateImageView.image = UIImage(named: template.name)
             cell.templateImageView.layer.cornerRadius = 10
             cell.templateImageView.clipsToBounds = false
         }
@@ -348,7 +355,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         }
         
         if let template = product.templates?[indexPath.row] {
-            firstTemplateImageView.image = UIImage(named: template.image)
+            firstTemplateImageView.image = UIImage(named: template.name)
             self.template = template
             reset = true
             customizerTableView.setContentOffset(.zero, animated: true)
@@ -367,36 +374,38 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
         
         if let need = template?.needs[indexPath.row] {
             if reset {
-                cell.needLabel.text = need.rawValue
+                cell.needLabel.text = need.name
                 cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
             } else {
                 if entries[indexPath.row] != nil {
                     cell.needLabel.text = entries[indexPath.row]
                     cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
                 } else {
-                    cell.needLabel.text = need.rawValue
+                    cell.needLabel.text = need.name
                     cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
                 }
             }
-            switch need {
-            case .firstName:
+            switch need.id {
+            case 1:
                 cell.needImageView.image = UIImage.init(systemName: "signature")
-            case .lastName:
+            case 2:
                 cell.needImageView.image = UIImage.init(systemName: "signature")
-            case .lastInitial:
+            case 3:
                 cell.needImageView.image = UIImage.init(systemName: "signpost.right")
-            case .fullName:
+            case 4:
                 cell.needImageView.image = UIImage.init(systemName: "signature")
-            case .photo:
+            case 5:
                 cell.needImageView.image = UIImage.init(systemName: "camera")
-            case .initials:
+            case 6:
                 cell.needImageView.image = UIImage.init(systemName: "signpost.right")
-            case .date:
+            case 7:
                 cell.needImageView.image = UIImage.init(systemName: "calendar.circle")
-            case .address:
+            case 8:
                 cell.needImageView.image = UIImage.init(systemName: "house.circle")
-            case .state:
+            case 9:
                 cell.needImageView.image = UIImage.init(systemName: "mappin.circle")
+            default:
+                cell.needImageView.image = nil
             }
         }
         
@@ -407,39 +416,43 @@ extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
         self.indexPath = indexPath
         self.reset = false
         if let need = template?.needs[indexPath.row] {
-            switch need {
-            case .firstName:
-                enterLabel.text = "Enter \(need.rawValue)"
-                customizeTextField.placeholder = need.rawValue
+            switch need.id {
+            case 1:
+                enterLabel.text = "Enter \(need.name)"
+                customizeTextField.placeholder = need.name
                 switchTextField()
-            case .lastName:
-                enterLabel.text = "Enter \(need.rawValue)"
-                customizeTextField.placeholder = need.rawValue
+            case 2:
+                enterLabel.text = "Enter \(need.name)"
+                customizeTextField.placeholder = need.name
                 switchTextField()
-            case .lastInitial:
-                enterLabelCAP.text = "Enter \(need.rawValue)"
-                customizeTextField.placeholder = need.rawValue
+            case 3:
+                enterLabelCAP.text = "Enter \(need.name)"
+                customizeTextField.placeholder = need.name
                 switchTextFieldCAP()
-            case .fullName:
-                enterLabel.text = "Enter \(need.rawValue)"
-                customizeTextField.placeholder = need.rawValue
+            case 4:
+                enterLabel.text = "Enter \(need.name)"
+                customizeTextField.placeholder = need.name
                 switchTextField()
-            case .photo:
+            case 5:
                 return
-            case .initials:
-                enterLabelCAP.text = "Enter \(need.rawValue)"
-                customizeTextField.placeholder = need.rawValue
+            case 6:
+                enterLabelCAP.text = "Enter \(need.name)"
+                customizeTextField.placeholder = need.name
                 switchTextFieldCAP()
-            case .date:
+            case 7:
                 switchDatePicker()
-            case .address:
-                enterLabel.text = "Enter \(need.rawValue)"
-                customizeTextField.placeholder = need.rawValue
+            case 8:
+                enterLabel.text = "Enter \(need.name)"
+                customizeTextField.placeholder = need.name
                 switchTextField()
-            case .state:
-                enterLabelCAP.text = "Enter \(need.rawValue) initials"
-                customizeTextField.placeholder = need.rawValue
+            case 9:
+                enterLabelCAP.text = "Enter \(need.name) initials"
+                customizeTextField.placeholder = need.name
                 switchTextFieldCAP()
+            default:
+                enterLabel.text = ""
+                enterLabelCAP.text = ""
+                customizeTextField.placeholder = ""
             }
         }
     }

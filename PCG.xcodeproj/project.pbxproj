@@ -11,6 +11,9 @@
 		37125D742489A20B00E716CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37125D732489A20A00E716CA /* WebKit.framework */; };
 		374E50A525E48D37004320B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 374E50A425E48D37004320B5 /* GoogleService-Info.plist */; };
 		374E50B725E48F1B004320B5 /* PurchaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E50B625E48F1B004320B5 /* PurchaseController.swift */; };
+		375390CC266DD8BE0016791C /* Needs.json in Resources */ = {isa = PBXBuildFile; fileRef = 375390CB266DD8BE0016791C /* Needs.json */; };
+		375390CF266DD9150016791C /* Reviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 375390CE266DD8C50016791C /* Reviews.json */; };
+		375390D0266DD9180016791C /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 375390CD266DD8C10016791C /* Products.json */; };
 		3755178F24F9B8AE002643F7 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */; };
 		375B611A2669ADF4008F6639 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375B61192669ADF4008F6639 /* CartViewController.swift */; };
 		376412EE2519588800730747 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376412EC2519588800730747 /* BebasNeue-Regular.ttf */; };
@@ -52,6 +55,9 @@
 		37125D732489A20A00E716CA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		374E50A425E48D37004320B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		374E50B625E48F1B004320B5 /* PurchaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseController.swift; sourceTree = "<group>"; };
+		375390CB266DD8BE0016791C /* Needs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Needs.json; sourceTree = "<group>"; };
+		375390CD266DD8C10016791C /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		375390CE266DD8C50016791C /* Reviews.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Reviews.json; sourceTree = "<group>"; };
 		3755178E24F9B8AE002643F7 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		375B61192669ADF4008F6639 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		376412D62516B7F000730747 /* PCG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PCG.entitlements; sourceTree = "<group>"; };
@@ -139,8 +145,8 @@
 		37B8062D25C117430082F1B6 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				37FC57A424F5690A00610C60 /* TabBarController.swift */,
 				37FC57A224F5646D00610C60 /* HomeViewController.swift */,
+				37FC57A424F5690A00610C60 /* TabBarController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -188,6 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				376412D62516B7F000730747 /* PCG.entitlements */,
+				375390CB266DD8BE0016791C /* Needs.json */,
+				375390CD266DD8C10016791C /* Products.json */,
+				375390CE266DD8C50016791C /* Reviews.json */,
 				37E2710E244E435E001F6421 /* App Lifecycle */,
 				376412632516769700730747 /* Shop */,
 				37E27110244E438D001F6421 /* Networking */,
@@ -303,7 +312,6 @@
 				37E270EE244E4338001F6421 /* Sources */,
 				37E270EF244E4338001F6421 /* Frameworks */,
 				37E270F0244E4338001F6421 /* Resources */,
-				5FCF9218564DA1F957A3E085 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,33 +367,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				376412EE2519588800730747 /* BebasNeue-Regular.ttf in Resources */,
+				375390D0266DD9180016791C /* Products.json in Resources */,
 				37E27102244E4338001F6421 /* LaunchScreen.storyboard in Resources */,
 				374E50A525E48D37004320B5 /* GoogleService-Info.plist in Resources */,
 				37E270FF244E4338001F6421 /* Assets.xcassets in Resources */,
 				37E270FD244E4338001F6421 /* Main.storyboard in Resources */,
+				375390CC266DD8BE0016791C /* Needs.json in Resources */,
+				375390CF266DD9150016791C /* Reviews.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5FCF9218564DA1F957A3E085 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9B7E88E8AE7F7842C11FD7E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
