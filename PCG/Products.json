@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Holiday Cottage Ornament",
-    "image": "https://www.dropbox.com/s/4238qzu1er2aeqs/Cottage%20Ornament.jpg?dl=0",
+    "name": "Cottage Ornament",
+    "image": "Holiday Cottage Ornament",
     "category": "Ornament",
     "price": 30,
     "discountPrice": 25,
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Dog Treat Jar",
-    "image": "https://www.dropbox.com/s/ts6jrkjjkhdab3l/Dog%20Treat%20Jar.jpg?dl=0",
+    "image": "Dog Treat Jar",
     "category": "DogTreatJar",
     "price": 40,
     "discountPrice": 35,
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Welcome Mat",
-    "image": "https://www.dropbox.com/s/29sfyn8k814orun/Doormat.jpg?dl=0",
+    "image": "Welcome Mat",
     "category": "Doormat",
     "price": 0,
     "discountPrice": 0,
@@ -37,8 +37,8 @@
   },
   {
     "id": 4,
-    "name": "Glass Cutting Board LG",
-    "image": "https://www.dropbox.com/s/sqpts9mm3j0jkua/Glass%20Cutting%20Board.jpg?dl=0",
+    "name": "Glass Cutting Board",
+    "image": "Glass Cutting Board",
     "category": "CuttingBoard",
     "price": 42,
     "discountPrice": 36,
@@ -48,21 +48,9 @@
     "chosenTemplate": []
   },
   {
-    "id": 5,
-    "name": "Glass Cutting Board SM",
-    "image": "",
-    "category": "CuttingBoard",
-    "price": 32,
-    "discountPrice": 25,
-    "description": "These exclusive cutting boards are antibacterial, shatter resistant & can be used with all food types When they're not busy preparing the daily meal, these beautiful cutting boards will be displayed as kitchen décor",
-    "count": 0,
-    "templates": [],
-    "chosenTemplate": []
-  },
-  {
     "id": 6,
-    "name": "Tumbled Marble Coaster Set",
-    "image": "",
+    "name": "Tumbled Marble Coasters",
+    "image": "Tumbled Marble Coasters",
     "category": "CoasterSet",
     "price": 0,
     "discountPrice": 0,
@@ -74,7 +62,7 @@
   {
     "id": 7,
     "name": "Glass Ornament",
-    "image": "https://www.dropbox.com/s/p4gf4jq18jeeqer/Glass%20Ornament.jpg?dl=0",
+    "image": "Glass Ornament",
     "category": "Ornament",
     "price": 0,
     "discountPrice": 0,
@@ -86,7 +74,7 @@
   {
     "id": 8,
     "name": "Santoku Knife Set",
-    "image": "https://www.dropbox.com/s/e8hbxxj8bwyxp8v/Knife%20Set.jpg?dl=0",
+    "image": "Santoku Knife Set",
     "category": "KnifeSet",
     "price": 195,
     "discountPrice": 185,
@@ -98,7 +86,7 @@
   {
     "id": 9,
     "name": "Rustic Lantern",
-    "image": "https://www.dropbox.com/s/pcgofir4r7utxzj/Lantern.jpg?dl=0",
+    "image": "Rustic Lantern",
     "category": "Lantern",
     "price": 70,
     "discountPrice": 57,
@@ -110,7 +98,7 @@
   {
     "id": 10,
     "name": "Maple Cutting Board",
-    "image": "https://www.dropbox.com/s/5k5n1ms9c9qzvao/Maple%20Cutting%20Board.jpg?dl=0",
+    "image": "Maple Cutting Board",
     "category": "CuttingBoard",
     "price": 63,
     "discountPrice": 50,
@@ -427,8 +415,8 @@
   },
   {
     "id": 11,
-    "name": "Italian Marble Wood Cheese Board",
-    "image": "https://www.dropbox.com/s/6tw7whhmly0eje2/MarbleWood%20Cutting%20Board.jpg?dl=0",
+    "name": "Marble Wood Cheese Board",
+    "image": "Italian Marble Wood Cheese Board",
     "category": "CheeseBoard",
     "price": 70,
     "discountPrice": 60,
@@ -439,8 +427,8 @@
   },
   {
     "id": 12,
-    "name": "Italian Marble Wood Coaster Set",
-    "image": "",
+    "name": "Marble Wood Coasters",
+    "image": "Marble Wood Coasters",
     "category": "CoasterSet",
     "price": 0,
     "discountPrice": 0,
@@ -452,7 +440,7 @@
   {
     "id": 13,
     "name": "Open House Doormat",
-    "image": "https://www.dropbox.com/s/2se6bvnz4zmbc15/Realtor%20Doormat.jpg?dl=0",
+    "image": "Open House Doormat",
     "category": "Doormat",
     "price": 60,
     "discountPrice": 45,
@@ -464,7 +452,7 @@
   {
     "id": 14,
     "name": "Slate Cheese Board",
-    "image": "https://www.dropbox.com/s/x7dl642w9xgjr4w/Slate%20Cheese%20Board.jpg?dl=0",
+    "image": "Slate Cheese Board",
     "category": "CheeseBoard",
     "price": 60,
     "discountPrice": 47,
@@ -801,8 +789,8 @@
   },
   {
     "id": 15,
-    "name": "Slate Coaster Set",
-    "image": "",
+    "name": "Slate Coasters",
+    "image": "Slate Coasters",
     "category": "CoasterSet",
     "price": 0,
     "discountPrice": 0,
@@ -813,8 +801,8 @@
   },
   {
     "id": 16,
-    "name": "Classic Address Stamp",
-    "image": "https://www.dropbox.com/s/9lghdthyvoxw4dy/Stamp.jpg?dl=0",
+    "name": "Classic Stamp",
+    "image": "Classic Stamp",
     "category": "Stamp",
     "price": 27,
     "discountPrice": 22,
@@ -825,8 +813,8 @@
   },
   {
     "id": 17,
-    "name": "Monogram Address Stamp",
-    "image": "",
+    "name": "Monogram Stamp",
+    "image": "Monogram Stamp",
     "category": "Stamp",
     "price": 37,
     "discountPrice": 33,
@@ -837,8 +825,8 @@
   },
   {
     "id": 18,
-    "name": "Laguiole Steak Knife Set",
-    "image": "https://www.dropbox.com/s/yhdjgjk6j5qbgjs/Steak%20Knife%20Set.jpg?dl=0",
+    "name": "Steak Knife Set",
+    "image": "Laguiole Steak Knife Set",
     "category": "KnifeSet",
     "price": 125,
     "discountPrice": 109,
@@ -850,35 +838,11 @@
   {
     "id": 19,
     "name": "3-Tool Cheese Board",
-    "image": "https://www.dropbox.com/s/7hsv94l1gi8qqfi/Three%20Tool.jpg?dl=0",
+    "image": "3-Tool Cheese Board",
     "category": "CheeseBoard",
     "price": 88,
     "discountPrice": 77,
     "description": "The bamboo is topped by a tempered Pyrex cutting board that is conveniently removeable, so it can double as a serving tray There is no need to go back to the kitchen for a cheese knife Simply pull out the 'hidden' drawer & you'll find 3 varieties of cheese tools ready to use",
-    "count": 0,
-    "templates": [],
-    "chosenTemplate": []
-  },
-  {
-    "id": 20,
-    "name": "Wrought Iron Stand LG",
-    "image": "",
-    "category": "AddOn",
-    "price": 14,
-    "discountPrice": 0,
-    "description": "",
-    "count": 0,
-    "templates": [],
-    "chosenTemplate": []
-  },
-  {
-    "id": 21,
-    "name": "Wrought Iron Stand SM",
-    "image": "",
-    "category": "AddOn",
-    "price": 10,
-    "discountPrice": 0,
-    "description": "",
     "count": 0,
     "templates": [],
     "chosenTemplate": []

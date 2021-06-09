@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class ShopViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -84,10 +83,12 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.titleLabel.text = product.name
         }
         
-        cell.productImageView.image = UIImage(named: product.name)
+        cell.productImageView.image = UIImage(named: product.image)
         cell.productImageView.layer.cornerRadius = 10
         cell.productImageView.clipsToBounds = true
         cell.productImageView.addShadow()
+        cell.layer.cornerRadius = 10
+        cell.clipsToBounds = true
         
         return cell
     }
