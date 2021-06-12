@@ -22,6 +22,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var shopView: UIView!
     @IBOutlet var membershipTapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet var shopTapGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet weak var viaEtsyButton: UIButton!
     
     // MARK: - Views
     
@@ -54,6 +55,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.reviewView.text = review.review
         cell.layer.cornerRadius = 10.0
         cell.addTopDownGradient(color: UIColor.init(named: "Tan")!.cgColor)
+        cell.reviewView.textContainer.lineBreakMode = .byTruncatingTail
         
         return cell
     }
@@ -82,6 +84,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func shopButtonTapped(_ sender: Any) {
         self.tabBarController?.selectedIndex = 3
+    }
+    
+    @IBAction func viaEtsyButtonTapped(_ sender: Any) {
     }
     
     // MARK: - Navigation
