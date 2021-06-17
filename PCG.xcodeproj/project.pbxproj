@@ -25,7 +25,7 @@
 		377D77A025DB2899008D0059 /* PurchaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D779F25DB2899008D0059 /* PurchaseDetailViewController.swift */; };
 		377D77A825DB5A54008D0059 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D77A725DB5A54008D0059 /* AccountViewController.swift */; };
 		379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */; };
-		379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */; };
+		379C3BCD253623F6003D22C1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* SwiftPackageProductDependency */; };
 		37B1988B25B7807C00E59CF6 /* TemplateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1988A25B7807C00E59CF6 /* TemplateCollectionViewCell.swift */; };
 		37B1988F25B7836100E59CF6 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1988E25B7836100E59CF6 /* Template.swift */; };
 		37B1989325B7C4A400E59CF6 /* CustomizerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1989225B7C4A400E59CF6 /* CustomizerTableViewCell.swift */; };
@@ -100,7 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37125D742489A20B00E716CA /* WebKit.framework in Frameworks */,
-				379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */,
+				379C3BCD253623F6003D22C1 /* BuildFile in Frameworks */,
 				EA6C026F322F389E279BB791 /* Pods_PCG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +312,7 @@
 				37E270EE244E4338001F6421 /* Sources */,
 				37E270EF244E4338001F6421 /* Frameworks */,
 				37E270F0244E4338001F6421 /* Resources */,
+				706FF0AC07C73B28AE958460 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,7 +320,7 @@
 			);
 			name = PCG;
 			packageProductDependencies = (
-				379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */,
+				379C3BCC253623F6003D22C1 /* SwiftPackageProductDependency */,
 			);
 			productName = PCG;
 			productReference = 37E270F2244E4338001F6421 /* PCG.app */;
@@ -350,7 +351,7 @@
 			);
 			mainGroup = 37E270E9244E4338001F6421;
 			packageReferences = (
-				379C3BCB253623F6003D22C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				379C3BCB253623F6003D22C1 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 37E270F3244E4338001F6421 /* Products */;
 			projectDirPath = "";
@@ -380,6 +381,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		706FF0AC07C73B28AE958460 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9B7E88E8AE7F7842C11FD7E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -644,7 +662,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		379C3BCB253623F6003D22C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		379C3BCB253623F6003D22C1 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -655,9 +673,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */ = {
+		379C3BCC253623F6003D22C1 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 379C3BCB253623F6003D22C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = 379C3BCB253623F6003D22C1 /* RemoteSwiftPackageReference */;
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

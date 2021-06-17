@@ -21,29 +21,9 @@ class CustomizeViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var bottomFadeView: UIView!
-    @IBOutlet weak var reviewOrderButton: UIButton!
+    @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
-    @IBOutlet weak var abandonButton: UIButton!
-    @IBOutlet weak var customizerTableView: UITableView!
-    @IBOutlet weak var customizeTextFieldView: UIView!
-    @IBOutlet weak var enterLabel: UILabel!
-    @IBOutlet weak var customizeTextField: UITextField!
-    @IBOutlet weak var saveCustomTextButton: UIButton!
-    @IBOutlet weak var customizeDateView: UIView!
-    @IBOutlet weak var customizeDatePicker: UIDatePicker!
-    @IBOutlet weak var saveCustomDateButton: UIButton!
-    @IBOutlet weak var discardDateButton: UIButton!
-    @IBOutlet weak var itemAddedView: UIView!
-    @IBOutlet weak var viewCartButton: UIButton!
-    @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var logoView: UIView!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var customizeTextFieldViewCAP: UIView!
-    @IBOutlet weak var enterLabelCAP: UILabel!
-    @IBOutlet weak var customizeTextFieldCAP: UITextField!
-    @IBOutlet weak var saveCustomTextCAPButton: UIButton!
     
     // MARK: - Views
     
@@ -57,63 +37,18 @@ class CustomizeViewController: UIViewController {
     // MARK: - Methods
     
     private func setupSubviews() {
-        customizeTextField.delegate = self
-        customizeTextFieldCAP.delegate = self
         
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
         
-        customizerTableView.dataSource = self
-        customizerTableView.delegate = self
+        addToCartButton.layer.cornerRadius = 15
+        addToCartButton.addShadow()
+        addToCartButton.isEnabled = false
+        addToCartButton.setTitle("", for: .normal)
+        addToCartButton.tintColor = UIColor.init(named: "Navy")
         
-        reviewOrderButton.layer.cornerRadius = 15
-        reviewOrderButton.addShadow()
-        reviewOrderButton.isEnabled = false
-        reviewOrderButton.setTitle("", for: .normal)
-        reviewOrderButton.tintColor = UIColor.init(named: "Navy")
-        
-        bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
         firstTemplateImageView.layer.cornerRadius = 10
         firstTemplateImageView.clipsToBounds = true
-        
-        customizeTextFieldView.layer.cornerRadius = 10
-        customizeTextFieldView.layer.borderColor = UIColor.init(named: "Light Gray")?.cgColor
-        customizeTextFieldView.layer.borderWidth = 2.0
-        customizeTextFieldView.addShadow()
-        
-        saveCustomTextButton.layer.cornerRadius = 10.0
-        saveCustomTextButton.layer.borderWidth = 0.5
-        saveCustomTextButton.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
-        
-        customizeTextFieldViewCAP.layer.cornerRadius = 10
-        customizeTextFieldViewCAP.layer.borderColor = UIColor.init(named: "Light Gray")?.cgColor
-        customizeTextFieldViewCAP.layer.borderWidth = 2.0
-        customizeTextFieldViewCAP.addShadow()
-        saveCustomTextCAPButton.layer.cornerRadius = 10.0
-        saveCustomTextCAPButton.layer.borderWidth = 0.5
-        saveCustomTextCAPButton.layer.borderColor = UIColor.init(named: "Navy")?.cgColor
-        
-        
-        customizeDateView.layer.cornerRadius = 10
-        customizeDateView.addShadow()
-        
-        abandonButton.layer.cornerRadius = 10.0
-        abandonButton.isEnabled = false
-        abandonButton.alpha = 0
-        
-        itemAddedView.isUserInteractionEnabled = false
-        itemAddedView.alpha = 0
-        itemAddedView.layer.cornerRadius = 10.0
-        
-        logoView.alpha = 1
-        
-        viewCartButton.layer.cornerRadius = 10.0
-        viewCartButton.layer.borderColor = UIColor.white.cgColor
-        viewCartButton.layer.borderWidth = 1.0
-        
-        continueButton.layer.cornerRadius = 10.0
-        continueButton.layer.borderColor = UIColor.white.cgColor
-        continueButton.layer.borderWidth = 1.0
     }
     
     private func updateViews() {
@@ -125,208 +60,25 @@ class CustomizeViewController: UIViewController {
         }
     }
     
-    func switchDatePicker() {
-        if customizeDateView.alpha == 1 {
-            UIView.animate(withDuration: 0.3) {
-                self.customizeDateView.alpha = 0
-            }
-            customizeDateView.isUserInteractionEnabled = false
-        } else {
-            UIView.animate(withDuration: 0.3) {
-                self.customizeDateView.alpha = 1
-            }
-            customizeDateView.isUserInteractionEnabled = true
-        }
-    }
-    
-    func switchTextField() {
-        if customizeTextFieldView.alpha == 1 {
-            UIView.animate(withDuration: 0.3) {
-                self.customizeTextFieldView.alpha = 0
-            }
-            customizeTextFieldView.isUserInteractionEnabled = false
-        } else {
-            UIView.animate(withDuration: 0.3) {
-                self.customizeTextFieldView.alpha = 1
-            }
-            customizeTextFieldView.isUserInteractionEnabled = true
-            customizeTextField.becomeFirstResponder()
-        }
-    }
-    
-    func switchTextFieldCAP() {
-        if customizeTextFieldViewCAP.alpha == 1 {
-            UIView.animate(withDuration: 0.3) {
-                self.customizeTextFieldViewCAP.alpha = 0
-            }
-            customizeTextFieldViewCAP.isUserInteractionEnabled = false
-        } else {
-            UIView.animate(withDuration: 0.3) {
-                self.customizeTextFieldViewCAP.alpha = 1
-            }
-            customizeTextFieldViewCAP.isUserInteractionEnabled = true
-            customizeTextFieldCAP.becomeFirstResponder()
-        }
-    }
-    
-    func switchItemAdded() {
-        if itemAddedView.alpha == 1 {
-            UIView.animate(withDuration: 0.3) {
-                self.itemAddedView.alpha = 0
-            }
-            itemAddedView.isUserInteractionEnabled = false
-            customizerTableView.isUserInteractionEnabled = true
-            abandonCustomization()
-        } else {
-            UIView.animate(withDuration: 0.3) {
-                self.itemAddedView.alpha = 1
-            }
-            itemAddedView.isUserInteractionEnabled = true
-            customizerTableView.isUserInteractionEnabled = false
-            addToCartOff()
-        }
-    }
-    
     func addToCartOn() {
-        reviewOrderButton.isEnabled = true
-        reviewOrderButton.setTitle("  Add to Cart", for: .normal)
-        reviewOrderButton.tintColor = .white
+        addToCartButton.isEnabled = true
+        addToCartButton.setTitle("  Add to Cart", for: .normal)
     }
     
     func addToCartOff() {
-        reviewOrderButton.isEnabled = false
-        reviewOrderButton.setTitle("", for: .normal)
-        reviewOrderButton.tintColor = UIColor.init(named: "Navy")
-    }
-    
-    func dataEntered() {
-        if abandonButton.alpha == 0 {
-            abandonButton.alpha = 1
-            abandonButton.isEnabled = true
-            templatesCollectionView.isUserInteractionEnabled = false
-        } else {
-            return
-        }
-    }
-    
-    func abandonCustomization() {
-        reset = true
-        customizerTableView.setContentOffset(.zero, animated: true)
-        customizerTableView.reloadData()
-        abandonButton.alpha = 0
-        abandonButton.isEnabled = false
-        templatesCollectionView.isUserInteractionEnabled = true
-        customizeDatePicker.setDate(Date(), animated: false)
+        addToCartButton.isEnabled = false
+        addToCartButton.setTitle("", for: .normal)
     }
     
     // MARK: - Actions
     
-    @IBAction func reviewButtonTapped(_ sender: Any) {
-        
-        guard entries.values.count == template?.needs.count, var product = product else { return }
-        
-        for entry in entries.values {
-            template?.fulfilled.append(entry.description)
-        }
-        if let chosenTemplate = template {
-            product.chosenTemplate = []
-            product.chosenTemplate?.append(chosenTemplate)
-        }
-        switchItemAdded()
-    }
-    
-    @IBAction func saveCustomTextButtonTapped(_ sender: Any) {
-        if let entry = customizeTextField.text {
-            if entry == "" {
-                switchTextField()
-                return
-            }
-            
-            if let indexPath = indexPath {
-                guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
-                cell.needLabel.text = entry
-                cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
-                entries[indexPath.row] = entry
-            }
-        }
-        
-        customizeTextField.text = nil
-        switchTextField()
-        dataEntered()
-        if entries.count == template?.needs.count {
-            addToCartOn()
-        }
-    }
-    
-    @IBAction func saveCustomTextCAPButtonTapped(_ sender: Any) {
-        if let entry = customizeTextFieldCAP.text {
-            if entry == "" {
-                switchTextFieldCAP()
-                return
-            }
-            
-            if let indexPath = indexPath {
-                guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
-                cell.needLabel.text = entry
-                cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
-                entries[indexPath.row] = entry
-            }
-        }
-        
-        customizeTextFieldCAP.text = nil
-        switchTextFieldCAP()
-        dataEntered()
-        if entries.count == template?.needs.count {
-            addToCartOn()
-        }
-    }
-    
-    @IBAction func saveCustomDateButtonTapped(_ sender: Any) {
-        let date = customizeDatePicker.date
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        
-        if let indexPath = indexPath {
-            guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return }
-            cell.needLabel.text = formatter.string(from: date)
-            cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
-            entries[indexPath.row] = formatter.string(from: date)
-        }
-        
-        switchDatePicker()
-        dataEntered()
-        if entries.count == template?.needs.count {
-            addToCartOn()
-        }
-    }
-    
-    @IBAction func abandonButtonTapped(_ sender: Any) {
-        abandonCustomization()
-        addToCartOff()
-        entries = [:]
-    }
-    
-    @IBAction func viewCartButtonTapped(_ sender: Any) {
-        switchItemAdded()
-        self.performSegue(withIdentifier: "viewCartSegue", sender: self)
-    }
-    
-    @IBAction func continueButtonTapped(_ sender: Any) {
-        switchItemAdded()
-        addToCartOff()
-        abandonCustomization()
-        entries = [:]
-    }
-    
-    @IBAction func discardDateButtonTapped(_ sender: Any) {
-        switchDatePicker()
+    @IBAction func addToCartButtonTapped(_ sender: Any) {
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
-
 }
 
 extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -350,158 +102,10 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let product = product else { return }
         
-        if logoView.alpha == 1 {
-            logoView.alpha = 0
-        }
-        
         if let template = product.templates?[indexPath.row] {
             firstTemplateImageView.image = UIImage(named: template.name)
             self.template = template
             reset = true
-            customizerTableView.setContentOffset(.zero, animated: true)
-            self.customizerTableView.reloadData()
-        }
-    }
-}
-
-extension CustomizeViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return template?.needs.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customizerCell", for: indexPath) as? CustomizerTableViewCell else { return UITableViewCell() }
-        
-        if let need = template?.needs[indexPath.row] {
-            if reset {
-                cell.needLabel.text = need.name
-                cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
-            } else {
-                if entries[indexPath.row] != nil {
-                    cell.needLabel.text = entries[indexPath.row]
-                    cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
-                } else {
-                    cell.needLabel.text = need.name
-                    cell.needButton.imageView?.image = UIImage.init(systemName: "circle")
-                }
-            }
-            switch need.id {
-            case 1:
-                cell.needImageView.image = UIImage.init(systemName: "signature")
-            case 2:
-                cell.needImageView.image = UIImage.init(systemName: "signature")
-            case 3:
-                cell.needImageView.image = UIImage.init(systemName: "signpost.right")
-            case 4:
-                cell.needImageView.image = UIImage.init(systemName: "signature")
-            case 5:
-                cell.needImageView.image = UIImage.init(systemName: "camera")
-            case 6:
-                cell.needImageView.image = UIImage.init(systemName: "signpost.right")
-            case 7:
-                cell.needImageView.image = UIImage.init(systemName: "calendar.circle")
-            case 8:
-                cell.needImageView.image = UIImage.init(systemName: "house.circle")
-            case 9:
-                cell.needImageView.image = UIImage.init(systemName: "mappin.circle")
-            default:
-                cell.needImageView.image = nil
-            }
-        }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.indexPath = indexPath
-        self.reset = false
-        if let need = template?.needs[indexPath.row] {
-            switch need.id {
-            case 1:
-                enterLabel.text = "Enter \(need.name)"
-                customizeTextField.placeholder = need.name
-                switchTextField()
-            case 2:
-                enterLabel.text = "Enter \(need.name)"
-                customizeTextField.placeholder = need.name
-                switchTextField()
-            case 3:
-                enterLabelCAP.text = "Enter \(need.name)"
-                customizeTextField.placeholder = need.name
-                switchTextFieldCAP()
-            case 4:
-                enterLabel.text = "Enter \(need.name)"
-                customizeTextField.placeholder = need.name
-                switchTextField()
-            case 5:
-                return
-            case 6:
-                enterLabelCAP.text = "Enter \(need.name)"
-                customizeTextField.placeholder = need.name
-                switchTextFieldCAP()
-            case 7:
-                switchDatePicker()
-            case 8:
-                enterLabel.text = "Enter \(need.name)"
-                customizeTextField.placeholder = need.name
-                switchTextField()
-            case 9:
-                enterLabelCAP.text = "Enter \(need.name) initials"
-                customizeTextField.placeholder = need.name
-                switchTextFieldCAP()
-            default:
-                enterLabel.text = ""
-                enterLabelCAP.text = ""
-                customizeTextField.placeholder = ""
-            }
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
-    }
-}
-
-extension CustomizeViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == customizeTextField {
-            if let entry = textField.text {
-                if entry == "" {
-                    switchTextField()
-                    return true
-                } else {
-                    if let indexPath = indexPath {
-                        guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return false }
-                        cell.needLabel.text = entry
-                        cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
-                        entries[indexPath.row] = entry
-                    }
-                }
-            }
-            
-            switchTextField()
-            dataEntered()
-            textField.text = nil
-            return true
-        } else {
-            if let entry = textField.text {
-                if entry == "" {
-                    switchTextFieldCAP()
-                    return true
-                } else {
-                    if let indexPath = indexPath {
-                        guard let cell = customizerTableView.cellForRow(at: indexPath) as? CustomizerTableViewCell else { return false }
-                        cell.needLabel.text = entry
-                        cell.needButton.imageView?.image = UIImage.init(systemName: "checkmark.circle")
-                        entries[indexPath.row] = entry
-                    }
-                }
-            }
-            
-            switchTextFieldCAP()
-            dataEntered()
-            textField.text = nil
-            return true
         }
     }
 }
