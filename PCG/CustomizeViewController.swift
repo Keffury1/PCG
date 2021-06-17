@@ -114,6 +114,9 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         }
         if addInfoView.isHidden == true {
             addInfoView.isHidden = false
+            if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+                layout.scrollDirection = .horizontal
+            }
         }
     }
 }
