@@ -101,6 +101,15 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
             cell.templateImageView.clipsToBounds = false
         }
         
+        cell.templateImageView.layer.borderWidth = 1
+        cell.templateImageView.layer.cornerRadius = 10
+        
+        if cell.isSelected {
+            cell.templateImageView.layer.borderColor = UIColor(named: "Navy")!.cgColor
+        }else {
+            cell.templateImageView.layer.borderColor = UIColor.clear.cgColor
+        }
+        
         return cell
     }
     
@@ -118,5 +127,19 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
                 layout.scrollDirection = .horizontal
             }
         }
+        
+        let cell = collectionView.cellForItem(at: indexPath) as? TemplateCollectionViewCell
+        cell?.templateImageView.layer.borderColor = UIColor(named: "Navy")!.cgColor
+        cell?.isSelected = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? TemplateCollectionViewCell
+        cell?.templateImageView.layer.borderColor = UIColor.clear.cgColor
+        cell?.isSelected = false
     }
 }

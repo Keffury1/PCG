@@ -10,5 +10,8 @@ import UIKit
 
 class TemplateCollectionViewCell: UICollectionViewCell {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var templateImageView: UIImageView!
+    
 }
