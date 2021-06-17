@@ -6,5 +6,5 @@ target 'PCG' do
   use_frameworks!
 
   # Pods for PCG
-  pod 'StepperView'
+  pod 'SMSegmentView'
 end

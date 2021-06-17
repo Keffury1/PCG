@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import SMSegmentView
 
 class CustomizeViewController: UIViewController {
     // MARK: - Properties
@@ -24,6 +25,9 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
+    @IBOutlet weak var bottomFadeView: UIView!
+    @IBOutlet weak var chooseTemplateView: UIView!
+    @IBOutlet weak var addInfoView: UIView!
     
     // MARK: - Views
     
@@ -32,6 +36,7 @@ class CustomizeViewController: UIViewController {
         setupSubviews()
         updateViews()
         first = false
+        bottomFadeView.addBottomUpGradient(color: UIColor(named: "Tan")!.cgColor)
     }
     
     // MARK: - Methods
@@ -106,6 +111,9 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
             firstTemplateImageView.image = UIImage(named: template.name)
             self.template = template
             reset = true
+        }
+        if addInfoView.isHidden == true {
+            addInfoView.isHidden = false
         }
     }
 }

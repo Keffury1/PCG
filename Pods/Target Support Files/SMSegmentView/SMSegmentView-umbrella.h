@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double StepperViewVersionNumber;
-FOUNDATION_EXPORT const unsigned char StepperViewVersionString[];
+FOUNDATION_EXPORT double SMSegmentViewVersionNumber;
+FOUNDATION_EXPORT const unsigned char SMSegmentViewVersionString[];
 
