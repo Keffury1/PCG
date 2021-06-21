@@ -1296,10 +1296,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2L5-ca-KdR">
-                                <rect key="frame" x="0.0" y="554" width="414" height="288"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kqx-y5-rvR">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
@@ -1423,7 +1419,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Ujl-n5-471" secondAttribute="bottom" constant="20" id="2FH-TC-tcP"/>
                                             <constraint firstAttribute="trailing" secondItem="hdo-AH-FjR" secondAttribute="trailing" constant="20" id="IvB-iY-yBA"/>
@@ -1445,21 +1441,16 @@
                         <viewLayoutGuide key="safeArea" id="18M-nU-2Fy"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2L5-ca-KdR" firstAttribute="leading" secondItem="18M-nU-2Fy" secondAttribute="leading" id="3kM-bY-npG"/>
-                            <constraint firstAttribute="bottom" secondItem="2L5-ca-KdR" secondAttribute="bottom" id="5J5-W2-jeA"/>
                             <constraint firstItem="18M-nU-2Fy" firstAttribute="trailing" secondItem="kqx-y5-rvR" secondAttribute="trailing" id="ATV-O5-hNg"/>
                             <constraint firstItem="18M-nU-2Fy" firstAttribute="bottom" secondItem="kqx-y5-rvR" secondAttribute="bottom" id="Ln7-co-Myf"/>
                             <constraint firstItem="kqx-y5-rvR" firstAttribute="leading" secondItem="18M-nU-2Fy" secondAttribute="leading" id="PBu-JG-Kq1"/>
                             <constraint firstItem="kqx-y5-rvR" firstAttribute="top" secondItem="18M-nU-2Fy" secondAttribute="top" id="V15-AC-yQW"/>
-                            <constraint firstItem="18M-nU-2Fy" firstAttribute="trailing" secondItem="2L5-ca-KdR" secondAttribute="trailing" id="kkc-iv-Du8"/>
-                            <constraint firstItem="2L5-ca-KdR" firstAttribute="top" secondItem="18M-nU-2Fy" secondAttribute="centerY" constant="150" id="odb-ZD-ORE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qlh-vY-PVj"/>
                     <connections>
                         <outlet property="addInfoView" destination="chL-Zd-mcG" id="HTz-Ri-eHT"/>
                         <outlet property="addToCartButton" destination="Ujl-n5-471" id="kNz-c4-fHm"/>
-                        <outlet property="bottomFadeView" destination="2L5-ca-KdR" id="bBi-XP-EjT"/>
                         <outlet property="chooseTemplateView" destination="fqO-KM-Oao" id="2OP-fJ-jl5"/>
                         <outlet property="firstTemplateImageView" destination="H3G-gn-TA0" id="wNB-Oh-A2J"/>
                         <outlet property="templatesCollectionView" destination="H7W-Me-bj6" id="DZD-Mz-jKi"/>
