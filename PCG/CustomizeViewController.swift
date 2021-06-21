@@ -10,10 +10,15 @@ import UIKit
 import SMSegmentView
 
 class CustomizeViewController: UIViewController {
+    
     // MARK: - Properties
     
     var product: Product?
-    var template: Template?
+    var template: Template? {
+        didSet {
+            templateChosen()
+        }
+    }
     var indexPath: IndexPath?
     var reset: Bool = false
     var first: Bool = true
@@ -62,12 +67,16 @@ class CustomizeViewController: UIViewController {
         }
     }
     
-    func addToCartOn() {
+    private func templateChosen() {
+        //Show needs based on chosen template
+    }
+    
+    private func addToCartOn() {
         addToCartButton.isEnabled = true
         addToCartButton.setTitle("  Add to Cart", for: .normal)
     }
     
-    func addToCartOff() {
+    private func addToCartOff() {
         addToCartButton.isEnabled = false
         addToCartButton.setTitle("", for: .normal)
     }
@@ -84,6 +93,7 @@ class CustomizeViewController: UIViewController {
 }
 
 extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return product?.templates?.count ?? 0
     }
@@ -132,7 +142,6 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
-
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? TemplateCollectionViewCell

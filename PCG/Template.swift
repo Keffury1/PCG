@@ -32,4 +32,5 @@ enum Need: String, Codable {
     case date = "Date"
     case address = "Address"
     case state = "State"
+    case message = "Message"
 }
