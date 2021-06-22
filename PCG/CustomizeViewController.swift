@@ -36,9 +36,14 @@ class CustomizeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSubviews()
+//        setupSubviews()
         updateViews()
         first = false
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupSubviews()
     }
     
     // MARK: - Methods
@@ -53,9 +58,6 @@ class CustomizeViewController: UIViewController {
         addToCartButton.isEnabled = false
         addToCartButton.setTitle("", for: .normal)
         addToCartButton.tintColor = UIColor.init(named: "Navy")
-        
-        firstTemplateImageView.layer.cornerRadius = 10
-        firstTemplateImageView.clipsToBounds = true
     }
     
     private func updateViews() {
@@ -64,6 +66,8 @@ class CustomizeViewController: UIViewController {
             return
         } else {
             firstTemplateImageView.image = UIImage(named: (product.templates?.first!.name) ?? "")
+            firstTemplateImageView.layer.cornerRadius = 10
+            firstTemplateImageView.clipsToBounds = true
         }
     }
     
@@ -110,6 +114,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         
         cell.templateImageView.layer.borderWidth = 1
         cell.templateImageView.layer.cornerRadius = 10
+        cell.templateImageView.layer.masksToBounds = true
         
         if cell.isSelected {
             cell.templateImageView.layer.borderColor = UIColor(named: "Navy")!.cgColor
