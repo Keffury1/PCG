@@ -12,9 +12,8 @@ import UIKit
 struct Template: Codable {
     var id: Int
     var name: String
-    var image: String
     var needs: [Needs]
-    var fulfilled: [String]
+    var fulfilled: [Int]
 }
 
 struct Needs: Codable {
