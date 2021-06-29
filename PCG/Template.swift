@@ -32,4 +32,6 @@ enum Need: String, Codable {
     case address = "Address"
     case state = "State"
     case message = "Message"
+    case petName = "Pet's Name"
+    case monogram = "Monogram"
 }
