@@ -36,7 +36,6 @@ class CustomizeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupSubviews()
         updateViews()
         first = false
     }
@@ -112,14 +111,14 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
             cell.templateImageView.clipsToBounds = false
         }
         
-        cell.templateImageView.layer.borderWidth = 1
-        cell.templateImageView.layer.cornerRadius = 10
-        cell.templateImageView.layer.masksToBounds = true
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
         
         if cell.isSelected {
-            cell.templateImageView.layer.borderColor = UIColor(named: "Navy")!.cgColor
+            cell.layer.borderColor = UIColor(named: "Navy")!.cgColor
         }else {
-            cell.templateImageView.layer.borderColor = UIColor.clear.cgColor
+            cell.layer.borderColor = UIColor.clear.cgColor
         }
         
         return cell
@@ -141,7 +140,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         }
         
         let cell = collectionView.cellForItem(at: indexPath) as? TemplateCollectionViewCell
-        cell?.templateImageView.layer.borderColor = UIColor(named: "Navy")!.cgColor
+        cell?.layer.borderColor = UIColor(named: "Navy")!.cgColor
         cell?.isSelected = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
@@ -150,7 +149,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? TemplateCollectionViewCell
-        cell?.templateImageView.layer.borderColor = UIColor.clear.cgColor
+        cell?.layer.borderColor = UIColor.clear.cgColor
         cell?.isSelected = false
     }
 }

@@ -7,4 +7,6 @@ target 'PCG' do
 
   # Pods for PCG
   pod 'SMSegmentView'
+  pod 'KDCalendar'
+  pod 'DropDown'
 end

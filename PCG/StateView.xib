@@ -3,8 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,15 +17,86 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fof-cs-jsa">
+                    <rect key="frame" x="10" y="89" width="40" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKy-oc-MF2">
+                            <rect key="frame" x="5" y="5.5" width="30" height="29"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" backgroundImage="mappin.circle" catalog="system"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="Navy"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="0kk-zO-lou"/>
+                        <constraint firstItem="VKy-oc-MF2" firstAttribute="centerY" secondItem="fof-cs-jsa" secondAttribute="centerY" id="1S3-jn-D66"/>
+                        <constraint firstItem="VKy-oc-MF2" firstAttribute="leading" secondItem="fof-cs-jsa" secondAttribute="leading" constant="5" id="8uu-Bm-prx"/>
+                        <constraint firstItem="VKy-oc-MF2" firstAttribute="top" secondItem="fof-cs-jsa" secondAttribute="top" constant="5" id="B4b-8h-Aa4"/>
+                        <constraint firstAttribute="bottom" secondItem="VKy-oc-MF2" secondAttribute="bottom" constant="5" id="rDS-SP-ig4"/>
+                        <constraint firstAttribute="trailing" secondItem="VKy-oc-MF2" secondAttribute="trailing" constant="5" id="uQH-Nz-fVl"/>
+                        <constraint firstItem="VKy-oc-MF2" firstAttribute="centerX" secondItem="fof-cs-jsa" secondAttribute="centerX" id="yEE-GJ-r4x"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8X-N3-bw3">
+                    <rect key="frame" x="58" y="86.5" width="346" height="45"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXT-Or-BcK">
+                            <rect key="frame" x="5" y="13" width="40" height="19.5"/>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35F-k1-y8o">
+                            <rect key="frame" x="311" y="10.5" width="25" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="35F-k1-y8o" secondAttribute="height" multiplier="1:1" id="UAA-e3-l9o"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" backgroundImage="chevron.up.circle" catalog="system"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaJ-cA-Ixt">
+                            <rect key="frame" x="0.0" y="0.0" width="346" height="45"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="Navy"/>
+                    <constraints>
+                        <constraint firstItem="iaJ-cA-Ixt" firstAttribute="leading" secondItem="i8X-N3-bw3" secondAttribute="leading" id="18f-PL-uzv"/>
+                        <constraint firstItem="35F-k1-y8o" firstAttribute="top" secondItem="i8X-N3-bw3" secondAttribute="top" constant="10" id="8AC-74-Xof"/>
+                        <constraint firstItem="35F-k1-y8o" firstAttribute="centerY" secondItem="i8X-N3-bw3" secondAttribute="centerY" id="Abo-CE-Qtu"/>
+                        <constraint firstItem="PXT-Or-BcK" firstAttribute="leading" secondItem="i8X-N3-bw3" secondAttribute="leading" constant="5" id="Lzd-kB-LLG"/>
+                        <constraint firstItem="PXT-Or-BcK" firstAttribute="centerY" secondItem="i8X-N3-bw3" secondAttribute="centerY" id="UVd-7q-tqY"/>
+                        <constraint firstAttribute="trailing" secondItem="35F-k1-y8o" secondAttribute="trailing" constant="10" id="ZSO-XY-6N3"/>
+                        <constraint firstAttribute="trailing" secondItem="iaJ-cA-Ixt" secondAttribute="trailing" id="aKg-E2-e5t"/>
+                        <constraint firstAttribute="bottom" secondItem="iaJ-cA-Ixt" secondAttribute="bottom" id="dIy-4Q-33P"/>
+                        <constraint firstAttribute="height" constant="45" id="kut-w2-uah"/>
+                        <constraint firstAttribute="bottom" secondItem="35F-k1-y8o" secondAttribute="bottom" constant="10" id="pFn-dt-ggA"/>
+                        <constraint firstItem="iaJ-cA-Ixt" firstAttribute="top" secondItem="i8X-N3-bw3" secondAttribute="top" id="zcy-NV-mu2"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="Tan"/>
+            <constraints>
+                <constraint firstItem="fof-cs-jsa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="6TB-up-7OB"/>
+                <constraint firstItem="i8X-N3-bw3" firstAttribute="leading" secondItem="fof-cs-jsa" secondAttribute="trailing" constant="8" symbolic="YES" id="7W6-ug-aZJ"/>
+                <constraint firstItem="fof-cs-jsa" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="BXh-4V-hgp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i8X-N3-bw3" secondAttribute="trailing" constant="10" id="JcX-kQ-qE2"/>
+                <constraint firstItem="i8X-N3-bw3" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="TcV-0r-X4L"/>
+                <constraint firstItem="fof-cs-jsa" firstAttribute="width" secondItem="fof-cs-jsa" secondAttribute="height" multiplier="1:1" id="XqU-q8-r7f"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="73.913043478260875" y="-133.25892857142856"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="chevron.up.circle" catalog="system" width="128" height="121"/>
+        <image name="mappin.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="Navy">
+            <color red="0.047058823529411764" green="0.094117647058823528" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tan">
+            <color red="0.83137254901960789" green="0.81568627450980391" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

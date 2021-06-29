@@ -3,8 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,17 +15,64 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="446" height="223"/>
+            <rect key="frame" x="0.0" y="0.0" width="446" height="93"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FIRST NAME" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K0W-QM-3rj">
+                    <rect key="frame" x="58" y="26.5" width="368" height="50"/>
+                    <color key="backgroundColor" name="Navy"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="a4w-F2-kiO"/>
+                    </constraints>
+                    <color key="textColor" name="White"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lo3-vg-D6D">
+                    <rect key="frame" x="10" y="31.5" width="40" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyI-J5-HhQ">
+                            <rect key="frame" x="5" y="5.5" width="30" height="29"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" backgroundImage="pencil.circle" catalog="system"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="Navy"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="tyI-J5-HhQ" secondAttribute="bottom" constant="5" id="2vo-Sz-jJT"/>
+                        <constraint firstItem="tyI-J5-HhQ" firstAttribute="centerX" secondItem="Lo3-vg-D6D" secondAttribute="centerX" id="KIt-VP-5kF"/>
+                        <constraint firstItem="tyI-J5-HhQ" firstAttribute="leading" secondItem="Lo3-vg-D6D" secondAttribute="leading" constant="5" id="Vut-r4-JmO"/>
+                        <constraint firstItem="tyI-J5-HhQ" firstAttribute="centerY" secondItem="Lo3-vg-D6D" secondAttribute="centerY" id="asQ-i7-jLH"/>
+                        <constraint firstAttribute="width" secondItem="Lo3-vg-D6D" secondAttribute="height" multiplier="1:1" id="e89-2a-OTy"/>
+                        <constraint firstAttribute="trailing" secondItem="tyI-J5-HhQ" secondAttribute="trailing" constant="5" id="h09-Vp-qYE"/>
+                        <constraint firstAttribute="width" constant="40" id="jO7-Qb-lFC"/>
+                        <constraint firstItem="tyI-J5-HhQ" firstAttribute="top" secondItem="Lo3-vg-D6D" secondAttribute="top" constant="5" id="n8i-Sf-EYN"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="Tan"/>
+            <constraints>
+                <constraint firstItem="Lo3-vg-D6D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="C1k-ye-LSN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="K0W-QM-3rj" secondAttribute="trailing" constant="20" id="PO9-Xu-fgc"/>
+                <constraint firstItem="K0W-QM-3rj" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="aUQ-68-sqn"/>
+                <constraint firstItem="K0W-QM-3rj" firstAttribute="leading" secondItem="Lo3-vg-D6D" secondAttribute="trailing" constant="8" symbolic="YES" id="qQp-w1-GWJ"/>
+                <constraint firstItem="Lo3-vg-D6D" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="uvO-59-C0E"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="97.101449275362327" y="-116.85267857142857"/>
+            <point key="canvasLocation" x="97.101449275362327" y="-160.37946428571428"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="Navy">
+            <color red="0.047058823529411764" green="0.094117647058823528" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tan">
+            <color red="0.83137254901960789" green="0.81568627450980391" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
