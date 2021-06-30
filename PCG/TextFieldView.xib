@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView" customModule="PCG" customModuleProvider="target">
             <connections>
+                <outlet property="iconButton" destination="tyI-J5-HhQ" id="GoQ-NT-EP8"/>
+                <outlet property="textField" destination="K0W-QM-3rj" id="VKF-IA-VxT"/>
                 <outlet property="textFieldView" destination="iN0-l3-epB" id="iBv-uW-Qrx"/>
             </connections>
         </placeholder>
@@ -35,6 +37,9 @@
                             <rect key="frame" x="5" y="5.5" width="30" height="29"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" backgroundImage="pencil.circle" catalog="system"/>
+                            <connections>
+                                <action selector="iconButtonTapped:" destination="-1" eventType="touchUpInside" id="auE-pk-S1q"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" name="Navy"/>
@@ -51,7 +56,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="Tan"/>
+            <color key="backgroundColor" name="White"/>
             <constraints>
                 <constraint firstItem="Lo3-vg-D6D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="C1k-ye-LSN"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="K0W-QM-3rj" secondAttribute="trailing" constant="20" id="PO9-Xu-fgc"/>
@@ -67,9 +72,6 @@
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Navy">
             <color red="0.047058823529411764" green="0.094117647058823528" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Tan">
-            <color red="0.83137254901960789" green="0.81568627450980391" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

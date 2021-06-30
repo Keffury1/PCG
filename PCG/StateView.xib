@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StateView" customModule="PCG" customModuleProvider="target">
             <connections>
+                <outlet property="chevronButton" destination="35F-k1-y8o" id="YIT-xu-Nzn"/>
+                <outlet property="iconButton" destination="VKy-oc-MF2" id="zTE-CR-cLK"/>
+                <outlet property="stateButton" destination="iaJ-cA-Ixt" id="g2o-uh-dQO"/>
+                <outlet property="stateLabel" destination="PXT-Or-BcK" id="ied-33-pN9"/>
                 <outlet property="stateView" destination="iN0-l3-epB" id="Gze-U0-zlL"/>
             </connections>
         </placeholder>
@@ -25,6 +29,9 @@
                             <rect key="frame" x="5" y="5.5" width="30" height="29"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" backgroundImage="mappin.circle" catalog="system"/>
+                            <connections>
+                                <action selector="iconButtonTapped:" destination="-1" eventType="touchUpInside" id="ieC-BN-FTR"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" name="Navy"/>
@@ -57,6 +64,9 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaJ-cA-Ixt">
                             <rect key="frame" x="0.0" y="0.0" width="346" height="45"/>
+                            <connections>
+                                <action selector="stateButtonTapped:" destination="-1" eventType="touchUpInside" id="doV-fP-Pdh"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" name="Navy"/>
@@ -76,7 +86,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="Tan"/>
+            <color key="backgroundColor" name="White"/>
             <constraints>
                 <constraint firstItem="fof-cs-jsa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="6TB-up-7OB"/>
                 <constraint firstItem="i8X-N3-bw3" firstAttribute="leading" secondItem="fof-cs-jsa" secondAttribute="trailing" constant="8" symbolic="YES" id="7W6-ug-aZJ"/>
@@ -95,8 +105,8 @@
         <namedColor name="Navy">
             <color red="0.047058823529411764" green="0.094117647058823528" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Tan">
-            <color red="0.83137254901960789" green="0.81568627450980391" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

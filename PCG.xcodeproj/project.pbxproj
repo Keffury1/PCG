@@ -11,11 +11,9 @@
 		370B79BD268291A50088242D /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 370B79BC268291A50088242D /* Products.json */; };
 		37125D742489A20B00E716CA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37125D732489A20A00E716CA /* WebKit.framework */; };
 		37204A3C268A9A8E001B34F6 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37204A3B268A9A8E001B34F6 /* TextFieldView.xib */; };
-		37204A3E268A9AA3001B34F6 /* PhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37204A3D268A9AA3001B34F6 /* PhotoView.xib */; };
 		37204A40268A9AAA001B34F6 /* DateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37204A3F268A9AAA001B34F6 /* DateView.xib */; };
 		37204A42268A9AB5001B34F6 /* StateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37204A41268A9AB5001B34F6 /* StateView.xib */; };
 		37204A48268A9B30001B34F6 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37204A47268A9B30001B34F6 /* TextFieldView.swift */; };
-		37204A4A268A9B48001B34F6 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37204A49268A9B48001B34F6 /* PhotoView.swift */; };
 		37204A4C268A9B50001B34F6 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37204A4B268A9B50001B34F6 /* DateView.swift */; };
 		37204A4E268A9B58001B34F6 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37204A4D268A9B58001B34F6 /* StateView.swift */; };
 		37204A51268ACEEA001B34F6 /* States.json in Resources */ = {isa = PBXBuildFile; fileRef = 37204A50268ACEEA001B34F6 /* States.json */; };
@@ -64,11 +62,9 @@
 		370B79BC268291A50088242D /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 		37125D732489A20A00E716CA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		37204A3B268A9A8E001B34F6 /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
-		37204A3D268A9AA3001B34F6 /* PhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoView.xib; sourceTree = "<group>"; };
 		37204A3F268A9AAA001B34F6 /* DateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateView.xib; sourceTree = "<group>"; };
 		37204A41268A9AB5001B34F6 /* StateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StateView.xib; sourceTree = "<group>"; };
 		37204A47268A9B30001B34F6 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
-		37204A49268A9B48001B34F6 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		37204A4B268A9B50001B34F6 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		37204A4D268A9B58001B34F6 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		37204A50268ACEEA001B34F6 /* States.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = States.json; sourceTree = "<group>"; };
@@ -163,7 +159,6 @@
 			children = (
 				37204A46268A9B13001B34F6 /* State */,
 				37204A45268A9B0F001B34F6 /* Date */,
-				37204A44268A9B07001B34F6 /* Photo */,
 				37204A43268A9AFF001B34F6 /* TextField */,
 			);
 			name = Views;
@@ -176,15 +171,6 @@
 				37204A47268A9B30001B34F6 /* TextFieldView.swift */,
 			);
 			name = TextField;
-			sourceTree = "<group>";
-		};
-		37204A44268A9B07001B34F6 /* Photo */ = {
-			isa = PBXGroup;
-			children = (
-				37204A3D268A9AA3001B34F6 /* PhotoView.xib */,
-				37204A49268A9B48001B34F6 /* PhotoView.swift */,
-			);
-			name = Photo;
 			sourceTree = "<group>";
 		};
 		37204A45268A9B0F001B34F6 /* Date */ = {
@@ -460,7 +446,6 @@
 				37204A42268A9AB5001B34F6 /* StateView.xib in Resources */,
 				37E270FD244E4338001F6421 /* Main.storyboard in Resources */,
 				375390CC266DD8BE0016791C /* Needs.json in Resources */,
-				37204A3E268A9AA3001B34F6 /* PhotoView.xib in Resources */,
 				375390CF266DD9150016791C /* Reviews.json in Resources */,
 				370B79BD268291A50088242D /* Products.json in Resources */,
 			);
@@ -518,7 +503,6 @@
 				37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */,
 				37FC57C324F60F5100610C60 /* ProductController.swift in Sources */,
 				37FC57BD24F5FB3600610C60 /* ReviewCollectionViewCell.swift in Sources */,
-				37204A4A268A9B48001B34F6 /* PhotoView.swift in Sources */,
 				37B1988B25B7807C00E59CF6 /* TemplateCollectionViewCell.swift in Sources */,
 				37204A48268A9B30001B34F6 /* TextFieldView.swift in Sources */,
 				37204A4E268A9B58001B34F6 /* StateView.swift in Sources */,

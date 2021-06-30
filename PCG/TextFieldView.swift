@@ -10,9 +10,15 @@ import UIKit
 
 class TextFieldView: UIView {
     
+    //MARK: - Properties
+    
+    var title: String?
+    
     //MARK: - Outlets
     
     @IBOutlet var textFieldView: UIView!
+    @IBOutlet weak var iconButton: UIButton!
+    @IBOutlet weak var textField: UITextField!
     
     //MARK: - Methods
 
@@ -33,5 +39,13 @@ class TextFieldView: UIView {
         textFieldView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         self.addShadow()
+        self.layer.cornerRadius = 30
+        textField.text = title?.uppercased()
+    }
+    
+    //MARK: - Actions
+    
+    @IBAction func iconButtonTapped(_ sender: Any) {
+        textField.becomeFirstResponder()
     }
 }

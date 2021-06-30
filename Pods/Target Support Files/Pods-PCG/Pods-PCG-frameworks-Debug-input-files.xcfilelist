@@ -1,4 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
-${BUILT_PRODUCTS_DIR}/KDCalendar/KDCalendar.framework
+${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
 ${BUILT_PRODUCTS_DIR}/SMSegmentView/SMSegmentView.framework

@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import FSCalendar
 
 class DateView: UIView {
     
     //MARK: - Outlets
     
     @IBOutlet var dateView: UIView!
+    @IBOutlet weak var iconButton: UIButton!
+    @IBOutlet weak var dividerView: UIView!
+    @IBOutlet weak var dateButton: UIButton!
+    @IBOutlet weak var chevronButton: UIButton!
+    @IBOutlet weak var calendarView: FSCalendar!
     
     //MARK: - Methods
 
@@ -33,6 +39,26 @@ class DateView: UIView {
         dateView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         self.addShadow()
+        self.layer.cornerRadius = 30
     }
-
+    
+    private func toggleCalendar() {
+        if calendarView.isHidden {
+            calendarView.isHidden = false
+            dividerView.isHidden = false
+        } else {
+            calendarView.isHidden = true
+            dividerView.isHidden = true
+        }
+    }
+    
+    //MARK: - Actions
+    
+    @IBAction func dateButtonTapped(_ sender: Any) {
+        toggleCalendar()
+    }
+    
+    @IBAction func iconButtonTapped(_ sender: Any) {
+        toggleCalendar()
+    }
 }
