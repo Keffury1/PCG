@@ -25,6 +25,7 @@ class StateView: UIView {
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var chevronButton: UIButton!
     @IBOutlet weak var stateButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
     
     //MARK: - Methods
 
@@ -47,13 +48,16 @@ class StateView: UIView {
         
         self.layer.cornerRadius = 30
         dropDown.anchorView = stateButton
-        dropDown.backgroundColor = .clear
+        dropDown.backgroundColor = UIColor(named: "Navy")
         dropDown.textColor = .white
-        dropDown.dataSource = states
+        dropDown.dataSource = states.sorted { $0 < $1 }
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             stateLabel.text = item
         }
+        dropDown.cornerRadius = 10
         iconView.layer.cornerRadius = 10
+        containerView.layer.cornerRadius = 10
+        stateButton.layer.cornerRadius = 10
     }
     
     private func loadStates() {
@@ -72,8 +76,10 @@ class StateView: UIView {
     private func toggleStates() {
         if showing {
             dropDown.hide()
+            chevronButton.setBackgroundImage(UIImage(systemName: "chevron.up.circle"), for: .normal)
         } else {
             dropDown.show()
+            chevronButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
         }
     }
     

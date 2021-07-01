@@ -85,6 +85,15 @@ class CustomizeViewController: UIViewController {
         addToCartButton.isHidden = true
     }
     
+    private func newTextField(image: UIImage, text: String) {
+        let textField = TextFieldView()
+        textField.iconButton.setBackgroundImage(image, for: .normal)
+        textField.textField.text = text
+        textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+        textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+        customizeStackView.addArrangedSubview(textField)
+    }
+    
     private func setupCustomizer(template: Template?) {
         scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: 0), animated: true)
         customizeStackView.subviews.forEach({ $0.removeFromSuperview() })
@@ -93,44 +102,19 @@ class CustomizeViewController: UIViewController {
             switch need.id {
             case 1:
                 //FirstName
-                let textField = TextFieldView()
-                textField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
-                textField.textField.text = "First Name"
-                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(textField)
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "First Name")
             case 2:
                 //LastName
-                let textField = TextFieldView()
-                textField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
-                textField.textField.text = "Last Name"
-                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(textField)
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Last Name")
             case 3:
                 //LastInitial
-                let textField = TextFieldView()
-                textField.iconButton.setBackgroundImage(UIImage(systemName: "chevron.right.circle"), for: .normal)
-                textField.textField.text = "Last Initial"
-                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(textField)
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Last Initial")
             case 4:
                 //FullName
-                let textField = TextFieldView()
-                textField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
-                textField.textField.text = "Full Name"
-                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(textField)
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Full Name")
             case 6:
                 //Initials
-                let textField = TextFieldView()
-                textField.iconButton.setBackgroundImage(UIImage(systemName: "chevron.right.circle"), for: .normal)
-                textField.textField.text = "Initials"
-                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(textField)
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Initials")
             case 7:
                 //Date
                 let dateView = DateView()
@@ -139,48 +123,25 @@ class CustomizeViewController: UIViewController {
                 customizeStackView.addArrangedSubview(dateView)
             case 8:
                 //Address
-                let textField = TextFieldView()
-                textField.iconButton.setBackgroundImage(UIImage(systemName: "house.circle"), for: .normal)
-                textField.textField.text = "Address"
-                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(textField)
+                newTextField(image: UIImage(systemName: "house.circle")!, text: "Address")
             case 9:
                 //State
                 let stateView = StateView()
+                stateView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                stateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
                 customizeStackView.addArrangedSubview(stateView)
             case 10:
                 //Message
-                let messageTextField = TextFieldView()
-                messageTextField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
-                messageTextField.textField.text = "Message"
-                messageTextField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                messageTextField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(messageTextField)
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Message")
                 
                 //Signature
-                let signatureTextField = TextFieldView()
-                signatureTextField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
-                signatureTextField.textField.text = "Signature Line"
-                signatureTextField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                signatureTextField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(signatureTextField)
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Signature Line")
             case 11:
                 //petName
-                let textField = TextFieldView()
-                textField.iconButton.setBackgroundImage(UIImage(systemName: "hare"), for: .normal)
-                textField.textField.text = "Pet's Name"
-                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(textField)
+                newTextField(image: UIImage(systemName: "hare")!, text: "Pet's Name")
             case 12:
                 //Monogram
-                let textField = TextFieldView()
-                textField.iconButton.setBackgroundImage(UIImage(systemName: "chevron.right.circle"), for: .normal)
-                textField.textField.text = "Monogram"
-                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(textField)
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Monogram")
             default:
                 return
             }
@@ -261,5 +222,11 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.cellForItem(at: indexPath) as? TemplateCollectionViewCell
         cell?.layer.borderColor = UIColor.clear.cgColor
         cell?.isSelected = false
+    }
+}
+
+extension TextFieldView: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
     }
 }

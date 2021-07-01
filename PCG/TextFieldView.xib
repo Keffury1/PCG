@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FIRST NAME" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K0W-QM-3rj">
-                    <rect key="frame" x="58" y="34.5" width="368" height="34"/>
+                    <rect key="frame" x="58" y="31.5" width="368" height="40"/>
                     <color key="backgroundColor" name="Navy"/>
                     <color key="tintColor" name="White"/>
                     <color key="textColor" name="White"/>
@@ -58,6 +58,7 @@
                 <constraint firstItem="Lo3-vg-D6D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="C1k-ye-LSN"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="K0W-QM-3rj" secondAttribute="trailing" constant="20" id="PO9-Xu-fgc"/>
                 <constraint firstItem="K0W-QM-3rj" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="aUQ-68-sqn"/>
+                <constraint firstItem="K0W-QM-3rj" firstAttribute="height" secondItem="Lo3-vg-D6D" secondAttribute="height" id="hzs-oo-CcT"/>
                 <constraint firstItem="K0W-QM-3rj" firstAttribute="leading" secondItem="Lo3-vg-D6D" secondAttribute="trailing" constant="8" symbolic="YES" id="qQp-w1-GWJ"/>
                 <constraint firstItem="Lo3-vg-D6D" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="uvO-59-C0E"/>
             </constraints>
