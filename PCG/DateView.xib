@@ -44,13 +44,13 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sob-2g-PLj">
-                    <rect key="frame" x="58" y="104.5" width="272" height="300"/>
+                    <rect key="frame" x="58" y="104.5" width="282" height="300"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UzP-oh-FuX">
-                            <rect key="frame" x="5" y="5" width="262" height="290"/>
+                            <rect key="frame" x="5" y="5" width="272" height="290"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byg-IH-7Q8">
-                                    <rect key="frame" x="0.0" y="0.0" width="262" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="272" height="35"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJP-bQ-qM9">
                                             <rect key="frame" x="5" y="8" width="30.5" height="19.5"/>
@@ -67,14 +67,14 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQg-Me-5wq">
-                                    <rect key="frame" x="0.0" y="37" width="262" height="1"/>
+                                    <rect key="frame" x="0.0" y="37" width="272" height="1"/>
                                     <color key="backgroundColor" name="White"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="Liy-vY-wo3"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQ2-5U-NVs" customClass="FSCalendar">
-                                    <rect key="frame" x="0.0" y="40" width="262" height="250"/>
+                                    <rect key="frame" x="0.0" y="40" width="272" height="250"/>
                                     <color key="backgroundColor" name="Navy"/>
                                     <color key="tintColor" name="White"/>
                                     <constraints>
@@ -159,7 +159,7 @@
             <constraints>
                 <constraint firstItem="sob-2g-PLj" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="7Jb-3F-bn1"/>
                 <constraint firstItem="xh6-an-IYI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="FAk-Nn-dJa"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sob-2g-PLj" secondAttribute="trailing" constant="20" id="JfO-U6-cle"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sob-2g-PLj" secondAttribute="trailing" constant="10" id="JfO-U6-cle"/>
                 <constraint firstItem="xh6-an-IYI" firstAttribute="top" secondItem="UzP-oh-FuX" secondAttribute="top" id="TOw-oe-wQP"/>
                 <constraint firstItem="sob-2g-PLj" firstAttribute="leading" secondItem="xh6-an-IYI" secondAttribute="trailing" constant="8" symbolic="YES" id="Wuh-DT-Z4Q"/>
                 <constraint firstItem="xh6-an-IYI" firstAttribute="width" secondItem="xh6-an-IYI" secondAttribute="height" multiplier="1:1" id="a2I-UA-voG"/>

@@ -48,7 +48,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8X-N3-bw3">
-                    <rect key="frame" x="58" y="86.5" width="336" height="45"/>
+                    <rect key="frame" x="58" y="86.5" width="346" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXT-Or-BcK">
                             <rect key="frame" x="10" y="13" width="40" height="19.5"/>
@@ -57,7 +57,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35F-k1-y8o">
-                            <rect key="frame" x="301" y="10.5" width="25" height="24"/>
+                            <rect key="frame" x="311" y="10.5" width="25" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="35F-k1-y8o" secondAttribute="height" multiplier="1:1" id="UAA-e3-l9o"/>
                             </constraints>
@@ -65,7 +65,7 @@
                             <state key="normal" backgroundImage="chevron.up.circle" catalog="system"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaJ-cA-Ixt">
-                            <rect key="frame" x="0.0" y="0.0" width="336" height="45"/>
+                            <rect key="frame" x="0.0" y="0.0" width="346" height="45"/>
                             <connections>
                                 <action selector="stateButtonTapped:" destination="-1" eventType="touchUpInside" id="doV-fP-Pdh"/>
                             </connections>
@@ -93,7 +93,7 @@
                 <constraint firstItem="fof-cs-jsa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="6TB-up-7OB"/>
                 <constraint firstItem="i8X-N3-bw3" firstAttribute="leading" secondItem="fof-cs-jsa" secondAttribute="trailing" constant="8" symbolic="YES" id="7W6-ug-aZJ"/>
                 <constraint firstItem="fof-cs-jsa" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="BXh-4V-hgp"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i8X-N3-bw3" secondAttribute="trailing" constant="20" id="JcX-kQ-qE2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i8X-N3-bw3" secondAttribute="trailing" constant="10" id="JcX-kQ-qE2"/>
                 <constraint firstItem="i8X-N3-bw3" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="TcV-0r-X4L"/>
                 <constraint firstItem="fof-cs-jsa" firstAttribute="width" secondItem="fof-cs-jsa" secondAttribute="height" multiplier="1:1" id="XqU-q8-r7f"/>
             </constraints>
