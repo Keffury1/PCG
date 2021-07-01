@@ -1396,6 +1396,13 @@
                                                     <constraint firstAttribute="height" constant="225" id="utA-Wr-Wgl"/>
                                                 </constraints>
                                             </view>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PinchToZoom" translatesAutoresizingMaskIntoConstraints="NO" id="uDq-hH-Xyb">
+                                                <rect key="frame" x="365" y="252" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="7Xy-Gd-CNk"/>
+                                                    <constraint firstAttribute="width" secondItem="uDq-hH-Xyb" secondAttribute="height" multiplier="1:1" id="Ybe-TB-rDg"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1407,7 +1414,9 @@
                                             <constraint firstItem="H7W-Me-bj6" firstAttribute="top" secondItem="yx1-pr-OT9" secondAttribute="bottom" constant="8" id="Ebg-67-uWi"/>
                                             <constraint firstItem="yx1-pr-OT9" firstAttribute="top" secondItem="qcL-2R-HVv" secondAttribute="bottom" constant="8" id="U0N-Fk-mvv"/>
                                             <constraint firstItem="H7W-Me-bj6" firstAttribute="leading" secondItem="qcL-2R-HVv" secondAttribute="leading" id="ULA-TN-kFn"/>
+                                            <constraint firstItem="uDq-hH-Xyb" firstAttribute="bottom" secondItem="yx1-pr-OT9" secondAttribute="bottom" id="ctQ-hl-EGu"/>
                                             <constraint firstItem="4PC-A2-2U7" firstAttribute="leading" secondItem="qcL-2R-HVv" secondAttribute="trailing" constant="5" id="lNF-CJ-XJF"/>
+                                            <constraint firstItem="uDq-hH-Xyb" firstAttribute="leading" secondItem="yx1-pr-OT9" secondAttribute="trailing" constant="8" id="n7F-gL-kpg"/>
                                             <constraint firstItem="qcL-2R-HVv" firstAttribute="leading" secondItem="fqO-KM-Oao" secondAttribute="leading" constant="20" id="tyV-hL-DHS"/>
                                         </constraints>
                                     </view>
@@ -1496,8 +1505,8 @@
                         <viewLayoutGuide key="safeArea" id="18M-nU-2Fy"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yx1-pr-OT9" firstAttribute="centerX" secondItem="18M-nU-2Fy" secondAttribute="centerX" id="96h-XP-FoE"/>
                             <constraint firstItem="18M-nU-2Fy" firstAttribute="trailing" secondItem="kqx-y5-rvR" secondAttribute="trailing" id="ATV-O5-hNg"/>
+                            <constraint firstItem="yx1-pr-OT9" firstAttribute="centerX" secondItem="18M-nU-2Fy" secondAttribute="centerX" id="DCA-Ta-cyz"/>
                             <constraint firstItem="18M-nU-2Fy" firstAttribute="trailing" secondItem="GH5-FD-lZm" secondAttribute="trailing" constant="20" id="I3s-Mo-TO3"/>
                             <constraint firstItem="18M-nU-2Fy" firstAttribute="bottom" secondItem="kqx-y5-rvR" secondAttribute="bottom" id="Ln7-co-Myf"/>
                             <constraint firstItem="kqx-y5-rvR" firstAttribute="leading" secondItem="18M-nU-2Fy" secondAttribute="leading" id="PBu-JG-Kq1"/>
@@ -1880,6 +1889,7 @@
     </scenes>
     <resources>
         <image name="Logo" width="612" height="792"/>
+        <image name="PinchToZoom" width="200" height="200"/>
         <image name="Shop" width="220" height="218"/>
         <image name="applelogo" catalog="system" width="103" height="128"/>
         <image name="arrowshape.turn.up.backward.circle" catalog="system" width="128" height="121"/>
@@ -1908,7 +1918,7 @@
             <color red="0.28235294117647058" green="0.30196078431372547" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Navy">
-            <color red="0.047058823529411764" green="0.094117647058823528" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.047" green="0.094" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tan">
             <color red="0.83137254901960789" green="0.81568627450980391" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
