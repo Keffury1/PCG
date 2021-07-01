@@ -26,7 +26,7 @@ class CustomizeViewController: UIViewController {
     var indexPath: IndexPath?
     var reset: Bool = false
     var first: Bool = true
-    var entries: [Int:String] = [:]
+    var templateCount = 0
     
     // MARK: - Outlets
     
@@ -118,6 +118,7 @@ class CustomizeViewController: UIViewController {
     }
     
     private func setupCustomizer(template: Template?) {
+        templateCount = 0
         scrollImg.zoomScale = 0
         scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: 0), animated: true)
         customizeStackView.subviews.forEach({ $0.removeFromSuperview() })
@@ -176,6 +177,16 @@ class CustomizeViewController: UIViewController {
         customizeStackView.axis  = NSLayoutConstraint.Axis.vertical
         customizeStackView.distribution  = UIStackView.Distribution.equalSpacing
         customizeStackView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func checkIfCustomized(template: Template?) {
+        guard let template = template else { return }
+        
+        if templateCount == template.needs.count {
+            addToCartOn()
+        } else {
+            addToCartOff()
+        }
     }
     
     // MARK: - Actions
@@ -255,6 +266,12 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
 extension CustomizeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text == "" {
+            templateCount -= 1
+        } else {
+            templateCount += 1
+        }
+        checkIfCustomized(template: self.template)
         textField.resignFirstResponder()
         return true
     }
@@ -270,7 +287,6 @@ extension CustomizeViewController: FSCalendarDataSource, FSCalendarDelegate {
 }
 
 extension CustomizeViewController: UIScrollViewDelegate {
-    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.firstTemplateImageView
     }
