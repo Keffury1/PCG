@@ -9,4 +9,5 @@ target 'PCG' do
   pod 'SMSegmentView'
   pod 'FSCalendar'
   pod 'DropDown'
+  pod 'IQKeyboardManager'
 end

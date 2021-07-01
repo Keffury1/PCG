@@ -27,7 +27,7 @@
                     <color key="tintColor" name="White"/>
                     <color key="textColor" name="White"/>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lo3-vg-D6D">
                     <rect key="frame" x="10" y="31.5" width="40" height="40"/>

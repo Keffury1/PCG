@@ -86,12 +86,14 @@ class CustomizeViewController: UIViewController {
     }
     
     private func newTextField(image: UIImage, text: String) {
-        let textField = TextFieldView()
-        textField.iconButton.setBackgroundImage(image, for: .normal)
-        textField.textField.text = text
-        textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
-        textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-        customizeStackView.addArrangedSubview(textField)
+        let textFieldView = TextFieldView()
+        textFieldView.iconButton.setBackgroundImage(image, for: .normal)
+        textFieldView.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+        textFieldView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+        customizeStackView.addArrangedSubview(textFieldView)
+        textFieldView.textField.delegate = self
+        textFieldView.textField.attributedPlaceholder = NSAttributedString(string: text,
+                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
     private func setupCustomizer(template: Template?) {
@@ -225,8 +227,10 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
     }
 }
 
-extension TextFieldView: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text = ""
+extension CustomizeViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
