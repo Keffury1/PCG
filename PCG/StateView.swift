@@ -20,6 +20,7 @@ class StateView: UIView {
     //MARK: - Outlets
     
     @IBOutlet var stateView: UIView!
+    @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var chevronButton: UIButton!
@@ -44,7 +45,6 @@ class StateView: UIView {
         stateView.frame = self.bounds
         stateView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        self.addShadow()
         self.layer.cornerRadius = 30
         dropDown.anchorView = stateButton
         dropDown.backgroundColor = .clear
@@ -53,6 +53,7 @@ class StateView: UIView {
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             stateLabel.text = item
         }
+        iconView.layer.cornerRadius = 10
     }
     
     private func loadStates() {

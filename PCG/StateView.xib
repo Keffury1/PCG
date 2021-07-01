@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="chevronButton" destination="35F-k1-y8o" id="YIT-xu-Nzn"/>
                 <outlet property="iconButton" destination="VKy-oc-MF2" id="zTE-CR-cLK"/>
+                <outlet property="iconView" destination="fof-cs-jsa" id="pcd-hs-iA6"/>
                 <outlet property="stateButton" destination="iaJ-cA-Ixt" id="g2o-uh-dQO"/>
                 <outlet property="stateLabel" destination="PXT-Or-BcK" id="ied-33-pN9"/>
                 <outlet property="stateView" destination="iN0-l3-epB" id="Gze-U0-zlL"/>

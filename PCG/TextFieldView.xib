@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView" customModule="PCG" customModuleProvider="target">
             <connections>
                 <outlet property="iconButton" destination="tyI-J5-HhQ" id="GoQ-NT-EP8"/>
+                <outlet property="iconView" destination="Lo3-vg-D6D" id="Lx0-Cq-CUs"/>
                 <outlet property="textField" destination="K0W-QM-3rj" id="VKF-IA-VxT"/>
                 <outlet property="textFieldView" destination="iN0-l3-epB" id="iBv-uW-Qrx"/>
             </connections>
@@ -21,11 +22,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FIRST NAME" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K0W-QM-3rj">
-                    <rect key="frame" x="58" y="26.5" width="368" height="50"/>
+                    <rect key="frame" x="58" y="34.5" width="368" height="34"/>
                     <color key="backgroundColor" name="Navy"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="a4w-F2-kiO"/>
-                    </constraints>
+                    <color key="tintColor" name="White"/>
                     <color key="textColor" name="White"/>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -45,9 +44,7 @@
                     <color key="backgroundColor" name="Navy"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="tyI-J5-HhQ" secondAttribute="bottom" constant="5" id="2vo-Sz-jJT"/>
-                        <constraint firstItem="tyI-J5-HhQ" firstAttribute="centerX" secondItem="Lo3-vg-D6D" secondAttribute="centerX" id="KIt-VP-5kF"/>
                         <constraint firstItem="tyI-J5-HhQ" firstAttribute="leading" secondItem="Lo3-vg-D6D" secondAttribute="leading" constant="5" id="Vut-r4-JmO"/>
-                        <constraint firstItem="tyI-J5-HhQ" firstAttribute="centerY" secondItem="Lo3-vg-D6D" secondAttribute="centerY" id="asQ-i7-jLH"/>
                         <constraint firstAttribute="width" secondItem="Lo3-vg-D6D" secondAttribute="height" multiplier="1:1" id="e89-2a-OTy"/>
                         <constraint firstAttribute="trailing" secondItem="tyI-J5-HhQ" secondAttribute="trailing" constant="5" id="h09-Vp-qYE"/>
                         <constraint firstAttribute="width" constant="40" id="jO7-Qb-lFC"/>

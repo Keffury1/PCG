@@ -26,7 +26,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var priceWithSubLabel: UILabel!
     @IBOutlet weak var withSubLabel: UILabel!
     @IBOutlet weak var productDetailCollectionView: UICollectionView!
-    
+    @IBOutlet weak var backButton: UIButton!
     
     // MARK: - Views
     
@@ -76,6 +76,10 @@ class ProductDetailViewController: UIViewController {
     
     @IBAction func customizeButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "customizeSegue", sender: self)
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Navigation

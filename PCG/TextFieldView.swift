@@ -17,6 +17,7 @@ class TextFieldView: UIView {
     //MARK: - Outlets
     
     @IBOutlet var textFieldView: UIView!
+    @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var textField: UITextField!
     
@@ -37,10 +38,9 @@ class TextFieldView: UIView {
         addSubview(textFieldView)
         textFieldView.frame = self.bounds
         textFieldView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
-        self.addShadow()
         self.layer.cornerRadius = 30
         textField.text = title?.uppercased()
+        iconView.layer.cornerRadius = 10
     }
     
     //MARK: - Actions

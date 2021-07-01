@@ -16,7 +16,7 @@ class CustomizeViewController: UIViewController {
     var product: Product?
     var template: Template? {
         didSet {
-            templateChosen()
+            setupCustomizer(template: template)
         }
     }
     var indexPath: IndexPath?
@@ -31,6 +31,9 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var templatesCollectionView: UICollectionView!
     @IBOutlet weak var chooseTemplateView: UIView!
     @IBOutlet weak var addInfoView: UIView!
+    @IBOutlet weak var customizeStackView: UIStackView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: - Views
     
@@ -70,23 +73,130 @@ class CustomizeViewController: UIViewController {
         }
     }
     
-    private func templateChosen() {
-        //Show needs based on chosen template
-    }
-    
     private func addToCartOn() {
         addToCartButton.isEnabled = true
         addToCartButton.setTitle("  Add to Cart", for: .normal)
+        addToCartButton.isHidden = false
     }
     
     private func addToCartOff() {
         addToCartButton.isEnabled = false
         addToCartButton.setTitle("", for: .normal)
+        addToCartButton.isHidden = true
+    }
+    
+    private func setupCustomizer(template: Template?) {
+        scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: 0), animated: true)
+        customizeStackView.subviews.forEach({ $0.removeFromSuperview() })
+        guard let template = template else { return }
+        for need in template.needs {
+            switch need.id {
+            case 1:
+                //FirstName
+                let textField = TextFieldView()
+                textField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
+                textField.textField.text = "First Name"
+                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(textField)
+            case 2:
+                //LastName
+                let textField = TextFieldView()
+                textField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
+                textField.textField.text = "Last Name"
+                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(textField)
+            case 3:
+                //LastInitial
+                let textField = TextFieldView()
+                textField.iconButton.setBackgroundImage(UIImage(systemName: "chevron.right.circle"), for: .normal)
+                textField.textField.text = "Last Initial"
+                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(textField)
+            case 4:
+                //FullName
+                let textField = TextFieldView()
+                textField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
+                textField.textField.text = "Full Name"
+                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(textField)
+            case 6:
+                //Initials
+                let textField = TextFieldView()
+                textField.iconButton.setBackgroundImage(UIImage(systemName: "chevron.right.circle"), for: .normal)
+                textField.textField.text = "Initials"
+                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(textField)
+            case 7:
+                //Date
+                let dateView = DateView()
+                dateView.heightAnchor.constraint(equalToConstant: 300.0).isActive = true
+                dateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(dateView)
+            case 8:
+                //Address
+                let textField = TextFieldView()
+                textField.iconButton.setBackgroundImage(UIImage(systemName: "house.circle"), for: .normal)
+                textField.textField.text = "Address"
+                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(textField)
+            case 9:
+                //State
+                let stateView = StateView()
+                customizeStackView.addArrangedSubview(stateView)
+            case 10:
+                //Message
+                let messageTextField = TextFieldView()
+                messageTextField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
+                messageTextField.textField.text = "Message"
+                messageTextField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                messageTextField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(messageTextField)
+                
+                //Signature
+                let signatureTextField = TextFieldView()
+                signatureTextField.iconButton.setBackgroundImage(UIImage(systemName: "pencil.circle"), for: .normal)
+                signatureTextField.textField.text = "Signature Line"
+                signatureTextField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                signatureTextField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(signatureTextField)
+            case 11:
+                //petName
+                let textField = TextFieldView()
+                textField.iconButton.setBackgroundImage(UIImage(systemName: "hare"), for: .normal)
+                textField.textField.text = "Pet's Name"
+                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(textField)
+            case 12:
+                //Monogram
+                let textField = TextFieldView()
+                textField.iconButton.setBackgroundImage(UIImage(systemName: "chevron.right.circle"), for: .normal)
+                textField.textField.text = "Monogram"
+                textField.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+                textField.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
+                customizeStackView.addArrangedSubview(textField)
+            default:
+                return
+            }
+        }
+        customizeStackView.axis  = NSLayoutConstraint.Axis.vertical
+        customizeStackView.distribution  = UIStackView.Distribution.equalSpacing
+        customizeStackView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     // MARK: - Actions
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Navigation
@@ -152,62 +262,4 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         cell?.layer.borderColor = UIColor.clear.cgColor
         cell?.isSelected = false
     }
-}
-
-extension CustomizeViewController: ShowAlbumDelegate {
-    func showAlbum() {
-        <#code#>
-    }
-}
-
-extension CustomizeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    //This is the tap gesture added on my UIImageView.
-    @IBAction func didTapOnImageView(sender: UITapGestureRecognizer) {
-        //call Alert function
-        self.showAlert()
-    }
-
-    //Show alert to selected the media source type.
-    private func showAlert() {
-
-        let alert = UIAlertController(title: "Image Selection", message: "From where you want to pick this image?", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
-            self.getImage(fromSourceType: .camera)
-        }))
-        alert.addAction(UIAlertAction(title: "Photo Album", style: .default, handler: {(action: UIAlertAction) in
-            self.getImage(fromSourceType: .photoLibrary)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-
-    //get image from source type
-    private func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
-
-        //Check is source type available
-        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = sourceType
-            self.present(imagePickerController, animated: true, completion: nil)
-        }
-    }
-
-    //MARK:- UIImagePickerViewDelegate.
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
-        self.dismiss(animated: true) { [weak self] in
-
-            guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
-            //Setting image to your image view
-            
-        }
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-
 }
