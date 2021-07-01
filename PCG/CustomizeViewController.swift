@@ -114,6 +114,9 @@ class CustomizeViewController: UIViewController {
             case 4:
                 //FullName
                 newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Full Name")
+            case 5:
+                //Monogram
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Monogram")
             case 6:
                 //Initials
                 newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Initials")
@@ -141,9 +144,6 @@ class CustomizeViewController: UIViewController {
             case 11:
                 //petName
                 newTextField(image: UIImage(systemName: "hare")!, text: "Pet's Name")
-            case 12:
-                //Monogram
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Monogram")
             default:
                 return
             }
