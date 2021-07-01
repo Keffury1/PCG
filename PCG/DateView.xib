@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="calendarView" destination="VQ2-5U-NVs" id="zRm-vf-FK3"/>
                 <outlet property="containerView" destination="sob-2g-PLj" id="A8W-Wa-rQg"/>
+                <outlet property="dateLabel" destination="BJP-bQ-qM9" id="MlS-Zj-ZDa"/>
                 <outlet property="dateView" destination="iN0-l3-epB" id="M6h-lG-TlF"/>
                 <outlet property="dividerView" destination="JQg-Me-5wq" id="8hE-Ow-sia"/>
                 <outlet property="iconButton" destination="23U-9K-ywW" id="wTS-cx-prY"/>

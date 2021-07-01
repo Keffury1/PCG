@@ -8,10 +8,13 @@
 
 import UIKit
 import SMSegmentView
+import FSCalendar
 
 class CustomizeViewController: UIViewController {
     
     // MARK: - Properties
+    
+    let scrollImg: UIScrollView = UIScrollView()
     
     var product: Product?
     var template: Template? {
@@ -19,6 +22,7 @@ class CustomizeViewController: UIViewController {
             setupCustomizer(template: template)
         }
     }
+    var dateDelegate: DateDelegate?
     var indexPath: IndexPath?
     var reset: Bool = false
     var first: Bool = true
@@ -27,6 +31,7 @@ class CustomizeViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var templateContainerView: UIView!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
     @IBOutlet weak var chooseTemplateView: UIView!
@@ -51,6 +56,22 @@ class CustomizeViewController: UIViewController {
     // MARK: - Methods
     
     private func setupSubviews() {
+        let vWidth = self.templateContainerView.frame.width
+        let vHeight = self.templateContainerView.frame.height
+        
+        scrollImg.delegate = self
+        scrollImg.frame = CGRect(x: 0, y: 0, width: vWidth, height: vHeight)
+        scrollImg.backgroundColor = UIColor(red: 90, green: 90, blue: 90, alpha: 0.90)
+        scrollImg.alwaysBounceVertical = false
+        scrollImg.alwaysBounceHorizontal = false
+        scrollImg.showsVerticalScrollIndicator = false
+        scrollImg.showsHorizontalScrollIndicator = false
+        
+        scrollImg.minimumZoomScale = 1.0
+        scrollImg.maximumZoomScale = 10.0
+        
+        templateContainerView!.addSubview(scrollImg)
+        scrollImg.addSubview(firstTemplateImageView!)
         
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
@@ -97,6 +118,7 @@ class CustomizeViewController: UIViewController {
     }
     
     private func setupCustomizer(template: Template?) {
+        scrollImg.zoomScale = 0
         scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: 0), animated: true)
         customizeStackView.subviews.forEach({ $0.removeFromSuperview() })
         guard let template = template else { return }
@@ -123,6 +145,9 @@ class CustomizeViewController: UIViewController {
             case 7:
                 //Date
                 let dateView = DateView()
+                dateView.calendarView.delegate = self
+                dateView.calendarView.dataSource = self
+                self.dateDelegate = dateView
                 dateView.heightAnchor.constraint(equalToConstant: 300.0).isActive = true
                 dateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
                 customizeStackView.addArrangedSubview(dateView)
@@ -232,5 +257,21 @@ extension CustomizeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension CustomizeViewController: FSCalendarDataSource, FSCalendarDelegate {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let date = dateFormatter.string(from: date)
+        dateDelegate?.dateTapped(date: date)
+    }
+}
+
+extension CustomizeViewController: UIScrollViewDelegate {
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.firstTemplateImageView
     }
 }

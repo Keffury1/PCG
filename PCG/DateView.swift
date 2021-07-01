@@ -9,11 +9,16 @@
 import UIKit
 import FSCalendar
 
+protocol DateDelegate {
+    func dateTapped(date: String)
+}
+
 class DateView: UIView {
     
     //MARK: - Outlets
     
     @IBOutlet var dateView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var iconButton: UIButton!
@@ -41,5 +46,11 @@ class DateView: UIView {
         containerView.layer.cornerRadius = 10
         containerView.clipsToBounds = true
         iconView.layer.cornerRadius = 10
+    }
+}
+
+extension DateView: DateDelegate {
+    func dateTapped(date: String) {
+        dateLabel.text = date
     }
 }
