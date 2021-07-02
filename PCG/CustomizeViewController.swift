@@ -91,17 +91,15 @@ class CustomizeViewController: UIViewController {
     }
     
     private func reviewOn() {
+        reviewOrderButton.isHidden = false
         reviewOrderButton.isUserInteractionEnabled = true
-        reviewOrderButton.backgroundColor = UIColor(named: "Navy")!
-        reviewOrderButton.tintColor = .white
-        reviewOrderButton.setTitleColor(.white, for: .normal)
+        self.view.bringSubviewToFront(reviewOrderButton)
     }
     
     private func reviewOff() {
+        reviewOrderButton.isHidden = true
         reviewOrderButton.isUserInteractionEnabled = false
-        reviewOrderButton.backgroundColor = UIColor(named: "Tan")!
-        reviewOrderButton.tintColor = UIColor(named: "Navy")!
-        reviewOrderButton.setTitleColor(UIColor(named: "Navy")!, for: .normal)
+        self.view.sendSubviewToBack(reviewOrderButton)
     }
     
     private func newTextField(image: UIImage, text: String) {
@@ -212,6 +210,7 @@ class CustomizeViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func reviewButtonTapped(_ sender: Any) {
+        
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
