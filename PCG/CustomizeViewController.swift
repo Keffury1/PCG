@@ -242,6 +242,8 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 10
+        cell.templateImageView.layer.cornerRadius = 10
+        cell.templateImageView.layer.masksToBounds = true
         cell.layer.masksToBounds = true
         
         if cell.isSelected {

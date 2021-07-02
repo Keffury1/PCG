@@ -1358,9 +1358,9 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="NAO-H5-kkF">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="NAO-H5-kkF">
                                                                     <rect key="frame" x="5" y="5" width="90" height="90"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" name="Navy"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1384,13 +1384,14 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icO-JO-kWk">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="225"/>
+                                                        <color key="backgroundColor" name="White"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="225" id="PbC-an-3zl"/>
                                                             <constraint firstAttribute="width" constant="300" id="yY3-o5-XZB"/>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="Navy"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="UY2-ZQ-sz6"/>
                                                     <constraint firstAttribute="height" constant="225" id="utA-Wr-Wgl"/>
