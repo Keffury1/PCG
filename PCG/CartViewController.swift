@@ -9,10 +9,6 @@
 import UIKit
 
 class CartViewController: UIViewController {
-
-    // MARK: - Properties
-    
-    var cart: [Product] = []
     
     // MARK: - Outlets
     
@@ -51,7 +47,7 @@ class CartViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func viewProductsButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func creditCardButtonTapped(_ sender: Any) {

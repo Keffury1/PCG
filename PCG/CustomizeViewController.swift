@@ -28,7 +28,7 @@ class CustomizeViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var reviewOrderButton: UIButton!
+    @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var templateContainerView: UIView!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
@@ -74,9 +74,9 @@ class CustomizeViewController: UIViewController {
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
         
-        reviewOrderButton.layer.cornerRadius = 15
-        reviewOrderButton.addShadow()
-        reviewOrderButton.isUserInteractionEnabled = false
+        addToCartButton.layer.cornerRadius = 15
+        addToCartButton.addShadow()
+        addToCartButton.isUserInteractionEnabled = false
     }
     
     private func updateViews() {
@@ -90,16 +90,16 @@ class CustomizeViewController: UIViewController {
         }
     }
     
-    private func reviewOn() {
-        reviewOrderButton.isHidden = false
-        reviewOrderButton.isUserInteractionEnabled = true
-        self.view.bringSubviewToFront(reviewOrderButton)
+    private func addToCartOn() {
+        addToCartButton.isHidden = false
+        addToCartButton.isUserInteractionEnabled = true
+        self.view.bringSubviewToFront(addToCartButton)
     }
     
-    private func reviewOff() {
-        reviewOrderButton.isHidden = true
-        reviewOrderButton.isUserInteractionEnabled = false
-        self.view.sendSubviewToBack(reviewOrderButton)
+    private func addToCartOff() {
+        addToCartButton.isHidden = true
+        addToCartButton.isUserInteractionEnabled = false
+        self.view.sendSubviewToBack(addToCartButton)
     }
     
     private func newTextField(image: UIImage, text: String) {
@@ -194,23 +194,28 @@ class CustomizeViewController: UIViewController {
         
         if template.needs.contains(where: { $0.id == 10 }) {
             if template.fulfilled.count == template.needs.count + 1 {
-                reviewOn()
+                addToCartOn()
             } else {
-                reviewOff()
+                addToCartOff()
             }
         } else {
             if template.fulfilled.count == template.needs.count {
-                reviewOn()
+                addToCartOn()
             } else {
-                reviewOff()
+                addToCartOff()
             }
         }
     }
     
     // MARK: - Actions
     
-    @IBAction func reviewButtonTapped(_ sender: Any) {
-        
+    @IBAction func addToCartButtonTapped(_ sender: Any) {
+        guard let template = template, var product = product else { return }
+        product.chosenTemplate?.append(template)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
+        cart.append(product)
+        navigationController?.popToRootViewController(animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
