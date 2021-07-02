@@ -233,6 +233,16 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateCell", for: indexPath) as? TemplateCollectionViewCell else { return UICollectionViewCell() }
         guard let product = product else { return UICollectionViewCell() }
         
+        if product.id == 1 {
+            cell.templateImageView.contentMode = .scaleAspectFill
+        } else if product.id == 2 {
+            cell.templateImageView.contentMode = .scaleAspectFill
+        } else if product.id == 4 {
+            cell.templateImageView.contentMode = .scaleAspectFill
+        } else {
+            cell.templateImageView.contentMode = .scaleAspectFit
+        }
+        
         if let template = product.templates?[indexPath.row] {
             cell.templateImageView.image = UIImage(named: template.name)
             cell.templateImageView.layer.cornerRadius = 10
