@@ -17,6 +17,7 @@ class CustomizeViewController: UIViewController {
     let scrollImg: UIScrollView = UIScrollView()
     
     var count = 0
+    var dateCount: Int?
     var product: Product?
     var template: Template?
     var dateDelegate: DateDelegate?
@@ -157,8 +158,7 @@ class CustomizeViewController: UIViewController {
                 dateView.heightAnchor.constraint(equalToConstant: 300.0).isActive = true
                 dateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
                 customizeStackView.addArrangedSubview(dateView)
-                dateView.count = count
-                dateView.template = template
+                dateCount = count
             case 8:
                 //Address
                 newTextField(image: UIImage(systemName: "house.circle")!, text: "Address")
@@ -174,6 +174,8 @@ class CustomizeViewController: UIViewController {
             case 10:
                 //Message
                 newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Message")
+                
+                count += 1
                 
                 //Signature
                 newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Signature Line")
@@ -193,7 +195,7 @@ class CustomizeViewController: UIViewController {
         guard let template = template else { return }
         
         if template.needs.contains(where: { $0.id == 10 }) {
-            if template.fulfilled.count == template.needs.count {
+            if template.fulfilled.count == template.needs.count + 1 {
                 reviewOn()
             } else {
                 reviewOff()
@@ -305,6 +307,7 @@ extension CustomizeViewController: FSCalendarDataSource, FSCalendarDelegate {
             return
         } else {
             dateDelegate?.dateTapped(date: date)
+            template?.fulfilled[dateCount!] = date
             checkIfCustomized()
         }
     }
