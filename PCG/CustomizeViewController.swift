@@ -9,13 +9,14 @@
 import UIKit
 import SMSegmentView
 import FSCalendar
+import IQKeyboardManagerSwift
 
 class CustomizeViewController: UIViewController {
     
     // MARK: - Properties
     
     let scrollImg: UIScrollView = UIScrollView()
-    
+    var chosenTextField: UITextField?
     var count = 0
     var dateCount: Int?
     var product: Product?
@@ -222,6 +223,17 @@ class CustomizeViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func didPressOnDoneButton() {
+        guard let tf = chosenTextField else { return }
+        if tf.text == "" {
+            template?.fulfilled[tf.tag] = nil
+        } else {
+            template?.fulfilled[tf.tag] = tf.text
+        }
+        checkIfCustomized()
+        tf.resignFirstResponder()
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -301,6 +313,12 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
 }
 
 extension CustomizeViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.chosenTextField = textField
+        let invocation = IQInvocation(self, #selector(didPressOnDoneButton))
+        textField.keyboardToolbar.doneBarButton.invocation = invocation
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text == "" {

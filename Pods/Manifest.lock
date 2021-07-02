@@ -1,28 +1,28 @@
 PODS:
   - DropDown (2.3.13)
   - FSCalendar (2.8.2)
-  - IQKeyboardManager (6.5.6)
+  - IQKeyboardManagerSwift (6.5.6)
   - SMSegmentView (1.3.1)
 
 DEPENDENCIES:
   - DropDown
   - FSCalendar
-  - IQKeyboardManager
+  - IQKeyboardManagerSwift
   - SMSegmentView
 
 SPEC REPOS:
   trunk:
     - DropDown
     - FSCalendar
-    - IQKeyboardManager
+    - IQKeyboardManagerSwift
     - SMSegmentView
 
 SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
-  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   SMSegmentView: 3c3aa59206a67a7c8a9e05593f84aa875eddeeba
 
-PODFILE CHECKSUM: 27ead2bd1333cc02892a3207cc5923d78f1b3197
+PODFILE CHECKSUM: 117280a3999c1d0323d38381f10317c44b5c7a5c
 
 COCOAPODS: 1.10.1
