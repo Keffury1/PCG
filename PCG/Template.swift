@@ -13,7 +13,7 @@ struct Template: Codable {
     var id: Int
     var name: String
     var needs: [Needs]
-    var fulfilled: [Int]
+    var fulfilled: [Int : String]
 }
 
 struct Needs: Codable {

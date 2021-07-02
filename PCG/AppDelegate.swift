@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
-        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
+        
         
         return true
     }

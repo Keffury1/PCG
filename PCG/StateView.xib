@@ -105,7 +105,7 @@
         <image name="chevron.up.circle" catalog="system" width="128" height="121"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Navy">
-            <color red="0.047058823529411764" green="0.094117647058823528" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.047" green="0.094" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -16,21 +16,18 @@ class CustomizeViewController: UIViewController {
     
     let scrollImg: UIScrollView = UIScrollView()
     
+    var count = 0
     var product: Product?
-    var template: Template? {
-        didSet {
-            setupCustomizer(template: template)
-        }
-    }
+    var template: Template?
     var dateDelegate: DateDelegate?
+    var templateTextFieldDelegate: TemplateTextFieldDelegate?
     var indexPath: IndexPath?
     var reset: Bool = false
     var first: Bool = true
-    var templateCount = 0
     
     // MARK: - Outlets
     
-    @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var reviewOrderButton: UIButton!
     @IBOutlet weak var templateContainerView: UIView!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
@@ -76,11 +73,9 @@ class CustomizeViewController: UIViewController {
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
         
-        addToCartButton.layer.cornerRadius = 15
-        addToCartButton.addShadow()
-        addToCartButton.isEnabled = false
-        addToCartButton.setTitle("", for: .normal)
-        addToCartButton.tintColor = UIColor.init(named: "Navy")
+        reviewOrderButton.layer.cornerRadius = 15
+        reviewOrderButton.addShadow()
+        reviewOrderButton.isUserInteractionEnabled = false
     }
     
     private func updateViews() {
@@ -94,16 +89,18 @@ class CustomizeViewController: UIViewController {
         }
     }
     
-    private func addToCartOn() {
-        addToCartButton.isEnabled = true
-        addToCartButton.setTitle("  Add to Cart", for: .normal)
-        addToCartButton.isHidden = false
+    private func reviewOn() {
+        reviewOrderButton.isUserInteractionEnabled = true
+        reviewOrderButton.backgroundColor = UIColor(named: "Navy")!
+        reviewOrderButton.tintColor = .white
+        reviewOrderButton.setTitleColor(.white, for: .normal)
     }
     
-    private func addToCartOff() {
-        addToCartButton.isEnabled = false
-        addToCartButton.setTitle("", for: .normal)
-        addToCartButton.isHidden = true
+    private func reviewOff() {
+        reviewOrderButton.isUserInteractionEnabled = false
+        reviewOrderButton.backgroundColor = UIColor(named: "Tan")!
+        reviewOrderButton.tintColor = UIColor(named: "Navy")!
+        reviewOrderButton.setTitleColor(UIColor(named: "Navy")!, for: .normal)
     }
     
     private func newTextField(image: UIImage, text: String) {
@@ -115,15 +112,23 @@ class CustomizeViewController: UIViewController {
         textFieldView.textField.delegate = self
         textFieldView.textField.attributedPlaceholder = NSAttributedString(string: text,
                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        textFieldView.textField.tag = count
     }
     
     private func setupCustomizer(template: Template?) {
-        templateCount = 0
+        count = 0
+        
+        self.template?.fulfilled = [:]
+        checkIfCustomized()
+        
         scrollImg.zoomScale = 0
         scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: 0), animated: true)
+        
         customizeStackView.subviews.forEach({ $0.removeFromSuperview() })
+        
         guard let template = template else { return }
         for need in template.needs {
+            count += 1
             switch need.id {
             case 1:
                 //FirstName
@@ -152,15 +157,20 @@ class CustomizeViewController: UIViewController {
                 dateView.heightAnchor.constraint(equalToConstant: 300.0).isActive = true
                 dateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
                 customizeStackView.addArrangedSubview(dateView)
+                dateView.count = count
+                dateView.template = template
             case 8:
                 //Address
                 newTextField(image: UIImage(systemName: "house.circle")!, text: "Address")
             case 9:
                 //State
                 let stateView = StateView()
+                stateView.template = template
                 stateView.heightAnchor.constraint(equalToConstant: 50).isActive = true
                 stateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
                 customizeStackView.addArrangedSubview(stateView)
+                stateView.count = count
+                stateView.stateTappedDelegate = self
             case 10:
                 //Message
                 newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Message")
@@ -179,19 +189,27 @@ class CustomizeViewController: UIViewController {
         customizeStackView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private func checkIfCustomized(template: Template?) {
+    private func checkIfCustomized() {
         guard let template = template else { return }
         
-        if templateCount == template.needs.count {
-            addToCartOn()
+        if template.needs.contains(where: { $0.id == 10 }) {
+            if template.fulfilled.count == template.needs.count {
+                reviewOn()
+            } else {
+                reviewOff()
+            }
         } else {
-            addToCartOff()
+            if template.fulfilled.count == template.needs.count {
+                reviewOn()
+            } else {
+                reviewOff()
+            }
         }
     }
     
     // MARK: - Actions
     
-    @IBAction func addToCartButtonTapped(_ sender: Any) {
+    @IBAction func reviewButtonTapped(_ sender: Any) {
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -239,6 +257,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         if let template = product.templates?[indexPath.row] {
             firstTemplateImageView.image = UIImage(named: template.name)
             self.template = template
+            setupCustomizer(template: template)
             reset = true
         }
         if addInfoView.isHidden == true {
@@ -267,11 +286,11 @@ extension CustomizeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text == "" {
-            templateCount -= 1
+            template?.fulfilled[textField.tag] = nil
         } else {
-            templateCount += 1
+            template?.fulfilled[textField.tag] = textField.text
         }
-        checkIfCustomized(template: self.template)
+        checkIfCustomized()
         textField.resignFirstResponder()
         return true
     }
@@ -282,12 +301,24 @@ extension CustomizeViewController: FSCalendarDataSource, FSCalendarDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, yyyy"
         let date = dateFormatter.string(from: date)
-        dateDelegate?.dateTapped(date: date)
+        if date == "" {
+            return
+        } else {
+            dateDelegate?.dateTapped(date: date)
+            checkIfCustomized()
+        }
     }
 }
 
 extension CustomizeViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.firstTemplateImageView
+    }
+}
+
+extension CustomizeViewController: StateTappedDelegate {
+    func stateTapped(state: String, count: Int) {
+        template?.fulfilled[count] = state
+        checkIfCustomized()
     }
 }

@@ -1424,7 +1424,7 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chL-Zd-mcG">
-                                        <rect key="frame" x="0.0" y="760" width="414" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdo-AH-FjR">
                                                 <rect key="frame" x="20" y="0.0" width="374" height="0.5"/>
@@ -1449,26 +1449,11 @@
                                                 <color key="textColor" name="Navy"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-n5-471">
-                                                <rect key="frame" x="20" y="-24" width="374" height="24"/>
-                                                <color key="backgroundColor" name="Navy"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="52.5" id="DtA-E7-kFP"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                <color key="tintColor" name="Navy"/>
-                                                <state key="normal" title="  Add to Cart" image="cart" catalog="system">
-                                                    <color key="titleColor" name="White"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="addToCartButtonTapped:" destination="6cS-uS-eay" eventType="touchUpInside" id="OmV-fa-Wml"/>
-                                                </connections>
-                                            </button>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVe-Eu-WD3">
-                                                <rect key="frame" x="20" y="51" width="374" height="298"/>
+                                                <rect key="frame" x="20" y="43" width="374" height="298"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WBD-5g-lWB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="400"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
                                                 </subviews>
@@ -1482,23 +1467,39 @@
                                                 <viewLayoutGuide key="contentLayoutGuide" id="Pdq-bI-PEp"/>
                                                 <viewLayoutGuide key="frameLayoutGuide" id="OJs-aI-tMV"/>
                                             </scrollView>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-n5-471">
+                                                <rect key="frame" x="20" y="43" width="374" height="50"/>
+                                                <color key="backgroundColor" name="Tan"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="N5h-Qw-rO6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <color key="tintColor" name="Navy"/>
+                                                <state key="normal" title="  Review Order" image="chart.bar.doc.horizontal" catalog="system">
+                                                    <color key="titleColor" name="Navy"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="reviewButtonTapped:" destination="6cS-uS-eay" eventType="touchUpInside" id="OmV-fa-Wml"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="yVe-Eu-WD3" firstAttribute="leading" secondItem="Ujl-n5-471" secondAttribute="leading" id="1OL-1i-CGm"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ujl-n5-471" secondAttribute="bottom" id="2FH-TC-tcP"/>
                                             <constraint firstItem="yVe-Eu-WD3" firstAttribute="top" secondItem="d8o-x7-U14" secondAttribute="bottom" id="3Ec-PS-pg7"/>
-                                            <constraint firstItem="yVe-Eu-WD3" firstAttribute="trailing" secondItem="Ujl-n5-471" secondAttribute="trailing" id="HoJ-RS-s0L"/>
+                                            <constraint firstAttribute="trailing" secondItem="yVe-Eu-WD3" secondAttribute="trailing" constant="20" id="A4U-vS-HfQ"/>
+                                            <constraint firstItem="yVe-Eu-WD3" firstAttribute="leading" secondItem="chL-Zd-mcG" secondAttribute="leading" constant="20" id="HLV-qd-gXU"/>
                                             <constraint firstAttribute="trailing" secondItem="hdo-AH-FjR" secondAttribute="trailing" constant="20" id="IvB-iY-yBA"/>
                                             <constraint firstItem="hdo-AH-FjR" firstAttribute="top" secondItem="chL-Zd-mcG" secondAttribute="top" id="Khr-1o-Yi1"/>
                                             <constraint firstItem="d8o-x7-U14" firstAttribute="leading" secondItem="chL-Zd-mcG" secondAttribute="leading" constant="20" id="Xaa-SO-VzS"/>
                                             <constraint firstItem="hdo-AH-FjR" firstAttribute="leading" secondItem="chL-Zd-mcG" secondAttribute="leading" constant="20" id="Xqs-dT-6On"/>
                                             <constraint firstAttribute="trailing" secondItem="4uF-SH-1jW" secondAttribute="trailing" constant="20" id="dXz-eK-8A3"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ujl-n5-471" secondAttribute="trailing" constant="20" id="hAx-p8-o63"/>
                                             <constraint firstItem="4uF-SH-1jW" firstAttribute="leading" secondItem="d8o-x7-U14" secondAttribute="trailing" constant="10" id="ipT-YH-3V4"/>
+                                            <constraint firstItem="Ujl-n5-471" firstAttribute="top" secondItem="yVe-Eu-WD3" secondAttribute="bottom" id="ku0-0q-DVa"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ujl-n5-471" secondAttribute="trailing" constant="20" id="l85-Bn-cgM"/>
                                             <constraint firstItem="d8o-x7-U14" firstAttribute="top" secondItem="chL-Zd-mcG" secondAttribute="top" constant="2" id="mDQ-HU-gGZ"/>
-                                            <constraint firstItem="Ujl-n5-471" firstAttribute="leading" secondItem="chL-Zd-mcG" secondAttribute="leading" constant="20" id="plb-Bh-fka"/>
                                             <constraint firstItem="4uF-SH-1jW" firstAttribute="centerY" secondItem="d8o-x7-U14" secondAttribute="centerY" constant="3" id="shr-zg-jIS"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ujl-n5-471" secondAttribute="bottom" id="woI-nf-3pD"/>
+                                            <constraint firstItem="Ujl-n5-471" firstAttribute="leading" secondItem="chL-Zd-mcG" secondAttribute="leading" constant="20" id="ypm-OA-CgI"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1511,22 +1512,21 @@
                             <constraint firstItem="18M-nU-2Fy" firstAttribute="trailing" secondItem="kqx-y5-rvR" secondAttribute="trailing" id="ATV-O5-hNg"/>
                             <constraint firstItem="yx1-pr-OT9" firstAttribute="centerX" secondItem="18M-nU-2Fy" secondAttribute="centerX" id="DCA-Ta-cyz"/>
                             <constraint firstItem="18M-nU-2Fy" firstAttribute="trailing" secondItem="GH5-FD-lZm" secondAttribute="trailing" constant="20" id="I3s-Mo-TO3"/>
-                            <constraint firstItem="18M-nU-2Fy" firstAttribute="bottom" secondItem="kqx-y5-rvR" secondAttribute="bottom" id="Ln7-co-Myf"/>
                             <constraint firstItem="kqx-y5-rvR" firstAttribute="leading" secondItem="18M-nU-2Fy" secondAttribute="leading" id="PBu-JG-Kq1"/>
                             <constraint firstItem="kqx-y5-rvR" firstAttribute="top" secondItem="18M-nU-2Fy" secondAttribute="top" constant="15" id="V15-AC-yQW"/>
-                            <constraint firstItem="18M-nU-2Fy" firstAttribute="bottom" secondItem="yVe-Eu-WD3" secondAttribute="bottom" id="VrC-Qk-pgw"/>
                             <constraint firstItem="GH5-FD-lZm" firstAttribute="top" secondItem="18M-nU-2Fy" secondAttribute="top" id="uU4-pY-Gw8"/>
                             <constraint firstItem="kqx-y5-rvR" firstAttribute="top" secondItem="GH5-FD-lZm" secondAttribute="bottom" constant="-5" id="vrd-Eh-vNT"/>
+                            <constraint firstItem="18M-nU-2Fy" firstAttribute="bottom" secondItem="kqx-y5-rvR" secondAttribute="bottom" id="xGi-7z-rEc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qlh-vY-PVj"/>
                     <connections>
                         <outlet property="addInfoView" destination="chL-Zd-mcG" id="HTz-Ri-eHT"/>
-                        <outlet property="addToCartButton" destination="Ujl-n5-471" id="kNz-c4-fHm"/>
                         <outlet property="backButton" destination="GH5-FD-lZm" id="10H-Ih-aOM"/>
                         <outlet property="chooseTemplateView" destination="fqO-KM-Oao" id="2OP-fJ-jl5"/>
                         <outlet property="customizeStackView" destination="WBD-5g-lWB" id="YBv-a1-wQ4"/>
                         <outlet property="firstTemplateImageView" destination="icO-JO-kWk" id="2CR-J6-ElB"/>
+                        <outlet property="reviewOrderButton" destination="Ujl-n5-471" id="kNz-c4-fHm"/>
                         <outlet property="scrollView" destination="yVe-Eu-WD3" id="FUh-Ax-Tkw"/>
                         <outlet property="templateContainerView" destination="yx1-pr-OT9" id="HCk-Bt-Qdb"/>
                         <outlet property="templatesCollectionView" destination="H7W-Me-bj6" id="DZD-Mz-jKi"/>
@@ -1899,6 +1899,7 @@
         <image name="bag.circle" catalog="system" width="128" height="121"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.down.circle" catalog="system" width="128" height="121"/>

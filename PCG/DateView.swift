@@ -15,6 +15,11 @@ protocol DateDelegate {
 
 class DateView: UIView {
     
+    //MARK: - Properties
+    
+    var count: Int?
+    var template: Template?
+    
     //MARK: - Outlets
     
     @IBOutlet var dateView: UIView!
@@ -43,6 +48,7 @@ class DateView: UIView {
         dateView.frame = self.bounds
         dateView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        count = 0
         containerView.layer.cornerRadius = 10
         containerView.clipsToBounds = true
         iconView.layer.cornerRadius = 10
@@ -52,5 +58,6 @@ class DateView: UIView {
 extension DateView: DateDelegate {
     func dateTapped(date: String) {
         dateLabel.text = date
+        template?.fulfilled[count!] = date
     }
 }

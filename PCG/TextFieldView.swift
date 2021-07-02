@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol TemplateTextFieldDelegate {
+    func textFieldFilledIn(string: String)
+}
+
 class TextFieldView: UIView {
     
     //MARK: - Properties
     
     var title: String?
+    var count: Int?
     
     //MARK: - Outlets
     
@@ -38,6 +43,8 @@ class TextFieldView: UIView {
         addSubview(textFieldView)
         textFieldView.frame = self.bounds
         textFieldView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        count = 0
         self.layer.cornerRadius = 30
         textField.text = title?.uppercased()
         iconView.layer.cornerRadius = 10

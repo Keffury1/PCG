@@ -9,6 +9,10 @@
 import UIKit
 import DropDown
 
+protocol StateTappedDelegate {
+    func stateTapped(state: String, count: Int)
+}
+
 class StateView: UIView {
     
     //MARK: - Properties
@@ -16,6 +20,9 @@ class StateView: UIView {
     var states: [String] = []
     var showing: Bool = false
     let dropDown = DropDown()
+    var template: Template?
+    var count: Int?
+    var stateTappedDelegate: StateTappedDelegate?
     
     //MARK: - Outlets
     
@@ -47,12 +54,14 @@ class StateView: UIView {
         stateView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         self.layer.cornerRadius = 30
+        self.count = 0
         dropDown.anchorView = stateButton
         dropDown.backgroundColor = UIColor(named: "Navy")
         dropDown.textColor = .white
         dropDown.dataSource = states.sorted { $0 < $1 }
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             stateLabel.text = item
+            stateTappedDelegate?.stateTapped(state: item, count: count!)
         }
         dropDown.cornerRadius = 10
         iconView.layer.cornerRadius = 10
