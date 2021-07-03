@@ -233,7 +233,7 @@ class CustomizeViewController: UIViewController {
         let newTemplate = CDTemplate(id: Int16(template.id), name: template.name, context: moc)
         newProduct.addToChosenTemplate(newTemplate)
         
-        //Add Product
+        cart.addToCartProducts(newProduct)
         
         do {
             try moc.save()

@@ -68,7 +68,7 @@ class CartViewController: UIViewController {
     
     internal func updateViews() {
         subTotal = 0.00
-        guard let cart = fetchedResultsController.fetchedObjects.first? else { return }
+        guard let cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return }
         
         for item in cart {
             let price = Double(round((1000*Double(item.price))/1000)) * Double(item.count)
@@ -114,7 +114,7 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if fetchedResultsController.fetchedObjects == nil {
+        if fetchedResultsController.fetchedObjects?.first?.cartArray == nil {
             cartTableView.alpha = 0
             cartTableView.isUserInteractionEnabled = false
             emptyCartView.alpha = 1
@@ -125,13 +125,13 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
             emptyCartView.alpha = 0
             emptyCartView.isUserInteractionEnabled = false
         }
-        return fetchedResultsController.fetchedObjects?.count ?? 0
+        return fetchedResultsController.fetchedObjects?.first?.cartArray.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cartItemCell", for: indexPath) as? CartItemTableViewCell else { return UITableViewCell() }
         
-        guard let cart = fetchedResultsController.fetchedObjects else { return UITableViewCell() }
+        guard let cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return UITableViewCell() }
         let item = cart[indexPath.row]
         
         cell.productImageView.image = UIImage(named: (item.chosenArray.first?.name)!)
@@ -180,7 +180,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension CartViewController: UpdateDelegate {
     func updateNeeded(increase: Bool, index: Int) {
-        guard var cart = fetchedResultsController.fetchedObjects else { return }
+        guard var cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return }
         if increase {
             let product = cart[index]
             product.count += 1
