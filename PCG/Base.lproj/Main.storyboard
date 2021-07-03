@@ -828,10 +828,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" reuseIdentifier="productCell" id="pVw-L7-fpd" customClass="ProductCollectionViewCell" customModule="PCG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="190" height="202"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7sS-SE-hP5">
-                                            <rect key="frame" x="0.0" y="0.0" width="190" height="202"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="185"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="1wo-x8-ZcK">
@@ -841,19 +841,20 @@
                                                         <constraint firstAttribute="height" constant="150" id="WcS-0v-RSw"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XtT-ic-HYD">
-                                                    <rect key="frame" x="0.0" y="155" width="190" height="42"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XtT-ic-HYD">
+                                                    <rect key="frame" x="2" y="155" width="186" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5L5-9t-aSz">
-                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="144" height="25"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                                             <color key="textColor" name="Navy"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="$144" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewq-ob-HQU">
-                                                            <rect key="frame" x="0.0" y="27" width="36" height="15"/>
+                                                            <rect key="frame" x="146" y="5" width="40" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="Leo-RN-Wxl"/>
+                                                                <constraint firstAttribute="width" constant="40" id="yQn-Nr-17h"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                             <color key="textColor" name="Navy"/>
@@ -863,13 +864,13 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XtT-ic-HYD" firstAttribute="leading" secondItem="7sS-SE-hP5" secondAttribute="leading" id="7os-b8-IYY"/>
+                                                <constraint firstItem="XtT-ic-HYD" firstAttribute="leading" secondItem="7sS-SE-hP5" secondAttribute="leading" constant="2" id="7os-b8-IYY"/>
                                                 <constraint firstItem="1wo-x8-ZcK" firstAttribute="top" secondItem="7sS-SE-hP5" secondAttribute="top" id="DRN-ux-inp"/>
                                                 <constraint firstAttribute="bottom" secondItem="XtT-ic-HYD" secondAttribute="bottom" constant="5" id="E7j-Zs-c5x"/>
                                                 <constraint firstAttribute="trailing" secondItem="1wo-x8-ZcK" secondAttribute="trailing" id="IcR-B1-QO0"/>
                                                 <constraint firstItem="1wo-x8-ZcK" firstAttribute="leading" secondItem="7sS-SE-hP5" secondAttribute="leading" id="JXX-Ho-84w"/>
                                                 <constraint firstItem="XtT-ic-HYD" firstAttribute="top" secondItem="1wo-x8-ZcK" secondAttribute="bottom" constant="5" id="wzw-NZ-3fJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="XtT-ic-HYD" secondAttribute="trailing" id="y0z-OQ-VYZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="XtT-ic-HYD" secondAttribute="trailing" constant="2" id="y0z-OQ-VYZ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

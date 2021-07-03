@@ -12,7 +12,7 @@ import DropDown
 class ShopViewController: UIViewController {
 
     // MARK: - Properties
-    var items: [String : String] = ["Cutting Boards":"CuttingBoard", "Lanterns":"Lantern", "Coaster Sets":"CoasterSet","Cheese Boards":"CheeseBoard", "Stamps":"Stamp", "Knife Sets":"KnifeSet", "Ornaments":"Ornament", "Doormats":"Doormat", "Jars":"DogTreatJar"]
+    var items: [String : String] = ["Cutting Boards":"CuttingBoard", "Lanterns":"Lantern", "Coaster Sets":"CoasterSet","Cheese Boards":"CheeseBoard", "Stamps":"Stamp", "Knife Sets":"KnifeSet", "Ornaments":"Ornament", "Doormats":"Doormat", "Jars":"DogTreatJar", "View All Products":""]
     let productController = ProductController()
     var price: Bool = true
     var display: Bool = true
@@ -85,10 +85,17 @@ class ShopViewController: UIViewController {
         dropDown.bottomOffset = CGPoint(x: 0, y:((dropDown.anchorView?.plainView.bounds.height)! + 5))
         dropDown.backgroundColor = UIColor(named: "Navy")
         dropDown.textColor = .white
-        dropDown.dataSource = items.keys.sorted { $0 < $1 }
+        dropDown.separatorColor = .white
+        dropDown.dataSource = items.keys.sorted()
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            removeChoices(item)
-            sortByCategory(category: items[item]!)
+            if item == "View All Products" {
+                self.products = productController.products!
+                productsCollectionView.reloadData()
+                removeChoices("Menu")
+            } else {
+                removeChoices(item)
+                sortByCategory(category: items[item]!)
+            }
             UIView.animate(withDuration: 0.3) {
                 self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
             }
@@ -126,22 +133,12 @@ class ShopViewController: UIViewController {
     @IBAction func menuLabelTapped(_ sender: Any) {
         if display {
             turnOnMenu()
-        } else {
-            dropDown.hide()
-            self.products = productController.products!
-            productsCollectionView.reloadData()
-            removeChoices("Menu")
         }
     }
     
     @IBAction func menuButtonTapped(_ sender: Any) {
         if display {
             turnOnMenu()
-        } else {
-            dropDown.hide()
-            self.products = productController.products!
-            productsCollectionView.reloadData()
-            removeChoices("Menu")
         }
     }
     
