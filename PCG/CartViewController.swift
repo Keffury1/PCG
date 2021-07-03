@@ -15,12 +15,12 @@ class CartViewController: UIViewController {
     
     var subTotal = 0.00
     
-    lazy var fetchedResultsController: NSFetchedResultsController<CDProduct> = {
-        let fetchRequest: NSFetchRequest<CDProduct> = CDProduct.fetchRequest()
+    lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
+        let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
         fetchRequest.sortDescriptors = [
             NSSortDescriptor(key: "name", ascending: true)
         ]
-        let moc = CartCoreDataStack.shared.mainContext
+        let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "name", cacheName: nil)
         frc.delegate = self
         try! frc.performFetch()
@@ -68,7 +68,7 @@ class CartViewController: UIViewController {
     
     internal func updateViews() {
         subTotal = 0.00
-        guard let cart = fetchedResultsController.fetchedObjects else { return }
+        guard let cart = fetchedResultsController.fetchedObjects.first? else { return }
         
         for item in cart {
             let price = Double(round((1000*Double(item.price))/1000)) * Double(item.count)
@@ -161,7 +161,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .delete {
             let product = fetchedResultsController.object(at: indexPath)
             DispatchQueue.main.async {
-                let moc = CartCoreDataStack.shared.mainContext
+                let moc = CoreDataStack.shared.mainContext
                 moc.delete(product)
                 
                 do {
@@ -194,7 +194,7 @@ extension CartViewController: UpdateDelegate {
                 cart[index] = product
             }
         }
-        let moc = CartCoreDataStack.shared.mainContext
+        let moc = CoreDataStack.shared.mainContext
         do {
             try moc.save()
         } catch {
