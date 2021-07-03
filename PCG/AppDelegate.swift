@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import DropDown
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysShow
+        DropDown.startListeningToKeyboard()
         
         return true
     }
