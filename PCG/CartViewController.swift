@@ -48,6 +48,9 @@ class CartViewController: UIViewController {
         viewProductsButton.layer.cornerRadius = 10
         emptyCartView.layer.cornerRadius = 10.0
         emptyCartView.addShadow()
+        emptyCartView.layer.borderColor = UIColor(named: "Tan")!.cgColor
+        emptyCartView.layer.borderWidth = 0.5
+        
     }
     
     internal func updateViews() {
@@ -59,11 +62,15 @@ class CartViewController: UIViewController {
         }
         
         subtotalLabel.text = "$\(subTotal)"
-        taxLabel.text = "$\(1.95)"
-        shippingLabel.text = "$\(5.98)"
-        
-        subTotal += 1.95
-        subTotal += 5.98
+        if subTotal == 0 {
+            taxLabel.text = "$0.0"
+            shippingLabel.text = "$0.0"
+        } else {
+            taxLabel.text = "$\(1.95)"
+            shippingLabel.text = "$\(5.98)"
+            subTotal += 1.95
+            subTotal += 5.98
+        }
         
         totalLabel.text = "$\(Double(round((1000*subTotal)/1000)))"
         cartTableView.reloadData()
