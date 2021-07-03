@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 class ShopViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -18,6 +19,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var products: [Product] = []
     var product: Product?
     var cart: [Product]?
+    let dropDown = DropDown()
     
     // MARK: - Outlets
 
@@ -163,45 +165,27 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         disableButtons()
         display = true
         menuLabel.setTitle(string, for: .normal)
-        dropAndRetreiveButtons()
-        turnOffMenu()
-    }
-    
-    func turnOffMenu() {
-        disableButtons()
-        display = true
-        UIView.animate(withDuration: 0.3, animations: {
-            self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
-        })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
-            self.choicesView.alpha = 0
-        })
     }
     
     func turnOnMenu() {
-        enableButtons()
-        display = false
-        UIView.animate(withDuration: 0.5, animations: {
-            self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
-        })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-            self.choicesView.alpha = 1
-        })
-    }
-    
-    func dropAndRetreiveButtons() {
-        self.productButtonCollection.forEach({ (button) in
-            UIView.animate(withDuration: 0.45, animations: {
-                button.isHidden = !button.isHidden
-            })
-            if button.alpha == 0 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.27, execute: {
-                    button.alpha = 1
-                })
+        
+        var items: [String] = []
+        for product in products {
+            if items.contains(product.category) {
+                
             } else {
-                button.alpha = 0
+                items.append(product.category)
             }
-        })
+        }
+        dropDown.anchorView = menuButton
+        dropDown.backgroundColor = UIColor(named: "Navy")
+        dropDown.textColor = .white
+        dropDown.dataSource = items.sorted { $0 < $1 }
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            removeChoices(item)
+            sortByCategory(category: item)
+        }
+        dropDown.cornerRadius = 10
     }
     
     // MARK: - Actions
@@ -227,61 +211,15 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         productsCollectionView.reloadData()
     }
     
-    @IBAction func menuButtonTapped(_ sender: Any) {
-        
-        dropAndRetreiveButtons()
-        
+    @IBAction func menuLabelTapped(_ sender: Any) {
         if display {
             turnOnMenu()
         } else {
-            turnOffMenu()
+            dropDown.hide()
+            self.products = productController.products!
+            productsCollectionView.reloadData()
+            removeChoices("Menu")
         }
-    }
-    
-    @IBAction func cuttingBoardButtonTapped(_ sender: Any) {
-        removeChoices("Cutting Boards")
-        sortByCategory(category: "CuttingBoard")
-    }
-    
-    @IBAction func cheeseBoardButtonTapped(_ sender: Any) {
-        removeChoices("Cheese Boards")
-        sortByCategory(category: "CheeseBoard")
-    }
-    
-    @IBAction func knifeSetsButtonTapped(_ sender: Any) {
-        removeChoices("Knife Sets")
-        sortByCategory(category: "KnifeSet")
-    }
-    
-    @IBAction func ornamentsButtonTapped(_ sender: Any) {
-        removeChoices("Ornaments")
-        sortByCategory(category: "Ornament")
-    }
-    
-    @IBAction func doormatsButtonTapped(_ sender: Any) {
-        removeChoices("Doormats")
-        sortByCategory(category: "Doormat")
-    }
-    
-    @IBAction func stampsButtonTapped(_ sender: Any) {
-        removeChoices("Stamps")
-        sortByCategory(category: "Stamps")
-    }
-    
-    @IBAction func dogTreatJarButtonTapped(_ sender: Any) {
-        removeChoices("Dog Treat Jar")
-        sortByCategory(category: "DogTreatJar")
-    }
-    
-    @IBAction func lanternButtonTapped(_ sender: Any) {
-        removeChoices("Lantern")
-        sortByCategory(category: "Lantern")
-    }
-    
-    @IBAction func showAllButtonTapped(_ sender: Any) {
-        self.products = productController.products!
-        productsCollectionView.reloadData()
-        removeChoices("Menu")
     }
     
     // MARK: - Navigation

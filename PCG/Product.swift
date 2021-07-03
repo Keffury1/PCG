@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Product: Codable {
+struct Product: Codable, Identifiable {
     var id: Int
     var name: String
     var image: String
@@ -20,6 +20,7 @@ struct Product: Codable {
     var count: Int
     var templates: [Template]?
     var chosenTemplate: [Template]?
+    static let idKey = \Product.id
 }
 
 enum Categories: Int, Codable {
