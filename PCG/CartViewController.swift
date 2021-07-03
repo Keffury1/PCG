@@ -127,6 +127,16 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         cell.countLabel.text = "x\(item.count)"
         cell.index = indexPath.row
         
+        if item.id == 1 {
+            cell.productImageView.contentMode = .scaleAspectFill
+        } else if item.id == 2 {
+            cell.productImageView.contentMode = .scaleAspectFill
+        } else if item.id == 4 {
+            cell.productImageView.contentMode = .scaleAspectFill
+        } else {
+            cell.productImageView.contentMode = .scaleAspectFit
+        }
+        
         cell.updateDelegate = self
         
         return cell
