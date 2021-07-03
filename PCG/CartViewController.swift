@@ -10,6 +10,10 @@ import UIKit
 
 class CartViewController: UIViewController {
     
+    //MARK: - Properties
+    
+    var subTotal = 0.00
+    
     // MARK: - Outlets
     
     @IBOutlet weak var cartTableView: UITableView!
@@ -22,12 +26,14 @@ class CartViewController: UIViewController {
     @IBOutlet weak var creditCardButton: UIButton!
     @IBOutlet weak var applePayButton: UIButton!
     @IBOutlet weak var viewProductsButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     // MARK: - Views
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setubSubviews()
+        updateViews()
     }
     
     // MARK: - Methods
@@ -44,6 +50,25 @@ class CartViewController: UIViewController {
         emptyCartView.addShadow()
     }
     
+    internal func updateViews() {
+        subTotal = 0.00
+        
+        for item in cart {
+            let price = Double(round((1000*Double(item.price))/1000)) * Double(item.count)
+            subTotal += price
+        }
+        
+        subtotalLabel.text = "$\(subTotal)"
+        taxLabel.text = "$\(1.95)"
+        shippingLabel.text = "$\(5.98)"
+        
+        subTotal += 1.95
+        subTotal += 5.98
+        
+        totalLabel.text = "$\(Double(round((1000*subTotal)/1000)))"
+        cartTableView.reloadData()
+    }
+    
     // MARK: - Actions
     
     @IBAction func viewProductsButtonTapped(_ sender: Any) {
@@ -54,6 +79,10 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func applePayButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Navigation
@@ -83,12 +112,43 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         
         let item = cart[indexPath.row]
         
-        cell.productImageView.image = UIImage(named: item.image)
+        cell.productImageView.image = UIImage(named: (item.chosenTemplate?.first!.name)!)
+        cell.productImageView.layer.cornerRadius = 10
         cell.titleLabel.text = item.name.capitalized
-        cell.detailLabel.text = item.description
-        cell.priceLabel.text = "$\(item.price)"
-        cell.countLabel.text = "\(item.count)"
+        cell.detailLabel.text = "Category: \(item.category)"
+        cell.priceLabel.text = "$\(item.price * item.count)"
+        cell.countLabel.text = "x\(item.count)"
+        cell.index = indexPath.row
+        
+        cell.updateDelegate = self
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            cart.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            updateViews()
+        }
+    }
+}
+
+extension CartViewController: UpdateDelegate {
+    func updateNeeded(increase: Bool, index: Int) {
+        if increase {
+            var product = cart[index]
+            product.count += 1
+            cart[index] = product
+        } else {
+            var product = cart[index]
+            if product.count == 1 {
+                return
+            } else {
+                product.count -= 1
+                cart[index] = product
+            }
+        }
+        updateViews()
     }
 }

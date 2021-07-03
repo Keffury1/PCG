@@ -8,7 +8,16 @@
 
 import UIKit
 
+protocol UpdateDelegate {
+    func updateNeeded(increase: Bool, index: Int)
+}
+
 class CartItemTableViewCell: UITableViewCell {
+    
+    //MARK: - Properties
+    
+    var updateDelegate: UpdateDelegate?
+    var index: Int?
 
     //MARK: - Outlets
     
@@ -23,10 +32,10 @@ class CartItemTableViewCell: UITableViewCell {
     //MARK: - Actions
     
     @IBAction func increaseButtonTapped(_ sender: Any) {
-        
+        updateDelegate?.updateNeeded(increase: true, index: index!)
     }
     
     @IBAction func decreaseButtonTapped(_ sender: Any) {
-        
+        updateDelegate?.updateNeeded(increase: false, index: index!)
     }
 }

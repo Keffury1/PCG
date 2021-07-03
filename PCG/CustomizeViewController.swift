@@ -213,6 +213,7 @@ class CustomizeViewController: UIViewController {
     @IBAction func addToCartButtonTapped(_ sender: Any) {
         guard let template = template, var product = product else { return }
         product.chosenTemplate?.append(template)
+        product.count += 1
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
         cart.append(product)
         navigationController?.popToRootViewController(animated: true)
