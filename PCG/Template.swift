@@ -9,18 +9,16 @@
 import Foundation
 import UIKit
 
-struct Template: Codable, Identifiable {
+struct Template: Codable {
     var id: Int
     var name: String
     var needs: [Needs]
-    var fulfilled: [Int : String]
-    static let idKey = \Template.id
+    var fulfilled: [Int:String]
 }
 
-struct Needs: Codable, Identifiable {
+struct Needs: Codable {
     var id: Int
     var name: String
-    static let idKey = \Needs.id
 }
 
 enum Need: String, Codable {

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CDProduct" representedClassName="CDProduct" syncable="YES" codeGenerationType="class">
+    <entity name="Cart" representedClassName="Cart" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="cartProducts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDProduct"/>
+    </entity>
+    <entity name="CDProduct" representedClassName="CDProduct" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="descriptionText" optional="YES" attributeType="String"/>
@@ -9,18 +13,26 @@
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="chosenTemplate" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTemplate"/>
     </entity>
-    <entity name="CDTemplate" representedClassName="CDTemplate" syncable="YES" codeGenerationType="class">
+    <entity name="CDTemplate" representedClassName="CDTemplate" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="fulfilled" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fulfilled"/>
     </entity>
-    <entity name="Fulfilled" representedClassName="Fulfilled" syncable="YES" codeGenerationType="class">
+    <entity name="Fulfilled" representedClassName="Fulfilled" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="text" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="History" representedClassName="History" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="historyProducts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDProduct"/>
+    </entity>
     <elements>
-        <element name="CDProduct" positionX="-45" positionY="0" width="128" height="14"/>
-        <element name="CDTemplate" positionX="-18" positionY="27" width="128" height="14"/>
-        <element name="Fulfilled" positionX="9" positionY="54" width="128" height="14"/>
+        <element name="CDProduct" positionX="-54" positionY="-9" width="128" height="164"/>
+        <element name="CDTemplate" positionX="-36" positionY="9" width="128" height="74"/>
+        <element name="Fulfilled" positionX="36" positionY="126" width="128" height="59"/>
+        <element name="Cart" positionX="36" positionY="117" width="128" height="59"/>
+        <element name="History" positionX="45" positionY="135" width="128" height="59"/>
     </elements>
 </model>

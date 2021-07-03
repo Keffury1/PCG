@@ -10,6 +10,7 @@ import UIKit
 import SMSegmentView
 import FSCalendar
 import IQKeyboardManagerSwift
+import CoreData
 
 class CustomizeViewController: UIViewController {
     
@@ -26,6 +27,18 @@ class CustomizeViewController: UIViewController {
     var indexPath: IndexPath?
     var reset: Bool = false
     var first: Bool = true
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
+        
+        let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: false)
+        ]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "name", cacheName: nil)
+        try! frc.performFetch()
+        return frc
+    }()
     
     // MARK: - Outlets
     
@@ -215,7 +228,18 @@ class CustomizeViewController: UIViewController {
         product.chosenTemplate?.append(template)
         product.count += 1
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
-        cart.append(product)
+        let moc = CoreDataStack.shared.mainContext
+        let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price), context: moc)
+        let newTemplate = CDTemplate(id: Int16(template.id), name: template.name, context: moc)
+        newProduct.addToChosenTemplate(newTemplate)
+        
+        //Add Product
+        
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving added product: \(error)")
+        }
         navigationController?.popToRootViewController(animated: true)
         navigationController?.pushViewController(vc, animated: true)
     }

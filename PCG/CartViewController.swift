@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import CoreData
 
 class CartViewController: UIViewController {
     
     //MARK: - Properties
     
     var subTotal = 0.00
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<CDProduct> = {
+        let fetchRequest: NSFetchRequest<CDProduct> = CDProduct.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        let moc = CartCoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "name", cacheName: nil)
+        frc.delegate = self
+        try! frc.performFetch()
+        return frc
+    }()
     
     // MARK: - Outlets
     
@@ -55,6 +68,7 @@ class CartViewController: UIViewController {
     
     internal func updateViews() {
         subTotal = 0.00
+        guard let cart = fetchedResultsController.fetchedObjects else { return }
         
         for item in cart {
             let price = Double(round((1000*Double(item.price))/1000)) * Double(item.count)
@@ -100,7 +114,7 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if cart.isEmpty == true {
+        if fetchedResultsController.fetchedObjects == nil {
             cartTableView.alpha = 0
             cartTableView.isUserInteractionEnabled = false
             emptyCartView.alpha = 1
@@ -111,18 +125,19 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
             emptyCartView.alpha = 0
             emptyCartView.isUserInteractionEnabled = false
         }
-        return cart.count
+        return fetchedResultsController.fetchedObjects?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cartItemCell", for: indexPath) as? CartItemTableViewCell else { return UITableViewCell() }
         
+        guard let cart = fetchedResultsController.fetchedObjects else { return UITableViewCell() }
         let item = cart[indexPath.row]
         
-        cell.productImageView.image = UIImage(named: (item.chosenTemplate?.first!.name)!)
+        cell.productImageView.image = UIImage(named: (item.chosenArray.first?.name)!)
         cell.productImageView.layer.cornerRadius = 10
-        cell.titleLabel.text = item.name.capitalized
-        cell.detailLabel.text = "Category: \(item.category)"
+        cell.titleLabel.text = item.name?.capitalized
+        cell.detailLabel.text = "Category: \(item.category ?? "")"
         cell.priceLabel.text = "$\(item.price * item.count)"
         cell.countLabel.text = "x\(item.count)"
         cell.index = indexPath.row
@@ -144,8 +159,20 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            cart.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let product = fetchedResultsController.object(at: indexPath)
+            DispatchQueue.main.async {
+                let moc = CartCoreDataStack.shared.mainContext
+                moc.delete(product)
+                
+                do {
+                    try moc.save()
+                    tableView.reloadData()
+                    
+                } catch {
+                    moc.reset()
+                    print("Error saving managed object context: \(error)")
+                }
+            }
             updateViews()
         }
     }
@@ -153,12 +180,13 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension CartViewController: UpdateDelegate {
     func updateNeeded(increase: Bool, index: Int) {
+        guard var cart = fetchedResultsController.fetchedObjects else { return }
         if increase {
-            var product = cart[index]
+            let product = cart[index]
             product.count += 1
             cart[index] = product
         } else {
-            var product = cart[index]
+            let product = cart[index]
             if product.count == 1 {
                 return
             } else {
@@ -166,6 +194,54 @@ extension CartViewController: UpdateDelegate {
                 cart[index] = product
             }
         }
+        let moc = CartCoreDataStack.shared.mainContext
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving added product: \(error)")
+        }
         updateViews()
+    }
+}
+
+extension CartViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        cartTableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        cartTableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .insert:
+            cartTableView.insertSections(IndexSet(integer: sectionIndex), with: .automatic)
+        case .delete:
+            cartTableView.deleteSections(IndexSet(integer: sectionIndex), with: .automatic)
+        default:
+            break
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            cartTableView.insertRows(at: [newIndexPath], with: .automatic)
+        case .update:
+            guard let indexPath = indexPath else { return }
+            cartTableView.reloadRows(at: [indexPath], with: .automatic)
+        case .move:
+            guard let oldIndexPath = indexPath,
+                  let newIndexPath = newIndexPath else { return }
+            cartTableView.moveRow(at: oldIndexPath, to: newIndexPath)
+        case .delete:
+            guard let indexPath = indexPath else { return }
+            cartTableView.deleteRows(at: [indexPath], with: .automatic)
+        @unknown default:
+            break
+        }
     }
 }
