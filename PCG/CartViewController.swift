@@ -22,7 +22,6 @@ class CartViewController: UIViewController {
         ]
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "name", cacheName: nil)
-        frc.delegate = self
         try! frc.performFetch()
         return frc
     }()
@@ -165,11 +164,12 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let NSCart = fetchedResultsController.fetchedObjects?.first
             let cart = fetchedResultsController.fetchedObjects?.first?.cartArray
             let product = cart![indexPath.row]
             DispatchQueue.main.async {
                 let moc = CoreDataStack.shared.mainContext
-                moc.delete(product)
+                NSCart?.removeFromCartProducts(product)
                 do {
                     try moc.save()
                     self.updateViews()
@@ -205,48 +205,5 @@ extension CartViewController: UpdateDelegate {
             print("Error saving added product: \(error)")
         }
         updateViews()
-    }
-}
-
-extension CartViewController: NSFetchedResultsControllerDelegate {
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        cartTableView.beginUpdates()
-    }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        cartTableView.endUpdates()
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-        switch type {
-        case .insert:
-            cartTableView.insertSections(IndexSet(integer: sectionIndex), with: .automatic)
-        case .delete:
-            cartTableView.deleteSections(IndexSet(integer: sectionIndex), with: .automatic)
-        default:
-            break
-        }
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
-        switch type {
-        case .insert:
-            guard let newIndexPath = newIndexPath else { return }
-            cartTableView.insertRows(at: [newIndexPath], with: .automatic)
-        case .update:
-            guard let indexPath = indexPath else { return }
-            cartTableView.reloadRows(at: [indexPath], with: .automatic)
-        case .move:
-            guard let oldIndexPath = indexPath,
-                let newIndexPath = newIndexPath else { return }
-            cartTableView.deleteRows(at: [oldIndexPath], with: .automatic)
-            cartTableView.insertRows(at: [newIndexPath], with: .automatic)
-        case .delete:
-            guard let indexPath = indexPath else { return }
-            cartTableView.deleteRows(at: [indexPath], with: .automatic)
-        @unknown default:
-            break
-        }
     }
 }
