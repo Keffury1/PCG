@@ -17,7 +17,6 @@
 		37204A4C268A9B50001B34F6 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37204A4B268A9B50001B34F6 /* DateView.swift */; };
 		37204A4E268A9B58001B34F6 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37204A4D268A9B58001B34F6 /* StateView.swift */; };
 		37204A51268ACEEA001B34F6 /* States.json in Resources */ = {isa = PBXBuildFile; fileRef = 37204A50268ACEEA001B34F6 /* States.json */; };
-		373C02022691234100987D87 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373C02012691234100987D87 /* Global.swift */; };
 		374E50A525E48D37004320B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 374E50A425E48D37004320B5 /* GoogleService-Info.plist */; };
 		374E50B725E48F1B004320B5 /* PurchaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E50B625E48F1B004320B5 /* PurchaseController.swift */; };
 		375390CC266DD8BE0016791C /* Needs.json in Resources */ = {isa = PBXBuildFile; fileRef = 375390CB266DD8BE0016791C /* Needs.json */; };
@@ -86,7 +85,6 @@
 		37204A4B268A9B50001B34F6 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		37204A4D268A9B58001B34F6 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		37204A50268ACEEA001B34F6 /* States.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = States.json; sourceTree = "<group>"; };
-		373C02012691234100987D87 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		374E50A425E48D37004320B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		374E50B625E48F1B004320B5 /* PurchaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseController.swift; sourceTree = "<group>"; };
 		375390CB266DD8BE0016791C /* Needs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Needs.json; sourceTree = "<group>"; };
@@ -458,7 +456,6 @@
 		37E27110244E438D001F6421 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				373C02012691234100987D87 /* Global.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -643,7 +640,6 @@
 				37FC57B324F59F0F00610C60 /* ProductCollectionViewCell.swift in Sources */,
 				37FC57A324F5646D00610C60 /* HomeViewController.swift in Sources */,
 				37B1989325B7C4A400E59CF6 /* CustomizerTableViewCell.swift in Sources */,
-				373C02022691234100987D87 /* Global.swift in Sources */,
 				37B1988F25B7836100E59CF6 /* Template.swift in Sources */,
 				376B9A3125C09965003E1EFC /* MembershipViewController.swift in Sources */,
 				37E0EB4326910A89004B6C8D /* CDProduct+CoreDataClass.swift in Sources */,

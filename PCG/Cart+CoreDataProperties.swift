@@ -32,7 +32,7 @@ extension Cart {
     @objc(addCartProductsObject:)
     @NSManaged public func addToCartProducts(_ value: CDProduct)
 
-    @objc(removeFulfilledObject:)
+    @objc(removeCartProductsObject:)
     @NSManaged public func removeFromCartProducts(_ value: CDProduct)
 
     @objc(addProducts:)

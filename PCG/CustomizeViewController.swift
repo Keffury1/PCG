@@ -233,7 +233,12 @@ class CustomizeViewController: UIViewController {
         let newTemplate = CDTemplate(id: Int16(template.id), name: template.name, context: moc)
         newProduct.addToChosenTemplate(newTemplate)
         
-        cart.addToCartProducts(newProduct)
+        if fetchedResultsController.fetchedObjects?.isEmpty == true {
+            let cart = Cart(name: "New Cart", context: moc)
+            cart.addToCartProducts(newProduct)
+        } else {
+            fetchedResultsController.fetchedObjects?.first?.addToCartProducts(newProduct)
+        }
         
         do {
             try moc.save()

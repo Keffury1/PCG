@@ -114,7 +114,12 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if fetchedResultsController.fetchedObjects?.first?.cartArray == nil {
+        if fetchedResultsController.fetchedObjects?.isEmpty == true {
+            cartTableView.alpha = 0
+            cartTableView.isUserInteractionEnabled = false
+            emptyCartView.alpha = 1
+            emptyCartView.isUserInteractionEnabled = true
+        } else if fetchedResultsController.fetchedObjects?.first?.cartArray.count == 0 {
             cartTableView.alpha = 0
             cartTableView.isUserInteractionEnabled = false
             emptyCartView.alpha = 1
@@ -134,7 +139,8 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return UITableViewCell() }
         let item = cart[indexPath.row]
         
-        cell.productImageView.image = UIImage(named: (item.chosenArray.first?.name)!)
+        let chosen = item.chosenArray.first
+        cell.productImageView.image = UIImage(named: chosen!.name!)
         cell.productImageView.layer.cornerRadius = 10
         cell.titleLabel.text = item.name?.capitalized
         cell.detailLabel.text = "Category: \(item.category ?? "")"
@@ -159,21 +165,19 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let product = fetchedResultsController.object(at: indexPath)
+            let cart = fetchedResultsController.fetchedObjects?.first?.cartArray
+            let product = cart![indexPath.row]
             DispatchQueue.main.async {
                 let moc = CoreDataStack.shared.mainContext
                 moc.delete(product)
-                
                 do {
                     try moc.save()
-                    tableView.reloadData()
-                    
+                    self.updateViews()
                 } catch {
                     moc.reset()
                     print("Error saving managed object context: \(error)")
                 }
             }
-            updateViews()
         }
     }
 }
@@ -235,8 +239,9 @@ extension CartViewController: NSFetchedResultsControllerDelegate {
             cartTableView.reloadRows(at: [indexPath], with: .automatic)
         case .move:
             guard let oldIndexPath = indexPath,
-                  let newIndexPath = newIndexPath else { return }
-            cartTableView.moveRow(at: oldIndexPath, to: newIndexPath)
+                let newIndexPath = newIndexPath else { return }
+            cartTableView.deleteRows(at: [oldIndexPath], with: .automatic)
+            cartTableView.insertRows(at: [newIndexPath], with: .automatic)
         case .delete:
             guard let indexPath = indexPath else { return }
             cartTableView.deleteRows(at: [indexPath], with: .automatic)
