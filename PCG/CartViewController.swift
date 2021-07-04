@@ -170,6 +170,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
             DispatchQueue.main.async {
                 let moc = CoreDataStack.shared.mainContext
                 NSCart?.removeFromCartProducts(product)
+                moc.delete(product)
                 do {
                     try moc.save()
                     self.updateViews()
