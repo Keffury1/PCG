@@ -83,7 +83,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     @IBAction func shopButtonTapped(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 3
+        self.tabBarController?.selectedIndex = 2
     }
     
     @IBAction func viaEtsyButtonTapped(_ sender: Any) {

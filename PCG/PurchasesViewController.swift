@@ -39,7 +39,7 @@ class PurchasesViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func viewProductsButtonTapped(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 3
+        self.tabBarController?.selectedIndex = 2
     }
     
     // MARK: - Navigation

@@ -16,6 +16,6 @@ class TabBarController: UITabBarController {
         self.tabBar.layer.borderWidth = 0
         self.tabBar.clipsToBounds = true
         self.tabBar.backgroundColor = .white
-        self.selectedIndex = 2
+        self.selectedIndex = 1
     }
 }

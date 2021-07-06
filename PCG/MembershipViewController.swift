@@ -44,7 +44,7 @@ class MembershipViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func homeButtonTapped(_ sender: Any) {
-        parentVC?.tabBarController?.selectedIndex = 2
+        parentVC?.tabBarController?.selectedIndex = 1
         navigationController?.popViewController(animated: true)
     }
     
