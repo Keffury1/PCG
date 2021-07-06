@@ -107,7 +107,6 @@ class CustomizeViewController: UIViewController {
     private func addToCartOn() {
         addToCartButton.isHidden = false
         addToCartButton.isUserInteractionEnabled = true
-        self.view.bringSubviewToFront(addToCartButton)
     }
     
     private func addToCartOff() {
