@@ -27,6 +27,7 @@ class CustomizeViewController: UIViewController {
     var indexPath: IndexPath?
     var reset: Bool = false
     var first: Bool = true
+    var completedCount: Int = 0
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         
@@ -42,9 +43,9 @@ class CustomizeViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var templateContainerView: UIView!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
+    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
     @IBOutlet weak var chooseTemplateView: UIView!
     @IBOutlet weak var addInfoView: UIView!
@@ -87,10 +88,6 @@ class CustomizeViewController: UIViewController {
         
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
-        
-        addToCartButton.layer.cornerRadius = 15
-        addToCartButton.addShadow()
-        addToCartButton.isUserInteractionEnabled = false
     }
     
     private func updateViews() {
@@ -104,21 +101,10 @@ class CustomizeViewController: UIViewController {
         }
     }
     
-    private func addToCartOn() {
-        addToCartButton.isHidden = false
-        addToCartButton.isUserInteractionEnabled = true
-    }
-    
-    private func addToCartOff() {
-        addToCartButton.isHidden = true
-        addToCartButton.isUserInteractionEnabled = false
-        self.view.sendSubviewToBack(addToCartButton)
-    }
-    
     private func newTextField(image: UIImage, text: String) {
         let textFieldView = TextFieldView()
         textFieldView.iconButton.setBackgroundImage(image, for: .normal)
-        textFieldView.heightAnchor.constraint(equalToConstant: 65.0).isActive = true
+        textFieldView.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
         textFieldView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
         customizeStackView.addArrangedSubview(textFieldView)
         textFieldView.textField.delegate = self
@@ -197,6 +183,9 @@ class CustomizeViewController: UIViewController {
                 return
             }
         }
+        
+        countLabel.text = "\(completedCount) of \(count)"
+        
         customizeStackView.axis  = NSLayoutConstraint.Axis.vertical
         customizeStackView.distribution  = UIStackView.Distribution.equalSpacing
         customizeStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -205,17 +194,25 @@ class CustomizeViewController: UIViewController {
     private func checkIfCustomized() {
         guard let template = template else { return }
         
-        if template.needs.contains(where: { $0.id == 10 }) {
+        var message: Bool = false
+        
+        for need in template.needs {
+            if need.id == 10 {
+                message = true
+            }
+        }
+        
+        if message {
             if template.fulfilled.count == template.needs.count + 1 {
-                addToCartOn()
+                countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count + 1)"
             } else {
-                addToCartOff()
+                countLabel.text = "\(template.fulfilled.count) of \(template.needs.count + 1)"
             }
         } else {
             if template.fulfilled.count == template.needs.count {
-                addToCartOn()
+                countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count)"
             } else {
-                addToCartOff()
+                countLabel.text = "\(template.fulfilled.count) of \(template.needs.count)"
             }
         }
     }
@@ -318,6 +315,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
             self.template = template
             setupCustomizer(template: template)
             reset = true
+            view.reloadInputViews()
         }
         if addInfoView.isHidden == true {
             addInfoView.isHidden = false

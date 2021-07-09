@@ -85,7 +85,7 @@ class ShopViewController: UIViewController {
         dropDown.bottomOffset = CGPoint(x: 0, y:((dropDown.anchorView?.plainView.bounds.height)! + 5))
         dropDown.backgroundColor = UIColor(named: "Navy")
         dropDown.textColor = .white
-        dropDown.separatorColor = .white
+        dropDown.separatorColor = UIColor(named: "Tan")!
         dropDown.dataSource = items.keys.sorted()
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             if item == "View All Products" {

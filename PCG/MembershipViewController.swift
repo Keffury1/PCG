@@ -53,17 +53,11 @@ class MembershipViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "signUpSegue", sender: self)
+        // SignUP
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "signUpSegue" {
-            if let _ = segue.destination as? SignUpViewController {
-                
-            }
-        }
-        
     }
 }

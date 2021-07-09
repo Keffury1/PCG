@@ -56,6 +56,7 @@ class StateView: UIView {
         self.layer.cornerRadius = 30
         self.count = 0
         dropDown.anchorView = stateButton
+        dropDown.direction = .any
         dropDown.backgroundColor = UIColor(named: "Navy")
         dropDown.textColor = .white
         dropDown.dataSource = states.sorted { $0 < $1 }
