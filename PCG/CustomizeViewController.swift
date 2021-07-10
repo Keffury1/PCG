@@ -205,12 +205,14 @@ class CustomizeViewController: UIViewController {
         if message {
             if template.fulfilled.count == template.needs.count + 1 {
                 countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count + 1)"
+                self.performSegue(withIdentifier: "reviewSegue", sender: self)
             } else {
                 countLabel.text = "\(template.fulfilled.count) of \(template.needs.count + 1)"
             }
         } else {
             if template.fulfilled.count == template.needs.count {
                 countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count)"
+                self.performSegue(withIdentifier: "reviewSegue", sender: self)
             } else {
                 countLabel.text = "\(template.fulfilled.count) of \(template.needs.count)"
             }
@@ -263,6 +265,11 @@ class CustomizeViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "reviewSegue" {
+            if let _ = segue.destination as? ReviewViewController {
+                
+            }
+        }
     }
 }
 

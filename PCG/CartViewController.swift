@@ -35,8 +35,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var taxLabel: UILabel!
     @IBOutlet weak var shippingLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var creditCardButton: UIButton!
-    @IBOutlet weak var applePayButton: UIButton!
+    @IBOutlet weak var checkoutButton: UIButton!
     @IBOutlet weak var viewProductsButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
@@ -53,10 +52,8 @@ class CartViewController: UIViewController {
     private func setubSubviews() {
         cartTableView.dataSource = self
         cartTableView.delegate = self
-        creditCardButton.layer.cornerRadius = 10
-        creditCardButton.addShadow()
-        applePayButton.layer.cornerRadius = 10
-        applePayButton.addShadow()
+        checkoutButton.layer.cornerRadius = 10
+        checkoutButton.addShadow()
         viewProductsButton.layer.cornerRadius = 10
         emptyCartView.layer.cornerRadius = 10.0
         emptyCartView.addShadow()
@@ -95,10 +92,8 @@ class CartViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func creditCardButtonTapped(_ sender: Any) {
-    }
-    
-    @IBAction func applePayButtonTapped(_ sender: Any) {
+    @IBAction func checkoutButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "checkoutSegue", sender: self)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -108,6 +103,11 @@ class CartViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "checkoutSegue" {
+            if let _ = segue.destination as? CheckoutViewController {
+                
+            }
+        }
     }
 }
 

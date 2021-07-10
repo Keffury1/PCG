@@ -3,12 +3,19 @@ PODS:
   - FSCalendar (2.8.2)
   - IQKeyboardManagerSwift (6.5.6)
   - SMSegmentView (1.3.1)
+  - Stripe (21.7.0):
+    - Stripe/Stripe3DS2 (= 21.7.0)
+    - StripeCore (= 21.7.0)
+  - Stripe/Stripe3DS2 (21.7.0):
+    - StripeCore (= 21.7.0)
+  - StripeCore (21.7.0)
 
 DEPENDENCIES:
   - DropDown
   - FSCalendar
   - IQKeyboardManagerSwift
   - SMSegmentView
+  - Stripe
 
 SPEC REPOS:
   trunk:
@@ -16,13 +23,17 @@ SPEC REPOS:
     - FSCalendar
     - IQKeyboardManagerSwift
     - SMSegmentView
+    - Stripe
+    - StripeCore
 
 SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   SMSegmentView: 3c3aa59206a67a7c8a9e05593f84aa875eddeeba
+  Stripe: 90596971ef49bade169f68bc59369a796b30a045
+  StripeCore: c09b492efc3b269a6ff875ad738ca366db97e03b
 
-PODFILE CHECKSUM: 117280a3999c1d0323d38381f10317c44b5c7a5c
+PODFILE CHECKSUM: aa87381a3c185b2dab2b4924c29e351df89babe8
 
 COCOAPODS: 1.10.1

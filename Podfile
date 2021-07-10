@@ -10,4 +10,5 @@ target 'PCG' do
   pod 'FSCalendar'
   pod 'DropDown'
   pod 'IQKeyboardManagerSwift'
+  pod 'Stripe'
 end
