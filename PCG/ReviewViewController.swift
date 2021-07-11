@@ -12,7 +12,13 @@ class ReviewViewController: UIViewController {
 
     // MARK: - Properties
     
+    var product: Product?
+    
     // MARK: - Outlets
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var addToCartButton: UIButton!
     
     // MARK: - Views
     
@@ -23,6 +29,9 @@ class ReviewViewController: UIViewController {
     // MARK: - Methods
     
     // MARK: - Actions
+    
+    @IBAction func addToCartButtonTapped(_ sender: Any) {
+    }
     
     // MARK: - Navigation
     
