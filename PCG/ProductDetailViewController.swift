@@ -35,6 +35,7 @@ class ProductDetailViewController: UIViewController {
         updateViews()
         setupSubviews()
         productDetailCollectionView.dataSource = self
+        productDetailCollectionView.delegate = self
     }
     
     // MARK: - Methods
@@ -94,7 +95,7 @@ class ProductDetailViewController: UIViewController {
 
 }
 
-extension ProductDetailViewController: UICollectionViewDataSource {
+extension ProductDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -103,9 +104,33 @@ extension ProductDetailViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productImageCell", for: indexPath) as? ProductDetailCollectionViewCell else { return UICollectionViewCell() }
         
         cell.productDetailImageView.image = UIImage(named: product!.image)
+        
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 10
         cell.productDetailImageView.layer.cornerRadius = 10
-        cell.productDetailImageView.clipsToBounds = true
-        cell.productDetailImageView.addShadow()
+        cell.productDetailImageView.layer.masksToBounds = true
+        cell.layer.masksToBounds = true
+        
+        if cell.isSelected {
+            cell.layer.borderColor = UIColor(named: "Navy")!.cgColor
+        }else {
+            cell.layer.borderColor = UIColor.clear.cgColor
+        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderColor = UIColor(named: "Navy")!.cgColor
+        cell?.isSelected = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderColor = UIColor.clear.cgColor
+        cell?.isSelected = false
     }
 }

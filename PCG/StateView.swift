@@ -57,6 +57,7 @@ class StateView: UIView {
         self.count = 0
         dropDown.anchorView = stateButton
         dropDown.direction = .any
+        dropDown.separatorColor = UIColor(named: "Tan")!
         dropDown.backgroundColor = UIColor(named: "Navy")
         dropDown.textColor = .white
         dropDown.dataSource = states.sorted { $0 < $1 }
