@@ -15,8 +15,17 @@ class StripeController {
     
     var paymentIntentClientSecret: String?
     
+    var stripePublishableKey = "pk_test_51JAgHeDI7R80RtSVqhYB0hXW9MCwOLLiQxtr0dASYPGyt2AumicDhwG0F5ZxD2NLPOvZ8NX2Nz4E2yBvsx7vP0y1009STwJYdc"
+    
+    var backendBaseURL: String = "https://perfectclosinggift.herokuapp.com/"
+    
+    var appleMerchantID: String = "merchant.com.BobbyKeffury.PCG"
+    
+    let companyName = "Perfect Closing Gift"
+    let paymentCurrency: String = "usd"
+    
     func startCheckout(with amount: Int) {
-        let url = URL(string: "")!
+        let url = URL(string: backendBaseURL)!
         let amountCents = amount * 100
         let json: [String: Any] = [
             "amount": amountCents,

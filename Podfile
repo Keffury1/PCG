@@ -11,4 +11,5 @@ target 'PCG' do
   pod 'DropDown'
   pod 'IQKeyboardManagerSwift'
   pod 'Stripe'
+  pod 'SkyFloatingLabelTextField'
 end

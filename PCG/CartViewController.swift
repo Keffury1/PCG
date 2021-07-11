@@ -30,11 +30,6 @@ class CartViewController: UIViewController {
     
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var emptyCartView: UIView!
-    @IBOutlet weak var totalView: UIView!
-    @IBOutlet weak var subtotalLabel: UILabel!
-    @IBOutlet weak var taxLabel: UILabel!
-    @IBOutlet weak var shippingLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
     @IBOutlet weak var viewProductsButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -44,7 +39,6 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setubSubviews()
-        updateViews()
     }
     
     // MARK: - Methods
@@ -60,30 +54,25 @@ class CartViewController: UIViewController {
         emptyCartView.layer.borderColor = UIColor(named: "Tan")!.cgColor
         emptyCartView.layer.borderWidth = 0.5
         
+        if fetchedResultsController.fetchedObjects?.first?.cartArray == [] {
+            checkoutButton.setTitle("", for: .normal)
+            checkoutButton.setImage(nil, for: .normal)
+            checkoutButton.isUserInteractionEnabled = false
+        } else {
+            checkoutButton.setTitle(" Checkout", for: .normal)
+            checkoutButton.setImage(UIImage(named: "cart.circle"), for: .normal)
+            checkoutButton.isUserInteractionEnabled = true
+        }
     }
     
-    internal func updateViews() {
-        subTotal = 0.00
-        guard let cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return }
+    private func calcPrice() -> Double? {
+        guard let cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return nil }
         
         for item in cart {
             let price = Double(round((1000*Double(item.price))/1000)) * Double(item.count)
             subTotal += price
         }
-        
-        subtotalLabel.text = "$\(subTotal)"
-        if subTotal == 0 {
-            taxLabel.text = "$0.0"
-            shippingLabel.text = "$0.0"
-        } else {
-            taxLabel.text = "$\(1.95)"
-            shippingLabel.text = "$\(5.98)"
-            subTotal += 1.95
-            subTotal += 5.98
-        }
-        
-        totalLabel.text = "$\(Double(round((1000*subTotal)/1000)))"
-        cartTableView.reloadData()
+        return subTotal
     }
     
     // MARK: - Actions
@@ -104,8 +93,8 @@ class CartViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "checkoutSegue" {
-            if let _ = segue.destination as? CheckoutViewController {
-                
+            if let detailVC = segue.destination as? CheckoutViewController {
+                detailVC.amount = calcPrice() ?? 0.0
             }
         }
     }
@@ -173,7 +162,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
                 moc.delete(product)
                 do {
                     try moc.save()
-                    self.updateViews()
+                    tableView.reloadData()
                 } catch {
                     moc.reset()
                     print("Error saving managed object context: \(error)")
@@ -205,6 +194,6 @@ extension CartViewController: UpdateDelegate {
         } catch {
             print("Error saving added product: \(error)")
         }
-        updateViews()
+        cartTableView.reloadData()
     }
 }
