@@ -67,11 +67,13 @@ class CartViewController: UIViewController {
     
     private func calcPrice() -> Double? {
         guard let cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return nil }
+        subTotal = 0.0
         
         for item in cart {
             let price = Double(round((1000*Double(item.price))/1000)) * Double(item.count)
             subTotal += price
         }
+        
         return subTotal
     }
     

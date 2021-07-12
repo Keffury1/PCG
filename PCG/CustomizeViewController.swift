@@ -186,6 +186,12 @@ class CustomizeViewController: UIViewController {
         
         countLabel.text = "\(completedCount) of \(count)"
         
+        if completedCount == count {
+            countLabel.textColor = .green
+        } else {
+            countLabel.textColor = .red
+        }
+        
         customizeStackView.axis  = NSLayoutConstraint.Axis.vertical
         customizeStackView.distribution  = UIStackView.Distribution.equalSpacing
         customizeStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -205,47 +211,33 @@ class CustomizeViewController: UIViewController {
         if message {
             if template.fulfilled.count == template.needs.count + 1 {
                 countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count + 1)"
-                self.performSegue(withIdentifier: "reviewSegue", sender: self)
+                countLabel.textColor = .green
+                product?.chosenTemplate = []
+                product?.chosenTemplate?.append(template)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.performSegue(withIdentifier: "reviewSegue", sender: self)
+                }
             } else {
                 countLabel.text = "\(template.fulfilled.count) of \(template.needs.count + 1)"
+                countLabel.textColor = .red
             }
         } else {
             if template.fulfilled.count == template.needs.count {
                 countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count)"
-                self.performSegue(withIdentifier: "reviewSegue", sender: self)
+                countLabel.textColor = .green
+                product?.chosenTemplate = []
+                product?.chosenTemplate?.append(template)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.performSegue(withIdentifier: "reviewSegue", sender: self)
+                }
             } else {
                 countLabel.text = "\(template.fulfilled.count) of \(template.needs.count)"
+                countLabel.textColor = .red
             }
         }
     }
     
     // MARK: - Actions
-    
-    @IBAction func addToCartButtonTapped(_ sender: Any) {
-        guard let template = template, var product = product else { return }
-        product.chosenTemplate?.append(template)
-        product.count += 1
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
-        let moc = CoreDataStack.shared.mainContext
-        let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price), context: moc)
-        let newTemplate = CDTemplate(id: Int16(template.id), name: template.name, context: moc)
-        newProduct.addToChosenTemplate(newTemplate)
-        
-        if fetchedResultsController.fetchedObjects?.isEmpty == true {
-            let cart = Cart(name: "New Cart", context: moc)
-            cart.addToCartProducts(newProduct)
-        } else {
-            fetchedResultsController.fetchedObjects?.first?.addToCartProducts(newProduct)
-        }
-        
-        do {
-            try moc.save()
-        } catch {
-            print("Error saving added product: \(error)")
-        }
-        navigationController?.popToRootViewController(animated: true)
-        navigationController?.pushViewController(vc, animated: true)
-    }
     
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -266,8 +258,9 @@ class CustomizeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "reviewSegue" {
-            if let _ = segue.destination as? ReviewViewController {
-                
+            if let detailVC = segue.destination as? ReviewViewController {
+                detailVC.product = product
+                detailVC.template = template
             }
         }
     }

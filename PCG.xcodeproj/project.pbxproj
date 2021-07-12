@@ -63,6 +63,7 @@
 		37E270FD244E4338001F6421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E270FB244E4338001F6421 /* Main.storyboard */; };
 		37E270FF244E4338001F6421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E270FE244E4338001F6421 /* Assets.xcassets */; };
 		37E27102244E4338001F6421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E27100244E4338001F6421 /* LaunchScreen.storyboard */; };
+		37E2D7A3269BDAC300D41C60 /* FulfilledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2D7A2269BDAC300D41C60 /* FulfilledTableViewCell.swift */; };
 		37FC57A324F5646D00610C60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57A224F5646D00610C60 /* HomeViewController.swift */; };
 		37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57A424F5690A00610C60 /* TabBarController.swift */; };
 		37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57B024F5960C00610C60 /* ShopViewController.swift */; };
@@ -136,6 +137,7 @@
 		37E270FE244E4338001F6421 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37E27101244E4338001F6421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37E27103244E4338001F6421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37E2D7A2269BDAC300D41C60 /* FulfilledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FulfilledTableViewCell.swift; sourceTree = "<group>"; };
 		37FC57A224F5646D00610C60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		37FC57A424F5690A00610C60 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		37FC57B024F5960C00610C60 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				377D772C25D6FB09008D0059 /* ProductDetailCollectionViewCell.swift */,
 				377D779725DB26E7008D0059 /* PurchaseTableViewCell.swift */,
 				37B5BCB5266BE5930017AAE5 /* CartItemTableViewCell.swift */,
+				37E2D7A2269BDAC300D41C60 /* FulfilledTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				37DFC93B269A621F00B97982 /* StripeController.swift in Sources */,
 				37DFC93D269A64E100B97982 /* ReviewViewController.swift in Sources */,
 				37B1988F25B7836100E59CF6 /* Template.swift in Sources */,
+				37E2D7A3269BDAC300D41C60 /* FulfilledTableViewCell.swift in Sources */,
 				376B9A3125C09965003E1EFC /* MembershipViewController.swift in Sources */,
 				37E0EB4326910A89004B6C8D /* CDProduct+CoreDataClass.swift in Sources */,
 				37E0EB6D269120E9004B6C8D /* CoreDataStack.swift in Sources */,
