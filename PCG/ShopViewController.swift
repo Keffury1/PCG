@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import CoreData
 
 class ShopViewController: UIViewController {
 
@@ -20,6 +21,18 @@ class ShopViewController: UIViewController {
     var product: Product?
     var cart: [Product]?
     let dropDown = DropDown()
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
+        
+        let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: false)
+        ]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "name", cacheName: nil)
+        try! frc.performFetch()
+        return frc
+    }()
     
     // MARK: - Outlets
 
@@ -51,6 +64,12 @@ class ShopViewController: UIViewController {
         self.products = products
         productsCollectionView.reloadData()
         menuLabel.setTitle("Menu", for: .normal)
+        guard let array = fetchedResultsController.fetchedObjects?.first?.cartArray else { return }
+        if array.count > 0 {
+            cartButton.addBadgeToButon(badge: "\(array.count)")
+        } else {
+            cartButton.badge = nil
+        }
     }
     
     // MARK: - Methods

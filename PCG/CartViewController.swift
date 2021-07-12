@@ -58,10 +58,12 @@ class CartViewController: UIViewController {
             checkoutButton.setTitle("", for: .normal)
             checkoutButton.setImage(nil, for: .normal)
             checkoutButton.isUserInteractionEnabled = false
+            checkoutButton.backgroundColor = UIColor(named: "Tan")!
         } else {
             checkoutButton.setTitle(" Checkout", for: .normal)
-            checkoutButton.setImage(UIImage(named: "cart.circle"), for: .normal)
+            checkoutButton.setImage(UIImage(systemName: "cart.circle"), for: .normal)
             checkoutButton.isUserInteractionEnabled = true
+            checkoutButton.backgroundColor = UIColor(named: "Navy")!
         }
     }
     

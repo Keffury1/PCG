@@ -86,6 +86,10 @@ class ReviewViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

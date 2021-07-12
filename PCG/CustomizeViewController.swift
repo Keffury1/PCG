@@ -59,6 +59,7 @@ class CustomizeViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         first = false
+        setupCustomizer(template: template)
     }
     
     override func viewDidLayoutSubviews() {
