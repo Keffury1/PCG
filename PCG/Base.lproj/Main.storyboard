@@ -668,7 +668,7 @@
             <objects>
                 <viewController id="7nh-Q9-F1R" customClass="CheckoutViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRJ-eZ-QJc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-cY-wbq">
@@ -762,7 +762,7 @@
                                             <color key="titleColor" name="Navy"/>
                                         </state>
                                         <connections>
-                                            <action selector="creditCardButtonTapped:" destination="7nh-Q9-F1R" eventType="touchUpInside" id="jP6-pq-sJK"/>
+                                            <segue destination="gFQ-SX-fuC" kind="presentation" identifier="creditCardSegue" id="0eU-rS-yCN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6f-pO-WAs">
@@ -866,7 +866,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuw-cu-jVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-965.21739130434787" y="1594.5652173913045"/>
+            <point key="canvasLocation" x="-839" y="1595"/>
+        </scene>
+        <!--Credit Card View Controller-->
+        <scene sceneID="Pkf-cq-1ek">
+            <objects>
+                <viewController id="gFQ-SX-fuC" customClass="CreditCardViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7va-y0-MbF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hXc-zg-j5e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xae-Jj-AOI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="1594"/>
         </scene>
         <!--Products-->
         <scene sceneID="Hba-GF-CqG">

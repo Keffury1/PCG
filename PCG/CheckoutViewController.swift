@@ -18,11 +18,6 @@ class CheckoutViewController: UIViewController {
 
     // MARK: - Properties
     
-    lazy var cardTextField: STPPaymentCardTextField = {
-        let cardTextField = STPPaymentCardTextField()
-        return cardTextField
-    }()
-    
     var amount: Double?
     var shipping: Double?
     var tax: Double?
@@ -81,33 +76,6 @@ class CheckoutViewController: UIViewController {
         creditCardButton.layer.cornerRadius = 10
         creditCardButton.addShadow()
         textField.delegate = self
-    }
-    
-    private func makePayment() {
-        ProgressHUD.show()
-        guard let paymentIntentClientSecret = StripeController.shared.paymentIntentClientSecret else { return }
-        // Collect card details
-        let cardParams = cardTextField.cardParams
-        let paymentMethodParams = STPPaymentMethodParams(card: cardParams, billingDetails: nil, metadata: nil)
-        let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
-        paymentIntentParams.paymentMethodParams = paymentMethodParams
-        
-        // Submit the payment
-        let paymentHandler = STPPaymentHandler.shared()
-        paymentHandler.confirmPayment(paymentIntentParams,
-                                      with: self) { (status, _, _) in
-            switch status {
-            case .failed:
-                ProgressHUD.showError()
-            case .canceled:
-                return
-            case .succeeded:
-                self.saveOrder()
-                ProgressHUD.showSuccess()
-            @unknown default:
-                return
-            }
-        }
     }
     
     private func updateViews() {
@@ -190,14 +158,6 @@ class CheckoutViewController: UIViewController {
                     self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
             }
         }
-    }
-    
-    @IBAction func creditCardButtonTapped(_ sender: Any) {
-        guard address != nil || address != "" else {
-            ProgressHUD.showError()
-            return
-        }
-        makePayment()
     }
     
     @IBAction func applePayButtonTapped(_ sender: Any) {
