@@ -68,7 +68,7 @@ class ReviewViewController: UIViewController {
         product.count += 1
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
         let moc = CoreDataStack.shared.mainContext
-        let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price), context: moc)
+        let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price),address: "", date: "", context: moc)
         let newTemplate = CDTemplate(id: Int16(template.id), name: template.name, context: moc)
         newProduct.addToChosenTemplate(newTemplate)
         

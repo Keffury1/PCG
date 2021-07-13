@@ -26,6 +26,7 @@ class CheckoutViewController: UIViewController {
     var amount: Double?
     var shipping: Double?
     var tax: Double?
+    var address: String?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
@@ -128,19 +129,43 @@ class CheckoutViewController: UIViewController {
     
     private func saveOrder() {
         let cart = fetchedResultsController.fetchedObjects?.first
-        let order = (cart!.cartArray)
+        let order = cart!.cartArray
         let moc = CoreDataStack.shared.mainContext
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let date = dateFormatter.string(from: Date())
+        
+        for product in order {
+            product.address = address
+            if date == "" {
+                return
+            } else {
+                product.date = date
+            }
+        }
+        
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving date & address to order: \(error)")
+        }
         
         if let history = fetchedHistoryController.fetchedObjects?.first {
             history.addToHistoryProducts(NSSet(array: order))
             cart?.removeCartProducts(NSSet(array: order))
-            self.dismiss(animated: true, completion: nil)
         } else {
             let history = History(name: "New History", context: moc)
             history.addToHistoryProducts(NSSet(array: order))
             cart?.removeCartProducts(NSSet(array: order))
-            self.dismiss(animated: true, completion: nil)
         }
+        
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving order history: \(error)")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Actions
@@ -168,10 +193,18 @@ class CheckoutViewController: UIViewController {
     }
     
     @IBAction func creditCardButtonTapped(_ sender: Any) {
+        guard address != nil || address != "" else {
+            ProgressHUD.showError()
+            return
+        }
         makePayment()
     }
     
     @IBAction func applePayButtonTapped(_ sender: Any) {
+        guard address != nil || address != "" else {
+            ProgressHUD.showError()
+            return
+        }
         ProgressHUD.show()
         let merchantIdentifier = "merchant.com.BobbyKeffury.PCG"
         let paymentRequest = StripeAPI.paymentRequest(withMerchantIdentifier: merchantIdentifier, country: "US", currency: "USD")
@@ -221,6 +254,7 @@ extension CheckoutViewController: UITextFieldDelegate {
                 self.mapView.centerCoordinate = annotation.coordinate
                 let region = MKCoordinateRegion( center: location.coordinate, latitudinalMeters: CLLocationDistance(exactly: 20000)!, longitudinalMeters: CLLocationDistance(exactly: 20000)!)
                 self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
+                self.address = text
                 textField.resignFirstResponder()
             }
         }
