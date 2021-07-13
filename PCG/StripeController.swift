@@ -15,11 +15,11 @@ class StripeController {
     
     var paymentIntentClientSecret: String?
     
-    var stripePublishableKey = "pk_test_51JAgHeDI7R80RtSVqhYB0hXW9MCwOLLiQxtr0dASYPGyt2AumicDhwG0F5ZxD2NLPOvZ8NX2Nz4E2yBvsx7vP0y1009STwJYdc"
-    
     var backendBaseURL: String = "https://perfectclosinggift.herokuapp.com/"
     
     var appleMerchantID: String = "merchant.com.BobbyKeffury.PCG"
+    
+    var paymentSheet: PaymentSheet?
     
     let companyName = "Perfect Closing Gift"
     let paymentCurrency: String = "usd"
@@ -40,14 +40,23 @@ class StripeController {
                   response.statusCode == 200,
                   let data = data,
                   let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                  let clientSecret = json["clientSecret"] as? String else { return }
+                  let clientSecret = json["clientSecret"] as? String,
+                  let customerId = json["customer"] as? String,
+                  let customerEphemeralKeySecret = json["ephemeralKey"] as? String,
+                  let self = self else { return }
             
             if let error = error {
                 print("Error creating payment intent: \(error)")
                 return
             }
             print("Created PaymentIntent")
-            self?.paymentIntentClientSecret = clientSecret
+            self.paymentIntentClientSecret = clientSecret
+            
+            // MARK: Create a PaymentSheet instance
+            var configuration = PaymentSheet.Configuration()
+            configuration.merchantDisplayName = "Perfect Closing Gift"
+            configuration.customer = .init(id: customerId, ephemeralKeySecret: customerEphemeralKeySecret)
+            self.paymentSheet = PaymentSheet(paymentIntentClientSecret: clientSecret, configuration: configuration)
         })
         task.resume()
     }

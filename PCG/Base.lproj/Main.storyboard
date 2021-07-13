@@ -762,7 +762,7 @@
                                             <color key="titleColor" name="Navy"/>
                                         </state>
                                         <connections>
-                                            <segue destination="gFQ-SX-fuC" kind="presentation" identifier="creditCardSegue" id="0eU-rS-yCN"/>
+                                            <action selector="creditCardButtonTapped:" destination="7nh-Q9-F1R" eventType="touchUpInside" id="wAD-nP-GJd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6f-pO-WAs">
@@ -867,21 +867,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuw-cu-jVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-839" y="1595"/>
-        </scene>
-        <!--Credit Card View Controller-->
-        <scene sceneID="Pkf-cq-1ek">
-            <objects>
-                <viewController id="gFQ-SX-fuC" customClass="CreditCardViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7va-y0-MbF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hXc-zg-j5e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xae-Jj-AOI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="48" y="1594"/>
         </scene>
         <!--Products-->
         <scene sceneID="Hba-GF-CqG">

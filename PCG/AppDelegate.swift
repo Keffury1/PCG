@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import DropDown
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         DropDown.startListeningToKeyboard()
+        StripeAPI.defaultPublishableKey = "pk_test_51JAgHeDI7R80RtSVqhYB0hXW9MCwOLLiQxtr0dASYPGyt2AumicDhwG0F5ZxD2NLPOvZ8NX2Nz4E2yBvsx7vP0y1009STwJYdc"
         
         return true
     }

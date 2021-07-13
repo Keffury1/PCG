@@ -22,6 +22,7 @@ class CheckoutViewController: UIViewController {
     var shipping: Double?
     var tax: Double?
     var address: String?
+    var paymentSheet: PaymentSheet?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
@@ -76,6 +77,7 @@ class CheckoutViewController: UIViewController {
         creditCardButton.layer.cornerRadius = 10
         creditCardButton.addShadow()
         textField.delegate = self
+        paymentSheet = StripeController.shared.paymentSheet
     }
     
     private func updateViews() {
@@ -129,12 +131,14 @@ class CheckoutViewController: UIViewController {
         
         do {
             try moc.save()
+            // Transition to Purchases Screen
         } catch {
             print("Error saving order history: \(error)")
         }
         
         self.dismiss(animated: true, completion: nil)
     }
+
     
     // MARK: - Actions
     
@@ -160,12 +164,26 @@ class CheckoutViewController: UIViewController {
         }
     }
     
+    @IBAction func creditCardButtonTapped(_ sender: Any) {
+        paymentSheet?.present(from: self) { paymentResult in
+            switch paymentResult {
+            case .completed:
+                ProgressHUD.showSuccess()
+                self.saveOrder()
+            case .canceled:
+                ProgressHUD.showError()
+            case .failed(let error):
+                ProgressHUD.showError()
+              print("Payment failed: \n\(error.localizedDescription)")
+            }
+          }
+    }
+    
     @IBAction func applePayButtonTapped(_ sender: Any) {
         guard address != nil || address != "" else {
             ProgressHUD.showError()
             return
         }
-        ProgressHUD.show()
         let merchantIdentifier = "merchant.com.BobbyKeffury.PCG"
         let paymentRequest = StripeAPI.paymentRequest(withMerchantIdentifier: merchantIdentifier, country: "US", currency: "USD")
         

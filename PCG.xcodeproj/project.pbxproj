@@ -63,7 +63,6 @@
 		37E270FF244E4338001F6421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E270FE244E4338001F6421 /* Assets.xcassets */; };
 		37E27102244E4338001F6421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E27100244E4338001F6421 /* LaunchScreen.storyboard */; };
 		37E2D7A3269BDAC300D41C60 /* FulfilledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2D7A2269BDAC300D41C60 /* FulfilledTableViewCell.swift */; };
-		37E2D7A5269E3AC700D41C60 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2D7A4269E3AC700D41C60 /* CreditCardViewController.swift */; };
 		37FC57A324F5646D00610C60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57A224F5646D00610C60 /* HomeViewController.swift */; };
 		37FC57A524F5690A00610C60 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57A424F5690A00610C60 /* TabBarController.swift */; };
 		37FC57B124F5960C00610C60 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57B024F5960C00610C60 /* ShopViewController.swift */; };
@@ -137,7 +136,6 @@
 		37E27101244E4338001F6421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37E27103244E4338001F6421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37E2D7A2269BDAC300D41C60 /* FulfilledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FulfilledTableViewCell.swift; sourceTree = "<group>"; };
-		37E2D7A4269E3AC700D41C60 /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		37FC57A224F5646D00610C60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		37FC57A424F5690A00610C60 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		37FC57B024F5960C00610C60 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -305,7 +303,6 @@
 			children = (
 				375B61192669ADF4008F6639 /* CartViewController.swift */,
 				37DFC93E269A650C00B97982 /* CheckoutViewController.swift */,
-				37E2D7A4269E3AC700D41C60 /* CreditCardViewController.swift */,
 			);
 			name = Cart;
 			sourceTree = "<group>";
@@ -628,7 +625,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */,
-				37E2D7A5269E3AC700D41C60 /* CreditCardViewController.swift in Sources */,
 				37E0EB5626910E63004B6C8D /* Fulfilled+Convenience.swift in Sources */,
 				37FC57C324F60F5100610C60 /* ProductController.swift in Sources */,
 				37E0EB4E26910D3E004B6C8D /* CDTemplate+Convenience.swift in Sources */,
