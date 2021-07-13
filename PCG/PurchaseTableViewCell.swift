@@ -12,7 +12,7 @@ class PurchaseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var purchaseImageView: UIImageView!
     @IBOutlet weak var purchaseTitleLabel: UILabel!
-    @IBOutlet weak var purchaseClientLabel: UILabel!
-    @IBOutlet weak var purchaseDateLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
 
 }

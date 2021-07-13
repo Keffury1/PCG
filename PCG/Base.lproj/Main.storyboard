@@ -55,8 +55,8 @@
                                                                     <color key="textColor" name="Navy"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Susan &amp; Greg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8i-1I-ruG">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666664" width="92" height="31.666666666666664"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8i-1I-ruG">
+                                                                    <rect key="frame" x="0.0" y="21.666666666666664" width="54.666666666666664" height="31.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                                     <color key="textColor" name="Dark Gray"/>
                                                                     <nil key="highlightedColor"/>
@@ -79,8 +79,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="purchaseClientLabel" destination="M8i-1I-ruG" id="W2P-Rv-a4g"/>
-                                            <outlet property="purchaseDateLabel" destination="s2b-gs-KMT" id="SNr-yD-j3k"/>
+                                            <outlet property="addressLabel" destination="M8i-1I-ruG" id="W2P-Rv-a4g"/>
+                                            <outlet property="dateLabel" destination="s2b-gs-KMT" id="SNr-yD-j3k"/>
                                             <outlet property="purchaseImageView" destination="Yit-yv-IQ5" id="a15-Qh-ZZx"/>
                                             <outlet property="purchaseTitleLabel" destination="jbB-KS-5Mc" id="WdA-MD-F8X"/>
                                         </connections>
@@ -150,34 +150,11 @@
                         <outlet property="headerView" destination="xSg-Aq-CIZ" id="F5P-ni-ihe"/>
                         <outlet property="purchasesTableView" destination="4hI-WJ-uN9" id="Xy4-o7-Kyh"/>
                         <outlet property="viewProductsButton" destination="tvl-1h-aDY" id="loZ-sX-gTu"/>
-                        <segue destination="jXD-jT-y2g" kind="show" identifier="showPurchaseSegue" id="zMP-D5-aVy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Su-be-Nx2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2739.130434782609" y="906.69642857142856"/>
-        </scene>
-        <!--Purchase Detail View Controller-->
-        <scene sceneID="tJt-Dt-TDI">
-            <objects>
-                <viewController id="jXD-jT-y2g" customClass="PurchaseDetailViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MEl-xs-1i9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="eyL-70-bXT">
-                                <rect key="frame" x="87" y="51" width="240" height="214"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="BhB-oj-EkM"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Dtj-Io-MVp"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Elm-5I-vmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1804" y="907"/>
         </scene>
         <!--Home-->
         <scene sceneID="V2d-KA-I1F">

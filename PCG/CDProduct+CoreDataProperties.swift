@@ -23,6 +23,8 @@ extension CDProduct {
     @NSManaged public var image: String?
     @NSManaged public var name: String?
     @NSManaged public var price: Int16
+    @NSManaged public var address: String?
+    @NSManaged public var date: String?
     @NSManaged public var chosenTemplate: NSSet?
     
     public var chosenArray: [CDTemplate] {

@@ -51,18 +51,6 @@ class PurchasesViewController: UIViewController {
     @IBAction func viewProductsButtonTapped(_ sender: Any) {
         self.tabBarController?.selectedIndex = 2
     }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPurchaseSegue" {
-            if let detailVC = segue.destination as? PurchaseDetailViewController {
-                // FIX ME
-                detailVC.purchase = nil
-            }
-        }
-    }
-
 }
 
 extension PurchasesViewController: UITableViewDataSource {
@@ -84,8 +72,15 @@ extension PurchasesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "purchaseCell", for: indexPath) as? PurchaseTableViewCell else { return UITableViewCell() }
         
+        guard let history = fetchedHistoryController.fetchedObjects?.first?.historyArray else { return UITableViewCell() }
+        
+        let item = history[indexPath.row]
+        
+        cell.purchaseImageView.image = UIImage(named: "\(item.image!)")
+        cell.purchaseTitleLabel.text = item.name!
+        cell.addressLabel.text = item.address!
+        cell.dateLabel.text = item.date!
+        
         return cell
     }
-    
-    
 }

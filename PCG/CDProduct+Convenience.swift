@@ -18,6 +18,8 @@ extension CDProduct {
                      image: String,
                      name: String,
                      price: Int16,
+                     address: String,
+                     date: String,
                      context: NSManagedObjectContext) {
         self.init(context: context)
         self.category = category
@@ -28,5 +30,7 @@ extension CDProduct {
         self.image = image
         self.name = name
         self.price = price
+        self.address = address
+        self.date = date
     }
 }

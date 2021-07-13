@@ -5,8 +5,10 @@
         <relationship name="cartProducts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDProduct"/>
     </entity>
     <entity name="CDProduct" representedClassName="CDProduct" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="descriptionText" optional="YES" attributeType="String"/>
         <attribute name="discountPrice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -30,7 +32,7 @@
     </entity>
     <elements>
         <element name="Cart" positionX="36" positionY="117" width="128" height="59"/>
-        <element name="CDProduct" positionX="-54" positionY="-9" width="128" height="164"/>
+        <element name="CDProduct" positionX="-54" positionY="-9" width="128" height="194"/>
         <element name="CDTemplate" positionX="-36" positionY="9" width="128" height="74"/>
         <element name="Fulfilled" positionX="36" positionY="126" width="128" height="59"/>
         <element name="History" positionX="45" positionY="135" width="128" height="59"/>
