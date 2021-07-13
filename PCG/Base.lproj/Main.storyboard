@@ -668,7 +668,7 @@
             <objects>
                 <viewController id="7nh-Q9-F1R" customClass="CheckoutViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRJ-eZ-QJc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-cY-wbq">
@@ -1566,7 +1566,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="pgz-Zc-k3X"/>
                                                     </constraints>
                                                     <color key="tintColor" name="Navy"/>
-                                                    <state key="normal" image="dot.circle.fill" catalog="system"/>
+                                                    <state key="normal" image="smallcircle.fill.circle.fill" catalog="system"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atD-B4-TYQ">
                                                     <rect key="frame" x="45" y="11.333333333333334" width="309" height="27.333333333333329"/>
@@ -1999,7 +1999,6 @@
         <image name="creditcard.circle" catalog="system" width="128" height="121"/>
         <image name="doc.text.magnifyingglass" catalog="system" width="113" height="128"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
-        <image name="dot.circle.fill" catalog="system" width="128" height="121"/>
         <image name="faceid" catalog="system" width="128" height="115"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="highlighter" catalog="system" width="128" height="119"/>
@@ -2010,6 +2009,7 @@
         <image name="pencil.tip.crop.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="shippingbox" catalog="system" width="128" height="124"/>
+        <image name="smallcircle.fill.circle.fill" catalog="system" width="128" height="121"/>
         <image name="tag.circle" catalog="system" width="128" height="121"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="Dark Gray">
