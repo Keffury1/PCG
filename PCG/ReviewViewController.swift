@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import ProgressHUD
 
 class ReviewViewController: UIViewController {
 
@@ -62,6 +63,7 @@ class ReviewViewController: UIViewController {
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
         guard let template = template, var product = product else { return }
+        ProgressHUD.show()
         product.chosenTemplate?.append(template)
         product.count += 1
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
@@ -79,6 +81,7 @@ class ReviewViewController: UIViewController {
         
         do {
             try moc.save()
+            ProgressHUD.showSuccess()
         } catch {
             print("Error saving added product: \(error)")
         }

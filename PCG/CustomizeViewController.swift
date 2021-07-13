@@ -11,6 +11,7 @@ import SMSegmentView
 import FSCalendar
 import IQKeyboardManagerSwift
 import CoreData
+import ProgressHUD
 
 class CustomizeViewController: UIViewController {
     
@@ -211,11 +212,13 @@ class CustomizeViewController: UIViewController {
         
         if message {
             if template.fulfilled.count == template.needs.count + 1 {
+                ProgressHUD.show()
                 countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count + 1)"
                 countLabel.textColor = .green
                 product?.chosenTemplate = []
                 product?.chosenTemplate?.append(template)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    ProgressHUD.showSuccess()
                     self.performSegue(withIdentifier: "reviewSegue", sender: self)
                 }
             } else {
@@ -224,11 +227,13 @@ class CustomizeViewController: UIViewController {
             }
         } else {
             if template.fulfilled.count == template.needs.count {
+                ProgressHUD.show()
                 countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count)"
                 countLabel.textColor = .green
                 product?.chosenTemplate = []
                 product?.chosenTemplate?.append(template)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    ProgressHUD.showSuccess()
                     self.performSegue(withIdentifier: "reviewSegue", sender: self)
                 }
             } else {

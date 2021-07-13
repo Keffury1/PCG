@@ -83,6 +83,7 @@ class CheckoutViewController: UIViewController {
     }
     
     private func makePayment() {
+        ProgressHUD.show()
         guard let paymentIntentClientSecret = StripeController.shared.paymentIntentClientSecret else { return }
         // Collect card details
         let cardParams = cardTextField.cardParams
@@ -98,12 +99,12 @@ class CheckoutViewController: UIViewController {
             case .failed:
                 ProgressHUD.showError()
             case .canceled:
-                ProgressHUD.showError()
+                return
             case .succeeded:
                 self.saveOrder()
                 ProgressHUD.showSuccess()
             @unknown default:
-                fatalError()
+                return
             }
         }
     }
@@ -171,6 +172,7 @@ class CheckoutViewController: UIViewController {
     }
     
     @IBAction func applePayButtonTapped(_ sender: Any) {
+        ProgressHUD.show()
         let merchantIdentifier = "merchant.com.BobbyKeffury.PCG"
         let paymentRequest = StripeAPI.paymentRequest(withMerchantIdentifier: merchantIdentifier, country: "US", currency: "USD")
         

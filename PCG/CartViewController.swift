@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import ProgressHUD
 
 class CartViewController: UIViewController {
     
@@ -71,16 +72,14 @@ class CartViewController: UIViewController {
         }
     }
     
-    private func calcPrice() -> Double? {
-        guard let cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return nil }
+    private func calcPrice() {
+        guard let cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return }
         subTotal = 0.0
         
         for item in cart {
             let price = Double(round((1000*Double(item.price))/1000)) * Double(item.count)
             subTotal += price
         }
-        
-        return subTotal
     }
     
     // MARK: - Actions
@@ -102,7 +101,8 @@ class CartViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "checkoutSegue" {
             if let detailVC = segue.destination as? CheckoutViewController {
-                detailVC.amount = calcPrice() ?? 0.0
+                calcPrice()
+                detailVC.amount = subTotal
             }
         }
     }
