@@ -2,6 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-PCG/Pods-PCG-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
 ${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/SMSegmentView/SMSegmentView.framework
 ${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework
 ${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework

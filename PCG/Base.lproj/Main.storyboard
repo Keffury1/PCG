@@ -784,12 +784,18 @@
                                         <state key="normal" title=" Credit Card" image="creditcard.circle" catalog="system">
                                             <color key="titleColor" name="Navy"/>
                                         </state>
+                                        <connections>
+                                            <action selector="creditCardButtonTapped:" destination="7nh-Q9-F1R" eventType="touchUpInside" id="jP6-pq-sJK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6f-pO-WAs">
                                         <rect key="frame" x="0.0" y="65" width="374" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title=" Apple Pay" image="applelogo" catalog="system"/>
+                                        <connections>
+                                            <action selector="applePayButtonTapped:" destination="7nh-Q9-F1R" eventType="touchUpInside" id="AxR-2D-hOG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1992,6 +1998,11 @@
             <point key="canvasLocation" x="-4517" y="1596"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="12H-7q-mGk">
+            <size key="intrinsicContentSize" width="186" height="37"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Logo" width="612" height="792"/>
         <image name="PinchToZoom" width="200" height="200"/>

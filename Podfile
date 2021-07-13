@@ -12,4 +12,5 @@ target 'PCG' do
   pod 'IQKeyboardManagerSwift'
   pod 'Stripe'
   pod 'SkyFloatingLabelTextField'
+  pod 'ProgressHUD'
 end

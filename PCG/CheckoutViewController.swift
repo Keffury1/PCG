@@ -8,8 +8,10 @@
 
 import UIKit
 import Stripe
+import PassKit
 import MapKit
 import SkyFloatingLabelTextField
+import ProgressHUD
 
 class CheckoutViewController: UIViewController {
 
@@ -41,7 +43,7 @@ class CheckoutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        StripeController.shared.startCheckout(with: self.amount!)
+        StripeController.shared.startCheckout(with: self.amount!)
         setupSubviews()
         updateViews()
     }
@@ -57,7 +59,7 @@ class CheckoutViewController: UIViewController {
         textField.delegate = self
     }
     
-    private func makePayment(amount: Int) {
+    private func makePayment() {
         guard let paymentIntentClientSecret = StripeController.shared.paymentIntentClientSecret else { return }
         // Collect card details
         let cardParams = cardTextField.cardParams
@@ -71,11 +73,11 @@ class CheckoutViewController: UIViewController {
                                       with: self) { (status, _, _) in
             switch status {
             case .failed:
-                print("Payment Failed")
+                ProgressHUD.showError()
             case .canceled:
-                print("Payment Canceled")
+                ProgressHUD.showError()
             case .succeeded:
-                print("Payment Successful")
+                ProgressHUD.showSuccess()
             @unknown default:
                 fatalError()
             }
@@ -102,6 +104,7 @@ class CheckoutViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func shippingButtonTapped(_ sender: Any) {
+        textField.becomeFirstResponder()
     }
     
     @IBAction func textFieldDidFinishEditing(_ sender: SkyFloatingLabelTextField) {
@@ -116,9 +119,33 @@ class CheckoutViewController: UIViewController {
                     annotation.coordinate = location.coordinate
                     self.mapView.addAnnotation(annotation)
                     self.mapView.centerCoordinate = annotation.coordinate
-                    let region = MKCoordinateRegion( center: location.coordinate, latitudinalMeters: CLLocationDistance(exactly: 20000)!, longitudinalMeters: CLLocationDistance(exactly: 20000)!)
+                    let region = MKCoordinateRegion( center: location.coordinate, latitudinalMeters: CLLocationDistance(exactly: 30000)!, longitudinalMeters: CLLocationDistance(exactly: 30000)!)
                     self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
             }
+        }
+    }
+    
+    @IBAction func creditCardButtonTapped(_ sender: Any) {
+        makePayment()
+    }
+    
+    @IBAction func applePayButtonTapped(_ sender: Any) {
+        let merchantIdentifier = "merchant.com.BobbyKeffury.PCG"
+        let paymentRequest = StripeAPI.paymentRequest(withMerchantIdentifier: merchantIdentifier, country: "US", currency: "USD")
+        
+        // Configure the line items on the payment request
+        paymentRequest.paymentSummaryItems = [
+            // The final line should represent your company;
+            // it'll be prepended with the word "Pay" (i.e. "Pay iHats, Inc $50")
+            PKPaymentSummaryItem(label: "Perfect Closing Gift", amount: NSDecimalNumber(value: amount!)),
+        ]
+        // Initialize an STPApplePayContext instance
+        if let applePayContext = STPApplePayContext(paymentRequest: paymentRequest, delegate: self) {
+            // Present Apple Pay payment sheet
+            applePayContext.presentApplePay()
+        } else {
+            // There is a problem with your Apple Pay configuration
+            ProgressHUD.showError()
         }
     }
     
@@ -155,5 +182,28 @@ extension CheckoutViewController: UITextFieldDelegate {
             }
         }
         return true
+    }
+}
+
+extension CheckoutViewController: STPApplePayContextDelegate {
+    func applePayContext(_ context: STPApplePayContext, didCreatePaymentMethod paymentMethod: STPPaymentMethod, paymentInformation: PKPayment, completion: @escaping STPIntentClientSecretCompletionBlock) {
+        guard let paymentIntentClientSecret = StripeController.shared.paymentIntentClientSecret else { return }
+        let clientSecret = paymentIntentClientSecret
+        completion(clientSecret, nil);
+    }
+    
+    func applePayContext(_ context: STPApplePayContext, didCompleteWith status: STPPaymentStatus, error: Error?) {
+        switch status {
+        case .success:
+            ProgressHUD.showSuccess()
+            break
+        case .error:
+            ProgressHUD.showError()
+            break
+        case .userCancellation:
+            break
+        @unknown default:
+            fatalError()
+        }
     }
 }

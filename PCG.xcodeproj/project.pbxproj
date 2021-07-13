@@ -245,13 +245,6 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
-		376412632516769700730747 /* Shop */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Shop;
-			sourceTree = "<group>";
-		};
 		377D779A25DB2743008D0059 /* Purchases */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,7 +398,6 @@
 				376412D62516B7F000730747 /* PCG.entitlements */,
 				37204A4F268A9D4A001B34F6 /* JSON */,
 				37E2710E244E435E001F6421 /* App Lifecycle */,
-				376412632516769700730747 /* Shop */,
 				37E27110244E438D001F6421 /* Networking */,
 				37E2710D244E435C001F6421 /* Models */,
 				37E2710F244E4376001F6421 /* Model Controllers */,

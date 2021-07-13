@@ -24,7 +24,7 @@ class StripeController {
     let companyName = "Perfect Closing Gift"
     let paymentCurrency: String = "usd"
     
-    func startCheckout(with amount: Int) {
+    func startCheckout(with amount: Double) {
         let url = URL(string: backendBaseURL)!
         let amountCents = amount * 100
         let json: [String: Any] = [
