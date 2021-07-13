@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 class PurchasesViewController: UIViewController {
 
     // MARK: - Properties
     
-    var products: [String] = []
+    lazy var fetchedHistoryController: NSFetchedResultsController<History> = {
+        let fetchRequest: NSFetchRequest<History> = History.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "name", cacheName: nil)
+        try! frc.performFetch()
+        return frc
+    }()
     
     // MARK: - Outlets
     
@@ -57,7 +67,7 @@ class PurchasesViewController: UIViewController {
 
 extension PurchasesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if products.count == 0 {
+        if fetchedHistoryController.fetchedObjects?.first?.historyProducts?.count == 0 {
             emptyTableView.alpha = 1
             emptyTableView.isUserInteractionEnabled = true
             purchasesTableView.alpha = 0
@@ -68,7 +78,7 @@ extension PurchasesViewController: UITableViewDataSource {
             purchasesTableView.alpha = 1
             purchasesTableView.isUserInteractionEnabled = true
         }
-        return products.count
+        return fetchedHistoryController.fetchedObjects?.first?.historyProducts!.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -12,6 +12,7 @@ import PassKit
 import MapKit
 import SkyFloatingLabelTextField
 import ProgressHUD
+import CoreData
 
 class CheckoutViewController: UIViewController {
 
@@ -25,6 +26,28 @@ class CheckoutViewController: UIViewController {
     var amount: Double?
     var shipping: Double?
     var tax: Double?
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
+        let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "name", cacheName: nil)
+        try! frc.performFetch()
+        return frc
+    }()
+    
+    lazy var fetchedHistoryController: NSFetchedResultsController<History> = {
+        let fetchRequest: NSFetchRequest<History> = History.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "name", cacheName: nil)
+        try! frc.performFetch()
+        return frc
+    }()
     
     // MARK: - Outlets
     
@@ -77,6 +100,7 @@ class CheckoutViewController: UIViewController {
             case .canceled:
                 ProgressHUD.showError()
             case .succeeded:
+                self.saveOrder()
                 ProgressHUD.showSuccess()
             @unknown default:
                 fatalError()
@@ -98,6 +122,23 @@ class CheckoutViewController: UIViewController {
             }
             
             totalLabel.text = "$\(Double(round((1000*amount)/1000)))"
+        }
+    }
+    
+    private func saveOrder() {
+        let cart = fetchedResultsController.fetchedObjects?.first
+        let order = (cart!.cartArray)
+        let moc = CoreDataStack.shared.mainContext
+        
+        if let history = fetchedHistoryController.fetchedObjects?.first {
+            history.addToHistoryProducts(NSSet(array: order))
+            cart?.removeCartProducts(NSSet(array: order))
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let history = History(name: "New History", context: moc)
+            history.addToHistoryProducts(NSSet(array: order))
+            cart?.removeCartProducts(NSSet(array: order))
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -196,6 +237,7 @@ extension CheckoutViewController: STPApplePayContextDelegate {
         switch status {
         case .success:
             ProgressHUD.showSuccess()
+            saveOrder()
             break
         case .error:
             ProgressHUD.showError()

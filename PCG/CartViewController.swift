@@ -41,6 +41,12 @@ class CartViewController: UIViewController {
         setubSubviews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        cartTableView.reloadData()
+        calcPrice()
+    }
+    
     // MARK: - Methods
     
     private func setubSubviews() {
