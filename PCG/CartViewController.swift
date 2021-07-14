@@ -27,6 +27,8 @@ class CartViewController: UIViewController {
         return frc
     }()
     
+    var cart: [CDProduct]?
+    
     // MARK: - Outlets
     
     @IBOutlet weak var cartTableView: UITableView!
@@ -40,6 +42,7 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setubSubviews()
+        cart = fetchedResultsController.fetchedObjects?.first?.cartArray
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,13 +76,15 @@ class CartViewController: UIViewController {
     }
     
     private func calcPrice() {
-        guard let cart = fetchedResultsController.fetchedObjects?.first?.cartArray else { return }
+        guard let cart = cart else { return }
         subTotal = 0.0
         
         for item in cart {
             let price = Double(round((1000*Double(item.price))/1000)) * Double(item.count)
             subTotal += price
         }
+        subTotal += 1.95
+        subTotal += 5.98
     }
     
     // MARK: - Actions
@@ -89,6 +94,7 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func checkoutButtonTapped(_ sender: Any) {
+        calcPrice()
         self.performSegue(withIdentifier: "checkoutSegue", sender: self)
     }
     
@@ -101,7 +107,6 @@ class CartViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "checkoutSegue" {
             if let detailVC = segue.destination as? CheckoutViewController {
-                calcPrice()
                 detailVC.amount = subTotal
             }
         }

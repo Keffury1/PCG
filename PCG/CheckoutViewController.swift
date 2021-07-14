@@ -13,6 +13,11 @@ import MapKit
 import SkyFloatingLabelTextField
 import ProgressHUD
 import CoreData
+import NBBottomSheet
+
+protocol CardParamsDelegate {
+    func cardEntered(params: STPPaymentMethodCardParams)
+}
 
 class CheckoutViewController: UIViewController {
 
@@ -22,6 +27,8 @@ class CheckoutViewController: UIViewController {
     var shipping: Double?
     var tax: Double?
     var address: String?
+    var cardParams: STPPaymentMethodCardParams?
+    let bottomSheetController = NBBottomSheetController()
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
@@ -55,6 +62,7 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var shippingButton: UIButton!
     @IBOutlet weak var textField: SkyFloatingLabelTextField!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var creditCardButton: UIButton!
     @IBOutlet weak var applePayButton: UIButton!
     
     // MARK: - Views
@@ -74,6 +82,8 @@ class CheckoutViewController: UIViewController {
         mapView.layer.cornerRadius = 10
         applePayButton.layer.cornerRadius = 10
         applePayButton.addShadow()
+        creditCardButton.layer.cornerRadius = 10
+        creditCardButton.addShadow()
         textField.delegate = self
     }
     
@@ -136,6 +146,33 @@ class CheckoutViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    private func cardPayment(params: STPPaymentMethodCardParams) {
+        guard let paymentIntentClientSecret = StripeController.shared.paymentIntentClientSecret else { return }
+        // Collect card details
+        let paymentMethodParams = STPPaymentMethodParams(card: params, billingDetails: nil, metadata: nil)
+        let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
+        paymentIntentParams.paymentMethodParams = paymentMethodParams
+
+        // Submit the payment
+        let paymentHandler = STPPaymentHandler.shared()
+        paymentHandler.confirmPayment(paymentIntentParams,
+                                      with: self) { (status, _, _) in
+            switch status {
+            case .failed:
+                ProgressHUD.showError()
+                print("Payment Failed")
+            case .canceled:
+                ProgressHUD.dismiss()
+                print("Payment Canceled")
+            case .succeeded:
+                ProgressHUD.showSuccess()
+                print("Payment Successful")
+            @unknown default:
+                fatalError()
+            }
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func shippingButtonTapped(_ sender: Any) {
@@ -158,6 +195,12 @@ class CheckoutViewController: UIViewController {
                     self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
             }
         }
+    }
+    
+    @IBAction func creditCardButtonTapped(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreditCardVC")
+        vc.view.layer.cornerRadius = 30
+        bottomSheetController.present(vc, on: self)
     }
     
     @IBAction func applePayButtonTapped(_ sender: Any) {
@@ -239,9 +282,16 @@ extension CheckoutViewController: STPApplePayContextDelegate {
             ProgressHUD.showError()
             break
         case .userCancellation:
+            ProgressHUD.dismiss()
             break
         @unknown default:
             fatalError()
         }
+    }
+}
+
+extension CheckoutViewController: CardParamsDelegate {
+    func cardEntered(params: STPPaymentMethodCardParams) {
+        cardPayment(params: params)
     }
 }

@@ -17,6 +17,7 @@
 		37204A4C268A9B50001B34F6 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37204A4B268A9B50001B34F6 /* DateView.swift */; };
 		37204A4E268A9B58001B34F6 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37204A4D268A9B58001B34F6 /* StateView.swift */; };
 		37204A51268ACEEA001B34F6 /* States.json in Resources */ = {isa = PBXBuildFile; fileRef = 37204A50268ACEEA001B34F6 /* States.json */; };
+		3721E9F1269F62CF00C63C5D /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721E9F0269F62CF00C63C5D /* CreditCardViewController.swift */; };
 		374E50A525E48D37004320B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 374E50A425E48D37004320B5 /* GoogleService-Info.plist */; };
 		374E50B725E48F1B004320B5 /* PurchaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E50B625E48F1B004320B5 /* PurchaseController.swift */; };
 		375390CC266DD8BE0016791C /* Needs.json in Resources */ = {isa = PBXBuildFile; fileRef = 375390CB266DD8BE0016791C /* Needs.json */; };
@@ -88,6 +89,7 @@
 		37204A4B268A9B50001B34F6 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		37204A4D268A9B58001B34F6 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		37204A50268ACEEA001B34F6 /* States.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = States.json; sourceTree = "<group>"; };
+		3721E9F0269F62CF00C63C5D /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		374E50A425E48D37004320B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		374E50B625E48F1B004320B5 /* PurchaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseController.swift; sourceTree = "<group>"; };
 		375390CB266DD8BE0016791C /* Needs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Needs.json; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				375B61192669ADF4008F6639 /* CartViewController.swift */,
 				37DFC93E269A650C00B97982 /* CheckoutViewController.swift */,
+				3721E9F0269F62CF00C63C5D /* CreditCardViewController.swift */,
 			);
 			name = Cart;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37E270F6244E4338001F6421 /* AppDelegate.swift in Sources */,
+				3721E9F1269F62CF00C63C5D /* CreditCardViewController.swift in Sources */,
 				37E0EB5626910E63004B6C8D /* Fulfilled+Convenience.swift in Sources */,
 				37FC57C324F60F5100610C60 /* ProductController.swift in Sources */,
 				37E0EB4E26910D3E004B6C8D /* CDTemplate+Convenience.swift in Sources */,

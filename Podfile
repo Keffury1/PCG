@@ -15,4 +15,5 @@ target 'PCG' do
   pod 'Stripe'
   pod 'SkyFloatingLabelTextField'
   pod 'ProgressHUD'
+  pod 'NBBottomSheet'
 end

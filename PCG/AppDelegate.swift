@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import DropDown
 import Stripe
+import ProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         DropDown.startListeningToKeyboard()
         StripeAPI.defaultPublishableKey = "pk_test_51JAgHeDI7R80RtSVqhYB0hXW9MCwOLLiQxtr0dASYPGyt2AumicDhwG0F5ZxD2NLPOvZ8NX2Nz4E2yBvsx7vP0y1009STwJYdc"
+        
+        ProgressHUD.animationType = .circleRotateChase
+        ProgressHUD.colorAnimation = UIColor(named: "Navy")!
+        ProgressHUD.colorStatus = UIColor(named: "Navy")!
         
         return true
     }
