@@ -22,7 +22,6 @@ class CheckoutViewController: UIViewController {
     var shipping: Double?
     var tax: Double?
     var address: String?
-    var paymentSheet: PaymentSheet?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
@@ -57,13 +56,14 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var textField: SkyFloatingLabelTextField!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var applePayButton: UIButton!
-    @IBOutlet weak var creditCardButton: UIButton!
     
     // MARK: - Views
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        StripeController.shared.startCheckout(with: self.amount!)
+        let shipping = PKShippingMethod()
+        shipping.identifier = "shipping"
+        StripeController.shared.startCheckout(with: Int(amount!))
         setupSubviews()
         updateViews()
     }
@@ -74,10 +74,7 @@ class CheckoutViewController: UIViewController {
         mapView.layer.cornerRadius = 10
         applePayButton.layer.cornerRadius = 10
         applePayButton.addShadow()
-        creditCardButton.layer.cornerRadius = 10
-        creditCardButton.addShadow()
         textField.delegate = self
-        paymentSheet = StripeController.shared.paymentSheet
     }
     
     private func updateViews() {
@@ -138,7 +135,6 @@ class CheckoutViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
-
     
     // MARK: - Actions
     
@@ -164,21 +160,6 @@ class CheckoutViewController: UIViewController {
         }
     }
     
-    @IBAction func creditCardButtonTapped(_ sender: Any) {
-        paymentSheet?.present(from: self) { paymentResult in
-            switch paymentResult {
-            case .completed:
-                ProgressHUD.showSuccess()
-                self.saveOrder()
-            case .canceled:
-                ProgressHUD.showError()
-            case .failed(let error):
-                ProgressHUD.showError()
-              print("Payment failed: \n\(error.localizedDescription)")
-            }
-          }
-    }
-    
     @IBAction func applePayButtonTapped(_ sender: Any) {
         guard address != nil || address != "" else {
             ProgressHUD.showError()
@@ -191,7 +172,7 @@ class CheckoutViewController: UIViewController {
         paymentRequest.paymentSummaryItems = [
             // The final line should represent your company;
             // it'll be prepended with the word "Pay" (i.e. "Pay iHats, Inc $50")
-            PKPaymentSummaryItem(label: "Perfect Closing Gift", amount: NSDecimalNumber(value: amount!)),
+            PKPaymentSummaryItem(label: "PCG", amount: NSDecimalNumber(value: amount!)),
         ]
         // Initialize an STPApplePayContext instance
         if let applePayContext = STPApplePayContext(paymentRequest: paymentRequest, delegate: self) {
@@ -211,6 +192,7 @@ class CheckoutViewController: UIViewController {
 }
 
 extension CheckoutViewController: STPAuthenticationContext {
+
     func authenticationPresentingViewController() -> UIViewController {
         return self
     }
