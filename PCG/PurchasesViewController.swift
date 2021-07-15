@@ -55,7 +55,12 @@ class PurchasesViewController: UIViewController {
 
 extension PurchasesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if fetchedHistoryController.fetchedObjects?.first?.historyProducts?.count == 0 {
+        if fetchedHistoryController.fetchedObjects?.first?.historyArray.count == 0 {
+            emptyTableView.alpha = 1
+            emptyTableView.isUserInteractionEnabled = true
+            purchasesTableView.alpha = 0
+            purchasesTableView.isUserInteractionEnabled = false
+        } else if fetchedHistoryController.fetchedObjects?.first?.historyArray.count == nil {
             emptyTableView.alpha = 1
             emptyTableView.isUserInteractionEnabled = true
             purchasesTableView.alpha = 0
@@ -66,7 +71,7 @@ extension PurchasesViewController: UITableViewDataSource {
             purchasesTableView.alpha = 1
             purchasesTableView.isUserInteractionEnabled = true
         }
-        return fetchedHistoryController.fetchedObjects?.first?.historyProducts!.count ?? 0
+        return fetchedHistoryController.fetchedObjects?.first?.historyArray.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,6 +82,7 @@ extension PurchasesViewController: UITableViewDataSource {
         let item = history[indexPath.row]
         
         cell.purchaseImageView.image = UIImage(named: "\(item.image!)")
+        cell.purchaseImageView.layer.cornerRadius = 10
         cell.purchaseTitleLabel.text = item.name!
         cell.addressLabel.text = item.address!
         cell.dateLabel.text = item.date!
