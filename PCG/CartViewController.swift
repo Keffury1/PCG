@@ -63,16 +63,6 @@ class CartViewController: UIViewController {
         emptyCartView.addShadow()
         emptyCartView.layer.borderColor = UIColor(named: "Tan")!.cgColor
         emptyCartView.layer.borderWidth = 0.5
-        
-        if fetchedResultsController.fetchedObjects?.first?.cartArray == [] {
-            checkoutButton.setTitle("", for: .normal)
-            checkoutButton.setImage(nil, for: .normal)
-            checkoutButton.isUserInteractionEnabled = false
-        } else {
-            checkoutButton.setTitle(" Checkout", for: .normal)
-            checkoutButton.setImage(UIImage(systemName: "cart.circle"), for: .normal)
-            checkoutButton.isUserInteractionEnabled = true
-        }
     }
     
     private func calcPrice() {
@@ -117,16 +107,25 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
             cartTableView.isUserInteractionEnabled = false
             emptyCartView.alpha = 1
             emptyCartView.isUserInteractionEnabled = true
+            checkoutButton.setTitle("", for: .normal)
+            checkoutButton.setImage(nil, for: .normal)
+            checkoutButton.isUserInteractionEnabled = false
         } else if fetchedResultsController.fetchedObjects?.first?.cartArray.count == 0 {
             cartTableView.alpha = 0
             cartTableView.isUserInteractionEnabled = false
             emptyCartView.alpha = 1
             emptyCartView.isUserInteractionEnabled = true
+            checkoutButton.setTitle("", for: .normal)
+            checkoutButton.setImage(nil, for: .normal)
+            checkoutButton.isUserInteractionEnabled = false
         } else {
             cartTableView.alpha = 1
             cartTableView.isUserInteractionEnabled = true
             emptyCartView.alpha = 0
             emptyCartView.isUserInteractionEnabled = false
+            checkoutButton.setTitle(" Checkout", for: .normal)
+            checkoutButton.setImage(UIImage(systemName: "cart.circle"), for: .normal)
+            checkoutButton.isUserInteractionEnabled = true
         }
         return fetchedResultsController.fetchedObjects?.first?.cartArray.count ?? 0
     }
