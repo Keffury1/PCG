@@ -77,7 +77,7 @@ class CartViewController: UIViewController {
     
     private func calcPrice() {
         guard let cart = cart else { return }
-        subTotal = 7.93
+        subTotal = 0.0
         for item in cart {
             let price = Double(round((1000*Double(item.price))/1000)) * Double(item.count)
             subTotal += price

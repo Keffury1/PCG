@@ -71,9 +71,9 @@ class CheckoutViewController: UIViewController {
         super.viewDidLoad()
         let shipping = PKShippingMethod()
         shipping.identifier = "shipping"
-        StripeController.shared.startCheckout(with: Int(amount!))
         setupSubviews()
         updateViews()
+        StripeController.shared.startCheckout(with: Int(amount!))
     }
     
     // MARK: - Methods
@@ -88,20 +88,18 @@ class CheckoutViewController: UIViewController {
     }
     
     private func updateViews() {
-        if var amount = amount {
-            subtotalLabel.text = "$\(amount)"
-            if amount == 0 {
-                taxLabel.text = "$0.0"
-                shippingLabel.text = "$0.0"
-            } else {
-                taxLabel.text = "$\(1.95)"
-                shippingLabel.text = "$\(5.98)"
-                amount += 1.95
-                amount += 5.98
-            }
-            
-            totalLabel.text = "$\(Double(round((1000*amount)/1000)))"
+        subtotalLabel.text = "$\(amount!)"
+        if amount == 0 {
+            taxLabel.text = "$0.0"
+            shippingLabel.text = "$0.0"
+        } else {
+            taxLabel.text = "$\(1.95)"
+            shippingLabel.text = "$\(5.98)"
+            amount! += 1.95
+            amount! += 5.98
         }
+        
+        totalLabel.text = "$\(Double(round((1000*amount!)/1000)))"
     }
     
     private func saveOrder() {
