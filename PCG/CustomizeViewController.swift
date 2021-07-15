@@ -86,6 +86,8 @@ class CustomizeViewController: UIViewController {
         scrollImg.maximumZoomScale = 10.0
         
         templateContainerView!.addSubview(scrollImg)
+        templateContainerView.layer.cornerRadius = 10
+        templateContainerView.clipsToBounds = true
         scrollImg.addSubview(firstTemplateImageView!)
         
         templatesCollectionView.dataSource = self
@@ -258,6 +260,7 @@ class CustomizeViewController: UIViewController {
         }
         checkIfCustomized()
         tf.resignFirstResponder()
+        scrollView.isScrollEnabled = true
     }
     
     // MARK: - Navigation
@@ -351,6 +354,7 @@ extension CustomizeViewController: UITextFieldDelegate {
         self.chosenTextField = textField
         let invocation = IQInvocation(self, #selector(didPressOnDoneButton))
         textField.keyboardToolbar.doneBarButton.invocation = invocation
+        scrollView.isScrollEnabled = false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -361,6 +365,7 @@ extension CustomizeViewController: UITextFieldDelegate {
         }
         checkIfCustomized()
         textField.resignFirstResponder()
+        scrollView.isScrollEnabled = true
         return true
     }
 }

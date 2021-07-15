@@ -23,7 +23,6 @@ class CreditCardViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var cardIOView: CardIOView!
     @IBOutlet weak var confirmButton: UIButton!
     
     // MARK: - Views
@@ -46,11 +45,6 @@ class CreditCardViewController: UIViewController {
             cardTextField.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 20.0),
             cardTextField.heightAnchor.constraint(equalToConstant: 50.0)
         ])
-        cardIOView.layer.cornerRadius = 10
-        cardIOView.clipsToBounds = true
-        cardIOView.layer.masksToBounds = true
-        cardIOView.guideColor = .white
-        cardIOView.delegate = self
         confirmButton.layer.cornerRadius = 10
     }
     // MARK: - Actions
@@ -66,18 +60,4 @@ class CreditCardViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 
-}
-
-extension CreditCardViewController: CardIOViewDelegate {
-    func cardIOView(_ cardIOView: CardIOView!, didScanCard cardInfo: CardIOCreditCardInfo!) {
-        let params = STPCardParams()
-        let cardParams = STPPaymentMethodCardParams(cardSourceParams: params)
-        cardParams.number = cardInfo.cardNumber
-        let month = Int(bitPattern: cardInfo.expiryMonth)
-        let year = Int(bitPattern: cardInfo.expiryYear)
-        cardParams.expMonth = NSNumber(integerLiteral: month)
-        cardParams.expYear = NSNumber(integerLiteral: year)
-        cardTextField.cardParams = cardParams
-        cardTextField.reloadInputViews()
-    }
 }

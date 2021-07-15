@@ -598,9 +598,9 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdu-8x-cmA">
-                                <rect key="frame" x="329.33333333333331" y="19.999999999999996" width="64.666666666666686" height="36.666666666666657"/>
+                                <rect key="frame" x="329.33333333333331" y="20" width="64.666666666666686" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36.5" id="Go5-Wr-rVA"/>
+                                    <constraint firstAttribute="height" constant="35" id="Go5-Wr-rVA"/>
                                 </constraints>
                                 <color key="tintColor" name="Navy"/>
                                 <state key="normal" title=" Back" image="arrowshape.turn.up.backward.circle" catalog="system">
@@ -667,7 +667,7 @@
             <objects>
                 <viewController id="7nh-Q9-F1R" customClass="CheckoutViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRJ-eZ-QJc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-cY-wbq">
@@ -1178,7 +1178,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-xf-LTz">
-                                <rect key="frame" x="10" y="340" width="384" height="75"/>
+                                <rect key="frame" x="10" y="350" width="384" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3R-TZ-QFE">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="34.333333333333336"/>
@@ -1223,7 +1223,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L7n-PG-Q7k">
-                                <rect key="frame" x="20" y="255" width="374" height="80"/>
+                                <rect key="frame" x="20" y="265" width="374" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Wt8-ya-XfO"/>
@@ -1264,22 +1264,22 @@
                                 </cells>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="t96-87-kIB">
-                                <rect key="frame" x="54.333333333333343" y="46.666666666666671" width="305.33333333333326" height="203.33333333333331"/>
+                                <rect key="frame" x="57" y="60" width="300" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="t96-87-kIB" secondAttribute="height" multiplier="1.5:1" id="hUa-OB-Fjj"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjH-6Q-nPL">
-                                <rect key="frame" x="10" y="420.00000000000006" width="384" height="248.66666666666669"/>
+                                <rect key="frame" x="10" y="430.00000000000006" width="384" height="238.66666666666669"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" name="Dark Gray"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOG-Ya-iZ6">
-                                <rect key="frame" x="338.33333333333331" y="0.0" width="55.666666666666686" height="46.666666666666664"/>
+                                <rect key="frame" x="338.33333333333331" y="20" width="55.666666666666686" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46.5" id="iQo-kS-YV1"/>
+                                    <constraint firstAttribute="height" constant="35" id="iQo-kS-YV1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="tintColor" name="Navy"/>
@@ -1291,7 +1291,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9o-r1-vEq">
-                                <rect key="frame" x="20" y="417" width="374" height="1"/>
+                                <rect key="frame" x="20" y="427" width="374" height="1"/>
                                 <color key="backgroundColor" name="Tan"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="3LO-h5-WuM"/>
@@ -1308,7 +1308,7 @@
                             <constraint firstItem="xUW-R4-k5p" firstAttribute="top" secondItem="OjH-6Q-nPL" secondAttribute="bottom" constant="5" id="9aY-Yl-IEY"/>
                             <constraint firstItem="TId-8W-FIS" firstAttribute="trailing" secondItem="OjH-6Q-nPL" secondAttribute="trailing" constant="20" id="Ap3-Ft-nPF"/>
                             <constraint firstItem="FJ9-xf-LTz" firstAttribute="trailing" secondItem="UOG-Ya-iZ6" secondAttribute="trailing" id="CrP-pd-UfP"/>
-                            <constraint firstItem="UOG-Ya-iZ6" firstAttribute="top" secondItem="TId-8W-FIS" secondAttribute="top" id="JB3-jX-DQy"/>
+                            <constraint firstItem="UOG-Ya-iZ6" firstAttribute="top" secondItem="TId-8W-FIS" secondAttribute="top" constant="20" id="JB3-jX-DQy"/>
                             <constraint firstItem="M9o-r1-vEq" firstAttribute="top" secondItem="FJ9-xf-LTz" secondAttribute="bottom" constant="2" id="L3g-Ee-BI3"/>
                             <constraint firstItem="TId-8W-FIS" firstAttribute="trailing" secondItem="UOG-Ya-iZ6" secondAttribute="trailing" constant="20" id="ZQX-fX-f2P"/>
                             <constraint firstItem="t96-87-kIB" firstAttribute="centerX" secondItem="TId-8W-FIS" secondAttribute="centerX" id="cFD-gl-f4y"/>
@@ -1317,12 +1317,12 @@
                             <constraint firstItem="L7n-PG-Q7k" firstAttribute="leading" secondItem="TId-8W-FIS" secondAttribute="leading" constant="20" id="fAu-Ap-7So"/>
                             <constraint firstItem="OjH-6Q-nPL" firstAttribute="leading" secondItem="TId-8W-FIS" secondAttribute="leading" constant="10" id="me2-go-vYh"/>
                             <constraint firstItem="TId-8W-FIS" firstAttribute="trailing" secondItem="L7n-PG-Q7k" secondAttribute="trailing" constant="20" id="nLi-tE-fNs"/>
-                            <constraint firstItem="t96-87-kIB" firstAttribute="top" secondItem="UOG-Ya-iZ6" secondAttribute="bottom" id="p97-Hm-PFU"/>
+                            <constraint firstItem="t96-87-kIB" firstAttribute="top" secondItem="UOG-Ya-iZ6" secondAttribute="bottom" constant="5" id="p97-Hm-PFU"/>
                             <constraint firstItem="TId-8W-FIS" firstAttribute="trailing" secondItem="M9o-r1-vEq" secondAttribute="trailing" constant="20" id="t4U-Hc-27m"/>
                             <constraint firstItem="OjH-6Q-nPL" firstAttribute="top" secondItem="M9o-r1-vEq" secondAttribute="bottom" constant="2" id="uFG-Qd-hCz"/>
                             <constraint firstItem="L7n-PG-Q7k" firstAttribute="top" secondItem="t96-87-kIB" secondAttribute="bottom" constant="5" id="ugA-pq-rUs"/>
                             <constraint firstItem="FJ9-xf-LTz" firstAttribute="top" secondItem="L7n-PG-Q7k" secondAttribute="bottom" constant="5" id="vkq-nY-e3p"/>
-                            <constraint firstItem="TId-8W-FIS" firstAttribute="top" secondItem="t96-87-kIB" secondAttribute="bottom" constant="-250" id="y9S-VO-ZWU"/>
+                            <constraint firstItem="TId-8W-FIS" firstAttribute="top" secondItem="t96-87-kIB" secondAttribute="bottom" constant="-260" id="y9S-VO-ZWU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Q1-cR-dU8"/>
@@ -1359,9 +1359,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GH5-FD-lZm">
-                                                <rect key="frame" x="333.33333333333331" y="19.999999999999996" width="55.666666666666686" height="36.666666666666657"/>
+                                                <rect key="frame" x="333.33333333333331" y="20" width="55.666666666666686" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="36.5" id="i1l-0F-4oe"/>
+                                                    <constraint firstAttribute="height" constant="35" id="i1l-0F-4oe"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                 <color key="tintColor" name="Navy"/>
