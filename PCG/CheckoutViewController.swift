@@ -128,12 +128,12 @@ class CheckoutViewController: UIViewController {
         
         if let history = fetchedHistoryController.fetchedObjects?.first {
             history.addToHistoryProducts(NSSet(array: order))
-            cart!.removeCartProducts(NSSet(array: order))
         } else {
             let history = History(name: "New History", context: moc)
             history.addToHistoryProducts(NSSet(array: order))
-            cart!.removeCartProducts(NSSet(array: order))
         }
+        
+        moc.delete(cart!)
         
         do {
             try moc.save()
