@@ -21,6 +21,7 @@ class CreditCardViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var cardIOView: CardIOView!
     
     // MARK: - Views
     
@@ -34,14 +35,18 @@ class CreditCardViewController: UIViewController {
     private func setupCardView() {
         cardView.addSubview(cardTextField)
         cardTextField.translatesAutoresizingMaskIntoConstraints = false
-        cardTextField.textColor = UIColor(named: "Navy")!
-        cardTextField.backgroundColor = .white
+        cardTextField.textColor = .white
+        cardTextField.backgroundColor = UIColor(named: "Navy")!
         NSLayoutConstraint.activate([
             cardTextField.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 20.0),
             cardTextField.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -20.0),
             cardTextField.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -30.0),
             cardTextField.heightAnchor.constraint(equalToConstant: 50.0)
         ])
+        cardIOView.layer.cornerRadius = 10
+        cardIOView.clipsToBounds = true
+        cardIOView.layer.masksToBounds = true
+        cardIOView.guideColor = .white
     }
     // MARK: - Actions
     

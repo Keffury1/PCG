@@ -16,4 +16,5 @@ target 'PCG' do
   pod 'SkyFloatingLabelTextField'
   pod 'ProgressHUD'
   pod 'NBBottomSheet'
+  pod 'CardIO'
 end
