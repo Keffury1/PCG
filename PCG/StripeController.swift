@@ -45,7 +45,7 @@ class StripeController {
                 response.statusCode == 200,
                 let data = data,
                 let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                let clientSecret = json["clientSecret"] as? String else { return }
+                let clientSecret = json["secret"] as? String else { return }
 
             if let error = error {
                 print("Error creating payment intent: \(error)")

@@ -95,6 +95,7 @@ class CartViewController: UIViewController {
         if segue.identifier == "checkoutSegue" {
             if let detailVC = segue.destination as? CheckoutViewController {
                 detailVC.amount = subTotal
+                detailVC.parentVC = self
             }
         }
     }

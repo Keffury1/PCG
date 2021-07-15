@@ -23,6 +23,7 @@ class CheckoutViewController: UIViewController {
 
     // MARK: - Properties
     
+    var parentVC: UIViewController?
     var amount: Double?
     var shipping: Double?
     var tax: Double?
@@ -127,21 +128,20 @@ class CheckoutViewController: UIViewController {
         
         if let history = fetchedHistoryController.fetchedObjects?.first {
             history.addToHistoryProducts(NSSet(array: order))
-            cart?.removeCartProducts(NSSet(array: order))
+            cart!.removeCartProducts(NSSet(array: order))
         } else {
             let history = History(name: "New History", context: moc)
             history.addToHistoryProducts(NSSet(array: order))
-            cart?.removeCartProducts(NSSet(array: order))
+            cart!.removeCartProducts(NSSet(array: order))
         }
         
         do {
             try moc.save()
-            // Transition to Purchases Screen
+            navigationController?.popToRootViewController(animated: true)
+            parentVC?.tabBarController?.selectedIndex = 3
         } catch {
             print("Error saving order history: \(error)")
         }
-        
-        self.dismiss(animated: true, completion: nil)
     }
     
     private func cardPayment(params: STPPaymentMethodCardParams) {
@@ -201,7 +201,8 @@ class CheckoutViewController: UIViewController {
             ProgressHUD.showError("Enter Shipping Address", image: nil, interaction: true)
             return
         }
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreditCardVC")
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreditCardVC") as! CreditCardViewController
+        vc.paramsDelegate = self
         vc.view.layer.cornerRadius = 30
         bottomSheetController.present(vc, on: self)
     }
@@ -234,7 +235,6 @@ class CheckoutViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
-
 }
 
 extension CheckoutViewController: STPAuthenticationContext {
