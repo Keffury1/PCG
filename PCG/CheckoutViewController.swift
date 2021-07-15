@@ -164,6 +164,7 @@ class CheckoutViewController: UIViewController {
                 print("Payment Canceled")
             case .succeeded:
                 ProgressHUD.showSuccess()
+                self.saveOrder()
                 print("Payment Successful")
             @unknown default:
                 fatalError()

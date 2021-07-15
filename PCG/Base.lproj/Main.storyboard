@@ -879,18 +879,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-vI-VgY" customClass="CardIOView">
-                                        <rect key="frame" x="122.66666666666667" y="8" width="168.66666666666663" height="225"/>
+                                        <rect key="frame" x="20" y="8" width="168.66666666666666" height="225"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aZI-vI-VgY" secondAttribute="height" multiplier="3:4" id="Bgx-Wp-kj1"/>
                                             <constraint firstAttribute="height" constant="225" id="F1Z-vX-VJJ"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6e1-fr-akf">
+                                        <rect key="frame" x="274" y="10" width="130" height="33"/>
+                                        <color key="backgroundColor" name="Navy"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="ueT-Aq-xBh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Confirm ">
+                                            <color key="titleColor" name="White"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="confirmButtonTapped:" destination="38Q-y3-pec" eventType="touchUpInside" id="wy3-8M-e6K"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Tan"/>
                                 <constraints>
+                                    <constraint firstItem="6e1-fr-akf" firstAttribute="top" secondItem="KjF-mR-6zZ" secondAttribute="top" constant="10" id="1VD-N3-VWN"/>
+                                    <constraint firstAttribute="trailing" secondItem="6e1-fr-akf" secondAttribute="trailing" constant="10" id="AvC-Ym-CGW"/>
                                     <constraint firstItem="aZI-vI-VgY" firstAttribute="top" secondItem="KjF-mR-6zZ" secondAttribute="top" constant="8" id="Qhg-dz-R9m"/>
-                                    <constraint firstItem="aZI-vI-VgY" firstAttribute="centerX" secondItem="KjF-mR-6zZ" secondAttribute="centerX" id="jWS-0q-Hwx"/>
+                                    <constraint firstItem="aZI-vI-VgY" firstAttribute="leading" secondItem="KjF-mR-6zZ" secondAttribute="leading" constant="20" id="YRz-eh-9hY"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -906,6 +922,7 @@
                     <connections>
                         <outlet property="cardIOView" destination="aZI-vI-VgY" id="JJ8-5F-2vj"/>
                         <outlet property="cardView" destination="KjF-mR-6zZ" id="nWz-Af-ey5"/>
+                        <outlet property="confirmButton" destination="6e1-fr-akf" id="TCr-3w-qDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oj6-oG-QIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
