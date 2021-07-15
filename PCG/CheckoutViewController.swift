@@ -197,14 +197,18 @@ class CheckoutViewController: UIViewController {
     }
     
     @IBAction func creditCardButtonTapped(_ sender: Any) {
+        guard address != nil else {
+            ProgressHUD.showError("Enter Shipping Address", image: nil, interaction: true)
+            return
+        }
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreditCardVC")
         vc.view.layer.cornerRadius = 30
         bottomSheetController.present(vc, on: self)
     }
     
     @IBAction func applePayButtonTapped(_ sender: Any) {
-        guard address != nil || address != "" else {
-            ProgressHUD.showError()
+        guard address != nil else {
+            ProgressHUD.showError("Enter Shipping Address", image: nil, interaction: true)
             return
         }
         let merchantIdentifier = "merchant.com.BobbyKeffury.PCG"

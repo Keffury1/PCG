@@ -37,8 +37,8 @@ class CreditCardViewController: UIViewController {
     private func setupCardView() {
         cardView.addSubview(cardTextField)
         cardTextField.translatesAutoresizingMaskIntoConstraints = false
-        cardTextField.textColor = .white
-        cardTextField.backgroundColor = UIColor(named: "Navy")!
+        cardTextField.textColor = UIColor(named: "Navy")!
+        cardTextField.backgroundColor = .white
         NSLayoutConstraint.activate([
             cardTextField.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 20.0),
             cardTextField.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -20.0),
