@@ -189,7 +189,7 @@ class CustomizeViewController: UIViewController {
         countLabel.text = "\(completedCount) of \(count)"
         
         if completedCount == count {
-            countLabel.textColor = .green
+            countLabel.textColor = UIColor(named: "Navy")
         } else {
             countLabel.textColor = .red
         }
@@ -214,7 +214,7 @@ class CustomizeViewController: UIViewController {
             if template.fulfilled.count == template.needs.count + 1 {
                 ProgressHUD.show()
                 countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count + 1)"
-                countLabel.textColor = .green
+                countLabel.textColor = UIColor(named: "Navy")
                 product?.chosenTemplate = []
                 product?.chosenTemplate?.append(template)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -229,7 +229,7 @@ class CustomizeViewController: UIViewController {
             if template.fulfilled.count == template.needs.count {
                 ProgressHUD.show()
                 countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count)"
-                countLabel.textColor = .green
+                countLabel.textColor = UIColor(named: "Navy")
                 product?.chosenTemplate = []
                 product?.chosenTemplate?.append(template)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {

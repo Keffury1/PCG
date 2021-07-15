@@ -43,7 +43,7 @@ class CreditCardViewController: UIViewController {
         NSLayoutConstraint.activate([
             cardTextField.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 20.0),
             cardTextField.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -20.0),
-            cardTextField.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -30.0),
+            cardTextField.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 20.0),
             cardTextField.heightAnchor.constraint(equalToConstant: 50.0)
         ])
         cardIOView.layer.cornerRadius = 10
