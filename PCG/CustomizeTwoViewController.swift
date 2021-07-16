@@ -105,7 +105,7 @@ class CustomizeTwoViewController: UIViewController {
                 dateView.calendarView.delegate = self
                 dateView.calendarView.dataSource = self
                 self.dateDelegate = dateView
-                dateView.heightAnchor.constraint(equalToConstant: 325.0).isActive = true
+                dateView.heightAnchor.constraint(equalToConstant: 275.0).isActive = true
                 dateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
                 customizeStackView.addArrangedSubview(dateView)
                 dateCount = count

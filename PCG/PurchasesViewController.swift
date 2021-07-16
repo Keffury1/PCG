@@ -87,6 +87,8 @@ extension PurchasesViewController: UITableViewDataSource {
         cell.addressLabel.text = item.address!
         cell.dateLabel.text = item.date!
         
+        cell.purchaseImageView.contentMode = .scaleAspectFill
+        
         return cell
     }
 }

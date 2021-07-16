@@ -70,6 +70,18 @@ class CustomizeViewController: UIViewController {
         continueButton.addShadow()
     }
     
+    private func enableContinueButton() {
+        continueButton.setTitle(" Continue", for: .normal)
+        continueButton.setImage(UIImage(systemName: "arrow.right.circle"), for: .normal)
+        continueButton.isUserInteractionEnabled = true
+    }
+    
+    private func disableContinueButton() {
+        continueButton.setTitle(" ", for: .normal)
+        continueButton.setImage(nil, for: .normal)
+        continueButton.isUserInteractionEnabled = false
+    }
+    
     // MARK: - Actions
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -140,6 +152,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
             self.template = template
             reset = true
             view.reloadInputViews()
+            enableContinueButton()
         }
         
         let cell = collectionView.cellForItem(at: indexPath) as? TemplateCollectionViewCell
@@ -151,6 +164,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.cellForItem(at: indexPath) as? TemplateCollectionViewCell
         cell?.layer.borderColor = UIColor.clear.cgColor
         cell?.isSelected = false
+        disableContinueButton()
     }
 }
 

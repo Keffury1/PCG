@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 import ProgressHUD
 
+protocol DismissDelegate {
+    func dismiss()
+}
+
 class CartViewController: UIViewController {
     
     //MARK: - Properties
@@ -28,7 +32,6 @@ class CartViewController: UIViewController {
     }()
     
     var cart: [CDProduct]?
-    var parentVC: UIViewController?
     
     // MARK: - Outlets
     
@@ -96,7 +99,7 @@ class CartViewController: UIViewController {
         if segue.identifier == "checkoutSegue" {
             if let detailVC = segue.destination as? CheckoutViewController {
                 detailVC.amount = subTotal
-                detailVC.parentVC = parentVC
+                detailVC.dismissDelegate = self
             }
         }
     }
@@ -206,5 +209,11 @@ extension CartViewController: UpdateDelegate {
             print("Error saving added product: \(error)")
         }
         cartTableView.reloadData()
+    }
+}
+
+extension CartViewController: DismissDelegate {
+    func dismiss() {
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -169,10 +169,6 @@ class ShopViewController: UIViewController {
                 detailVC.product = self.product
                 detailVC.price = price
             }
-        } else if segue.identifier == "cartSegue" {
-            if let detailVC = segue.destination as? CartViewController {
-                detailVC.parentVC = self
-            }
         }
     }
 }

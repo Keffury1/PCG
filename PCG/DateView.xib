@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xh6-an-IYI">
-                    <rect key="frame" x="10" y="92" width="40" height="40"/>
+                    <rect key="frame" x="10" y="117" width="40" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23U-9K-ywW">
                             <rect key="frame" x="5" y="5.5" width="30" height="29"/>
@@ -45,10 +45,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sob-2g-PLj">
-                    <rect key="frame" x="58" y="92" width="282" height="325"/>
+                    <rect key="frame" x="58" y="117" width="282" height="275"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UzP-oh-FuX">
-                            <rect key="frame" x="5" y="5" width="272" height="315"/>
+                            <rect key="frame" x="5" y="5" width="272" height="265"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byg-IH-7Q8">
                                     <rect key="frame" x="0.0" y="0.0" width="272" height="35"/>
@@ -75,11 +75,11 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQ2-5U-NVs" customClass="FSCalendar">
-                                    <rect key="frame" x="0.0" y="40" width="272" height="275"/>
+                                    <rect key="frame" x="0.0" y="40" width="272" height="225"/>
                                     <color key="backgroundColor" name="Navy"/>
                                     <color key="tintColor" name="White"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="275" id="LDD-3s-Mca"/>
+                                        <constraint firstAttribute="height" constant="225" id="LDD-3s-Mca"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>

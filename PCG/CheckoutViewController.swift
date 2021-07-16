@@ -23,13 +23,13 @@ class CheckoutViewController: UIViewController {
 
     // MARK: - Properties
     
-    var parentVC: UIViewController?
     var amount: Double?
     var shipping: Double?
     var tax: Double?
     var address: String?
     var cardParams: STPPaymentMethodCardParams?
     let bottomSheetController = NBBottomSheetController()
+    var dismissDelegate: DismissDelegate?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
@@ -137,8 +137,8 @@ class CheckoutViewController: UIViewController {
         
         do {
             try moc.save()
-            navigationController?.popToRootViewController(animated: true)
-            parentVC?.tabBarController?.selectedIndex = 3
+            dismissDelegate?.dismiss()
+            self.dismiss(animated: true, completion: nil)
         } catch {
             print("Error saving order history: \(error)")
         }
