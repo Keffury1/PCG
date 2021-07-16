@@ -18,6 +18,7 @@
 		37204A4E268A9B58001B34F6 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37204A4D268A9B58001B34F6 /* StateView.swift */; };
 		37204A51268ACEEA001B34F6 /* States.json in Resources */ = {isa = PBXBuildFile; fileRef = 37204A50268ACEEA001B34F6 /* States.json */; };
 		3721E9F1269F62CF00C63C5D /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721E9F0269F62CF00C63C5D /* CreditCardViewController.swift */; };
+		3731EE5026A208E400B3EA16 /* CustomizeTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731EE4F26A208E400B3EA16 /* CustomizeTwoViewController.swift */; };
 		374E50A525E48D37004320B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 374E50A425E48D37004320B5 /* GoogleService-Info.plist */; };
 		374E50B725E48F1B004320B5 /* PurchaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E50B625E48F1B004320B5 /* PurchaseController.swift */; };
 		375390CC266DD8BE0016791C /* Needs.json in Resources */ = {isa = PBXBuildFile; fileRef = 375390CB266DD8BE0016791C /* Needs.json */; };
@@ -90,6 +91,7 @@
 		37204A4D268A9B58001B34F6 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		37204A50268ACEEA001B34F6 /* States.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = States.json; sourceTree = "<group>"; };
 		3721E9F0269F62CF00C63C5D /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
+		3731EE4F26A208E400B3EA16 /* CustomizeTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeTwoViewController.swift; sourceTree = "<group>"; };
 		374E50A425E48D37004320B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		374E50B625E48F1B004320B5 /* PurchaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseController.swift; sourceTree = "<group>"; };
 		375390CB266DD8BE0016791C /* Needs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Needs.json; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */,
+				3731EE4F26A208E400B3EA16 /* CustomizeTwoViewController.swift */,
 				37DFC93C269A64E100B97982 /* ReviewViewController.swift */,
 			);
 			name = Customize;
@@ -668,6 +671,7 @@
 				37204A4C268A9B50001B34F6 /* DateView.swift in Sources */,
 				37FC57B324F59F0F00610C60 /* ProductCollectionViewCell.swift in Sources */,
 				37FC57A324F5646D00610C60 /* HomeViewController.swift in Sources */,
+				3731EE5026A208E400B3EA16 /* CustomizeTwoViewController.swift in Sources */,
 				37B1989325B7C4A400E59CF6 /* CustomizerTableViewCell.swift in Sources */,
 				37DFC93B269A621F00B97982 /* StripeController.swift in Sources */,
 				37DFC93D269A64E100B97982 /* ReviewViewController.swift in Sources */,

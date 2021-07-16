@@ -17,18 +17,11 @@ class CustomizeViewController: UIViewController {
     
     // MARK: - Properties
     
-    let scrollImg: UIScrollView = UIScrollView()
-    var chosenTextField: UITextField?
-    var count = 0
-    var dateCount: Int?
     var product: Product?
     var template: Template?
-    var dateDelegate: DateDelegate?
-    var templateTextFieldDelegate: TemplateTextFieldDelegate?
     var indexPath: IndexPath?
     var reset: Bool = false
     var first: Bool = true
-    var completedCount: Int = 0
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         
@@ -46,203 +39,35 @@ class CustomizeViewController: UIViewController {
     
     @IBOutlet weak var templateContainerView: UIView!
     @IBOutlet weak var firstTemplateImageView: UIImageView!
-    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
     @IBOutlet weak var chooseTemplateView: UIView!
-    @IBOutlet weak var addInfoView: UIView!
-    @IBOutlet weak var customizeStackView: UIStackView!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var continueButton: UIButton!
     
     // MARK: - Views
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
-        first = false
-        setupCustomizer(template: template)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         setupSubviews()
+        first = false
     }
     
     // MARK: - Methods
     
     private func setupSubviews() {
-        let vWidth = self.templateContainerView.frame.width
-        let vHeight = self.templateContainerView.frame.height
-        
-        scrollImg.delegate = self
-        scrollImg.frame = CGRect(x: 0, y: 0, width: vWidth, height: vHeight)
-        scrollImg.backgroundColor = UIColor(red: 90, green: 90, blue: 90, alpha: 0.90)
-        scrollImg.alwaysBounceVertical = false
-        scrollImg.alwaysBounceHorizontal = false
-        scrollImg.showsVerticalScrollIndicator = false
-        scrollImg.showsHorizontalScrollIndicator = false
-        
-        scrollImg.minimumZoomScale = 1.0
-        scrollImg.maximumZoomScale = 10.0
-        
-        templateContainerView!.addSubview(scrollImg)
-        templateContainerView.layer.cornerRadius = 10
-        templateContainerView.clipsToBounds = true
-        scrollImg.addSubview(firstTemplateImageView!)
-        
-        templatesCollectionView.dataSource = self
-        templatesCollectionView.delegate = self
-    }
-    
-    private func updateViews() {
         guard let product = product else { return }
+        
         if product.templates?.isEmpty == true {
             return
         } else {
             firstTemplateImageView.image = UIImage(named: (product.templates?.first!.name) ?? "")
-            firstTemplateImageView.layer.cornerRadius = 10
-            firstTemplateImageView.clipsToBounds = true
-        }
-    }
-    
-    private func newTextField(image: UIImage, text: String) {
-        let textFieldView = TextFieldView()
-        textFieldView.iconButton.setBackgroundImage(image, for: .normal)
-        textFieldView.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
-        textFieldView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-        customizeStackView.addArrangedSubview(textFieldView)
-        textFieldView.textField.delegate = self
-        textFieldView.textField.attributedPlaceholder = NSAttributedString(string: text,
-                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        textFieldView.textField.tag = count
-    }
-    
-    private func setupCustomizer(template: Template?) {
-        count = 0
-        
-        self.template?.fulfilled = [:]
-        checkIfCustomized()
-        
-        scrollImg.zoomScale = 0
-        scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: 0), animated: true)
-        
-        customizeStackView.subviews.forEach({ $0.removeFromSuperview() })
-        
-        guard let template = template else { return }
-        for need in template.needs {
-            count += 1
-            switch need.id {
-            case 1:
-                //FirstName
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "First Name")
-            case 2:
-                //LastName
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Last Name")
-            case 3:
-                //LastInitial
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Last Initial")
-            case 4:
-                //FullName
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Full Name")
-            case 5:
-                //Monogram
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Monogram")
-            case 6:
-                //Initials
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Initials")
-            case 7:
-                //Date
-                let dateView = DateView()
-                dateView.calendarView.delegate = self
-                dateView.calendarView.dataSource = self
-                self.dateDelegate = dateView
-                dateView.heightAnchor.constraint(equalToConstant: 300.0).isActive = true
-                dateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(dateView)
-                dateCount = count
-            case 8:
-                //Address
-                newTextField(image: UIImage(systemName: "house.circle")!, text: "Address")
-            case 9:
-                //State
-                let stateView = StateView()
-                stateView.template = template
-                stateView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                stateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
-                customizeStackView.addArrangedSubview(stateView)
-                stateView.count = count
-                stateView.stateTappedDelegate = self
-            case 10:
-                //Message
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Message")
-                
-                count += 1
-                
-                //Signature
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Signature Line")
-            case 11:
-                //petName
-                newTextField(image: UIImage(systemName: "hare")!, text: "Pet's Name")
-            default:
-                return
-            }
         }
         
-        countLabel.text = "\(completedCount) of \(count)"
+        templatesCollectionView.dataSource = self
+        templatesCollectionView.delegate = self
         
-        if completedCount == count {
-            countLabel.textColor = UIColor(named: "Navy")
-        } else {
-            countLabel.textColor = .red
-        }
-        
-        customizeStackView.axis  = NSLayoutConstraint.Axis.vertical
-        customizeStackView.distribution  = UIStackView.Distribution.equalSpacing
-        customizeStackView.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    private func checkIfCustomized() {
-        guard let template = template else { return }
-        
-        var message: Bool = false
-        
-        for need in template.needs {
-            if need.id == 10 {
-                message = true
-            }
-        }
-        
-        if message {
-            if template.fulfilled.count == template.needs.count + 1 {
-                ProgressHUD.show()
-                countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count + 1)"
-                countLabel.textColor = UIColor(named: "Navy")
-                product?.chosenTemplate = []
-                product?.chosenTemplate?.append(template)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    ProgressHUD.showSuccess()
-                    self.performSegue(withIdentifier: "reviewSegue", sender: self)
-                }
-            } else {
-                countLabel.text = "\(template.fulfilled.count) of \(template.needs.count + 1)"
-                countLabel.textColor = .red
-            }
-        } else {
-            if template.fulfilled.count == template.needs.count {
-                ProgressHUD.show()
-                countLabel.text = "✓ \(template.fulfilled.count) of \(template.needs.count)"
-                countLabel.textColor = UIColor(named: "Navy")
-                product?.chosenTemplate = []
-                product?.chosenTemplate?.append(template)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    ProgressHUD.showSuccess()
-                    self.performSegue(withIdentifier: "reviewSegue", sender: self)
-                }
-            } else {
-                countLabel.text = "\(template.fulfilled.count) of \(template.needs.count)"
-                countLabel.textColor = .red
-            }
-        }
+        continueButton.layer.cornerRadius = 10
+        continueButton.addShadow()
     }
     
     // MARK: - Actions
@@ -250,24 +75,15 @@ class CustomizeViewController: UIViewController {
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
-    @objc func didPressOnDoneButton() {
-        guard let tf = chosenTextField else { return }
-        if tf.text == "" {
-            template?.fulfilled[tf.tag] = nil
-        } else {
-            template?.fulfilled[tf.tag] = tf.text
-        }
-        checkIfCustomized()
-        tf.resignFirstResponder()
-        scrollView.isScrollEnabled = true
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "step2Segue", sender: self)
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "reviewSegue" {
-            if let detailVC = segue.destination as? ReviewViewController {
+        if segue.identifier == "step2Segue" {
+            if let detailVC = segue.destination as? CustomizeTwoViewController {
                 detailVC.product = product
                 detailVC.template = template
             }
@@ -322,23 +138,13 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         if let template = product.templates?[indexPath.row] {
             firstTemplateImageView.image = UIImage(named: template.name)
             self.template = template
-            setupCustomizer(template: template)
             reset = true
             view.reloadInputViews()
-        }
-        if addInfoView.isHidden == true {
-            addInfoView.isHidden = false
-            if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-                layout.scrollDirection = .horizontal
-            }
         }
         
         let cell = collectionView.cellForItem(at: indexPath) as? TemplateCollectionViewCell
         cell?.layer.borderColor = UIColor(named: "Navy")!.cgColor
         cell?.isSelected = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
     }
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -348,52 +154,8 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
     }
 }
 
-extension CustomizeViewController: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.chosenTextField = textField
-        let invocation = IQInvocation(self, #selector(didPressOnDoneButton))
-        textField.keyboardToolbar.doneBarButton.invocation = invocation
-        scrollView.isScrollEnabled = false
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.text == "" {
-            template?.fulfilled[textField.tag] = nil
-        } else {
-            template?.fulfilled[textField.tag] = textField.text
-        }
-        checkIfCustomized()
-        textField.resignFirstResponder()
-        scrollView.isScrollEnabled = true
-        return true
-    }
-}
-
-extension CustomizeViewController: FSCalendarDataSource, FSCalendarDelegate {
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        let date = dateFormatter.string(from: date)
-        if date == "" {
-            return
-        } else {
-            dateDelegate?.dateTapped(date: date)
-            template?.fulfilled[dateCount!] = date
-            checkIfCustomized()
-        }
-    }
-}
-
 extension CustomizeViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.firstTemplateImageView
-    }
-}
-
-extension CustomizeViewController: StateTappedDelegate {
-    func stateTapped(state: String, count: Int) {
-        template?.fulfilled[count] = state
-        checkIfCustomized()
     }
 }

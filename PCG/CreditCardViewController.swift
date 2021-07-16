@@ -8,6 +8,7 @@
 
 import UIKit
 import Stripe
+import ProgressHUD
 
 class CreditCardViewController: UIViewController {
 
@@ -50,6 +51,7 @@ class CreditCardViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func confirmButtonTapped(_ sender: Any) {
+        ProgressHUD.show()
         let cardParams = cardTextField.cardParams
         paramsDelegate?.cardEntered(params: cardParams)
         self.dismiss(animated: true, completion: nil)

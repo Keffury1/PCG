@@ -51,7 +51,6 @@ class ReviewViewController: UIViewController {
     // MARK: - Methods
     
     private func setupSubviews() {
-        
         fulfilledTableView.delegate = self
         fulfilledTableView.dataSource = self
         
