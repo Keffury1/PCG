@@ -12,6 +12,7 @@ PODS:
   - Stripe/Stripe3DS2 (21.7.0):
     - StripeCore (= 21.7.0)
   - StripeCore (21.7.0)
+  - VerticalSlider (2.0.0)
 
 DEPENDENCIES:
   - DropDown
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - SkyFloatingLabelTextField
   - SMSegmentView
   - Stripe
+  - VerticalSlider
 
 SPEC REPOS:
   trunk:
@@ -34,6 +36,7 @@ SPEC REPOS:
     - SMSegmentView
     - Stripe
     - StripeCore
+    - VerticalSlider
 
 SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
@@ -45,7 +48,8 @@ SPEC CHECKSUMS:
   SMSegmentView: 3c3aa59206a67a7c8a9e05593f84aa875eddeeba
   Stripe: 90596971ef49bade169f68bc59369a796b30a045
   StripeCore: c09b492efc3b269a6ff875ad738ca366db97e03b
+  VerticalSlider: 655f2bc3ed062bac13e21c174f5ff93b8308571d
 
-PODFILE CHECKSUM: e2e73dcc0f80ee60e88a6e364d1f20116e347247
+PODFILE CHECKSUM: ba01ca565a826ba129bc047ffe88cd240d6dec6a
 
 COCOAPODS: 1.10.1

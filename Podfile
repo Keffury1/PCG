@@ -17,4 +17,5 @@ target 'PCG' do
   pod 'SkyFloatingLabelTextField'
   pod 'ProgressHUD'
   pod 'NBBottomSheet'
+  pod 'VerticalSlider'
 end

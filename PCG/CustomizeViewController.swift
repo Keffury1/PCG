@@ -12,11 +12,13 @@ import FSCalendar
 import IQKeyboardManagerSwift
 import CoreData
 import ProgressHUD
+import VerticalSlider
 
 class CustomizeViewController: UIViewController {
     
     // MARK: - Properties
     
+    let scrollImg = UIScrollView()
     var product: Product?
     var template: Template?
     var indexPath: IndexPath?
@@ -43,6 +45,7 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var chooseTemplateView: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var verticalSlider: VerticalSlider!
     
     // MARK: - Views
     
@@ -63,11 +66,31 @@ class CustomizeViewController: UIViewController {
             firstTemplateImageView.image = UIImage(named: (product.templates?.first!.name) ?? "")
         }
         
+        let vWidth = self.templateContainerView.frame.width
+        let vHeight = self.templateContainerView.frame.height
+        
+        scrollImg.delegate = self
+        scrollImg.frame = CGRect(x: 0, y: 0, width: vWidth, height: vHeight)
+        scrollImg.showsVerticalScrollIndicator = false
+        scrollImg.showsHorizontalScrollIndicator = false
+        
+        scrollImg.minimumZoomScale = 1
+        scrollImg.maximumZoomScale = 10
+        
+        templateContainerView.addSubview(scrollImg)
+        templateContainerView.layer.cornerRadius = 10
+        templateContainerView.clipsToBounds = true
+        firstTemplateImageView.layer.cornerRadius = 10
+        firstTemplateImageView.clipsToBounds = true
+        scrollImg.addSubview(firstTemplateImageView)
+        
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
         
         continueButton.layer.cornerRadius = 10
         continueButton.addShadow()
+        
+        verticalSlider.slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
     }
     
     private func enableContinueButton() {
@@ -80,6 +103,10 @@ class CustomizeViewController: UIViewController {
         continueButton.setTitle(" ", for: .normal)
         continueButton.setImage(nil, for: .normal)
         continueButton.isUserInteractionEnabled = false
+    }
+    
+    @objc private func sliderChanged() {
+        scrollImg.setZoomScale(CGFloat(verticalSlider.value), animated: true)
     }
     
     // MARK: - Actions
