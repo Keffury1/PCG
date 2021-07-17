@@ -60,6 +60,11 @@ class CartViewController: UIViewController {
     private func setubSubviews() {
         cartTableView.dataSource = self
         cartTableView.delegate = self
+        cartTableView.backgroundColor = .white
+        cartTableView.addShadow()
+        cartTableView.clipsToBounds = false
+        cartTableView.layer.masksToBounds = false
+        cartTableView.layer.cornerRadius = 10
         checkoutButton.layer.cornerRadius = 10
         checkoutButton.addShadow()
         viewProductsButton.layer.cornerRadius = 10
@@ -142,6 +147,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         let item = cart[indexPath.row]
         
         let chosen = item.chosenArray.first
+        cell.contentView.layer.cornerRadius = 10
         cell.productImageView.image = UIImage(named: chosen!.name!)
         cell.productImageView.layer.cornerRadius = 10
         cell.titleLabel.text = item.name?.capitalized
