@@ -74,6 +74,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         shopView.layer.cornerRadius = 15
         shopView.addShadow()
+        
+        viaEtsyButton.semanticContentAttribute = UIApplication.shared
+            .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
     }
     
     // MARK: - Actions
@@ -87,6 +90,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     @IBAction func viaEtsyButtonTapped(_ sender: Any) {
+        guard let url = URL(string: "https://www.etsy.com/shop/DeskCandy?ref=profile_header#reviews") else { return }
+        UIApplication.shared.open(url)
     }
     
     // MARK: - Navigation
