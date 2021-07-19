@@ -212,9 +212,9 @@ class CheckoutViewController: UIViewController {
             ProgressHUD.showError("Enter Shipping Address", image: nil, interaction: true)
             return
         }
-        let merchantIdentifier = "merchant.com.BobbyKeffury.PCG"
+        let merchantIdentifier = "merchant.com.RobertKeffury.PCG"
         let paymentRequest = StripeAPI.paymentRequest(withMerchantIdentifier: merchantIdentifier, country: "US", currency: "USD")
-        
+
         // Configure the line items on the payment request
         paymentRequest.paymentSummaryItems = [
             // The final line should represent your company;

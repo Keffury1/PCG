@@ -148,6 +148,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         
         let chosen = item.chosenArray.first
         cell.contentView.layer.cornerRadius = 10
+        cell.layer.cornerRadius = 10
         cell.productImageView.image = UIImage(named: chosen!.name!)
         cell.productImageView.layer.cornerRadius = 10
         cell.titleLabel.text = item.name?.capitalized
