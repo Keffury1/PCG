@@ -278,14 +278,11 @@ extension CheckoutViewController: STPApplePayContextDelegate {
     func applePayContext(_ context: STPApplePayContext, didCompleteWith status: STPPaymentStatus, error: Error?) {
         switch status {
         case .success:
-            ProgressHUD.showSuccess()
             saveOrder()
             break
         case .error:
-            ProgressHUD.showError()
             break
         case .userCancellation:
-            ProgressHUD.dismiss()
             break
         @unknown default:
             fatalError()
