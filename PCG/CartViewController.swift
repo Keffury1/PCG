@@ -117,17 +117,19 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
             cartTableView.isUserInteractionEnabled = false
             emptyCartView.alpha = 1
             emptyCartView.isUserInteractionEnabled = true
-            checkoutButton.setTitle("", for: .normal)
-            checkoutButton.setImage(nil, for: .normal)
             checkoutButton.isUserInteractionEnabled = false
+            checkoutButton.setTitleColor(UIColor(named: "Navy")!, for: .normal)
+            checkoutButton.tintColor = UIColor(named: "Navy")!
+            checkoutButton.backgroundColor = UIColor(named: "Tan")!
         } else if fetchedResultsController.fetchedObjects?.first?.cartArray.count == 0 {
             cartTableView.alpha = 0
             cartTableView.isUserInteractionEnabled = false
             emptyCartView.alpha = 1
             emptyCartView.isUserInteractionEnabled = true
-            checkoutButton.setTitle("", for: .normal)
-            checkoutButton.setImage(nil, for: .normal)
             checkoutButton.isUserInteractionEnabled = false
+            checkoutButton.setTitleColor(UIColor(named: "Navy")!, for: .normal)
+            checkoutButton.tintColor = UIColor(named: "Navy")!
+            checkoutButton.backgroundColor = UIColor(named: "Tan")!
         } else {
             cartTableView.alpha = 1
             cartTableView.isUserInteractionEnabled = true
@@ -135,6 +137,9 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
             emptyCartView.isUserInteractionEnabled = false
             checkoutButton.setTitle(" Checkout", for: .normal)
             checkoutButton.setImage(UIImage(systemName: "cart.circle"), for: .normal)
+            checkoutButton.backgroundColor = UIColor(named: "Navy")!
+            checkoutButton.setTitleColor(.white, for: .normal)
+            checkoutButton.tintColor = .white
             checkoutButton.isUserInteractionEnabled = true
         }
         return fetchedResultsController.fetchedObjects?.first?.cartArray.count ?? 0

@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Outlets
     
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var reviewsCollectionView: UICollectionView!
     @IBOutlet weak var membershipView: UIView!
     @IBOutlet weak var shopView: UIView!
@@ -68,6 +69,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     private func setupSubviews() {
         headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
+        
+        logoImageView.layer.cornerRadius = 15
+        logoImageView.clipsToBounds = true
+        logoImageView.addShadow()
         
         membershipView.layer.cornerRadius = 15
         membershipView.addShadow()

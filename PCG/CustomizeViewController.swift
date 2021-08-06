@@ -96,12 +96,18 @@ class CustomizeViewController: UIViewController {
     private func enableContinueButton() {
         continueButton.setTitle(" Continue", for: .normal)
         continueButton.setImage(UIImage(systemName: "arrow.right.circle"), for: .normal)
+        continueButton.setTitleColor(.white, for: .normal)
+        continueButton.tintColor = .white
+        continueButton.backgroundColor = UIColor(named: "Navy")!
         continueButton.isUserInteractionEnabled = true
     }
     
     private func disableContinueButton() {
-        continueButton.setTitle(" ", for: .normal)
-        continueButton.setImage(nil, for: .normal)
+        continueButton.setTitle(" Choose Template", for: .normal)
+        continueButton.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+        continueButton.setTitleColor(UIColor(named: "Navy")!, for: .normal)
+        continueButton.tintColor = UIColor(named: "Navy")!
+        continueButton.backgroundColor = UIColor(named: "Tan")!
         continueButton.isUserInteractionEnabled = false
     }
     

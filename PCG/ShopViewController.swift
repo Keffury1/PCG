@@ -140,12 +140,16 @@ class ShopViewController: UIViewController {
     @IBAction func lowToHighTapped(_ sender: Any) {
         let array = self.products.sorted(by: { $0.price < $1.price })
         self.products = array
+        lowToHighButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
+        highToLowButton.setImage(UIImage(systemName: "chart.bar"), for: .normal)
         productsCollectionView.reloadData()
     }
     
     @IBAction func highToLowTapped(_ sender: Any) {
         let array = self.products.sorted(by: { $0.price > $1.price })
         self.products = array
+        lowToHighButton.setImage(UIImage(systemName: "chart.bar"), for: .normal)
+        highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
         productsCollectionView.reloadData()
     }
     

@@ -190,10 +190,16 @@ class CustomizeTwoViewController: UIViewController {
         if reviewButton.isUserInteractionEnabled == false {
             reviewButton.setTitle(" Review", for: .normal)
             reviewButton.setImage(UIImage(systemName: "doc.text.magnifyingglass"), for: .normal)
+            reviewButton.backgroundColor = UIColor(named: "Navy")!
+            reviewButton.setTitleColor(.white, for: .normal)
+            reviewButton.tintColor = .white
             reviewButton.isUserInteractionEnabled = true
         } else {
-            reviewButton.setTitle(" ", for: .normal)
-            reviewButton.setImage(nil, for: .normal)
+            reviewButton.setTitle(" Customize", for: .normal)
+            reviewButton.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+            reviewButton.backgroundColor = UIColor(named: "Tan")!
+            reviewButton.setTitleColor(UIColor(named: "Navy")!, for: .normal)
+            reviewButton.tintColor = UIColor(named: "Navy")!
             reviewButton.isUserInteractionEnabled = false
         }
     }
