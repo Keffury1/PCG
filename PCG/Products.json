@@ -1,12 +1,12 @@
 [
     {
         "id": 16,
-        "name": "Classic Stamp",
-        "image": "Classic Stamp",
+        "name": "Classic Address Stamp",
+        "image": "Classic Address Stamp",
         "category": "Stamp",
         "price": 27,
         "discountPrice": 22,
-        "description": "Our self-inking address stamps last for thousands of impressions and are a much-needed gift that your client will use on a regular basis",
+        "description": "PCG Classic Address Stamps provide the best ROI for a closing gift on the market. Our proprietary process incorporates your marketing information on the front of every stamp casing. This information will NEVER rub or scratch off! It is not a label or piece of paper. This stamp will last thousands of impressions and your client will never get rid of it. That means, your client will have your name, phone number and email at their fingertips when they are ready to move or refer you to a friend. *Address Stamps have a onetime $45 set up fee to develop the artwork on the front of the stamp casing. Please send us your photo, logo and any marketing information that you would like to appear on the front of your stamp casing. Please submit your attachments in a .jpeg or .TIFF file format in 300 dpi resolution or better and e-mail to: artwork@perfectclosinggift.com. You will receive a full color artwork proof within 1 to 3 business days. Please, respond to the e-mail with any necessary changes. We will make any required changes and re-send an updated artwork proof for final acceptance. Credit card payment for the artwork fee can be made over the phone when artwork is submitted 805-481-9787 x110",
         "count": 0,
         "templates": [
             {
@@ -272,12 +272,12 @@
     },
     {
         "id": 17,
-        "name": "Monogram Stamp",
-        "image": "Monogram Stamp",
+        "name": "Monogram Address Stamp",
+        "image": "Monogram Address Stamp",
         "category": "Stamp",
         "price": 37,
         "discountPrice": 33,
-        "description": "Our self-inking address stamps last for thousands of impressions and are a much-needed gift that your client will use on a regular basis",
+        "description": "Monogram Address Stamps, popular with millennials, provide an upscale look to your address information. Our proprietary process permanently incorporates your marketing information on the front of every stamp casing. This information will NEVER rub or scratch off. This stamp will last thousands of impressions. That means, your client will have your name, phone number and email at their fingertips when they are ready to move or refer you to a friend. *Address Stamps have a onetime $45 set up fee to develop the artwork on the front of the stamp casing. Please send us your photo, logo and any marketing information that you would like to appear on the front of your stamp casing. Please submit your attachments in a .jpeg or .TIFF file format in 300 dpi resolution or better and e-mail to: artwork@perfectclosinggift.com. You will receive a full color artwork proof within 1 to 3 business days. Please, respond to the e-mail with any necessary changes. We will make any required changes and re-send an updated artwork proof for final acceptance. Credit card payment for the artwork fee can be made over the phone when artwork is submitted 805-481-9787 x110",
         "count": 0,
         "templates": [
             {
@@ -592,7 +592,7 @@
         "category": "CuttingBoard",
         "price": 42,
         "discountPrice": 36,
-        "description": "These exclusive cutting boards are antibacterial, shatter resistant & can be used with all food types When they're not busy preparing the daily meal, these beautiful cutting boards will be displayed as kitchen décor",
+        "description": "PCG Large Glass Cutting Boards (12” x 15”) are antibacterial, dishwasher safe, shatter resistant and perfect for all food types. When they are not busy preparing the daily meal, these beautiful cutting boards will be displayed as kitchen décor. Select from one of our 30 specially designed templates or upload your custom photo.",
         "count": 0,
         "templates": [
             {
@@ -1151,7 +1151,7 @@
         "category": "CheeseBoard",
         "price": 70,
         "discountPrice": 60,
-        "description": "With classic white mable on top & acacia wood on the bottom, these gorgeous boards are the perfect home decor",
+        "description": "The PCG Marble with Acacia Wood Cheese board is an exceptional gift which pairs functionality with classic home décor elements. This gorgeous, kitchen décor item with your subtle marketing will stay out on the client's counter when it is not in use - it will not be put away in a drawer! That means you can market to your client AND their friends and family",
         "count": 0,
         "templates": [
             {
@@ -1324,7 +1324,7 @@
         "category": "CoasterSet",
         "price": 0,
         "discountPrice": 0,
-        "description": "",
+        "description": "PCG Marble with Acacia Wood Coaster Sets are a great standalone gift or as a compliment to the matching cheese board. The trendy mixed materials offer an upscale look and will be used on a regular basis by friends and family alike.",
         "count": 0,
         "templates": [
             {
@@ -1497,7 +1497,7 @@
         "category": "CuttingBoard",
         "price": 63,
         "discountPrice": 50,
-        "description": "Maple wood, which is light in color and full of subtle grain marks, makes and excellent complement to your client's kitchen Maple is a hard wood which resists scarring and provides a natural protection against microbial contamination",
+        "description": "Maple wood, which is light in color and full of subtle grain marks, makes and excellent complement to your client's kitchen. Maple is a hard wood which resists scarring and provides a natural protection against microbial contamination.",
         "count": 0,
         "templates": [
             {
@@ -1854,12 +1854,12 @@
     },
     {
         "id": 19,
-        "name": "3-Tool Cheese Board",
-        "image": "3-Tool Cheese Board",
+        "name": "Bamboo Cheese Board w/ 3 Tools",
+        "image": "Bamboo Cheese Board w/ 3 Tools",
         "category": "CheeseBoard",
         "price": 88,
         "discountPrice": 77,
-        "description": "The bamboo is topped by a tempered Pyrex cutting board that is conveniently removeable, so it can double as a serving tray There is no need to go back to the kitchen for a cheese knife Simply pull out the 'hidden' drawer & you'll find 3 varieties of cheese tools ready to use",
+        "description": "The PCG Bamboo Cheese board with Three Cheese Tools is the luxury choice for serving cheese while entertaining. Each gift is made with a caramel colored, naturally sustainable bamboo cutting board base. The bamboo is topped by a removable tempered Pyrex cutting board that doubles as a serving tray. This special gift includes a set of 3 Cheese tools in a hidden drawer for different kinds of cheese varietals.",
         "count": 0,
         "templates": [
             {
@@ -2217,7 +2217,7 @@
         "category": "CheeseBoard",
         "price": 60,
         "discountPrice": 47,
-        "description": "Our charcoal slate cutting boards offer a beautifully rustic, organic surface to match any type of household From a farmhouse styled home to a bachelor pad, these slate cutting boards are sure to make a statement",
+        "description": "Our charcoal slate cheese boards offer a beautifully rustic, organic surface to match any type of household. From a farmhouse styled home to a bachelor pad, these slate cutting boards are sure to make a statement.",
         "count": 0,
         "templates": [
             {
@@ -2597,12 +2597,12 @@
     },
     {
         "id": 15,
-        "name": "Slate Coasters",
-        "image": "Slate Coasters",
+        "name": "Slate Coaster Set",
+        "image": "Slate Coaster Set",
         "category": "CoasterSet",
         "price": 0,
         "discountPrice": 0,
-        "description": "",
+        "description": "Slate is a very popular material trending in today's kitchens. The natural streamlined look complements rustic and contemporary home design in both style and color. The set of four 4”x4” coasters are equipped with cork feet for furniture protection.",
         "count": 0,
         "templates": [
             {
@@ -2955,12 +2955,12 @@
     },
     {
         "id": 18,
-        "name": "Steak Knife Set",
+        "name": "Laguiole Steak Knife Set",
         "image": "Laguiole Steak Knife Set",
         "category": "KnifeSet",
         "price": 125,
         "discountPrice": 109,
-        "description": "Made in Francem these knives were inspired by pocket knives used by French Shepherds 200 years ago Each blade is made from high quality stainless steel, light weight acrylic handle (Ivory) with a beautiful Platine detailing down the spine",
+        "description": "PCG Laguiole Steak Knives are renowned for quality and tradition that dates from the 19th century. Made in Laguiole, France the set of six stainless-steel knives comes with ivory acrylic handles that includes beautiful Platine detailing down the spine of each blade.  Each gift is presented in a personalized presentation box that is monogrammed for your client and includes your marketing or two-line message of gratitude (or logo). Inside each gift set is a Certificate of Authenticity.",
         "count": 0,
         "templates": [
             {
@@ -3203,7 +3203,7 @@
         "category": "KnifeSet",
         "price": 195,
         "discountPrice": 185,
-        "description": "The Santoku knives are hand forged in Germany with the highest quality carbon stainless steel for exceptional durability Each blade is laser pricision measured to guarantee world class sharpness",
+        "description": "The Santoku knives are hand forged in Germany with the highest quality carbon stainless steel for exceptional durability. Each blade is laser pricision measured to guarantee world class sharpness. This beautiful set comes in a personalized bamboo presentation box. The removable lid doubles as a cutting board.",
         "count": 0,
         "templates": [
             {
@@ -3444,7 +3444,7 @@
         "category": "Lantern",
         "price": 70,
         "discountPrice": 57,
-        "description": "Be the focal point of your client's home with our captivating personalized rustic lanterns The delightful flicker of a candle illuminates your client's name",
+        "description": "Be the focal point of your client's home with our captivating personalized rustic lanterns. The delightful flicker of a candle illuminates your client's name.",
         "count": 0,
         "templates": [
             {
@@ -3536,7 +3536,7 @@
         "category": "DogTreatJar",
         "price": 40,
         "discountPrice": 35,
-        "description": "Give your client's furry friend a special treat on closing day This refillable treat jar is personalized with your client's pup's name & comes with 18 matching peanut butter personalized cookies!",
+        "description": "Give your client's furry friend a special treat on closing day. This refillable treat jar is personalized with your client's pup's name & comes with 18 matching peanut butter personalized cookies!",
         "count": 0,
         "templates": [
             {
@@ -3617,7 +3617,7 @@
         "category": "Ornament",
         "price": 0,
         "discountPrice": 0,
-        "description": "",
+        "description": "Glass Holiday Ornaments are a sentimental keepsake that your client will place on their tree every year. This is a great way to touch this year’s clients to say Thank You. Available in four shapes, personalize each ornament with the family name, year, and your holiday wishes.",
         "count": 0,
         "templates": [
             {
@@ -3823,24 +3823,24 @@
     },
     {
         "id": 3,
-        "name": "Welcome Mat",
-        "image": "Welcome Mat",
+        "name": "Welcome Home Doormat",
+        "image": "Welcome Home Doormat",
         "category": "Doormat",
         "price": 0,
         "discountPrice": 0,
-        "description": "",
+        "description": "Our classically inspired coir doormat knows how to make an entrance and keep the foyer clean. These mats are manufactured in the USA from durable dense natural coir fiber (outer husk of coconut shells). Using coir helps scrape shoes clean with lasting endurance. Each fiber is inserted into an all-weather vinyl backing to increase durability and help prevent shifting and movement.  To ensure a long-lasting product, the personalization on the mat is flocked instead of painted to resist fading. These mats are stain, rot, and mildew resistant, weather tolerant and can absorb moisture. ",
         "count": 0,
         "templates": [],
         "chosenTemplate": []
     },
     {
         "id": 6,
-        "name": "Tumbled Marble Coasters",
-        "image": "Tumbled Marble Coasters",
+        "name": "Thirsty Stone Coasters",
+        "image": "Thirsty Stone Coasters",
         "category": "CoasterSet",
         "price": 0,
         "discountPrice": 0,
-        "description": "",
+        "description": "PCG Thirsty Coasters are perfect for everyday use in your client’s home. Our set of four 4” x 4” coasters are made from natural sandstone which absorbs moisture and condensation. Cork backing protects furniture.",
         "count": 0,
         "templates": [
             {
@@ -4160,7 +4160,7 @@
         "category": "Doormat",
         "price": 60,
         "discountPrice": 45,
-        "description": "Each open house doormat is made from a tufted looped polyester with a non-skid rubberized backing and black edges Your design is printed into the mat, which creates a durable, weather-resistant image that lasts!",
+        "description": "Each open house doormat is made from a tufted looped polyester with a non-skid rubberized backing and black edges. Your design is printed into the mat, which creates a durable, weather-resistant image that lasts! Each mat will be made in your corporate colors and can include your logo and/or photo at no charge.",
         "count": 0,
         "templates": [],
         "chosenTemplate": []
