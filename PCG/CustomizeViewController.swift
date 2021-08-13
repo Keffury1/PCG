@@ -55,6 +55,16 @@ class CustomizeViewController: UIViewController {
         first = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if product?.templates?.count == 1 {
+            let indexPath = self.templatesCollectionView.indexPathsForSelectedItems?.first ?? IndexPath(item: 0, section: 0)
+            self.templatesCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+            collectionView(templatesCollectionView, didSelectItemAt: indexPath)
+        }
+    }
+    
     // MARK: - Methods
     
     private func setupSubviews() {
