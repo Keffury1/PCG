@@ -18,4 +18,5 @@ target 'PCG' do
   pod 'ProgressHUD'
   pod 'NBBottomSheet'
   pod 'VerticalSlider'
+  pod 'ReadMoreTextView'
 end

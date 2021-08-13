@@ -4,6 +4,7 @@ PODS:
   - IQKeyboardManagerSwift (6.5.6)
   - NBBottomSheet (1.2.0)
   - ProgressHUD (13.6)
+  - ReadMoreTextView (3.0.1)
   - SkyFloatingLabelTextField (4.0.0)
   - SMSegmentView (1.3.1)
   - Stripe (21.7.0):
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - NBBottomSheet
   - ProgressHUD
+  - ReadMoreTextView
   - SkyFloatingLabelTextField
   - SMSegmentView
   - Stripe
@@ -32,6 +34,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - NBBottomSheet
     - ProgressHUD
+    - ReadMoreTextView
     - SkyFloatingLabelTextField
     - SMSegmentView
     - Stripe
@@ -44,12 +47,13 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   NBBottomSheet: aa7a52809b2d7b193f733247b8ce391a59904372
   ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
+  ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
   SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
   SMSegmentView: 3c3aa59206a67a7c8a9e05593f84aa875eddeeba
   Stripe: 90596971ef49bade169f68bc59369a796b30a045
   StripeCore: c09b492efc3b269a6ff875ad738ca366db97e03b
   VerticalSlider: 655f2bc3ed062bac13e21c174f5ff93b8308571d
 
-PODFILE CHECKSUM: ba01ca565a826ba129bc047ffe88cd240d6dec6a
+PODFILE CHECKSUM: c726ab0b1c1ac481f0d3e5eab1bae4905d5b20fc
 
 COCOAPODS: 1.10.1

@@ -130,6 +130,7 @@ class CustomizeViewController: UIViewController {
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func continueButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "step2Segue", sender: self)
     }

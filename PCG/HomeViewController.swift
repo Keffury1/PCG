@@ -70,7 +70,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private func setupSubviews() {
         headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         
-        logoImageView.layer.cornerRadius = 15
+        logoImageView.layer.cornerRadius = logoImageView.frame.width / 2
         logoImageView.clipsToBounds = true
         logoImageView.addShadow()
         

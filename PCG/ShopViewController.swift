@@ -119,6 +119,11 @@ class ShopViewController: UIViewController {
                 self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
             }
         }
+        dropDown.cancelAction = {
+            UIView.animate(withDuration: 0.3) {
+                self.menuButton.transform = self.menuButton.transform.rotated(by: CGFloat(Double.pi))
+            }
+        }
         dropDown.cornerRadius = 10
         dropDown.show()
         UIView.animate(withDuration: 0.5) {
