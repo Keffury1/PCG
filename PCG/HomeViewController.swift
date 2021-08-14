@@ -37,6 +37,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         reviewsCollectionView.layer.cornerRadius = 10.0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        logoImageView.layer.cornerRadius = logoImageView.frame.width / 2
+        logoImageView.clipsToBounds = true
+        logoImageView.addShadow()
+    }
+    
     // MARK: - Colllection View Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -68,11 +75,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Methods
     
     private func setupSubviews() {
-        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
-        
-        logoImageView.layer.cornerRadius = logoImageView.frame.width / 2
-        logoImageView.clipsToBounds = true
-        logoImageView.addShadow()
+//        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         
         membershipView.layer.cornerRadius = 15
         membershipView.addShadow()
