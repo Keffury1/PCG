@@ -55,6 +55,9 @@ class ShopViewController: UIViewController {
         setupSubviews()
         
         productController.loadProducts()
+        guard let products = productController.products else { return }
+        self.products = products
+        productsCollectionView.reloadData()
         productsCollectionView.delegate = self
         productsCollectionView.dataSource = self
     }
@@ -62,10 +65,6 @@ class ShopViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        guard let products = productController.products else { return }
-        self.products = products
-        productsCollectionView.reloadData()
-        menuLabel.setTitle("Menu", for: .normal)
         guard let array = fetchedResultsController.fetchedObjects?.first?.cartArray else { return }
         if array.count > 0 {
             cartButton.addBadgeToButon(badge: "\(array.count)")
@@ -168,10 +167,13 @@ class ShopViewController: UIViewController {
                 productsCollectionView.reloadData()
             } else if item == "1 - $25 ↓" {
                 sortByPrice(price: 25)
+                menuLabel.setTitle("$25 & Under", for: .normal)
             } else if item == "2 - $50 ↓" {
                 sortByPrice(price: 50)
+                menuLabel.setTitle("$50 & Under", for: .normal)
             } else if item == "3 - $100 ↓" {
                 sortByPrice(price: 100)
+                menuLabel.setTitle("$100 & Under", for: .normal)
             }
         }
         priceDown.cornerRadius = 10
