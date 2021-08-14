@@ -180,7 +180,12 @@ class CheckoutViewController: UIViewController {
     
     @IBAction func textFieldDidFinishEditing(_ sender: SkyFloatingLabelTextField) {
         if let text = sender.text {
-            let geoCoder = CLGeocoder()
+            if text == "" {
+                self.address = nil
+                self.mapView.removeAnnotations(mapView.annotations)
+            } else {
+                self.address = text
+                let geoCoder = CLGeocoder()
                 geoCoder.geocodeAddressString(text) { (placemarks, error) in
                     guard let placemarks = placemarks, let location = placemarks.first?.location else {
                         print("Error Getting Location: \(error!)")
@@ -192,6 +197,7 @@ class CheckoutViewController: UIViewController {
                     self.mapView.centerCoordinate = annotation.coordinate
                     let region = MKCoordinateRegion( center: location.coordinate, latitudinalMeters: CLLocationDistance(exactly: 30000)!, longitudinalMeters: CLLocationDistance(exactly: 30000)!)
                     self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
+                }
             }
         }
     }
@@ -247,21 +253,26 @@ extension CheckoutViewController: STPAuthenticationContext {
 extension CheckoutViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
-            let geoCoder = CLGeocoder()
-            mapView.removeAnnotations(mapView.annotations)
-            geoCoder.geocodeAddressString(text) { (placemarks, error) in
-                guard let placemarks = placemarks, let location = placemarks.first?.location else {
-                    print("Error Getting Location: \(error!)")
-                    return
-                }
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = location.coordinate
-                self.mapView.addAnnotation(annotation)
-                self.mapView.centerCoordinate = annotation.coordinate
-                let region = MKCoordinateRegion( center: location.coordinate, latitudinalMeters: CLLocationDistance(exactly: 20000)!, longitudinalMeters: CLLocationDistance(exactly: 20000)!)
-                self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
+            if textField.text == nil {
+                self.address = nil
+                self.mapView.removeAnnotations(mapView.annotations)
+            } else {
                 self.address = text
-                textField.resignFirstResponder()
+                let geoCoder = CLGeocoder()
+                mapView.removeAnnotations(mapView.annotations)
+                geoCoder.geocodeAddressString(text) { (placemarks, error) in
+                    guard let placemarks = placemarks, let location = placemarks.first?.location else {
+                        print("Error Getting Location: \(error!)")
+                        return
+                    }
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = location.coordinate
+                    self.mapView.addAnnotation(annotation)
+                    self.mapView.centerCoordinate = annotation.coordinate
+                    let region = MKCoordinateRegion( center: location.coordinate, latitudinalMeters: CLLocationDistance(exactly: 20000)!, longitudinalMeters: CLLocationDistance(exactly: 20000)!)
+                    self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
+                    textField.resignFirstResponder()
+                }
             }
         }
         return true
