@@ -14,6 +14,7 @@ class ShopViewController: UIViewController {
 
     // MARK: - Properties
     var items: [String : String] = ["Cutting Boards":"CuttingBoard", "Lanterns":"Lantern", "Coaster Sets":"CoasterSet","Cheese Boards":"CheeseBoard", "Stamps":"Stamp", "Knife Sets":"KnifeSet", "Ornaments":"Ornament", "Doormats":"Doormat", "Jars":"DogTreatJar", "View All Products":""]
+    var prices: [String: String] = ["4 - White Label":"4","3 - $100 ↓":"3","1 - $25 ↓":"1","2 - $50 ↓":"2"]
     let productController = ProductController()
     var price: Bool = true
     var display: Bool = true
@@ -21,6 +22,7 @@ class ShopViewController: UIViewController {
     var product: Product?
     var cart: [Product]?
     let dropDown = DropDown()
+    let priceDown = DropDown()
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         
@@ -94,6 +96,19 @@ class ShopViewController: UIViewController {
         })
     }
     
+    func sortByPrice(price: Int) {
+        var array: [Product] = []
+        for item in productController.products! {
+            if item.price < price {
+                array.append(item)
+            }
+        }
+        self.products = array
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.productsCollectionView.reloadData()
+        }
+    }
+    
     func removeChoices(_ string: String) {
         display = true
         menuLabel.setTitle(string, for: .normal)
@@ -134,12 +149,33 @@ class ShopViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func priceButtonTapped(_ sender: Any) {
-        if price {
-            price = false
-        } else {
-            price = true
+        
+        priceDown.anchorView = priceButton
+        priceDown.bottomOffset = CGPoint(x: 0, y:((priceDown.anchorView?.plainView.bounds.height)! + 5))
+        priceDown.backgroundColor = UIColor(named: "Navy")
+        priceDown.textColor = .white
+        priceDown.separatorColor = UIColor(named: "Tan")!
+        priceDown.dataSource = prices.keys.sorted()
+        priceDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            if item == "4 - White Label" {
+                if price {
+                    price = false
+                    priceButton.setBackgroundImage(UIImage(systemName: "dollarsign.circle.fill"), for: .normal)
+                } else {
+                    price = true
+                    priceButton.setBackgroundImage(UIImage(systemName: "dollarsign.circle"), for: .normal)
+                }
+                productsCollectionView.reloadData()
+            } else if item == "1 - $25 ↓" {
+                sortByPrice(price: 25)
+            } else if item == "2 - $50 ↓" {
+                sortByPrice(price: 50)
+            } else if item == "3 - $100 ↓" {
+                sortByPrice(price: 100)
+            }
         }
-        productsCollectionView.reloadData()
+        priceDown.cornerRadius = 10
+        priceDown.show()
     }
 
     @IBAction func lowToHighTapped(_ sender: Any) {
