@@ -15,6 +15,12 @@ class ReviewViewController: UIViewController {
     // MARK: - Properties
     
     var product: Product?
+    var reviewing: Bool = true
+    var cartProduct: CDProduct? {
+        didSet {
+            reviewing = false
+        }
+    }
     var template: Template?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
@@ -44,7 +50,7 @@ class ReviewViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        guard let template = template else { return }
+        guard let template = template else { imageView.image = UIImage(named: "\(cartProduct?.chosenArray.first?.name ?? "")"); return }
         imageView.image = UIImage(named: "\(template.name)")
     }
     
@@ -56,40 +62,56 @@ class ReviewViewController: UIViewController {
         
         addToCartButton.layer.cornerRadius = 10
         addToCartButton.addShadow()
+        if reviewing {
+            addToCartButton.setTitle(" Add to Cart", for: .normal)
+        } else {
+            addToCartButton.setTitle(" Return", for: .normal)
+        }
     }
     
     // MARK: - Actions
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
-        guard let template = template, var product = product else { return }
-        ProgressHUD.show()
-        product.chosenTemplate?.append(template)
-        product.count += 1
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
-        let moc = CoreDataStack.shared.mainContext
-        let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price),address: "", date: "", context: moc)
-        let newTemplate = CDTemplate(id: Int16(template.id), name: template.name, context: moc)
-        newProduct.addToChosenTemplate(newTemplate)
-        
-        if fetchedResultsController.fetchedObjects?.isEmpty == true {
-            let cart = Cart(name: "New Cart", context: moc)
-            cart.addToCartProducts(newProduct)
+        if reviewing {
+            guard let template = template, var product = product else { return }
+            ProgressHUD.show()
+            product.chosenTemplate?.append(template)
+            product.count += 1
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
+            let moc = CoreDataStack.shared.mainContext
+            let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price),address: "", date: "", context: moc)
+            let newTemplate = CDTemplate(id: Int16(template.id), name: template.name, context: moc)
+            for fulfilled in template.fulfilled {
+                newTemplate.addToFulfilled(Fulfilled(text: fulfilled.value, context: moc))
+            }
+            newProduct.addToChosenTemplate(newTemplate)
+            
+            if fetchedResultsController.fetchedObjects?.isEmpty == true {
+                let cart = Cart(name: "New Cart", context: moc)
+                cart.addToCartProducts(newProduct)
+            } else {
+                fetchedResultsController.fetchedObjects?.first?.addToCartProducts(newProduct)
+            }
+            
+            do {
+                try moc.save()
+                ProgressHUD.showSuccess()
+            } catch {
+                print("Error saving added product: \(error)")
+            }
+            navigationController?.popToRootViewController(animated: true)
+            navigationController?.pushViewController(vc, animated: true)
         } else {
-            fetchedResultsController.fetchedObjects?.first?.addToCartProducts(newProduct)
+            self.dismiss(animated: true, completion: nil)
         }
-        
-        do {
-            try moc.save()
-            ProgressHUD.showSuccess()
-        } catch {
-            print("Error saving added product: \(error)")
-        }
-        navigationController?.popToRootViewController(animated: true)
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        if reviewing {
+            navigationController?.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - Navigation
@@ -100,18 +122,27 @@ class ReviewViewController: UIViewController {
 
 extension ReviewViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return template?.fulfilled.count ?? 0
+        if reviewing {
+            return template?.fulfilled.count ?? 0
+        } else {
+            let template = cartProduct?.chosenArray.first
+            return template?.fulfilled?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "fulfilledCell", for: indexPath) as? FulfilledTableViewCell else { return UITableViewCell() }
         
-        let sortedKeys = Array((template?.fulfilled.keys)!).sorted(by: <)
-        
-        let int = sortedKeys[indexPath.row]
-        
-        cell.titleLabel.text = template?.fulfilled[int]
-        
-        return cell
+        if reviewing {
+            let sortedKeys = Array((template?.fulfilled.keys)!).sorted(by: <)
+            let int = sortedKeys[indexPath.row]
+            cell.titleLabel.text = template?.fulfilled[int]
+            return cell
+        } else {
+            let template = cartProduct?.chosenArray.first
+            let fulfilled = template?.fulfilledArray[indexPath.row]
+            cell.titleLabel.text = fulfilled?.text
+            return cell
+        }
     }
 }

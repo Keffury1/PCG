@@ -32,6 +32,7 @@ class CartViewController: UIViewController {
     }()
     
     var cart: [CDProduct]?
+    var selectedIndex: Int?
     
     // MARK: - Outlets
     
@@ -105,6 +106,11 @@ class CartViewController: UIViewController {
             if let detailVC = segue.destination as? CheckoutViewController {
                 detailVC.amount = subTotal
                 detailVC.dismissDelegate = self
+            }
+        } else if segue.identifier == "segueReview" {
+            if let detailVC = segue.destination as? ReviewViewController {
+                let product = fetchedResultsController.fetchedObjects?.first?.cartArray[selectedIndex!]
+                detailVC.cartProduct = product
             }
         }
     }
@@ -195,6 +201,11 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
                 }
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "segueReview", sender: self)
     }
 }
 

@@ -167,13 +167,25 @@ class ShopViewController: UIViewController {
                 productsCollectionView.reloadData()
             } else if item == "1 - $25 ↓" {
                 sortByPrice(price: 25)
-                menuLabel.setTitle("$25 & Under", for: .normal)
+                let array = self.products.sorted(by: { $0.price > $1.price })
+                self.products = array
+                lowToHighButton.setImage(UIImage(systemName: "chart.bar"), for: .normal)
+                highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
+                productsCollectionView.reloadData()
             } else if item == "2 - $50 ↓" {
                 sortByPrice(price: 50)
-                menuLabel.setTitle("$50 & Under", for: .normal)
+                let array = self.products.sorted(by: { $0.price > $1.price })
+                self.products = array
+                lowToHighButton.setImage(UIImage(systemName: "chart.bar"), for: .normal)
+                highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
+                productsCollectionView.reloadData()
             } else if item == "3 - $100 ↓" {
                 sortByPrice(price: 100)
-                menuLabel.setTitle("$100 & Under", for: .normal)
+                let array = self.products.sorted(by: { $0.price > $1.price })
+                self.products = array
+                lowToHighButton.setImage(UIImage(systemName: "chart.bar"), for: .normal)
+                highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
+                productsCollectionView.reloadData()
             }
         }
         priceDown.cornerRadius = 10
