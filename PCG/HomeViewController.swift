@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import LocalAuthentication
+import ProgressHUD
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -35,6 +37,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         reviewsCollectionView.delegate = self
         reviewsCollectionView.dataSource = self
         reviewsCollectionView.layer.cornerRadius = 10.0
+        
+        if UserDefaults.value(forKey: "LoggedIn") == nil {
+            loginMember()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +81,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Methods
     
     private func setupSubviews() {
-//        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         
         membershipView.layer.cornerRadius = 15
         membershipView.addShadow()
@@ -85,6 +90,35 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         viaEtsyButton.semanticContentAttribute = UIApplication.shared
             .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
+    }
+    
+    private func loginMember() {
+        if UserDefaults.value(forKey: "Member") != nil {
+            let context = LAContext()
+            var error: NSError?
+            
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                let reason = "Identify yourself!"
+                
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                    [weak self] success, authenticationError in
+                    
+                    DispatchQueue.main.async {
+                        if success {
+                            self?.login()
+                        } else {
+                            ProgressHUD.showError("Error Logging in", image: nil, interaction: false)
+                        }
+                    }
+                }
+            } else {
+                ProgressHUD.showError("No Biometry", image: nil, interaction: false)
+            }
+        }
+    }
+    
+    private func login() {
+        UserDefaults.setValue("User logged in", forKey: "LoggedIn")
     }
     
     // MARK: - Actions

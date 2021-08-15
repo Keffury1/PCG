@@ -54,6 +54,7 @@ class MembershipViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
         // SignUP
+        UserDefaults.setValue("User is now member", forKey: "Member")
     }
     
     // MARK: - Navigation
