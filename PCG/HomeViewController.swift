@@ -38,9 +38,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         reviewsCollectionView.dataSource = self
         reviewsCollectionView.layer.cornerRadius = 10.0
         
-        if UserDefaults.value(forKey: "LoggedIn") == nil {
-            loginMember()
-        }
+//        if UserDefaults.value(forKey: "LoggedIn") == nil {
+//            loginMember()
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

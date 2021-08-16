@@ -65,6 +65,7 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var creditCardButton: UIButton!
     @IBOutlet weak var applePayButton: UIButton!
+    @IBOutlet weak var notesTextView: UITextView!
     
     // MARK: - Views
     
@@ -86,6 +87,12 @@ class CheckoutViewController: UIViewController {
         creditCardButton.layer.cornerRadius = 10
         creditCardButton.addShadow()
         textField.delegate = self
+        notesTextView.text = "Any Notes?"
+        notesTextView.textColor = UIColor.lightGray
+        notesTextView.delegate = self
+        notesTextView.layer.borderColor = UIColor.lightGray.cgColor
+        notesTextView.layer.borderWidth = 1
+        notesTextView.layer.cornerRadius = 10
     }
     
     private func updateViews() {
@@ -304,5 +311,25 @@ extension CheckoutViewController: STPApplePayContextDelegate {
 extension CheckoutViewController: CardParamsDelegate {
     func cardEntered(params: STPPaymentMethodCardParams) {
         cardPayment(params: params)
+    }
+}
+
+extension CheckoutViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor(named: "Navy")!
+            textView.layer.borderColor = UIColor(named: "Navy")!.cgColor
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Any Notes?"
+            textView.textColor = UIColor.lightGray
+            textView.layer.borderColor = UIColor.lightGray.cgColor
+        } else {
+            // Save notes to order
+        }
     }
 }
