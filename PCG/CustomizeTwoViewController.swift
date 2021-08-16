@@ -183,7 +183,6 @@ class CustomizeTwoViewController: UIViewController {
             toggleReviewButton()
         }
         tf.resignFirstResponder()
-        scrollView.isScrollEnabled = true
     }
     
     private func toggleReviewButton() {
@@ -233,7 +232,6 @@ extension CustomizeTwoViewController: UITextFieldDelegate {
         self.chosenTextField = textField
         let invocation = IQInvocation(self, #selector(didPressOnDoneButton))
         textField.keyboardToolbar.doneBarButton.invocation = invocation
-        scrollView.isScrollEnabled = false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -246,7 +244,6 @@ extension CustomizeTwoViewController: UITextFieldDelegate {
             toggleReviewButton()
         }
         textField.resignFirstResponder()
-        scrollView.isScrollEnabled = true
         return true
     }
 }
