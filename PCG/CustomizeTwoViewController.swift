@@ -80,6 +80,7 @@ class CustomizeTwoViewController: UIViewController {
         guard let template = template else { return }
         for need in template.needs {
             count += 1
+            
             switch need.id {
             case 1:
                 //FirstName
@@ -126,7 +127,6 @@ class CustomizeTwoViewController: UIViewController {
                 newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Message")
                 
                 count += 1
-                
                 //Signature
                 newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Signature Line")
             case 11:

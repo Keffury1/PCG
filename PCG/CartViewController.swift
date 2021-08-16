@@ -124,6 +124,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
             emptyCartView.alpha = 1
             emptyCartView.isUserInteractionEnabled = true
             checkoutButton.isUserInteractionEnabled = false
+            checkoutButton.setTitle(" Empty Cart", for: .normal)
             checkoutButton.setTitleColor(UIColor(named: "Navy")!, for: .normal)
             checkoutButton.tintColor = UIColor(named: "Navy")!
             checkoutButton.backgroundColor = UIColor(named: "Tan")!
@@ -133,6 +134,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
             emptyCartView.alpha = 1
             emptyCartView.isUserInteractionEnabled = true
             checkoutButton.isUserInteractionEnabled = false
+            checkoutButton.setTitle(" Empty Cart", for: .normal)
             checkoutButton.setTitleColor(UIColor(named: "Navy")!, for: .normal)
             checkoutButton.tintColor = UIColor(named: "Navy")!
             checkoutButton.backgroundColor = UIColor(named: "Tan")!
