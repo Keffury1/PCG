@@ -1696,6 +1696,19 @@
         "customPhoto": false
     },
     {
+        "id": 3,
+        "name": "Charcuterie Plank",
+        "image": "Charcuterie Plank",
+        "category": "CheeseBoard",
+        "price": 65.00,
+        "discountPrice": 53.40,
+        "description": "PCG’s Maple Charcuterie Plank is sure to impress any client who loves to entertain (or just loves cheese)! Handcrafted from 100% natural maple and finished with an artisan teak oil, this rustic farmhouse serving plank is one of the highest rated cheese boards on the market. Built with quality and craftsmanship, this serving plank makes a gorgeous display piece when not in use, adding warmth and character to your client’s home.",
+        "count": 0,
+        "templates": [],
+        "chosenTemplate": [],
+        "customPhoto": false
+    },
+    {
         "id": 10,
         "name": "Maple Cutting Board",
         "image": "Maple Cutting Board",
