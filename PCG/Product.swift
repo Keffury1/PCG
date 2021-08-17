@@ -14,8 +14,8 @@ struct Product: Codable {
     var name: String
     var image: String
     var category: String
-    var price: Int
-    var discountPrice: Int
+    var price: Double
+    var discountPrice: Double
     var description: String
     var count: Int
     var templates: [Template]?

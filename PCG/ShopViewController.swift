@@ -95,7 +95,7 @@ class ShopViewController: UIViewController {
         })
     }
     
-    func sortByPrice(price: Int) {
+    func sortByPrice(price: Double) {
         var array: [Product] = []
         for item in productController.products! {
             if item.price < price {
