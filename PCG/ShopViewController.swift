@@ -14,7 +14,7 @@ class ShopViewController: UIViewController {
 
     // MARK: - Properties
     var items: [String : String] = ["Cutting Boards":"CuttingBoard", "Lanterns":"Lantern", "Coaster Sets":"CoasterSet","Cheese Boards":"CheeseBoard", "Stamps":"Stamp", "Knife Sets":"KnifeSet", "Ornaments":"Ornament", "Doormats":"Doormat", "Jars":"DogTreatJar", "View All Products":""]
-    var prices: [String: String] = ["4 - White Label":"4","3 - $100 ↓":"3","1 - $25 ↓":"1","2 - $50 ↓":"2"]
+    var prices: [String: String] = ["4 - Ghost Mode 👻":"4","3 - $100 ↓":"3","1 - $50 ↓":"1","2 - $75 ↓":"2"]
     let productController = ProductController()
     var price: Bool = true
     var display: Bool = true
@@ -156,7 +156,7 @@ class ShopViewController: UIViewController {
         priceDown.separatorColor = UIColor(named: "Tan")!
         priceDown.dataSource = prices.keys.sorted()
         priceDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            if item == "4 - White Label" {
+            if item == "4 - Ghost Mode 👻" {
                 if price {
                     price = false
                     priceButton.setBackgroundImage(UIImage(systemName: "dollarsign.circle.fill"), for: .normal)
@@ -165,19 +165,21 @@ class ShopViewController: UIViewController {
                     priceButton.setBackgroundImage(UIImage(systemName: "dollarsign.circle"), for: .normal)
                 }
                 productsCollectionView.reloadData()
-            } else if item == "1 - $25 ↓" {
-                sortByPrice(price: 25)
-                let array = self.products.sorted(by: { $0.price > $1.price })
-                self.products = array
-                lowToHighButton.setImage(UIImage(systemName: "chart.bar"), for: .normal)
-                highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
-                productsCollectionView.reloadData()
-            } else if item == "2 - $50 ↓" {
+            } else if item == "1 - $50 ↓" {
                 sortByPrice(price: 50)
                 let array = self.products.sorted(by: { $0.price > $1.price })
                 self.products = array
                 lowToHighButton.setImage(UIImage(systemName: "chart.bar"), for: .normal)
                 highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
+                menuLabel.setTitle("50", for: .normal)
+                productsCollectionView.reloadData()
+            } else if item == "2 - $75 ↓" {
+                sortByPrice(price: 75)
+                let array = self.products.sorted(by: { $0.price > $1.price })
+                self.products = array
+                lowToHighButton.setImage(UIImage(systemName: "chart.bar"), for: .normal)
+                highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
+                menuLabel.setTitle("75", for: .normal)
                 productsCollectionView.reloadData()
             } else if item == "3 - $100 ↓" {
                 sortByPrice(price: 100)
@@ -185,6 +187,7 @@ class ShopViewController: UIViewController {
                 self.products = array
                 lowToHighButton.setImage(UIImage(systemName: "chart.bar"), for: .normal)
                 highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
+                menuLabel.setTitle("100", for: .normal)
                 productsCollectionView.reloadData()
             }
         }
@@ -245,13 +248,16 @@ extension ShopViewController: UICollectionViewDataSource, UICollectionViewDelega
         if price {
             cell.priceLabel.text = "$\(product.price)"
             cell.priceLabel.isHidden = false
-            cell.titleLabel.text = product.name
+            cell.priceLabel.alpha = 1
         } else {
             cell.priceLabel.text = ""
             cell.priceLabel.isHidden = true
-            cell.titleLabel.text = product.name
+            cell.priceLabel.alpha = 0
         }
         
+        cell.titleLabel.text = product.name
+        cell.priceLabel.layer.cornerRadius = 5
+        cell.priceLabel.clipsToBounds = true
         cell.productImageView.image = UIImage(named: product.image)
         cell.productImageView.layer.cornerRadius = 10
         cell.productImageView.clipsToBounds = true
