@@ -20,6 +20,7 @@ struct Product: Codable {
     var count: Int
     var templates: [Template]?
     var chosenTemplate: [Template]?
+    var customPhoto: Bool
 }
 
 enum Categories: Int, Codable {

@@ -131,7 +131,7 @@ class CustomizeTwoViewController: UIViewController {
                 newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Signature Line")
             case 11:
                 //petName
-                newTextField(image: UIImage(systemName: "hare")!, text: "Pet's Name")
+                newTextField(image: UIImage(named: "WhiteDog")!, text: "Pet's Name")
             default:
                 return
             }

@@ -46,6 +46,8 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var verticalSlider: VerticalSlider!
+    @IBOutlet weak var orLabel: UILabel!
+    @IBOutlet weak var cameraButton: UIButton!
     
     // MARK: - Views
     
@@ -53,6 +55,7 @@ class CustomizeViewController: UIViewController {
         super.viewDidLoad()
         setupSubviews()
         first = false
+        checkCamera()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +103,9 @@ class CustomizeViewController: UIViewController {
         continueButton.layer.cornerRadius = 10
         continueButton.addShadow()
         
+        cameraButton.layer.cornerRadius = 10
+        cameraButton.addShadow()
+        
         verticalSlider.slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
     }
     
@@ -125,6 +131,20 @@ class CustomizeViewController: UIViewController {
         scrollImg.setZoomScale(CGFloat(verticalSlider.value), animated: true)
     }
     
+    private func checkCamera() {
+        if product?.customPhoto == true {
+            orLabel.isHidden = false
+            cameraButton.isHidden = false
+            orLabel.isUserInteractionEnabled = true
+            cameraButton.isUserInteractionEnabled = true
+        } else {
+            orLabel.isHidden = true
+            cameraButton.isHidden = true
+            orLabel.isUserInteractionEnabled = false
+            cameraButton.isUserInteractionEnabled = false
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -133,6 +153,10 @@ class CustomizeViewController: UIViewController {
     
     @IBAction func continueButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "step2Segue", sender: self)
+    }
+    
+    @IBAction func cameraButtonTapped(_ sender: Any) {
+        // Send User to Camera Roll
     }
     
     // MARK: - Navigation

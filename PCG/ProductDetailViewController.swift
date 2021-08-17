@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ReadMoreTextView
 
 class ProductDetailViewController: UIViewController {
 
@@ -20,7 +19,7 @@ class ProductDetailViewController: UIViewController {
     
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productTitleLabel: UILabel!
-    @IBOutlet weak var productDescriptionTextView: ReadMoreTextView!
+    @IBOutlet weak var productDescriptionTextView: UITextView!
     @IBOutlet weak var customizeButton: UIButton!
     @IBOutlet weak var bottomFadeView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -37,11 +36,6 @@ class ProductDetailViewController: UIViewController {
         setupSubviews()
         productDetailCollectionView.dataSource = self
         productDetailCollectionView.delegate = self
-        productDescriptionTextView.shouldTrim = true
-        productDescriptionTextView.maximumNumberOfLines = 3
-        productDescriptionTextView.attributedReadMoreText = NSAttributedString(string: "  + see more")
-        productDescriptionTextView.attributedReadLessText = NSAttributedString(string: "  - see less")
-        productDescriptionTextView.isScrollEnabled = true
     }
     
     // MARK: - Methods
