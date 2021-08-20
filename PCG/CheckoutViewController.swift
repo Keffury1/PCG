@@ -88,9 +88,9 @@ class CheckoutViewController: UIViewController {
         creditCardButton.addShadow()
         textField.delegate = self
         notesTextView.text = "Any Notes?"
-        notesTextView.textColor = UIColor.lightGray
+        notesTextView.textColor = UIColor(named: "Tan")!
         notesTextView.delegate = self
-        notesTextView.layer.borderColor = UIColor.lightGray.cgColor
+        notesTextView.layer.borderColor = UIColor(named: "Tan")!.cgColor
         notesTextView.layer.borderWidth = 1
         notesTextView.layer.cornerRadius = 10
     }
@@ -316,7 +316,7 @@ extension CheckoutViewController: CardParamsDelegate {
 
 extension CheckoutViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
+        if textView.textColor == UIColor(named: "Tan")! {
             textView.text = nil
             textView.textColor = UIColor(named: "Navy")!
             textView.layer.borderColor = UIColor(named: "Navy")!.cgColor
@@ -326,8 +326,8 @@ extension CheckoutViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Any Notes?"
-            textView.textColor = UIColor.lightGray
-            textView.layer.borderColor = UIColor.lightGray.cgColor
+            textView.textColor = UIColor(named: "Tan")!
+            notesTextView.layer.borderColor = UIColor(named: "Tan")!.cgColor
         } else {
             let moc = CoreDataStack.shared.mainContext
             if let cart = fetchedResultsController.fetchedObjects?.first {
