@@ -11,8 +11,10 @@ import CoreData
 
 extension Cart {
     convenience init(name: String,
+                     notes: String,
                      context: NSManagedObjectContext) {
         self.init(context: context)
         self.name = name
+        self.notes = notes
     }
 }

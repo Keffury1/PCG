@@ -4275,7 +4275,7 @@
             }
         ],
         "chosenTemplate": [],
-        "customPhoto": true
+        "customPhoto": false
     },
     {
         "id": 9,
@@ -4388,7 +4388,7 @@
             }
         ],
         "chosenTemplate": [],
-        "customPhoto": true
+        "customPhoto": false
     },
     {
         "id": 2,

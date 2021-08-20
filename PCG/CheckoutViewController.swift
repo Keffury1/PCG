@@ -329,7 +329,15 @@ extension CheckoutViewController: UITextViewDelegate {
             textView.textColor = UIColor.lightGray
             textView.layer.borderColor = UIColor.lightGray.cgColor
         } else {
-            // Save notes to order
+            let moc = CoreDataStack.shared.mainContext
+            if let cart = fetchedResultsController.fetchedObjects?.first {
+                cart.notes = textView.text
+                do {
+                    try moc.save()
+                } catch {
+                    print("Error saving notes to cart: \(error)")
+                }
+            }
         }
     }
 }

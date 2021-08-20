@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>PCG would like to access your camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>PCG would like to access your photo library</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>BebasNeue-Regular.ttf</string>

@@ -26,6 +26,7 @@ class CustomizeTwoViewController: UIViewController {
     var templateTextFieldDelegate: TemplateTextFieldDelegate?
     var indexPath: IndexPath?
     var completedCount: Int = 0
+    var image: UIImage?
     
     // MARK: - Outlets
     
@@ -47,7 +48,18 @@ class CustomizeTwoViewController: UIViewController {
     private func setupSubviews() {
         guard let template = template else { return }
         
-        templateImageView.image = UIImage(named: template.name)
+        
+        if product?.id == 4 {
+            templateImageView.contentMode = .scaleAspectFill
+        } else if product?.id == 20 {
+            templateImageView.contentMode = .scaleAspectFill
+        }
+        
+        if image != nil {
+            templateImageView.image = image
+        } else {
+            templateImageView.image = UIImage(named: template.name)
+        }
         
         reviewButton.layer.cornerRadius = 10
         reviewButton.addShadow()
@@ -220,6 +232,7 @@ class CustomizeTwoViewController: UIViewController {
             if let detailVC = segue.destination as? ReviewViewController {
                 detailVC.product = product
                 detailVC.template = template
+                detailVC.image = image
             }
         }
     }

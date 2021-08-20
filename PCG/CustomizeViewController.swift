@@ -14,7 +14,7 @@ import CoreData
 import ProgressHUD
 import VerticalSlider
 
-class CustomizeViewController: UIViewController {
+class CustomizeViewController: UIViewController, UINavigationControllerDelegate {
     
     // MARK: - Properties
     
@@ -24,6 +24,12 @@ class CustomizeViewController: UIViewController {
     var indexPath: IndexPath?
     var reset: Bool = false
     var first: Bool = true
+    var image: UIImage? {
+        didSet {
+            self.firstTemplateImageView.image = image
+            enableContinueButton()
+        }
+    }
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         
@@ -77,6 +83,12 @@ class CustomizeViewController: UIViewController {
             return
         } else {
             firstTemplateImageView.image = UIImage(named: (product.templates?.first!.name) ?? "")
+        }
+        
+        if product.id == 4 {
+            firstTemplateImageView.contentMode = .scaleAspectFill
+        } else if product.id == 20 {
+            firstTemplateImageView.contentMode = .scaleAspectFill
         }
         
         let vWidth = self.templateContainerView.frame.width
@@ -156,7 +168,11 @@ class CustomizeViewController: UIViewController {
     }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
-        // Send User to Camera Roll
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
     }
     
     // MARK: - Navigation
@@ -166,6 +182,7 @@ class CustomizeViewController: UIViewController {
             if let detailVC = segue.destination as? CustomizeTwoViewController {
                 detailVC.product = product
                 detailVC.template = template
+                detailVC.image = image
             }
         }
     }
@@ -239,5 +256,17 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
 extension CustomizeViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.firstTemplateImageView
+    }
+}
+
+extension CustomizeViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        self.image = image
     }
 }

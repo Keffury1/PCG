@@ -22,6 +22,7 @@ class ReviewViewController: UIViewController {
         }
     }
     var template: Template?
+    var image: UIImage?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         
@@ -50,8 +51,19 @@ class ReviewViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        guard let template = template else { imageView.image = UIImage(named: "\(cartProduct?.chosenArray.first?.name ?? "")"); return }
-        imageView.image = UIImage(named: "\(template.name)")
+        
+        if product?.id == 4 {
+            imageView.contentMode = .scaleAspectFill
+        } else if product?.id == 20 {
+            imageView.contentMode = .scaleAspectFill
+        }
+        
+        if image != nil {
+            imageView.image = image
+        } else {
+            guard let template = template else { imageView.image = UIImage(named: "\(cartProduct?.chosenArray.first?.name ?? "")"); return }
+            imageView.image = UIImage(named: "\(template.name)")
+        }
     }
     
     // MARK: - Methods
@@ -87,7 +99,7 @@ class ReviewViewController: UIViewController {
             newProduct.addToChosenTemplate(newTemplate)
             
             if fetchedResultsController.fetchedObjects?.isEmpty == true {
-                let cart = Cart(name: "New Cart", context: moc)
+                let cart = Cart(name: "New Cart", notes: "", context: moc)
                 cart.addToCartProducts(newProduct)
             } else {
                 fetchedResultsController.fetchedObjects?.first?.addToCartProducts(newProduct)

@@ -17,6 +17,7 @@ extension Cart {
     
     @NSManaged public var cartProducts: NSSet?
     @NSManaged public var name: String?
+    @NSManaged public var notes: String?
     
     
     public var cartArray: [CDProduct] {
