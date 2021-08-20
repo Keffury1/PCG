@@ -101,10 +101,11 @@ class CheckoutViewController: UIViewController {
             taxLabel.text = "$0.0"
             shippingLabel.text = "$0.0"
         } else {
-            taxLabel.text = "$\(1.95)"
-            shippingLabel.text = "$\(5.98)"
-            amount! += 1.95
-            amount! += 5.98
+            let tax = 0.0775 * amount!
+            taxLabel.text = "$\(tax)"
+            shippingLabel.text = "$\(20.00)"
+            amount! += tax
+            amount! += 20.0
         }
         
         totalLabel.text = "$\(Double(round((1000*amount!)/1000)))"
