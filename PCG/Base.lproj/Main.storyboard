@@ -705,7 +705,7 @@
             <objects>
                 <viewController id="7nh-Q9-F1R" customClass="CheckoutViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRJ-eZ-QJc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-cY-wbq">
@@ -1640,6 +1640,7 @@
                         <outlet property="templatesCollectionView" destination="H7W-Me-bj6" id="DZD-Mz-jKi"/>
                         <outlet property="verticalSlider" destination="NCD-aV-KQa" id="hMm-mD-zBh"/>
                         <segue destination="oPO-Qv-hBV" kind="show" identifier="step2Segue" id="MY2-z3-63V"/>
+                        <segue destination="9bp-NN-zTO" kind="show" identifier="reviewSegue" id="dBQ-Vk-Ijl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxC-GT-Gcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1798,7 +1799,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTt-aD-Ekt">
-                                <rect key="frame" x="20" y="656" width="374" height="50"/>
+                                <rect key="frame" x="20" y="676" width="374" height="50"/>
                                 <color key="backgroundColor" name="Navy"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qMq-aG-sDI"/>
@@ -1813,7 +1814,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FhA-LA-37v">
-                                <rect key="frame" x="20" y="319.66666666666674" width="374" height="331.33333333333326"/>
+                                <rect key="frame" x="20" y="319.66666666666674" width="374" height="351.33333333333326"/>
                                 <color key="backgroundColor" name="White"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 <prototypes>
@@ -2254,7 +2255,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="ndi-Ei-GNX"/>
+        <segue reference="dBQ-Vk-Ijl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="612" height="792"/>

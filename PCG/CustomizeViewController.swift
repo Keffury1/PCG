@@ -147,12 +147,10 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
         if product?.customPhoto == true {
             orLabel.isHidden = false
             cameraButton.isHidden = false
-            orLabel.isUserInteractionEnabled = true
             cameraButton.isUserInteractionEnabled = true
         } else {
             orLabel.isHidden = true
             cameraButton.isHidden = true
-            orLabel.isUserInteractionEnabled = false
             cameraButton.isUserInteractionEnabled = false
         }
     }
@@ -164,7 +162,11 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "step2Segue", sender: self)
+        if image == nil {
+            self.performSegue(withIdentifier: "step2Segue", sender: self)
+        } else  {
+            self.performSegue(withIdentifier: "reviewSegue", sender: self)
+        }
     }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
@@ -183,6 +185,12 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
                 detailVC.product = product
                 detailVC.template = template
                 detailVC.image = image
+            }
+        } else if segue.identifier == "reviewSegue" {
+            if let detailVC = segue.destination as? ReviewViewController {
+                detailVC.product = product
+                detailVC.image = image
+                detailVC.template = nil
             }
         }
     }

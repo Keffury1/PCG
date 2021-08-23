@@ -79,24 +79,40 @@ class ReviewViewController: UIViewController {
         } else {
             addToCartButton.setTitle(" Return", for: .normal)
         }
+        
+        if template == nil {
+            imageView.contentMode = .scaleAspectFill
+            imageView.layer.cornerRadius = 10
+            imageView.clipsToBounds = true
+        }
     }
     
     // MARK: - Actions
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
         if reviewing {
-            guard let template = template, var product = product else { return }
+            guard var product = product else { return }
             ProgressHUD.show()
-            product.chosenTemplate?.append(template)
             product.count += 1
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
             let moc = CoreDataStack.shared.mainContext
             let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price),address: "", date: "", context: moc)
-            let newTemplate = CDTemplate(id: Int16(template.id), name: template.name, context: moc)
-            for fulfilled in template.fulfilled {
-                newTemplate.addToFulfilled(Fulfilled(text: fulfilled.value, context: moc))
+            
+            if let template = template {
+                product.chosenTemplate?.append(template)
+                let newTemplate = CDTemplate(id: Int16(template.id), name: template.name, context: moc)
+                for fulfilled in template.fulfilled {
+                    newTemplate.addToFulfilled(Fulfilled(text: fulfilled.value, context: moc))
+                }
+                newProduct.addToChosenTemplate(newTemplate)
+            } else {
+                self.imageView.image = image
+                let data = image?.pngData()
+                let newTemplate = CDTemplate(id: 0, name: "image", context: moc)
+                let fulfilled = Fulfilled(text: "\(data ?? Data())", context: moc)
+                newTemplate.addToFulfilled(fulfilled)
+                newProduct.addToChosenTemplate(newTemplate)
             }
-            newProduct.addToChosenTemplate(newTemplate)
             
             if fetchedResultsController.fetchedObjects?.isEmpty == true {
                 let cart = Cart(name: "New Cart", notes: "", context: moc)
@@ -111,8 +127,10 @@ class ReviewViewController: UIViewController {
             } catch {
                 print("Error saving added product: \(error)")
             }
+            
             navigationController?.popToRootViewController(animated: true)
             navigationController?.pushViewController(vc, animated: true)
+            
         } else {
             self.dismiss(animated: true, completion: nil)
         }
