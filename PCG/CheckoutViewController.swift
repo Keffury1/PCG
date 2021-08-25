@@ -28,7 +28,7 @@ class CheckoutViewController: UIViewController {
     var tax: Double?
     var address: String?
     var cardParams: STPPaymentMethodCardParams?
-    let bottomSheetController = NBBottomSheetController()
+    var configuration: Any?
     var dismissDelegate: DismissDelegate?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
@@ -215,9 +215,12 @@ class CheckoutViewController: UIViewController {
             ProgressHUD.showError("Enter Shipping Address", image: nil, interaction: true)
             return
         }
+        self.configuration = NBBottomSheetConfiguration(animationDuration: 0.4,
+                                                        sheetSize: .fixed(300))
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreditCardVC") as! CreditCardViewController
         vc.paramsDelegate = self
         vc.view.layer.cornerRadius = 30
+        let bottomSheetController = NBBottomSheetController(configuration: configuration as? NBBottomSheetConfiguration)
         bottomSheetController.present(vc, on: self)
     }
     

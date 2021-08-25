@@ -705,7 +705,7 @@
             <objects>
                 <viewController id="7nh-Q9-F1R" customClass="CheckoutViewController" customModule="PCG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRJ-eZ-QJc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-cY-wbq">
@@ -940,7 +940,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6e1-fr-akf">
-                                        <rect key="frame" x="20" y="676" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="656" width="374" height="50"/>
                                         <color key="backgroundColor" name="Navy"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="C4e-90-X3e"/>
@@ -954,7 +954,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="bVI-iQ-DC5">
-                                        <rect key="frame" x="0.0" y="526" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="506" width="414" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="aNd-Sd-9J4"/>
                                         </constraints>
@@ -977,7 +977,7 @@
                             <constraint firstAttribute="bottom" secondItem="KjF-mR-6zZ" secondAttribute="bottom" id="WhH-5i-Jex"/>
                             <constraint firstItem="KjF-mR-6zZ" firstAttribute="leading" secondItem="EG2-um-RlP" secondAttribute="leading" id="aUQ-Er-BVM"/>
                             <constraint firstAttribute="trailing" secondItem="KjF-mR-6zZ" secondAttribute="trailing" id="leY-cI-7rS"/>
-                            <constraint firstItem="b5g-hF-eFf" firstAttribute="bottom" secondItem="6e1-fr-akf" secondAttribute="bottom" constant="10" id="zdR-01-mm6"/>
+                            <constraint firstItem="b5g-hF-eFf" firstAttribute="bottom" secondItem="6e1-fr-akf" secondAttribute="bottom" constant="30" id="zdR-01-mm6"/>
                         </constraints>
                     </view>
                     <connections>

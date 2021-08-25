@@ -84,7 +84,9 @@ class CustomizeTwoViewController: UIViewController {
         self.template?.fulfilled = [:]
         
         if checkIfCustomized() {
-            toggleReviewButton()
+            toggleReviewButton(bool: true)
+        } else {
+            toggleReviewButton(bool: false)
         }
         
         customizeStackView.subviews.forEach({ $0.removeFromSuperview() })
@@ -186,19 +188,11 @@ class CustomizeTwoViewController: UIViewController {
     
     @objc func didPressOnDoneButton() {
         guard let tf = chosenTextField else { return }
-        if tf.text == "" {
-            template?.fulfilled[tf.tag] = nil
-        } else {
-            template?.fulfilled[tf.tag] = tf.text
-        }
-        if checkIfCustomized() {
-            toggleReviewButton()
-        }
         tf.resignFirstResponder()
     }
     
-    private func toggleReviewButton() {
-        if reviewButton.isUserInteractionEnabled == false {
+    private func toggleReviewButton(bool: Bool) {
+        if bool {
             reviewButton.setTitle(" Review", for: .normal)
             reviewButton.setImage(UIImage(systemName: "doc.text.magnifyingglass"), for: .normal)
             reviewButton.backgroundColor = UIColor(named: "Navy")!
@@ -247,15 +241,21 @@ extension CustomizeTwoViewController: UITextFieldDelegate {
         textField.keyboardToolbar.doneBarButton.invocation = invocation
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text == "" {
             template?.fulfilled[textField.tag] = nil
         } else {
             template?.fulfilled[textField.tag] = textField.text
         }
         if checkIfCustomized() {
-            toggleReviewButton()
+            toggleReviewButton(bool: true)
+        } else {
+            toggleReviewButton(bool: false)
         }
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -272,7 +272,9 @@ extension CustomizeTwoViewController: FSCalendarDataSource, FSCalendarDelegate {
             dateDelegate?.dateTapped(date: date)
             template?.fulfilled[dateCount!] = date
             if checkIfCustomized() {
-                toggleReviewButton()
+                toggleReviewButton(bool: true)
+            } else {
+                toggleReviewButton(bool: false)
             }
         }
     }
@@ -282,7 +284,9 @@ extension CustomizeTwoViewController: StateTappedDelegate {
     func stateTapped(state: String, count: Int) {
         template?.fulfilled[count] = state
         if checkIfCustomized() {
-            toggleReviewButton()
+            toggleReviewButton(bool: true)
+        } else {
+            toggleReviewButton(bool: false)
         }
     }
 }
