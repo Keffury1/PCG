@@ -98,7 +98,7 @@ class CustomizeTwoViewController: UIViewController {
             switch need.id {
             case 1:
                 //FirstName
-                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "First Name")
+                newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Name (s)")
             case 2:
                 //LastName
                 newTextField(image: UIImage(systemName: "pencil.circle")!, text: "Last Name")

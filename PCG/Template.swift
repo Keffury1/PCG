@@ -22,7 +22,7 @@ struct Needs: Codable {
 }
 
 enum Need: String, Codable {
-    case firstName = "First Name"
+    case name = "Name(s)"
     case lastName = "Last Name"
     case lastInitial = "Last Initial"
     case fullName = "Full Name"
