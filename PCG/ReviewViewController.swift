@@ -43,6 +43,8 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var fulfilledTableView: UITableView!
+    @IBOutlet weak var moveToBackButton: UIButton!
+    @IBOutlet weak var moveToBackLabel: UILabel!
     @IBOutlet weak var addOnCollectionView: UICollectionView!
     
     // MARK: - Views
@@ -59,6 +61,14 @@ class ReviewViewController: UIViewController {
             imageView.contentMode = .scaleAspectFill
         } else if product?.id == 20 {
             imageView.contentMode = .scaleAspectFill
+        }
+        
+        if product?.id == 10 {
+            moveToBackOn()
+        } else if product?.id == 14 {
+            moveToBackOn()
+        } else {
+            moveToBackOff()
         }
         
         if image != nil {
@@ -82,9 +92,11 @@ class ReviewViewController: UIViewController {
         if reviewing {
             addToCartButton.setTitle(" Add to Cart", for: .normal)
             addOnCollectionView.isUserInteractionEnabled = true
+            moveToBackButton.isUserInteractionEnabled = false
         } else {
             addToCartButton.setTitle(" Return", for: .normal)
             addOnCollectionView.isUserInteractionEnabled = false
+            moveToBackButton.isUserInteractionEnabled = true
         }
         
         if template == nil {
@@ -92,6 +104,18 @@ class ReviewViewController: UIViewController {
             imageView.layer.cornerRadius = 10
             imageView.clipsToBounds = true
         }
+    }
+    
+    private func moveToBackOn() {
+        moveToBackLabel.isHidden = false
+        moveToBackButton.isHidden = false
+        moveToBackButton.isUserInteractionEnabled = true
+    }
+    
+    private func moveToBackOff() {
+        moveToBackLabel.isHidden = true
+        moveToBackButton.isHidden = true
+        moveToBackButton.isUserInteractionEnabled = false
     }
     
     // MARK: - Actions
@@ -103,7 +127,7 @@ class ReviewViewController: UIViewController {
             product.count += 1
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
             let moc = CoreDataStack.shared.mainContext
-            let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price),address: "", date: "", addOn: product.addOn ?? "", context: moc)
+            let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price),address: "", date: "", addOn: product.addOn ?? "", back: product.back ?? "", context: moc)
             
             if let template = template {
                 product.chosenTemplate?.append(template)
@@ -148,6 +172,16 @@ class ReviewViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         } else {
             self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func moveToBackTapped(_ sender: UIButton) {
+        if sender.image(for: .normal) == UIImage(systemName: "square") {
+            sender.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            product?.back = "True"
+        } else {
+            sender.setImage(UIImage(systemName: "square"), for: .normal)
+            product?.back = "False"
         }
     }
     

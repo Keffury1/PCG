@@ -27,6 +27,7 @@ extension CDProduct {
     @NSManaged public var date: String?
     @NSManaged public var chosenTemplate: NSSet?
     @NSManaged public var addOn: String?
+    @NSManaged public var back: String?
     
     public var chosenArray: [CDTemplate] {
         let set = chosenTemplate as? Set<CDTemplate> ?? []

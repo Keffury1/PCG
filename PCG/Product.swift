@@ -22,6 +22,7 @@ struct Product: Codable {
     var chosenTemplate: [Template]?
     var customPhoto: Bool
     var addOn: String?
+    var back: String?
 }
 
 enum Categories: Int, Codable {

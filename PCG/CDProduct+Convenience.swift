@@ -21,6 +21,7 @@ extension CDProduct {
                      address: String,
                      date: String,
                      addOn: String,
+                     back: String,
                      context: NSManagedObjectContext) {
         self.init(context: context)
         self.category = category
@@ -34,5 +35,6 @@ extension CDProduct {
         self.address = address
         self.date = date
         self.addOn = addOn
+        self.back = back
     }
 }

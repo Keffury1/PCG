@@ -8,6 +8,7 @@
     <entity name="CDProduct" representedClassName="CDProduct" syncable="YES">
         <attribute name="addOn" optional="YES" attributeType="String"/>
         <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="back" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="String"/>
@@ -38,7 +39,7 @@
     </entity>
     <elements>
         <element name="Cart" positionX="36" positionY="117" width="128" height="74"/>
-        <element name="CDProduct" positionX="-54" positionY="-9" width="128" height="239"/>
+        <element name="CDProduct" positionX="-54" positionY="-9" width="128" height="254"/>
         <element name="CDTemplate" positionX="-36" positionY="9" width="128" height="89"/>
         <element name="Fulfilled" positionX="36" positionY="126" width="128" height="74"/>
         <element name="History" positionX="45" positionY="135" width="128" height="59"/>
