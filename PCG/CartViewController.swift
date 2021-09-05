@@ -111,6 +111,7 @@ class CartViewController: UIViewController {
             if let detailVC = segue.destination as? ReviewViewController {
                 let product = fetchedResultsController.fetchedObjects?.first?.cartArray[selectedIndex!]
                 detailVC.cartProduct = product
+                detailVC.addOn = product?.addOn
             }
         }
     }
@@ -165,7 +166,13 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
         cell.productImageView.image = UIImage(named: chosen!.name!)
         cell.productImageView.layer.cornerRadius = 10
         cell.titleLabel.text = item.name?.capitalized
-        cell.detailLabel.text = "(0) add-on items"
+        if item.addOn == "" {
+            cell.detailLabel.text = "(0) add-on items"
+        } else if item.addOn == nil {
+            cell.detailLabel.text = "(0) add-on items"
+        } else {
+            cell.detailLabel.text = "1 add-on item"
+        }
         cell.priceLabel.text = "$\(item.price * item.count)"
         cell.countLabel.text = "x\(item.count)"
         cell.index = indexPath.row

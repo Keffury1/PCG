@@ -34,6 +34,7 @@
 		377D77A825DB5A54008D0059 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D77A725DB5A54008D0059 /* AccountViewController.swift */; };
 		379C3BC925361B3B003D22C1 /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */; };
 		379C3BCD253623F6003D22C1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 379C3BCC253623F6003D22C1 /* IQKeyboardManagerSwift */; };
+		37ABC1BB26E57C4A002E9AF3 /* AddOnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ABC1BA26E57C4A002E9AF3 /* AddOnCollectionViewCell.swift */; };
 		37B1988B25B7807C00E59CF6 /* TemplateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1988A25B7807C00E59CF6 /* TemplateCollectionViewCell.swift */; };
 		37B1988F25B7836100E59CF6 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1988E25B7836100E59CF6 /* Template.swift */; };
 		37B1989325B7C4A400E59CF6 /* CustomizerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1989225B7C4A400E59CF6 /* CustomizerTableViewCell.swift */; };
@@ -107,6 +108,7 @@
 		377D779B25DB275F008D0059 /* PurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesViewController.swift; sourceTree = "<group>"; };
 		377D77A725DB5A54008D0059 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		379C3BC825361B3B003D22C1 /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
+		37ABC1BA26E57C4A002E9AF3 /* AddOnCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnCollectionViewCell.swift; sourceTree = "<group>"; };
 		37B1988A25B7807C00E59CF6 /* TemplateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewCell.swift; sourceTree = "<group>"; };
 		37B1988E25B7836100E59CF6 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		37B1989225B7C4A400E59CF6 /* CustomizerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizerTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				377D779725DB26E7008D0059 /* PurchaseTableViewCell.swift */,
 				37B5BCB5266BE5930017AAE5 /* CartItemTableViewCell.swift */,
 				37E2D7A2269BDAC300D41C60 /* FulfilledTableViewCell.swift */,
+				37ABC1BA26E57C4A002E9AF3 /* AddOnCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				37E0EB4E26910D3E004B6C8D /* CDTemplate+Convenience.swift in Sources */,
 				37FC57BD24F5FB3600610C60 /* ReviewCollectionViewCell.swift in Sources */,
 				37B1988B25B7807C00E59CF6 /* TemplateCollectionViewCell.swift in Sources */,
+				37ABC1BB26E57C4A002E9AF3 /* AddOnCollectionViewCell.swift in Sources */,
 				37E0EB4726910C3F004B6C8D /* CDProduct+Convenience.swift in Sources */,
 				37204A48268A9B30001B34F6 /* TextFieldView.swift in Sources */,
 				37E0EB5426910E31004B6C8D /* Fulfilled+CoreDataProperties.swift in Sources */,

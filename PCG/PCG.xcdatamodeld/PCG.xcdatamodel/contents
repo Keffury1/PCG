@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Cart" representedClassName="Cart" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
         <relationship name="cartProducts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDProduct" inverseName="cart" inverseEntity="CDProduct"/>
     </entity>
     <entity name="CDProduct" representedClassName="CDProduct" syncable="YES">
+        <attribute name="addOn" optional="YES" attributeType="String"/>
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -37,7 +38,7 @@
     </entity>
     <elements>
         <element name="Cart" positionX="36" positionY="117" width="128" height="74"/>
-        <element name="CDProduct" positionX="-54" positionY="-9" width="128" height="224"/>
+        <element name="CDProduct" positionX="-54" positionY="-9" width="128" height="239"/>
         <element name="CDTemplate" positionX="-36" positionY="9" width="128" height="89"/>
         <element name="Fulfilled" positionX="36" positionY="126" width="128" height="74"/>
         <element name="History" positionX="45" positionY="135" width="128" height="59"/>

@@ -23,6 +23,8 @@ class ReviewViewController: UIViewController {
     }
     var template: Template?
     var image: UIImage?
+    var addOns: [String]? = ["Thank You Card", "Gift Box", "Dog Treats"]
+    var addOn: String?
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         
@@ -41,6 +43,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var fulfilledTableView: UITableView!
+    @IBOutlet weak var addOnCollectionView: UICollectionView!
     
     // MARK: - Views
     
@@ -71,13 +74,17 @@ class ReviewViewController: UIViewController {
     private func setupSubviews() {
         fulfilledTableView.delegate = self
         fulfilledTableView.dataSource = self
+        addOnCollectionView.delegate = self
+        addOnCollectionView.dataSource = self
         
         addToCartButton.layer.cornerRadius = 10
         addToCartButton.addShadow()
         if reviewing {
             addToCartButton.setTitle(" Add to Cart", for: .normal)
+            addOnCollectionView.isUserInteractionEnabled = true
         } else {
             addToCartButton.setTitle(" Return", for: .normal)
+            addOnCollectionView.isUserInteractionEnabled = false
         }
         
         if template == nil {
@@ -96,7 +103,7 @@ class ReviewViewController: UIViewController {
             product.count += 1
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartVC")
             let moc = CoreDataStack.shared.mainContext
-            let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price),address: "", date: "", context: moc)
+            let newProduct = CDProduct(category: product.category, count: Int16(product.count), descriptionText: product.description, discountPrice: Int16(product.discountPrice), id: Int16(product.id), image: product.image, name: product.name, price: Int16(product.price),address: "", date: "", addOn: product.addOn ?? "", context: moc)
             
             if let template = template {
                 product.chosenTemplate?.append(template)
@@ -174,5 +181,47 @@ extension ReviewViewController: UITableViewDataSource, UITableViewDelegate {
             cell.titleLabel.text = fulfilled?.text
             return cell
         }
+    }
+}
+
+extension ReviewViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return addOns?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addOnCell", for: indexPath) as? AddOnCollectionViewCell else { return UICollectionViewCell() }
+        
+        let addOn = addOns![indexPath.row]
+        cell.addOnImageView.image = UIImage(named: addOn)
+        cell.addOnTitleLabel.text = addOn.capitalized
+        cell.contentView.layer.cornerRadius = 10
+        
+        if self.addOn == addOn {
+            cell.contentView.layer.borderWidth = 1
+            cell.contentView.layer.borderColor = UIColor(named: "Navy")!.cgColor
+        } else {
+            cell.contentView.layer.borderWidth = 0.5
+            cell.contentView.layer.borderColor = UIColor.lightGray.cgColor
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell!.contentView.layer.borderWidth = 1
+        cell!.contentView.layer.borderColor = UIColor(named: "Navy")?.cgColor
+        let addOn = addOns![indexPath.row]
+        product?.addOn = addOn
+        return
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell!.contentView.layer.borderWidth = 0.5
+        cell!.contentView.layer.borderColor = UIColor.lightGray.cgColor
+        product?.addOn = ""
+        return
     }
 }
