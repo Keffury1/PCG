@@ -24,12 +24,16 @@ class CheckoutViewController: UIViewController {
     // MARK: - Properties
     
     var amount: Double?
+    var total: Double?
     var shipping: Double?
     var tax: Double?
     var address: String?
     var cardParams: STPPaymentMethodCardParams?
     var configuration: Any?
     var dismissDelegate: DismissDelegate?
+    var one: [String] = ["WA","OR","NV","AZ","UT","ID","MT","WY","CO","NM","TX"]
+    var two: [String] = ["NC","GA","FL","VA","WV","TN","AL","KY","MD","PA","NY","AL","SC"]
+    var three: [String] = ["CT","MA","NH","VT","ME","OH","MY","IN"]
     
     lazy var fetchedResultsController: NSFetchedResultsController<Cart> = {
         let fetchRequest: NSFetchRequest<Cart> = Cart.fetchRequest()
@@ -75,7 +79,6 @@ class CheckoutViewController: UIViewController {
         shipping.identifier = "shipping"
         setupSubviews()
         updateViews()
-        StripeController.shared.startCheckout(with: Int(amount!))
     }
     
     // MARK: - Methods
@@ -96,19 +99,21 @@ class CheckoutViewController: UIViewController {
     }
     
     private func updateViews() {
-        subtotalLabel.text = "$\(amount!)"
+        subtotalLabel.text = "$\(amount?.rounded() ?? 0.0)"
         if amount == 0 {
             taxLabel.text = "$0.0"
             shippingLabel.text = "$0.0"
+            totalLabel.text = "$0.0"
         } else {
-            let tax = 0.0775 * amount!
+            total = amount
+            let tax = 0.0775 * total!
             taxLabel.text = "$\(tax.rounded())"
-            shippingLabel.text = "$\(20.00)"
-            amount! += tax
-            amount! += 20.0
+            shippingLabel.text = "$\(shipping ?? 0.0)"
+            total! += tax
+            total! += shipping ?? 0.0
+            totalLabel.text = "$\(Double(round((1000*total!)/1000)))"
+            StripeController.shared.startCheckout(with: Int(total!))
         }
-        
-        totalLabel.text = "$\(Double(round((1000*amount!)/1000)))"
     }
     
     private func saveOrder() {
@@ -180,6 +185,55 @@ class CheckoutViewController: UIViewController {
         }
     }
     
+    private func setShippingCost(state: String) {
+        let cart = fetchedResultsController.fetchedObjects?.first
+        let order = cart!.cartArray
+        
+        for product in order {
+            switch product.id {
+            case 1, 7, 16, 17:
+                shipping = 5.65
+            case 2:
+                shipping = 11.97
+            case 20, 6, 15:
+                shipping = 9.95
+            case 4, 8, 10, 11, 12, 14, 18, 21:
+                checkState(state: state, id: 1)
+            case 9, 19:
+                checkState(state: state, id: 1)
+            case 3:
+                checkState(state: state, id: 2)
+            case 13:
+                checkState(state: state, id: 1)
+            default:
+                return
+            }
+        }
+    }
+    
+    private func checkState(state: String, id: Int) {
+        switch id {
+        case 1:
+            if one.contains(state) {
+                shipping = 14.95
+            } else if state == "CA" {
+                shipping = 12.95
+            } else {
+                shipping = 16.95
+            }
+        case 2:
+            if two.contains(state) {
+                shipping = 15.95
+            } else if three.contains(state) {
+                shipping = 16.95
+            } else {
+                shipping = 18.95
+            }
+        default:
+            return
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func shippingButtonTapped(_ sender: Any) {
@@ -192,7 +246,6 @@ class CheckoutViewController: UIViewController {
                 self.address = nil
                 self.mapView.removeAnnotations(mapView.annotations)
             } else {
-                self.address = text
                 let geoCoder = CLGeocoder()
                 geoCoder.geocodeAddressString(text) { (placemarks, error) in
                     guard let placemarks = placemarks, let location = placemarks.first?.location else {
@@ -205,6 +258,30 @@ class CheckoutViewController: UIViewController {
                     self.mapView.centerCoordinate = annotation.coordinate
                     let region = MKCoordinateRegion( center: location.coordinate, latitudinalMeters: CLLocationDistance(exactly: 30000)!, longitudinalMeters: CLLocationDistance(exactly: 30000)!)
                     self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
+                    if placemarks.count > 0 {
+                        let pm = placemarks[0]
+                        var addressString : String = ""
+                        if pm.subLocality != nil {
+                            addressString = addressString + pm.subLocality! + ", "
+                        }
+                        if pm.thoroughfare != nil {
+                            addressString = addressString + pm.thoroughfare! + ", "
+                        }
+                        if pm.locality != nil {
+                            addressString = addressString + pm.locality! + ", "
+                        }
+                        if pm.country != nil {
+                            addressString = addressString + pm.country! + ", "
+                        }
+                        if pm.postalCode != nil {
+                            addressString = addressString + pm.postalCode! + " "
+                        }
+                        if pm.administrativeArea != nil {
+                            self.setShippingCost(state: pm.administrativeArea!)
+                        }
+                        self.address = addressString
+                        self.updateViews()
+                    }
                 }
             }
         }
@@ -268,7 +345,6 @@ extension CheckoutViewController: UITextFieldDelegate {
                 self.address = nil
                 self.mapView.removeAnnotations(mapView.annotations)
             } else {
-                self.address = text
                 let geoCoder = CLGeocoder()
                 mapView.removeAnnotations(mapView.annotations)
                 geoCoder.geocodeAddressString(text) { (placemarks, error) in
@@ -283,6 +359,30 @@ extension CheckoutViewController: UITextFieldDelegate {
                     let region = MKCoordinateRegion( center: location.coordinate, latitudinalMeters: CLLocationDistance(exactly: 20000)!, longitudinalMeters: CLLocationDistance(exactly: 20000)!)
                     self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
                     textField.resignFirstResponder()
+                    if placemarks.count > 0 {
+                        let pm = placemarks[0]
+                        var addressString : String = ""
+                        if pm.subLocality != nil {
+                            addressString = addressString + pm.subLocality! + ", "
+                        }
+                        if pm.thoroughfare != nil {
+                            addressString = addressString + pm.thoroughfare! + ", "
+                        }
+                        if pm.locality != nil {
+                            addressString = addressString + pm.locality! + ", "
+                        }
+                        if pm.country != nil {
+                            addressString = addressString + pm.country! + ", "
+                        }
+                        if pm.postalCode != nil {
+                            addressString = addressString + pm.postalCode! + " "
+                        }
+                        if pm.administrativeArea != nil {
+                            self.setShippingCost(state: pm.administrativeArea!)
+                        }
+                        self.address = addressString
+                        self.updateViews()
+                    }
                 }
             }
         }
