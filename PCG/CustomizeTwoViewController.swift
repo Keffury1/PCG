@@ -22,7 +22,6 @@ class CustomizeTwoViewController: UIViewController {
     var dateCount: Int?
     var product: Product?
     var template: Template?
-    var dateDelegate: DateDelegate?
     var templateTextFieldDelegate: TemplateTextFieldDelegate?
     var indexPath: IndexPath?
     var completedCount: Int = 0
@@ -117,9 +116,7 @@ class CustomizeTwoViewController: UIViewController {
             case 7:
                 //Date
                 let dateView = DateView()
-                dateView.calendarView.delegate = self
-                dateView.calendarView.dataSource = self
-                self.dateDelegate = dateView
+                dateView.dateDelegate = self
                 dateView.heightAnchor.constraint(equalToConstant: 275.0).isActive = true
                 dateView.widthAnchor.constraint(equalToConstant: self.customizeStackView.frame.width).isActive = true
                 customizeStackView.addArrangedSubview(dateView)
@@ -261,15 +258,11 @@ extension CustomizeTwoViewController: UITextFieldDelegate {
     }
 }
 
-extension CustomizeTwoViewController: FSCalendarDataSource, FSCalendarDelegate {
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        let date = dateFormatter.string(from: date)
+extension CustomizeTwoViewController: DateDelegate {
+    func dateTapped(date: String) {
         if date == "" {
             return
         } else {
-            dateDelegate?.dateTapped(date: date)
             template?.fulfilled[dateCount!] = date
             if checkIfCustomized() {
                 toggleReviewButton(bool: true)

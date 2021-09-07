@@ -13,6 +13,7 @@
                 <outlet property="calendarView" destination="VQ2-5U-NVs" id="zRm-vf-FK3"/>
                 <outlet property="containerView" destination="sob-2g-PLj" id="A8W-Wa-rQg"/>
                 <outlet property="dateLabel" destination="BJP-bQ-qM9" id="MlS-Zj-ZDa"/>
+                <outlet property="datePicker" destination="3lv-qo-qxL" id="Egh-F6-X4v"/>
                 <outlet property="dateView" destination="iN0-l3-epB" id="M6h-lG-TlF"/>
                 <outlet property="dividerView" destination="JQg-Me-5wq" id="8hE-Ow-sia"/>
                 <outlet property="iconButton" destination="23U-9K-ywW" id="wTS-cx-prY"/>
@@ -25,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xh6-an-IYI">
-                    <rect key="frame" x="10" y="117" width="40" height="40"/>
+                    <rect key="frame" x="10" y="115" width="40" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23U-9K-ywW">
                             <rect key="frame" x="5" y="5.5" width="30" height="29"/>
@@ -45,10 +46,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sob-2g-PLj">
-                    <rect key="frame" x="58" y="117" width="282" height="275"/>
+                    <rect key="frame" x="58" y="115" width="282" height="279"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UzP-oh-FuX">
-                            <rect key="frame" x="5" y="5" width="272" height="265"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UzP-oh-FuX">
+                            <rect key="frame" x="5" y="5" width="272" height="269"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byg-IH-7Q8">
                                     <rect key="frame" x="0.0" y="0.0" width="272" height="35"/>
@@ -68,17 +69,30 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQg-Me-5wq">
-                                    <rect key="frame" x="0.0" y="37" width="272" height="1"/>
+                                    <rect key="frame" x="0.0" y="39" width="272" height="1"/>
                                     <color key="backgroundColor" name="White"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="Liy-vY-wo3"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQ2-5U-NVs" customClass="FSCalendar">
-                                    <rect key="frame" x="0.0" y="40" width="272" height="225"/>
-                                    <color key="backgroundColor" name="Navy"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQ2-5U-NVs">
+                                    <rect key="frame" x="0.0" y="44" width="272" height="225"/>
+                                    <subviews>
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="3lv-qo-qxL">
+                                            <rect key="frame" x="0.0" y="0.0" width="272" height="225"/>
+                                            <color key="tintColor" name="White"/>
+                                            <connections>
+                                                <action selector="valueChanged:" destination="-1" eventType="valueChanged" id="47K-pJ-SD9"/>
+                                            </connections>
+                                        </datePicker>
+                                    </subviews>
+                                    <color key="backgroundColor" name="White"/>
                                     <color key="tintColor" name="White"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="3lv-qo-qxL" secondAttribute="trailing" id="2l1-zc-Ttf"/>
+                                        <constraint firstItem="3lv-qo-qxL" firstAttribute="top" secondItem="VQ2-5U-NVs" secondAttribute="top" id="3WF-3C-z0e"/>
+                                        <constraint firstAttribute="bottom" secondItem="3lv-qo-qxL" secondAttribute="bottom" id="40b-FH-DEZ"/>
+                                        <constraint firstItem="3lv-qo-qxL" firstAttribute="leading" secondItem="VQ2-5U-NVs" secondAttribute="leading" id="9QA-Xv-pIa"/>
                                         <constraint firstAttribute="height" constant="225" id="LDD-3s-Mca"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
@@ -175,7 +189,7 @@
             <color red="0.5607843137254902" green="0.60784313725490191" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Navy">
-            <color red="0.043137254901960784" green="0.090196078431372548" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.043000001460313797" green="0.090000003576278687" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tan">
             <color red="0.83137254901960789" green="0.81568627450980391" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

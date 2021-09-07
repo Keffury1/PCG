@@ -15,6 +15,11 @@ protocol DateDelegate {
 
 class DateView: UIView {
     
+    //MARK: - Properties
+    
+    var dateDelegate: DateDelegate?
+    var id: Int?
+    
     //MARK: - Outlets
     
     @IBOutlet var dateView: UIView!
@@ -24,6 +29,7 @@ class DateView: UIView {
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var dividerView: UIView!
     @IBOutlet weak var calendarView: FSCalendar!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     //MARK: - Methods
 
@@ -45,11 +51,14 @@ class DateView: UIView {
         containerView.layer.cornerRadius = 10
         containerView.clipsToBounds = true
         iconView.layer.cornerRadius = 10
+        calendarView.layer.cornerRadius = 10
     }
-}
-
-extension DateView: DateDelegate {
-    func dateTapped(date: String) {
+    
+    @IBAction func valueChanged(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let date = dateFormatter.string(from: datePicker.date)
         dateLabel.text = date
+        dateDelegate?.dateTapped(date: date)
     }
 }
