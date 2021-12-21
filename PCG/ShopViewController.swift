@@ -14,7 +14,7 @@ class ShopViewController: UIViewController {
 
     // MARK: - Properties
     var items: [String : String] = ["Cutting Boards":"CuttingBoard", "Lanterns":"Lantern", "Coaster Sets":"CoasterSet","Cheese Boards":"CheeseBoard", "Stamps":"Stamp", "Knife Sets":"KnifeSet", "Ornaments":"Ornament", "Doormats":"Doormat", "Jars":"DogTreatJar", "View All Products":""]
-    var prices: [String: String] = ["4 - Ghost Mode 👻":"4","3 - $100 ↓":"3","1 - $50 ↓":"1","2 - $75 ↓":"2"]
+    var prices: [String: String] = ["Ghost Mode 👻":"4","$100 ↓":"3","$50 ↓":"1","$75 ↓":"2"]
     let productController = ProductController()
     var price: Bool = true
     var display: Bool = true
@@ -156,7 +156,7 @@ class ShopViewController: UIViewController {
         priceDown.separatorColor = UIColor(named: "Tan")!
         priceDown.dataSource = prices.keys.sorted()
         priceDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            if item == "4 - Ghost Mode 👻" {
+            if item == "Ghost Mode 👻" {
                 if price {
                     price = false
                     priceButton.setBackgroundImage(UIImage(systemName: "dollarsign.circle.fill"), for: .normal)
@@ -165,7 +165,7 @@ class ShopViewController: UIViewController {
                     priceButton.setBackgroundImage(UIImage(systemName: "dollarsign.circle"), for: .normal)
                 }
                 productsCollectionView.reloadData()
-            } else if item == "1 - $50 ↓" {
+            } else if item == "$50 ↓" {
                 sortByPrice(price: 50)
                 let array = self.products.sorted(by: { $0.price > $1.price })
                 self.products = array
@@ -173,7 +173,7 @@ class ShopViewController: UIViewController {
                 highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
                 menuLabel.setTitle("50", for: .normal)
                 productsCollectionView.reloadData()
-            } else if item == "2 - $75 ↓" {
+            } else if item == "$75 ↓" {
                 sortByPrice(price: 75)
                 let array = self.products.sorted(by: { $0.price > $1.price })
                 self.products = array
@@ -181,7 +181,7 @@ class ShopViewController: UIViewController {
                 highToLowButton.setImage(UIImage(systemName: "chart.bar.fill"), for: .normal)
                 menuLabel.setTitle("75", for: .normal)
                 productsCollectionView.reloadData()
-            } else if item == "3 - $100 ↓" {
+            } else if item == "$100 ↓" {
                 sortByPrice(price: 100)
                 let array = self.products.sorted(by: { $0.price > $1.price })
                 self.products = array
