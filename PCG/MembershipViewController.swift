@@ -32,7 +32,6 @@ class MembershipViewController: UIViewController {
     // MARK: - Methods
     
     private func setupSubviews() {
-        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         loginButton.layer.cornerRadius = 10.0
         loginButton.layer.borderWidth = 1.0
         loginButton.layer.borderColor = UIColor.init(named: "Navy")?.cgColor

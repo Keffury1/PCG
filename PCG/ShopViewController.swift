@@ -76,7 +76,6 @@ class ShopViewController: UIViewController {
     // MARK: - Methods
     
     private func setupSubviews() {
-        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         highToLowButton.transform = CGAffineTransform(scaleX: -1, y: 1)
         menuLabel.addShadow()
         menuLabel.layer.cornerRadius = 10

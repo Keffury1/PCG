@@ -42,7 +42,6 @@ class PurchasesViewController: UIViewController {
     
     private func setupSubviews() {
         purchasesTableView.dataSource = self
-        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
         viewProductsButton.layer.cornerRadius = 10
     }
     

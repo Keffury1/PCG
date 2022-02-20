@@ -29,7 +29,6 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSubviews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,11 +38,6 @@ class AccountViewController: UIViewController {
         }
     }
     
-    // MARK: - Methods
-    
-    private func setupSubviews() {
-        headerView.addTopDownGradient(color: UIColor.init(named: "Light Gray")!.cgColor)
-    }
     
     // MARK: - Actions
     

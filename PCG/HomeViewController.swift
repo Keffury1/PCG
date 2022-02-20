@@ -9,6 +9,7 @@
 import UIKit
 import LocalAuthentication
 import ProgressHUD
+import SafariServices
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -21,11 +22,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var reviewsCollectionView: UICollectionView!
-    @IBOutlet weak var membershipView: UIView!
     @IBOutlet weak var shopView: UIView!
-    @IBOutlet var membershipTapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet var shopTapGestureRecognizer: UITapGestureRecognizer!
-    @IBOutlet weak var viaEtsyButton: UIButton!
     
     // MARK: - Views
     
@@ -37,15 +35,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         reviewsCollectionView.delegate = self
         reviewsCollectionView.dataSource = self
         reviewsCollectionView.layer.cornerRadius = 10.0
-        
-//        if UserDefaults.value(forKey: "LoggedIn") == nil {
-//            loginMember()
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        logoImageView.layer.cornerRadius = logoImageView.frame.width / 2
+        logoImageView.layer.cornerRadius = 10
         logoImageView.clipsToBounds = true
         logoImageView.addShadow()
     }
@@ -81,15 +75,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Methods
     
     private func setupSubviews() {
-        
-        membershipView.layer.cornerRadius = 15
-        membershipView.addShadow()
-        
         shopView.layer.cornerRadius = 15
         shopView.addShadow()
-        
-        viaEtsyButton.semanticContentAttribute = UIApplication.shared
-            .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
     }
     
     private func loginMember() {
@@ -123,17 +110,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Actions
     
-    @IBAction func membershipButtonTapped(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 0
-    }
-    
     @IBAction func shopButtonTapped(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 2
-    }
-    
-    @IBAction func viaEtsyButtonTapped(_ sender: Any) {
-        guard let url = URL(string: "https://www.etsy.com/shop/DeskCandy?ref=profile_header#reviews") else { return }
-        UIApplication.shared.open(url)
+        self.tabBarController?.selectedIndex = 1
     }
     
     // MARK: - Navigation
