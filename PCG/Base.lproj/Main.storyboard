@@ -214,10 +214,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="und-dO-fSY">
-                                <rect key="frame" x="10" y="145" width="355" height="268"/>
+                                <rect key="frame" x="10" y="150" width="355" height="263"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Products" translatesAutoresizingMaskIntoConstraints="NO" id="61t-Es-87L">
-                                        <rect key="frame" x="70" y="30" width="100" height="100"/>
+                                        <rect key="frame" x="70" y="40" width="100" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="White"/>
                                         <constraints>
@@ -226,13 +226,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Our  Products!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqc-pv-Qw2">
-                                        <rect key="frame" x="200" y="54" width="106.5" height="66"/>
+                                        <rect key="frame" x="200" y="64" width="106.5" height="66"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                         <color key="textColor" name="White"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Find out how over 20 years of experience has made us the best in the business  ________  (We can add a personalized note here)" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaB-mY-xa1">
-                                        <rect key="frame" x="44" y="156" width="267" height="102"/>
+                                        <rect key="frame" x="44" y="166" width="267" height="159.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" name="White"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
@@ -247,8 +247,7 @@
                                     <constraint firstItem="eaB-mY-xa1" firstAttribute="leading" secondItem="und-dO-fSY" secondAttribute="leading" constant="44" id="Ikz-Z8-dfN"/>
                                     <constraint firstItem="eaB-mY-xa1" firstAttribute="top" secondItem="61t-Es-87L" secondAttribute="bottom" constant="26" id="Kco-vJ-bkn"/>
                                     <constraint firstItem="dqc-pv-Qw2" firstAttribute="bottom" secondItem="61t-Es-87L" secondAttribute="bottom" constant="-10" id="gEl-lu-8XQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="eaB-mY-xa1" secondAttribute="bottom" constant="10" id="po0-FY-240"/>
-                                    <constraint firstItem="61t-Es-87L" firstAttribute="top" secondItem="und-dO-fSY" secondAttribute="top" constant="30" id="s96-uS-ZY4"/>
+                                    <constraint firstItem="61t-Es-87L" firstAttribute="top" secondItem="und-dO-fSY" secondAttribute="top" constant="40" id="kFV-Wx-JJK"/>
                                     <constraint firstItem="eaB-mY-xa1" firstAttribute="centerX" secondItem="und-dO-fSY" secondAttribute="centerX" id="xpw-ZY-F5Z"/>
                                 </constraints>
                                 <connections>
@@ -328,7 +327,7 @@
                             <constraint firstItem="siA-3M-kLM" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" id="EQK-b4-Qxy"/>
                             <constraint firstItem="und-dO-fSY" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="Fko-oN-WKc"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="siA-3M-kLM" secondAttribute="trailing" id="Fot-m8-XBh"/>
-                            <constraint firstItem="und-dO-fSY" firstAttribute="top" secondItem="bs3-M0-ser" secondAttribute="bottom" constant="-40" id="FsM-EH-YCN"/>
+                            <constraint firstItem="und-dO-fSY" firstAttribute="top" secondItem="bs3-M0-ser" secondAttribute="bottom" constant="-35" id="FsM-EH-YCN"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="top" secondItem="bs3-M0-ser" secondAttribute="top" constant="40" id="g2e-hE-Cew"/>
                             <constraint firstItem="bzH-wz-fxb" firstAttribute="trailing" secondItem="und-dO-fSY" secondAttribute="trailing" id="kYz-85-YaA"/>
                             <constraint firstItem="und-dO-fSY" firstAttribute="leading" secondItem="bzH-wz-fxb" secondAttribute="leading" id="kfp-eM-efd"/>
@@ -2287,7 +2286,10 @@
     </scenes>
     <designables>
         <designable name="12H-7q-mGk">
-            <size key="intrinsicContentSize" width="186" height="37"/>
+            <size key="intrinsicContentSize" width="280" height="49.833671875"/>
+        </designable>
+        <designable name="NCD-aV-KQa">
+            <size key="intrinsicContentSize" width="30" height="-1"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

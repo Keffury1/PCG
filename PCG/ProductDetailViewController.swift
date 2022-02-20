@@ -44,8 +44,6 @@ class ProductDetailViewController: UIViewController {
         customizeButton.layer.cornerRadius = 15
         customizeButton.addShadow()
         
-        bottomFadeView.addBottomUpGradient(color: UIColor.init(named: "Tan")!.cgColor)
-        
         guard let product = product else { return }
         
         if price! {
