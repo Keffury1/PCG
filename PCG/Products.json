@@ -1930,6 +1930,10 @@
                 "name": "DoubleBorderMonoCH",
                 "needs": [
                     {
+                        "id": 5,
+                        "name": "monogram"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -1940,6 +1944,18 @@
                 "id": 209,
                 "name": "ElegantCH",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
+                        "id": 1,
+                        "name": "name"
+                    },
+                    {
+                        "id": 7,
+                        "name": "date"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -1952,6 +1968,14 @@
                 "name": "LeafCH",
                 "needs": [
                     {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
+                        "id": 1,
+                        "name": "name"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -1962,6 +1986,10 @@
                 "id": 211,
                 "name": "OliveCH",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -1974,6 +2002,14 @@
                 "name": "PoppyCH",
                 "needs": [
                     {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
+                        "id": 7,
+                        "name": "date"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -1984,6 +2020,14 @@
                 "id": 213,
                 "name": "RusticCH",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
+                        "id": 7,
+                        "name": "date"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -1996,6 +2040,14 @@
                 "name": "VisionaryCH",
                 "needs": [
                     {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
+                        "id": 7,
+                        "name": "date"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -2006,6 +2058,14 @@
                 "id": 215,
                 "name": "WhimsicalCH",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
+                        "id": 7,
+                        "name": "date"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4026,6 +4086,10 @@
                 "name": "Charleston2Lines",
                 "needs": [
                     {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4036,6 +4100,10 @@
                 "id": 217,
                 "name": "CharlestonInitial",
                 "needs": [
+                    {
+                        "id": 3,
+                        "name": "lastInitial"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4048,6 +4116,10 @@
                 "name": "CharlestonLastName",
                 "needs": [
                     {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4058,6 +4130,10 @@
                 "id": 219,
                 "name": "DoubleBorder2Lines",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4070,6 +4146,10 @@
                 "name": "DoubleBorderInitial",
                 "needs": [
                     {
+                        "id": 3,
+                        "name": "lastInitial"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4080,6 +4160,10 @@
                 "id": 221,
                 "name": "DoubleBorderLastName",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4092,6 +4176,10 @@
                 "name": "FrenchQuarter2Lines",
                 "needs": [
                     {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4102,6 +4190,10 @@
                 "id": 223,
                 "name": "FrenchQuarterInitial",
                 "needs": [
+                    {
+                        "id": 3,
+                        "name": "lastInitial"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4114,6 +4206,10 @@
                 "name": "FrenchQuarterLastName",
                 "needs": [
                     {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4124,6 +4220,10 @@
                 "id": 225,
                 "name": "GreekKey2Lines",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4136,6 +4236,10 @@
                 "name": "GreekKeyInitial",
                 "needs": [
                     {
+                        "id": 3,
+                        "name": "lastInitial"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4146,6 +4250,10 @@
                 "id": 227,
                 "name": "GreekKeyLastName",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4158,6 +4266,14 @@
                 "name": "Home",
                 "needs": [
                     {
+                        "id": 9,
+                        "name": "state"
+                    },
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4168,6 +4284,10 @@
                 "id": 229,
                 "name": "Kingsbury",
                 "needs": [
+                    {
+                        "id": 3,
+                        "name": "lastInitial"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4180,6 +4300,10 @@
                 "name": "Monaco",
                 "needs": [
                     {
+                        "id": 3,
+                        "name": "lastInitial"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4190,6 +4314,10 @@
                 "id": 231,
                 "name": "Monogram",
                 "needs": [
+                    {
+                        "id": 5,
+                        "name": "monogram"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4202,6 +4330,10 @@
                 "name": "Pineapple",
                 "needs": [
                     {
+                        "id": 2,
+                        "name": "lastName"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4212,6 +4344,10 @@
                 "id": 233,
                 "name": "Rustic",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
                     {
                         "id": 10,
                         "name": "message"
@@ -4224,6 +4360,10 @@
                 "name": "Sorrento",
                 "needs": [
                     {
+                        "id": 3,
+                        "name": "lastInitial"
+                    },
+                    {
                         "id": 10,
                         "name": "message"
                     }
@@ -4234,6 +4374,10 @@
                 "id": 235,
                 "name": "SpringLeaves",
                 "needs": [
+                    {
+                        "id": 2,
+                        "name": "lastName"
+                    },
                     {
                         "id": 10,
                         "name": "message"
