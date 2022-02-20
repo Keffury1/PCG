@@ -4338,18 +4338,5 @@
         ],
         "chosenTemplate": [],
         "customPhoto": false
-    },
-    {
-        "id": 13,
-        "name": "Open House Doormat",
-        "image": "Open House Doormat",
-        "category": "Doormat",
-        "price": 59.95,
-        "discountPrice": 45.75,
-        "description": "Each open house doormat is made from a tufted looped polyester with a non-skid rubberized backing and black edges. Your design is printed into the mat, which creates a durable, weather-resistant image that lasts! Each mat will be made in your corporate colors and can include your logo and/or photo at no charge.",
-        "count": 0,
-        "templates": [],
-        "chosenTemplate": [],
-        "customPhoto": false
     }
 ]
