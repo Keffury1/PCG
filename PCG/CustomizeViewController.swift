@@ -60,6 +60,7 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
         super.viewDidLoad()
         first = false
         checkCamera()
+        imageScrollView.setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,13 +93,9 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
         
         imageScrollView.contentMode = .scaleAspectFit
 
-        if product.id == 11 || product.id == 21 || product.id == 9 {
+        if product.id == 11 || product.id == 21 || product.id == 9 || product.id == 15 || product.id == 2 || product.id == 6 || product.id == 17 {
             let bottomOffset = CGPoint(x: 0, y: imageScrollView.contentSize.height - imageScrollView.bounds.height + imageScrollView.contentInset.bottom)
             imageScrollView.setContentOffset(bottomOffset, animated: true)
-        } else if product.id == 4 {
-            imageScrollView.contentMode = .scaleAspectFill
-        } else if product.id == 20 {
-            imageScrollView.contentMode = .scaleAspectFill
         }
 
         templateContainerView.layer.cornerRadius = 10
@@ -233,7 +230,7 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         if let template = product.templates?[indexPath.row] {
             if let image = UIImage(named: template.name) {
                 imageScrollView.display(image: image)
-                if product.id == 11 || product.id == 21 || product.id == 9 {
+                if product.id == 11 || product.id == 21 || product.id == 9 || product.id == 15 || product.id == 2 || product.id == 6 || product.id == 17 {
                     let bottomOffset = CGPoint(x: 0, y: imageScrollView.contentSize.height - imageScrollView.bounds.height + imageScrollView.contentInset.bottom)
                     imageScrollView.setContentOffset(bottomOffset, animated: true)
                 }
