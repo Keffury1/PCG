@@ -23,13 +23,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var reviewsCollectionView: UICollectionView!
     @IBOutlet weak var shopView: UIView!
-    @IBOutlet var shopTapGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet weak var detailTextView: UITextView!
+    @IBOutlet weak var shopButton: UIButton!
     
     // MARK: - Views
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSubviews()
         
         reviewController.loadReviews()
         reviewsCollectionView.delegate = self
@@ -42,6 +42,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         logoImageView.layer.cornerRadius = 10
         logoImageView.clipsToBounds = true
         logoImageView.addShadow()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setupSubviews()
     }
     
     // MARK: - Colllection View Methods
@@ -75,8 +80,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Methods
     
     private func setupSubviews() {
-        shopView.layer.cornerRadius = 15
-        shopView.addShadow()
+        shopView.roundCorners(corners: [.topRight, .topLeft], radius: 15)
+        shopButton.setTitle("", for: .normal)
     }
     
     private func loginMember() {
