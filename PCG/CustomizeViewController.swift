@@ -63,16 +63,6 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
         imageScrollView.setup()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        if product?.templates?.count == 1 {
-            let indexPath = self.templatesCollectionView.indexPathsForSelectedItems?.first ?? IndexPath(item: 0, section: 0)
-            self.templatesCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
-            collectionView(templatesCollectionView, didSelectItemAt: indexPath)
-        }
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         setupSubviews()
