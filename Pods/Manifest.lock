@@ -1,6 +1,7 @@
 PODS:
   - DropDown (2.3.13)
   - FSCalendar (2.8.2)
+  - ImageScrollView (1.9.3)
   - IQKeyboardManagerSwift (6.5.6)
   - NBBottomSheet (1.2.0)
   - ProgressHUD (13.6)
@@ -18,6 +19,7 @@ PODS:
 DEPENDENCIES:
   - DropDown
   - FSCalendar
+  - ImageScrollView
   - IQKeyboardManagerSwift
   - NBBottomSheet
   - ProgressHUD
@@ -31,6 +33,7 @@ SPEC REPOS:
   trunk:
     - DropDown
     - FSCalendar
+    - ImageScrollView
     - IQKeyboardManagerSwift
     - NBBottomSheet
     - ProgressHUD
@@ -44,6 +47,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
+  ImageScrollView: d3ce8371e0d44299b2b638410db45387e18aa83f
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   NBBottomSheet: aa7a52809b2d7b193f733247b8ce391a59904372
   ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
@@ -54,6 +58,6 @@ SPEC CHECKSUMS:
   StripeCore: c09b492efc3b269a6ff875ad738ca366db97e03b
   VerticalSlider: 655f2bc3ed062bac13e21c174f5ff93b8308571d
 
-PODFILE CHECKSUM: c726ab0b1c1ac481f0d3e5eab1bae4905d5b20fc
+PODFILE CHECKSUM: eeb39de3bc79d4e7e6060aed2762c5a8f560dd10
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

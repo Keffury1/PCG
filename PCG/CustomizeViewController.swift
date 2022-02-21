@@ -13,12 +13,12 @@ import IQKeyboardManagerSwift
 import CoreData
 import ProgressHUD
 import VerticalSlider
+import ImageScrollView
 
 class CustomizeViewController: UIViewController, UINavigationControllerDelegate {
     
     // MARK: - Properties
-    
-    let scrollImg = UIScrollView()
+
     var product: Product?
     var template: Template?
     var indexPath: IndexPath?
@@ -26,7 +26,7 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
     var first: Bool = true
     var image: UIImage? {
         didSet {
-            self.firstTemplateImageView.image = image
+            self.imageScrollView.display(image: image!)
             enableContinueButton()
         }
     }
@@ -46,12 +46,11 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
     // MARK: - Outlets
     
     @IBOutlet weak var templateContainerView: UIView!
-    @IBOutlet weak var firstTemplateImageView: UIImageView!
+    @IBOutlet weak var imageScrollView: ImageScrollView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
     @IBOutlet weak var chooseTemplateView: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var verticalSlider: VerticalSlider!
     @IBOutlet weak var orLabel: UILabel!
     @IBOutlet weak var cameraButton: UIButton!
     
@@ -59,7 +58,6 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSubviews()
         first = false
         checkCamera()
     }
@@ -74,6 +72,11 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setupSubviews()
+    }
+    
     // MARK: - Methods
     
     private func setupSubviews() {
@@ -82,32 +85,25 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
         if product.templates?.isEmpty == true {
             return
         } else {
-            firstTemplateImageView.image = UIImage(named: (product.templates?.first!.name) ?? "")
+            if let image = UIImage(named: (product.templates?.first!.name) ?? "") {
+                imageScrollView.display(image: image)
+            }
         }
         
-        if product.id == 4 {
-            firstTemplateImageView.contentMode = .scaleAspectFill
+        imageScrollView.contentMode = .scaleAspectFit
+
+        if product.id == 11 || product.id == 21 || product.id == 9 {
+            let bottomOffset = CGPoint(x: 0, y: imageScrollView.contentSize.height - imageScrollView.bounds.height + imageScrollView.contentInset.bottom)
+            imageScrollView.setContentOffset(bottomOffset, animated: true)
+        } else if product.id == 4 {
+            imageScrollView.contentMode = .scaleAspectFill
         } else if product.id == 20 {
-            firstTemplateImageView.contentMode = .scaleAspectFill
+            imageScrollView.contentMode = .scaleAspectFill
         }
-        
-        let vWidth = self.templateContainerView.frame.width
-        let vHeight = self.templateContainerView.frame.height
-        
-        scrollImg.delegate = self
-        scrollImg.frame = CGRect(x: 0, y: 0, width: vWidth, height: vHeight)
-        scrollImg.showsVerticalScrollIndicator = false
-        scrollImg.showsHorizontalScrollIndicator = false
-        
-        scrollImg.minimumZoomScale = 1
-        scrollImg.maximumZoomScale = 10
-        
-        templateContainerView.addSubview(scrollImg)
+
         templateContainerView.layer.cornerRadius = 10
         templateContainerView.clipsToBounds = true
-        firstTemplateImageView.layer.cornerRadius = 10
-        firstTemplateImageView.clipsToBounds = true
-        scrollImg.addSubview(firstTemplateImageView)
+        imageScrollView.layer.cornerRadius = 10
         
         templatesCollectionView.dataSource = self
         templatesCollectionView.delegate = self
@@ -117,8 +113,6 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
         
         cameraButton.layer.cornerRadius = 10
         cameraButton.addShadow()
-        
-        verticalSlider.slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
     }
     
     private func enableContinueButton() {
@@ -137,10 +131,6 @@ class CustomizeViewController: UIViewController, UINavigationControllerDelegate 
         continueButton.tintColor = UIColor(named: "Navy")!
         continueButton.backgroundColor = UIColor(named: "Tan")!
         continueButton.isUserInteractionEnabled = false
-    }
-    
-    @objc private func sliderChanged() {
-        scrollImg.setZoomScale(CGFloat(verticalSlider.value), animated: true)
     }
     
     private func checkCamera() {
@@ -241,7 +231,13 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         guard let product = product else { return }
         
         if let template = product.templates?[indexPath.row] {
-            firstTemplateImageView.image = UIImage(named: template.name)
+            if let image = UIImage(named: template.name) {
+                imageScrollView.display(image: image)
+                if product.id == 11 || product.id == 21 || product.id == 9 {
+                    let bottomOffset = CGPoint(x: 0, y: imageScrollView.contentSize.height - imageScrollView.bounds.height + imageScrollView.contentInset.bottom)
+                    imageScrollView.setContentOffset(bottomOffset, animated: true)
+                }
+            }
             self.template = template
             reset = true
             view.reloadInputViews()
@@ -258,12 +254,6 @@ extension CustomizeViewController: UICollectionViewDataSource, UICollectionViewD
         cell?.layer.borderColor = UIColor.clear.cgColor
         cell?.isSelected = false
         disableContinueButton()
-    }
-}
-
-extension CustomizeViewController: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return self.firstTemplateImageView
     }
 }
 

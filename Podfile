@@ -19,4 +19,5 @@ target 'PCG' do
   pod 'NBBottomSheet'
   pod 'VerticalSlider'
   pod 'ReadMoreTextView'
+  pod 'ImageScrollView'
 end
