@@ -19,7 +19,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Outlets
     
-    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var reviewsCollectionView: UICollectionView!
     @IBOutlet weak var shopView: UIView!

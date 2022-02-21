@@ -331,12 +331,12 @@
                         <viewLayoutGuide key="safeArea" id="IUg-Uj-dTm"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ac5-HG-Rkj" firstAttribute="top" secondItem="bs3-M0-ser" secondAttribute="bottom" id="AE6-p7-zAV"/>
+                            <constraint firstItem="bs3-M0-ser" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="BFj-uG-zSn"/>
                             <constraint firstItem="ac5-HG-Rkj" firstAttribute="centerY" secondItem="IUg-Uj-dTm" secondAttribute="centerY" constant="70" id="Nzy-3a-hII"/>
                             <constraint firstItem="IUg-Uj-dTm" firstAttribute="trailing" secondItem="ac5-HG-Rkj" secondAttribute="trailing" constant="10" id="OiZ-3i-20i"/>
-                            <constraint firstItem="bs3-M0-ser" firstAttribute="centerX" secondItem="IUg-Uj-dTm" secondAttribute="centerX" id="fsf-3v-foG"/>
+                            <constraint firstItem="bs3-M0-ser" firstAttribute="top" secondItem="IUg-Uj-dTm" secondAttribute="top" id="Wdn-yE-h19"/>
                             <constraint firstItem="ac5-HG-Rkj" firstAttribute="leading" secondItem="IUg-Uj-dTm" secondAttribute="leading" constant="10" id="iwd-os-dL2"/>
-                            <constraint firstItem="bs3-M0-ser" firstAttribute="top" secondItem="IUg-Uj-dTm" secondAttribute="top" id="wGi-tI-aoz"/>
+                            <constraint firstItem="ac5-HG-Rkj" firstAttribute="top" secondItem="bs3-M0-ser" secondAttribute="bottom" id="xUT-GO-DVX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="IBg-Rd-sn0">
